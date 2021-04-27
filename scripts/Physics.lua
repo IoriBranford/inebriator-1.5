@@ -1,0 +1,106 @@
+local Physics = {}
+
+local world
+local bodies
+
+function Physics.init()
+    bodies = {}
+    world = love.physics.newWorld()
+end
+
+function Physics.clear()
+    bodies = nil
+    world:destroy()
+    world = nil
+end
+
+function Physics.setCallback(callback)
+    assert(type(callback) == "function")
+    local beginContact = callback and function(f1, f2, contact)
+        callback("beginContact", f1, f2, contact)
+    end
+    
+    local endContact = callback and function(f1, f2, contact)
+        callback("endContact", f1, f2, contact)
+    end
+    
+    local preSolve = callback and function(f1, f2, contact)
+        callback("preSolve", f1, f2, contact)
+    end
+    
+    local postSolve = callback and function(f1, f2, contact, ...)
+        callback("postSolve", f1, f2, contact, ...)
+    end
+    world:setCallbacks(beginContact, endContact, preSolve, postSolve)
+end
+
+function Physics.addBody(id, x, y, type, shape, dim1, dim2)
+    local body = love.physics.newBody(world, x, y, type)
+    bodies[id] = body
+    body:setUserData(id)
+    return body
+end
+
+function Physics.getBody(id)
+    return bodies[id]
+end
+
+function Physics.addRectangleFixture(id, w, h, x, y)
+    local body = bodies[id]
+    local shape = x and y and love.physics.newRectangleShape(x, y, w, h)
+        or love.physics.newRectangleShape(w, h)
+    local fixture = love.physics.newFixture(body, shape)
+    fixture:setUserData(id)
+    return fixture
+end
+
+function Physics.addCircleFixture(id, r, x, y)
+    local body = bodies[id]
+    local shape = x and y and love.physics.newCircleShape(x, y, r)
+        or love.physics.newCircleShape(r)
+    local fixture = love.physics.newFixture(body, shape)
+    fixture:setUserData(id)
+    return fixture
+end
+
+function Physics.addChainFixture(id, loop, ...)
+    local body = bodies[id]
+    local shape = love.physics.newChainShape(loop, ...)
+    local fixture = love.physics.newFixture(body, shape)
+    fixture:setUserData(id)
+    return fixture
+end
+
+function Physics.removeBody(id)
+    local body = bodies[id]
+    bodies[id] = nil
+    body:destroy()
+end
+
+function Physics.fixedupdate()
+    world:update(1)
+end
+
+function Physics.iterateBodies()
+    return pairs(bodies)
+end
+
+local function drawFixture(fixture)
+    local shape = fixture:getShape()
+    local typ = shape:getType()
+    if typ == "circle" then
+        local body = fixture:getBody()
+        local x, y = body:getWorldPoint(shape:getPoint())
+        love.graphics.circle("line", x, y, shape:getRadius())
+    elseif typ == "polygon" or typ == "chain" then
+        local body = fixture:getBody()
+        love.graphics.polygon("line", body:getWorldPoints(shape:getPoints()))
+    end
+    return true
+end
+
+function Physics.draw(viewx, viewy, vieww, viewh)
+    world:queryBoundingBox(viewx, viewy, viewx + vieww, viewy + viewh, drawFixture)
+end
+
+return Physics
