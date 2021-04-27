@@ -29,6 +29,7 @@ history.db
 *.jar
 *.apk
 *.tar.*
+love-*-win*/
 squashfs-root
 bin*/
 love-apk-src/
