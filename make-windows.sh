@@ -38,11 +38,6 @@ getZip () {
 }
 
 ./make-game.sh
-
-if [ -e game-win ]
-then
-	rm -rf game-win
-fi
 mkdir -p game-win
 
 if ! [ -e ${LOVE_DIR} ]
@@ -107,6 +102,11 @@ cp ${LOVE_DIR}/*.dll game-win
 if [ -e README.md ]
 then
 	cp README.md game-win
+fi
+
+if [ -e "$GAME_DIR" ]
+then
+	rm -rf "$GAME_DIR"
 fi
 
 mv game-win "${GAME_DIR}"
