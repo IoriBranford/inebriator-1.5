@@ -47,13 +47,19 @@ local function activateUnit(unit)
         Scene.addAnimatedTile(id, tile, x, y, z, unit.rotation, unit.scalex, unit.scaley)
     end
 
-    local bodytype = unit.bodytype
-    local body = bodytype and Physics.addBody(id, x, y, bodytype)
-    unit.body = body
+    local body = unit.body
+    if not body then
+        local bodytype = unit.bodytype
+        body = bodytype and Physics.addBody(id, x, y, bodytype)
+        unit.body = body
+    end
     if body then
         body:setFixedRotation(not unit.bodyrotation)
         body:setAngle(unit.bodyrotation and unit.rotation or 0)
 
+        for i, fixture in pairs(body:getFixtures()) do
+            fixture:destroy()
+        end
         if tile then
             local bodytileshape = unit.bodytileshape
             local shapes = tile.shapes
