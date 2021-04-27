@@ -38,6 +38,11 @@ getZip () {
 }
 
 ./make-game.sh
+
+if [ -e game-win ]
+then
+	rm -rf game-win
+fi
 mkdir -p game-win
 
 if ! [ -e ${LOVE_DIR} ]
