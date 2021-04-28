@@ -44,8 +44,15 @@ function Gameplay.getVectorToPlayer(x, y)
     return camerahalfw - x, camerahalfh - y
 end
 
-local bigguylayer
-local bigguyleft, bigguyright
+local bigguy
+
+function Gameplay.startClosingBigGuy()
+    Audio.play("data/sound/DSBOSPN_underwater.ogg")
+    local leftjaw = bigguy.leftjaw
+    local rightjaw = bigguy.rightjaw
+    leftjaw.body:setAngularVelocity(-leftjaw.rotation/1200)
+    rightjaw.body:setAngularVelocity(-rightjaw.rotation/1200)
+end
 
 local level
 local playerdepth
@@ -60,7 +67,7 @@ local levels = {
     { depth = onemeter * 512,           maxevolution = 32, },
     { depth = onemeter * 2048,          maxevolution = 48, },
     { depth = onemeter * 4096,          maxevolution = 64, },
-    { depth = onemeter * (4096+2048),   maxevolution = 100, },
+    { depth = onemeter * (4096+2048),   maxevolution = 80, },
 }
 
 function Gameplay.getLevel()
@@ -132,8 +139,7 @@ function Gameplay.loadphase(stagefile)
 end
 
 function Gameplay.quitphase()
-    bigguyleft = nil
-    bigguyright = nil
+    bigguy = nil
     player = nil
     creaturetypes = nil
     Physics.clear()
@@ -145,6 +151,9 @@ end
 
 local function startLevel(newlevel)
     level = newlevel
+    if level > #levels then
+        return
+    end
     local levelstats = levels[newlevel]
     local nextlevelstats = levels[newlevel+1]
     if levelstats then
@@ -160,14 +169,17 @@ local function startLevel(newlevel)
     player.evolution = 0
     damageeffectsecs = 0
 
-    if level >= #levels then
-        if not bigguyleft and not bigguyright then
-            bigguyleft = Units.add(bigguylayer.leftjaw)
-            bigguyleft.body = Physics.addBody(bigguyleft.id, bigguyleft.x, bigguyleft.y, "dynamic")
-            bigguyright = Units.add(bigguylayer.rightjaw)
-            bigguyright.body = Physics.addBody(bigguyright.id, bigguyright.x, bigguyright.y, "dynamic")
-            love.physics.newWeldJoint(bigguyleft.body, bigguyright.body, bigguyleft.x, bigguyleft.y)
-        end
+    if level == #levels then
+        local leftjaw = Units.add(bigguy.leftjaw)
+        bigguy.leftjaw = leftjaw
+        leftjaw.body = Physics.addBody(leftjaw.id, leftjaw.x, leftjaw.y, "dynamic")
+        local rightjaw = Units.add(bigguy.rightjaw)
+        bigguy.rightjaw = rightjaw
+        rightjaw.body = Physics.addBody(rightjaw.id, rightjaw.x, rightjaw.y, "dynamic")
+        love.physics.newWeldJoint(leftjaw.body, rightjaw.body, leftjaw.x, leftjaw.y, rightjaw.x, rightjaw.y, true)
+        local littleguy = Units.add(bigguy.LittleGuy)
+        littleguy.body = Physics.addBody(littleguy.id, littleguy.x, littleguy.y, "dynamic")
+        love.physics.newWeldJoint(littleguy.body, rightjaw.body, littleguy.x, littleguy.y, true)
     end
 end
 
@@ -225,7 +237,7 @@ function Gameplay.loadStage(stagefile)
     player = Units.add(map.layers.player[1], camerahalfw, camerahalfh)
     surfacey = stageheight
 
-    bigguylayer = map.layers.bigguy
+    bigguy = map.layers.bigguy
 
     startLevel(1)
 end

@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 10,
-  nextobjectid = 35,
+  nextobjectid = 36,
   backgroundcolor = { 94, 126, 181 },
   properties = {},
   tilesets = {
@@ -239,7 +239,7 @@ return {
       image = "tilesets/Ana.png",
       imagewidth = 720,
       imageheight = 48,
-      objectalignment = "unspecified",
+      objectalignment = "topleft",
       tileoffset = {
         x = -24,
         y = -24
@@ -293,11 +293,11 @@ return {
       tileheight = 16,
       spacing = 0,
       margin = 0,
-      columns = 4,
+      columns = 12,
       image = "tilesets/Creatures_16x16.png",
-      imagewidth = 64,
+      imagewidth = 192,
       imageheight = 16,
-      objectalignment = "unspecified",
+      objectalignment = "topleft",
       tileoffset = {
         x = -8,
         y = -8
@@ -309,7 +309,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 4,
+      tilecount = 12,
       tiles = {
         {
           id = 0,
@@ -359,12 +359,77 @@ return {
               duration = 100
             }
           }
+        },
+        {
+          id = 4,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "ellipse",
+                x = 0,
+                y = 0,
+                width = 16,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              }
+            }
+          },
+          animation = {
+            {
+              tileid = 4,
+              duration = 50
+            },
+            {
+              tileid = 5,
+              duration = 50
+            },
+            {
+              tileid = 6,
+              duration = 50
+            },
+            {
+              tileid = 7,
+              duration = 50
+            },
+            {
+              tileid = 8,
+              duration = 50
+            },
+            {
+              tileid = 9,
+              duration = 50
+            },
+            {
+              tileid = 10,
+              duration = 50
+            },
+            {
+              tileid = 11,
+              duration = 50
+            }
+          }
         }
       }
     },
     {
       name = "Creatures_32x32",
-      firstgid = 335,
+      firstgid = 343,
       tilewidth = 32,
       tileheight = 32,
       spacing = 0,
@@ -373,7 +438,7 @@ return {
       image = "tilesets/Creatures_32x32.png",
       imagewidth = 128,
       imageheight = 32,
-      objectalignment = "unspecified",
+      objectalignment = "topleft",
       tileoffset = {
         x = -16,
         y = -16
@@ -630,7 +695,7 @@ return {
           width = 32,
           height = 32,
           rotation = 0,
-          gid = 335,
+          gid = 343,
           visible = true,
           properties = {
             ["attackrange"] = 64,
@@ -666,8 +731,8 @@ return {
           name = "rightjaw",
           type = "",
           shape = "polygon",
-          x = 104,
-          y = 7264,
+          x = 120,
+          y = 7168,
           width = 0,
           height = 0,
           rotation = 3,
@@ -716,9 +781,9 @@ return {
             { x = -120, y = -4760 },
             { x = -152, y = -4928 },
             { x = 8, y = -5048 },
-            { x = 128, y = -5152 },
-            { x = 112, y = -5248 },
-            { x = 56, y = -5296 },
+            { x = 56, y = -5128 },
+            { x = 0, y = -5208 },
+            { x = -56, y = -5256 },
             { x = -224, y = -5304 },
             { x = -336, y = -5528 },
             { x = -128, y = -5696 },
@@ -730,9 +795,9 @@ return {
             { x = -24, y = -6736 },
             { x = -168, y = -6864 },
             { x = -88, y = -6984 },
-            { x = 200, y = -7064 },
-            { x = 80, y = -7120 },
-            { x = -208, y = -7136 },
+            { x = -16, y = -7032 },
+            { x = -16, y = -7120 },
+            { x = -112, y = -7184 },
             { x = -160, y = -7264 },
             { x = -160, y = -7304 },
             { x = -104, y = -7328 },
@@ -752,8 +817,8 @@ return {
           name = "leftjaw",
           type = "",
           shape = "polygon",
-          x = 104,
-          y = 7264,
+          x = 120,
+          y = 7168,
           width = 0,
           height = 0,
           rotation = -3,
@@ -798,9 +863,9 @@ return {
             { x = -120, y = -4760 },
             { x = -152, y = -4928 },
             { x = 8, y = -5048 },
-            { x = 128, y = -5152 },
-            { x = 112, y = -5248 },
-            { x = 56, y = -5296 },
+            { x = 56, y = -5128 },
+            { x = 0, y = -5208 },
+            { x = -56, y = -5256 },
             { x = -224, y = -5304 },
             { x = -336, y = -5528 },
             { x = -128, y = -5696 },
@@ -812,9 +877,9 @@ return {
             { x = -24, y = -6736 },
             { x = -168, y = -6864 },
             { x = -88, y = -6984 },
-            { x = 200, y = -7064 },
-            { x = 80, y = -7120 },
-            { x = -208, y = -7136 },
+            { x = -16, y = -7032 },
+            { x = -16, y = -7120 },
+            { x = -112, y = -7184 },
             { x = -160, y = -7264 },
             { x = -160, y = -7304 },
             { x = -176, y = -7312 },
@@ -830,6 +895,26 @@ return {
           properties = {
             ["bodyrotation"] = true,
             ["bodytype"] = "dynamic",
+            ["think"] = "moveInRelationToPlayer"
+          }
+        },
+        {
+          id = 35,
+          name = "LittleGuy",
+          type = "Unit",
+          shape = "rectangle",
+          x = 96,
+          y = 6928,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 335,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["eatevolution"] = 999999,
+            ["eathealth"] = 999999,
             ["think"] = "moveInRelationToPlayer"
           }
         }

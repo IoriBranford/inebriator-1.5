@@ -107,6 +107,9 @@ function Behavior.playerBeginContact(unit, other)
         local eathealth = other.eathealth
         local eatevolution = other.eatevolution
         if eathealth and eatevolution then
+            if other.name == "LittleGuy" then
+                AnaGame.startClosingBigGuy()
+            end
             AnaGame.feedPlayer(eathealth, eatevolution)
             Units.remove(other)
         end
