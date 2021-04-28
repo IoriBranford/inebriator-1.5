@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" backgroundcolor="#5e7eb5" nextlayerid="8" nextobjectid="35">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" backgroundcolor="#5e7eb5" nextlayerid="10" nextobjectid="35">
  <editorsettings>
   <chunksize width="10" height="20"/>
   <export target="ocean.lua" format="lua"/>
  </editorsettings>
- <properties>
-  <property name="playertype" type="object" value="4"/>
- </properties>
  <tileset firstgid="1" source="tilesets/Ocean.tsx"/>
  <tileset firstgid="301" source="tilesets/splash.tsx"/>
  <tileset firstgid="308" source="tilesets/Creatures_8x8.tsx"/>
@@ -26,6 +23,16 @@
   </chunk>
   </data>
  </layer>
+ <objectgroup id="8" name="player">
+  <object id="4" name="Ana" type="Unit" gid="316" x="48" y="392" width="48" height="48">
+   <properties>
+    <property name="beginContact" value="playerBeginContact"/>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
+    <property name="think" value="updatePlayerSprite"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="3" name="creaturetypes">
   <object id="33" name="Commonfish" type="Unit" gid="308" x="48" y="376" width="8" height="8">
    <properties>
@@ -99,61 +106,23 @@
     <property name="think" value="attackOrSwim"/>
    </properties>
   </object>
-  <object id="4" name="Ana" type="Unit" gid="316" x="48" y="392" width="48" height="48">
+ </objectgroup>
+ <objectgroup id="9" name="bigguy">
+  <object id="11" name="rightjaw" x="104" y="7264" rotation="3">
    <properties>
-    <property name="beginContact" value="playerBeginContact"/>
-    <property name="bodytileshape" value="hull"/>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="think" value="updatePlayerSprite"/>
+    <property name="think" value="moveInRelationToPlayer"/>
    </properties>
+   <polygon points="360,-7360 480,-7336 480,32 184,496 0,0 -16,-24 -24,-96 -24,-240 -8,-328 -40,-384 -16,-496 -72,-624 -96,-752 -64,-904 -32,-1000 -40,-1120 -40,-1144 -96,-1312 -104,-1360 -64,-1512 -32,-1696 -32,-1816 -32,-1920 -8,-2032 48,-2248 24,-2472 -16,-2584 -120,-2752 -112,-2944 -40,-3152 8,-3272 56,-3344 40,-3440 -48,-3696 -120,-3760 -192,-3832 -256,-4168 -168,-4264 -16,-4424 24,-4576 -120,-4760 -152,-4928 8,-5048 128,-5152 112,-5248 56,-5296 -224,-5304 -336,-5528 -128,-5696 40,-5848 96,-6032 -72,-6160 -296,-6368 -296,-6376 -24,-6736 -168,-6864 -88,-6984 200,-7064 80,-7120 -208,-7136 -160,-7264 -160,-7304 -104,-7328 -16,-7344 72,-7336 152,-7344 224,-7360"/>
+  </object>
+  <object id="10" name="leftjaw" x="104" y="7264" rotation="-3">
+   <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
+    <property name="bodytype" value="dynamic"/>
+    <property name="think" value="moveInRelationToPlayer"/>
+   </properties>
+   <polygon points="0,0 -16,-24 -24,-96 -24,-240 -8,-328 -40,-384 -16,-496 -72,-624 -96,-752 -64,-904 -32,-1000 -40,-1120 -40,-1144 -96,-1312 -104,-1360 -64,-1512 -32,-1696 -32,-1816 -32,-1920 -8,-2032 48,-2248 24,-2472 -16,-2584 -120,-2752 -112,-2944 -40,-3152 8,-3272 56,-3344 40,-3440 -48,-3696 -120,-3760 -192,-3832 -256,-4168 -168,-4264 -16,-4424 24,-4576 -120,-4760 -152,-4928 8,-5048 128,-5152 112,-5248 56,-5296 -224,-5304 -336,-5528 -128,-5696 40,-5848 96,-6032 -72,-6160 -296,-6368 -296,-6376 -24,-6736 -168,-6864 -88,-6984 200,-7064 80,-7120 -208,-7136 -160,-7264 -160,-7304 -176,-7312 -216,-7336 -288,-7320 -352,-7344 -408,-7352 -480,-7344 -512,-7328 -512,0 -184,496"/>
   </object>
  </objectgroup>
- <group id="5" name="BigGuy">
-  <objectgroup id="6" name="left">
-   <object id="10" name="jaw" x="104" y="7264" rotation="-45">
-    <properties>
-     <property name="bodymass" type="int" value="1000000"/>
-     <property name="bodyrotation" type="bool" value="true"/>
-     <property name="bodytype" value="dynamic"/>
-     <property name="think" value="moveInRelationToPlayer"/>
-    </properties>
-    <polygon points="0,0 -16,-24 -24,-96 -24,-240 -8,-328 -40,-384 -16,-496 -72,-624 -96,-752 -64,-904 -32,-1000 -40,-1120 -40,-1144 -96,-1312 -104,-1360 -64,-1512 -32,-1696 -32,-1816 -32,-1920 -8,-2032 48,-2248 24,-2472 -16,-2584 -120,-2752 -112,-2944 -40,-3152 8,-3272 56,-3344 40,-3440 -48,-3696 -120,-3760 -192,-3832 -256,-4168 -168,-4264 -16,-4424 24,-4576 -120,-4760 -152,-4928 8,-5048 128,-5152 112,-5248 56,-5296 -224,-5304 -336,-5528 -128,-5696 40,-5848 96,-6032 -72,-6160 -296,-6368 -296,-6376 -24,-6736 -168,-6864 -88,-6984 200,-7064 80,-7120 -208,-7136 -160,-7264 -160,-7304 -176,-7312 -216,-7336 -288,-7320 -352,-7344 -408,-7352 -480,-7344 -512,-7328 -512,0 8,600"/>
-   </object>
-   <object id="12" name="eye" x="40" y="7256" width="32" height="32">
-    <properties>
-     <property name="linecolor" type="color" value="#ffffffff"/>
-    </properties>
-    <ellipse/>
-   </object>
-   <object id="13" name="pupil" x="56" y="7264" width="16" height="16">
-    <properties>
-     <property name="fillcolor" type="color" value="#ffffffff"/>
-    </properties>
-    <ellipse/>
-   </object>
-  </objectgroup>
-  <objectgroup id="7" name="right">
-   <object id="11" name="jaw" x="104" y="7264" rotation="45">
-    <properties>
-     <property name="bodymass" type="int" value="1000000"/>
-     <property name="bodyrotation" type="bool" value="true"/>
-     <property name="bodytype" value="dynamic"/>
-     <property name="think" value="moveInRelationToPlayer"/>
-    </properties>
-    <polygon points="360,-7360 480,-7336 480,32 -32,592 0,0 -16,-24 -24,-96 -24,-240 -8,-328 -40,-384 -16,-496 -72,-624 -96,-752 -64,-904 -32,-1000 -40,-1120 -40,-1144 -96,-1312 -104,-1360 -64,-1512 -32,-1696 -32,-1816 -32,-1920 -8,-2032 48,-2248 24,-2472 -16,-2584 -120,-2752 -112,-2944 -40,-3152 8,-3272 56,-3344 40,-3440 -48,-3696 -120,-3760 -192,-3832 -256,-4168 -168,-4264 -16,-4424 24,-4576 -120,-4760 -152,-4928 8,-5048 128,-5152 112,-5248 56,-5296 -224,-5304 -336,-5528 -128,-5696 40,-5848 96,-6032 -72,-6160 -296,-6368 -296,-6376 -24,-6736 -168,-6864 -88,-6984 200,-7064 80,-7120 -208,-7136 -160,-7264 -160,-7304 -104,-7328 -16,-7344 72,-7336 152,-7344 224,-7360"/>
-   </object>
-   <object id="31" name="eye" x="128" y="7256" width="32" height="32">
-    <properties>
-     <property name="linecolor" type="color" value="#ffffffff"/>
-    </properties>
-    <ellipse/>
-   </object>
-   <object id="30" name="pupil" x="128" y="7264" width="16" height="16">
-    <properties>
-     <property name="fillcolor" type="color" value="#ffffffff"/>
-    </properties>
-    <ellipse/>
-   </object>
-  </objectgroup>
- </group>
 </map>

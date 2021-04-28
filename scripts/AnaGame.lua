@@ -44,6 +44,9 @@ function Gameplay.getVectorToPlayer(x, y)
     return camerahalfw - x, camerahalfh - y
 end
 
+local bigguylayer
+local bigguyleft, bigguyright
+
 local level
 local playerdepth
 local unsafedepth
@@ -54,10 +57,10 @@ local creaturespawninterval
 
 local levels = {
     { depth = 0,                        maxevolution = 16, },
-    { depth = onemeter * 512,           maxevolution = 16+4, },
-    { depth = onemeter * 2048,          maxevolution = 16+4+8, },
-    { depth = onemeter * 4096,          maxevolution = 16+4+8+16, },
-    { depth = onemeter * (4096+2048),   maxevolution = 16+4+8+16, },
+    { depth = onemeter * 512,           maxevolution = 32, },
+    { depth = onemeter * 2048,          maxevolution = 48, },
+    { depth = onemeter * 4096,          maxevolution = 64, },
+    { depth = onemeter * (4096+2048),   maxevolution = 100, },
 }
 
 function Gameplay.getLevel()
@@ -129,6 +132,8 @@ function Gameplay.loadphase(stagefile)
 end
 
 function Gameplay.quitphase()
+    bigguyleft = nil
+    bigguyright = nil
     player = nil
     creaturetypes = nil
     Physics.clear()
@@ -140,24 +145,30 @@ end
 
 local function startLevel(newlevel)
     level = newlevel
-    newlevel = math.min(#levels, newlevel)
     local levelstats = levels[newlevel]
     local nextlevelstats = levels[newlevel+1]
-    if level > #levels then
-        playerdepth = playerdepth + levelstats.depth
-        maxevolution = maxevolution + levelstats.maxevolution
-    else
+    if levelstats then
         playerdepth = levelstats.depth
         maxevolution = levelstats.maxevolution
     end
     if nextlevelstats then
         unsafedepth = nextlevelstats.depth
     else
-        unsafedepth = unsafedepth + levelstats.depth
+        unsafedepth = 16*99999
     end
     player.health = maxhealth
     player.evolution = 0
     damageeffectsecs = 0
+
+    if level >= #levels then
+        if not bigguyleft and not bigguyright then
+            bigguyleft = Units.add(bigguylayer.leftjaw)
+            bigguyleft.body = Physics.addBody(bigguyleft.id, bigguyleft.x, bigguyleft.y, "dynamic")
+            bigguyright = Units.add(bigguylayer.rightjaw)
+            bigguyright.body = Physics.addBody(bigguyright.id, bigguyright.x, bigguyright.y, "dynamic")
+            love.physics.newWeldJoint(bigguyleft.body, bigguyright.body, bigguyleft.x, bigguyleft.y)
+        end
+    end
 end
 
 function Gameplay.loadStage(stagefile)
@@ -211,10 +222,11 @@ function Gameplay.loadStage(stagefile)
         local creaturetype = creaturetypes[i]
         creaturetype.id = nil
     end
-    player = map.objects[map.playertype.id]
-    player.id = "player"
-    player = Units.add(player, camerahalfw, camerahalfh)
+    player = Units.add(map.layers.player[1], camerahalfw, camerahalfh)
     surfacey = stageheight
+
+    bigguylayer = map.layers.bigguy
+
     startLevel(1)
 end
 
@@ -302,13 +314,10 @@ local function updateCreatureSpawn()
     creaturespawntimer = creaturespawntimer - playerspeed
     if creaturespawntimer <= 0 then
         creaturespawntimer = creaturespawntimer + creaturespawninterval + love.math.random(10)
-        for i = 0, level-1 do
-            local creaturetype = creaturetypes[1 + (i % #creaturetypes)]
-            -- local depthmin = creaturetype.depthmin or math.huge
-            -- local depthmax = creaturetype.depthmax or -math.huge
-            local spawnlevel = creaturetype.level or math.huge
-            -- local spawndepth = playervy < 0 and playerdepth - camerahalfh or playerdepth + camerahalfh
-            if level >= spawnlevel then -- depthmin <= spawndepth and spawndepth <= depthmax then
+        for i = 1, #creaturetypes do
+            local creaturetype = creaturetypes[i]
+            local spawnlevel = creaturetype.level
+            if level == spawnlevel then
                 local x = playervx < 0 and 0 or cameraw
                 local y = playervy < 0 and 0 or camerah
                 if love.math.random(2) == 1 then
@@ -410,7 +419,7 @@ function Gameplay.draw(fixedfrac)
         love.graphics.setColor(1 - dim, 1 - dim, 1 - dim)
         Scene.draw(0, 0, cameraw, camerah)
         love.graphics.line(0, scenesurfacey, cameraw, scenesurfacey)
-        -- Physics.draw(0, 0, cameraw, camerah)
+        Physics.draw(0, 0, cameraw, camerah)
         love.graphics.setCanvas()
         love.graphics.pop()
     end

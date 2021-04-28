@@ -5,9 +5,6 @@
  <tile id="0">
   <objectgroup draworder="index" id="2">
    <object id="1" name="hull" type="Fixture" x="12" y="12" width="24" height="24">
-    <properties>
-     <property name="sensor" type="bool" value="true"/>
-    </properties>
     <ellipse/>
    </object>
   </objectgroup>
