@@ -65,6 +65,7 @@ local Tiled = {}
 
 function Tiled.clearTiles()
     Tiled.tilesets = {}
+    Tiled.images = {}
 end
 Tiled.clearTiles()
 
@@ -100,7 +101,7 @@ function Tiled.addTileset(tileset)
     end
     alltilesets[tilesetname] = tileset
 
-    local image = love.graphics.newImage(tileset.image)
+    local image = Tiled.loadImage(tileset.image)
     local columns = tileset.columns
     local n = tileset.tilecount
     local tw = tileset.tilewidth
@@ -278,10 +279,25 @@ function Tiled.newTileBatch(tiles, gids, cellwidth, cellheight, cols, rows)
     return tilebatch
 end
 
+function Tiled.loadImage(imagefile)
+    local image = Tiled.images[imagefile] or love.graphics.newImage(imagefile)
+    Tiled.images[imagefile] = image
+    return image
+end
+
 function Tiled.load(mapfile)
     local map, err = love.filesystem.load(mapfile)
     assert(map, err)
     map = map()
+
+    local mapdir = string.match(mapfile, "^(.+/)") or ""
+
+    if map.image then
+        local tileset = map
+        tileset.image = mapdir..tileset.image
+        tileset = Tiled.addTileset(tileset)
+        return tileset
+    end
 
     if map.backgroundcolor then
         for i, c in ipairs(map.backgroundcolor) do
@@ -294,7 +310,6 @@ function Tiled.load(mapfile)
     local mapobjects = {}
     map.objects = mapobjects
 
-    local mapdir = string.match(mapfile, "^(.+/)") or ""
     local tilesets = map.tilesets
     for i = 1, #tilesets do
         local tileset = tilesets[i]
@@ -382,7 +397,7 @@ function Tiled.load(mapfile)
             end
             layer.objects = nil
         elseif layertype == "imagelayer" then
-            layer.image = love.graphics.newImage(layer.image)
+            layer.image = Tiled.loadImage(layer.image)
         end
         propertiesToFields(layer)
         return z
