@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
- <tileset firstgid="1" source="../tilesets/Creatures_8x8.tsx"/>
- <object name="Lanternfish" type="Unit" gid="1" width="8" height="8">
+ <tileset firstgid="1" source="../tilesets/wineguards.tsx"/>
+ <object name="WineGuard" type="Unit" gid="22" width="24" height="32">
   <properties>
+   <property name="beginContact" value="enemy_beginContact"/>
    <property name="bodytileshape" value="hull"/>
    <property name="bodytype" value="dynamic"/>
   </properties>

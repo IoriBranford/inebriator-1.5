@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <object type="Trigger">
+  <properties>
+   <property name="command" value="addUnits"/>
+   <property name="commandparam" value="layer"/>
+  </properties>
+  <polyline points="0,0 16,0"/>
+ </object>
+</template>
