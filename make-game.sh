@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
 
-GAME_FILE=${GAME_FILE:=game.love}
+ASSET_FILE=${ASSET_FILE:=game.love}
+ASSET_LIST=${ASSET_LIST:=conf.lua main.lua data scripts shaders}
 
-git archive --format=zip -o $GAME_FILE HEAD
+git archive --format=zip -o $ASSET_FILE HEAD $ASSET_LIST
