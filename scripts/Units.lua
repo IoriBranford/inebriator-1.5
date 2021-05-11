@@ -11,14 +11,16 @@ local units
 local thinkingunits
 local addedunits
 local removedunits
+local scene
 
-function Units.init(nextunitid0, units0)
+function Units.init(nextunitid0, scene0)
     Behavior = Behavior or require "Behavior"
     nextunitid = nextunitid0 or 1
-    units = units0 or {}
+    units = {}
     thinkingunits = {}
     addedunits = {}
     removedunits = {}
+    scene = scene0
 end
 
 function Units.clear()
@@ -26,6 +28,7 @@ function Units.clear()
     thinkingunits = nil
     addedunits = nil
     removedunits = nil
+    scene = nil
 end
 
 local function activateUnit(unit)
@@ -37,6 +40,11 @@ local function activateUnit(unit)
         thinkingunits[id] = unit
     end
 
+    local start = unit.start and Behavior[unit.start]
+    if type(start) == "function" then
+        start(unit)
+    end
+
     local tile = unit.tile
     if not tile then
         local tileset = unit.tileset
@@ -44,7 +52,7 @@ local function activateUnit(unit)
         tile = tileset and tileid and Tiled.tilesets[tileset][tileid]
     end
     if tile then
-        Scene.addAnimatedTile(id, tile, x, y, z, unit.rotation, unit.scalex, unit.scaley)
+        scene:addAnimatedTile(id, tile, x, y, z, unit.rotation, unit.scalex, unit.scaley)
     end
 
     local body = unit.body

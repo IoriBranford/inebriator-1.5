@@ -21,6 +21,8 @@ local stagewidth, stageheight
 
 local canvas
 local viewx, viewy
+local worldscene
+local uiscene
 
 local Player = {
     id = "player",
@@ -45,7 +47,15 @@ function Gameplay.loadphase(stagefile)
     cameravy, camerax, cameray = -1, 0, 0
     stagewidth, stageheight = 0, 0
 
+    worldscene = Scene.new()
     Gameplay.loadStage(stagefile)
+
+    uiscene = Scene.new()
+    local ui = Tiled.load("data/gameplay.lua")
+    local hud_inner = ui.layers.hud_inner
+
+    for i = 1, #hud_inner do
+    end
 end
 
 function Gameplay.quitphase()
@@ -54,7 +64,8 @@ function Gameplay.quitphase()
     player = nil
 
     Physics.clear()
-    Scene.clear()
+    worldscene = nil
+    uiscene = nil
     canvas = nil
     Tiled.clearTiles()
 end
@@ -63,7 +74,7 @@ function Gameplay.loadStage(stagefile)
     local map = Tiled.load(stagefile)
     local mapobjects = map.objects
 
-    Units.init(map.nextobjectid)
+    Units.init(map.nextobjectid, worldscene)
     local cellwidth = map.tilewidth
     local cellheight = map.tileheight
     local stagecols = map.width
@@ -84,7 +95,7 @@ function Gameplay.loadStage(stagefile)
         if layertype == "tilelayer" then
             local tilebatch = layer.tilebatch
             if tilebatch then
-                Scene.addChunk(layerid, layer, stagewidth, stageheight, x, y, z)
+                worldscene:addChunk(layerid, layer, stagewidth, stageheight, x, y, z)
             end
             local chunks = layer.chunks
             if chunks then
@@ -95,7 +106,7 @@ function Gameplay.loadStage(stagefile)
                     local h = chunk.height * cellheight
                     local cx = chunk.x * cellwidth
                     local cy = chunk.y * cellheight
-                    Scene.addChunk(chunkid, chunk, w, h, x+cx, y+cy, z)
+                    worldscene:addChunk(chunkid, chunk, w, h, x+cx, y+cy, z)
                 end
             end
         elseif layertype == "objectgroup" then
@@ -179,10 +190,11 @@ function Gameplay.update(dsecs, fixedfrac)
     end
 
     for id, body in Physics.iterateBodies() do
-        Scene.updateFromBody(id, body, fixedfrac)
+        worldscene:updateFromBody(id, body, fixedfrac)
     end
 
-    Scene.updateAnimations(dsecs)
+    worldscene:updateAnimations(dsecs)
+    uiscene:updateAnimations(dsecs)
 
     -- local playervx = player.body:getLinearVelocity()
     viewx = camerax -- + playervx*fixedfrac
@@ -198,10 +210,11 @@ function Gameplay.draw()
 
     love.graphics.setCanvas(canvas)
     love.graphics.push()
-    Scene.draw(viewx, viewy, cameraw, camerah)
+    worldscene:draw(viewx, viewy, cameraw, camerah)
     Physics.draw(viewx, viewy, cameraw, camerah)
-    love.graphics.setCanvas()
     love.graphics.pop()
+    uiscene:draw(0, 0, cameraw, camerah)
+    love.graphics.setCanvas()
 
     local scale = math.min(math.floor(ghw / chw), math.floor(ghh / chh))
     love.graphics.draw(canvas, ghw, ghh, 0, scale, scale, chw, chh)
