@@ -39,7 +39,8 @@ function Scene:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
         ox = ox or 0,
         oy = oy or 0,
         kx = kx or 0,
-        ky = ky or 0
+        ky = ky or 0,
+        hidden = nil
     }
 
     self[id] = sceneobject
@@ -64,6 +65,13 @@ end
 
 function Scene:addText(id, text, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return self:add(id, text, nil, text:getWidth(), text:getHeight(), x, y, z, r, sx, sy, ox, oy, kx, ky)
+end
+
+function Scene:addCustom(id, draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    local sceneobject = self:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    assert(type(draw) == "function")
+    sceneobject.draw = draw
+    return sceneobject
 end
 
 function Scene:get(id)
@@ -143,7 +151,9 @@ function Scene:draw(viewx, viewy, vieww, viewh)
             t, b = math.min(t, b), math.max(t, b)
             if r > viewx and viewr > l and b > viewy and viewb > t then
                 local quad = sceneobject.quad
-                if quad then
+                if sceneobject.draw then
+                    sceneobject:draw()
+                elseif quad then
                     love.graphics.draw(sceneobject.drawable, quad, math.floor(x), math.floor(y),
                         sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
                 else
