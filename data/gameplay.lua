@@ -2832,7 +2832,7 @@ return {
         },
         {
           id = 124,
-          name = "",
+          name = "ENEMY",
           type = "",
           shape = "text",
           x = 248,

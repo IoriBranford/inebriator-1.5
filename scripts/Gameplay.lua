@@ -6,7 +6,7 @@ local Physics = require "Physics"
 local Scene = require "Scene"
 local Timeline = require "Timeline"
 local Audio = require "Audio"
-local Hud = require "Hud"
+local Gui = require "Gui"
 local Units
 local Trigger
 
@@ -23,7 +23,6 @@ local stagewidth, stageheight
 local canvas
 local viewx, viewy
 local worldscene
-local uiscene
 
 local Player = {
     id = "player",
@@ -51,9 +50,10 @@ function Gameplay.loadphase(stagefile)
     worldscene = Scene.new()
     Gameplay.loadStage(stagefile)
 
-    uiscene = Scene.new()
-    local ui = Tiled.load("data/gameplay.lua")
-    Hud.init(uiscene, ui.layers.hud_inner)
+    Gui.load("data/gameplay.lua")
+    for name, layer in pairs(Gui.root) do
+        Gui.setLayerHidden(name, name ~= "hud_inner")
+    end
 end
 
 function Gameplay.quitphase()
@@ -62,9 +62,8 @@ function Gameplay.quitphase()
     player = nil
 
     Physics.clear()
-    Hud.clear()
+    Gui.clear()
     worldscene = nil
-    uiscene = nil
     canvas = nil
     Tiled.clearCache()
 end
@@ -193,12 +192,12 @@ function Gameplay.update(dsecs, fixedfrac)
     end
 
     worldscene:updateAnimations(dsecs)
-    uiscene:updateAnimations(dsecs)
 
     -- local playervx = player.body:getLinearVelocity()
     viewx = camerax -- + playervx*fixedfrac
     viewy = cameray + cameravy*fixedfrac
     Audio.update(dsecs)
+    Gui.update(dsecs)
 end
 
 function Gameplay.draw()
@@ -223,7 +222,7 @@ function Gameplay.draw()
     love.graphics.scale(scale)
     love.graphics.translate(-chw, -chh)
     love.graphics.draw(canvas, 0, 0, 0, 1, 1, 0, 0)
-    uiscene:draw(-0x1000000, -0x1000000, 0x2000000, 0x2000000)
+    Gui.draw()
     love.graphics.pop()
     love.graphics.printf(tostring(love.timer.getFPS()), 0, 0, math.huge)
 end

@@ -401,7 +401,7 @@ GOOD LUCK!</text>
     <property name="linecolor" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="124" x="248" y="8" width="68" height="16">
+  <object id="124" name="ENEMY" x="248" y="8" width="68" height="16">
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">ENEMY</text>
   </object>
   <object id="141" name="enemy1" type="UIImage" gid="96" x="264" y="44" width="32" height="32">
