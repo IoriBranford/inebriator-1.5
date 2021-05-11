@@ -3,6 +3,75 @@ local Behavior = {}
 local Units = require "Units"
 local Scene = require "Scene"
 local Tiled = require "Tiled"
+
+local function moveTowards(x0, x1, speed)
+	if x1 < x0 then
+		speed = -speed
+	end
+	x0 = x0 + speed
+	if speed > 0 and x0 > x1 or speed < 0 and x0 < x1 then
+		return x1
+	end
+	return x0
+end
+
+local function moveTowards2(x0, y0, x1, y1, speedx, speedy)
+	return moveTowards(x0, x1, speedx), moveTowards(y0, y1, speedy)
+end
+
+function Behavior.timeout(unit)
+	local time = unit.time or 60
+	time = time - 1
+	if time <= 0 then
+		Units.remove(unit)
+	end
+end
+
+function Behavior.walkPath(unit, onPointReached)
+	local path = unit.path and unit.group.paths[unit.path.id]
+	local polyline = path and path.polyline
+	local polygon = path and path.polygon
+	local points = polyline or polygon
+	if not points then
+		return
+	end
+	local pathindex = unit.pathindex or 2
+	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
+	if not destx or not desty then
+		return
+	end
+	local speed = unit.speed or 1
+	local x, y = unit.body:getPosition()
+	local newx, newy = moveTowards2(x, y, destx, desty, speed, speed)
+	unit.body:setLinearVelocity(newx - x, newy - y)
+	if newx == destx and newy == desty then
+		pathindex = pathindex + 2
+		if polygon and pathindex > #points then
+			pathindex = 2
+		end
+		if onPointReached then
+			onPointReached(unit)
+		end
+	end
+	unit.pathindex = pathindex
+end
+
+function Behavior.walkPath_fireOnPathPoints(unit)
+	Behavior.walkPath()
+end
+
+function Behavior.fireTimeInterval(unit)
+	local bullet = unit.firebullet
+	local firetimer = unit.firetimer or unit.fireinterval or 1
+	firetimer = firetimer - 1
+	if firetimer <= 0 then
+		local x, y = unit.body:getPosition()
+		-- Units.add(???, x, y, unit.z)
+		firetimer = firetimer + (unit.fireinterval or 1)
+	end
+	unit.firetimer = firetimer
+end
+
 -- local AnaGame = require "AnaGame"
 
 -- local function moveInRelationToPlayer(selfvx, selfvy)

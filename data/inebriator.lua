@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 40,
-  nextobjectid = 264,
+  nextobjectid = 266,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -6006,9 +6006,9 @@ return {
         {
           id = 255,
           name = "",
-          type = "",
+          type = "Path",
           shape = "polyline",
-          x = 112,
+          x = 96,
           y = 1136,
           width = 0,
           height = 0,
@@ -6019,6 +6019,25 @@ return {
             { x = 0, y = 80 },
             { x = 16, y = 96 },
             { x = 16, y = 304 }
+          },
+          properties = {}
+        },
+        {
+          id = 264,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 192,
+          y = 1136,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = 80 },
+            { x = -16, y = 96 },
+            { x = -16, y = 304 }
           },
           properties = {}
         },
@@ -6037,7 +6056,9 @@ return {
           properties = {
             ["beginContact"] = "enemy_beginContact",
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["path"] = { id = 255 },
+            ["think"] = "walkPath"
           }
         },
         {
@@ -6073,7 +6094,9 @@ return {
           properties = {
             ["beginContact"] = "enemy_beginContact",
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["path"] = { id = 264 },
+            ["think"] = "walkPath"
           }
         },
         {

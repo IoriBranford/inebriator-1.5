@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="40" nextobjectid="264">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="40" nextobjectid="266">
  <editorsettings>
   <export target="inebriator.lua" format="lua"/>
  </editorsettings>
@@ -98,12 +98,25 @@
   </data>
  </layer>
  <objectgroup id="39" name="enemy1">
-  <object id="255" x="112" y="1136">
+  <object id="255" type="Path" x="96" y="1136">
    <polyline points="0,0 0,80 16,96 16,304"/>
   </object>
-  <object id="260" template="units/WineGuard.tx" x="96" y="1136"/>
+  <object id="264" type="Path" x="192" y="1136">
+   <polyline points="0,0 0,80 -16,96 -16,304"/>
+  </object>
+  <object id="260" template="units/WineGuard.tx" x="96" y="1136">
+   <properties>
+    <property name="path" type="object" value="255"/>
+    <property name="think" value="walkPath"/>
+   </properties>
+  </object>
   <object id="261" template="units/WineGuard.tx" x="144" y="1144"/>
-  <object id="262" template="units/WineGuard.tx" x="192" y="1136"/>
+  <object id="262" template="units/WineGuard.tx" x="192" y="1136">
+   <properties>
+    <property name="path" type="object" value="264"/>
+    <property name="think" value="walkPath"/>
+   </properties>
+  </object>
   <object id="263" template="triggers/addUnits.tx" x="-16" y="1152"/>
  </objectgroup>
  <layer id="4" name="town04_f_high" width="18" height="100">

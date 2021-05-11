@@ -29,7 +29,6 @@ local Player = {
     z = 100,
     tileset = "Amy",
     tileid = 0,
-    think = "player_control",
     speed = 3
 }
 
@@ -62,6 +61,7 @@ end
 
 function Gameplay.loadStage(stagefile)
     local map = Tiled.load(stagefile)
+    local mapobjects = map.objects
 
     Units.init(map.nextobjectid)
     local cellwidth = map.tilewidth
@@ -76,44 +76,47 @@ function Gameplay.loadStage(stagefile)
     local layers = map.layers
     for i = 1, #layers do
         local layer = layers[i]
-        local id = 'l' .. layer.id
+        local layerid = 'l' .. layer.id
         local layertype = layer.type
         local x = layer.x
         local y = layer.y
         local z = layer.z
-        local tilebatch = layer.tilebatch
-        if tilebatch then
-            Scene.addChunk(id, layer, stagewidth, stageheight, x, y, z)
-        end
-        local chunks = layer.chunks
-        if chunks then
-            for i = 1, #chunks do
-                local chunk = chunks[i]
-                local cid = id .. 'c' .. i
-                local w = chunk.width * cellwidth
-                local h = chunk.height * cellheight
-                local cx = chunk.x * cellwidth
-                local cy = chunk.y * cellheight
-                Scene.addChunk(cid, chunk, w, h, x+cx, y+cy, z)
+        if layertype == "tilelayer" then
+            local tilebatch = layer.tilebatch
+            if tilebatch then
+                Scene.addChunk(layerid, layer, stagewidth, stageheight, x, y, z)
             end
-        end
-        local objects = layer.objects
-        if objects then
-            for i = 1, #objects do
-                local object = objects[i]
+            local chunks = layer.chunks
+            if chunks then
+                for i = 1, #chunks do
+                    local chunk = chunks[i]
+                    local chunkid = layerid .. 'c' .. i
+                    local w = chunk.width * cellwidth
+                    local h = chunk.height * cellheight
+                    local cx = chunk.x * cellwidth
+                    local cy = chunk.y * cellheight
+                    Scene.addChunk(chunkid, chunk, w, h, x+cx, y+cy, z)
+                end
+            end
+        elseif layertype == "objectgroup" then
+            for i = 1, #layer do
+                local object = layer[i]
                 local typ = object.type
                 if typ == "Trigger" then
                     local time = cameray - object.y
                     local command = Trigger[object.command]
                     local param = object.commandparam
                     if param == "object" then
-                        param = tablex.deepcopy(object)
+                        param = (object)
                     elseif param == "layer" then
-                        param = tablex.deepcopy(layer)
+                        param = (layer)
                     end
                     timeline:addEvent(time, command, param)
+                elseif typ == "Path" then
+                    layer.paths = layer.paths or {}
+                    layer.paths[object.id] = object
                 elseif typ == "Unit" then
-
+                    object.group = layer
                 end
             end
         end
@@ -133,41 +136,48 @@ function Gameplay.fixedupdate()
     end
 
     Units.activateAdded()
-
-    local playervx, playervy = player.body:getLinearVelocity()
-    player.body:setLinearVelocity(playervx, playervy + cameravy)
-
     Physics.fixedupdate()
-
-    if not player.canbeoffscreen then
-        local playerx, playery = player.body:getPosition()
-        local playervx, playervy = player.body:getLinearVelocity()
-        if playerx < 0 then
-            local _, playervy = player.body:getLinearVelocity()
-            player.body:setLinearVelocity(0, playervy)
-            player.body:setX(0)
-        elseif playerx > stagewidth then
-            local _, playervy = player.body:getLinearVelocity()
-            player.body:setLinearVelocity(0, playervy)
-            player.body:setX(stagewidth)
-        end
-        if playery < cameray then
-            local playervx = player.body:getLinearVelocity()
-            player.body:setLinearVelocity(playervx, cameravy)
-            player.body:setY(cameray)
-        elseif playery > cameray + camerah then
-            local playervx = player.body:getLinearVelocity()
-            player.body:setLinearVelocity(playervx, cameravy)
-            player.body:setY(cameray + camerah)
-        end
-    end
-
-    camerax = (stagewidth - cameraw) * player.body:getX() / stagewidth
-
     Units.deleteRemoved()
+    camerax = (stagewidth - cameraw) * player.body:getX() / stagewidth
 end
 
 function Gameplay.update(dsecs, fixedfrac)
+    local playerbody = player.body
+    if playerbody then
+        local vx, vy = 0, 0
+        if love.keyboard.isDown("left") then
+            vx = vx - 1
+        end
+        if love.keyboard.isDown("right") then
+            vx = vx + 1
+        end
+        if love.keyboard.isDown("up") then
+            vy = vy - 1
+        end
+        if love.keyboard.isDown("down") then
+            vy = vy + 1
+        end
+        if love.keyboard.isDown("lshift") then
+            vx = vx / 2
+            vy = vy / 2
+        end
+
+        local speed = player.speed
+        vx, vy = vx * speed, vy * speed + cameravy
+        local x, y = player.body:getPosition()
+        if x + vx < 0 then
+            vx = -x
+        elseif x + vx > stagewidth then
+            vx = stagewidth - x
+        end
+        if y + vy < cameray then
+            vy = cameray - y
+        elseif y + vy > cameray + camerah then
+            vy = cameray + camerah - y
+        end
+        playerbody:setLinearVelocity(vx, vy)
+    end
+
     for id, body in Physics.iterateBodies() do
         Scene.updateFromBody(id, body, fixedfrac)
     end
