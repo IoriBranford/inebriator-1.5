@@ -2,8 +2,7 @@ local Trigger = {}
 
 local Units = require "Units"
 
-function Trigger.addUnits(layer)
-    local objects = layer.objects
+function Trigger.addUnits(objects)
     for i = 1, #objects do
         local object = objects[i]
         if object.type == "Unit" then
