@@ -49,6 +49,16 @@
     objectgroup[i][prop]=val            Object properties become fields of the object*
     objectgroup[i].polygon              Converted to LOVE-style array {x1, y1, x2, y2, ...}
     objectgroup[i].polyline             Converted to LOVE-style array {x1, y1, x2, y2, ...}
+    objectgroup[i].text                 Converted to LOVE Text object
+                                        Font file should be in map directory and follow this naming:
+                                        "fontfamily.ttf"
+                                        "fontfamily Bold.ttf"
+                                        "fontfamily Italic.ttf"
+                                        "fontfamily Bold Italic.ttf"
+                                        "fontfamily pixelsize.fnt"
+                                        "fontfamily Bold pixelsize.fnt"
+                                        "fontfamily Italic pixelsize.fnt"
+                                        "fontfamily Bold Italic pixelsize.fnt"
 
     layergroup[i]                       Each layer in a layer group
     layergroup[name]                    You can access the in-group layer by name if it has one
@@ -64,11 +74,12 @@
 
 local Tiled = {}
 
-function Tiled.clearTiles()
+function Tiled.clearCache()
     Tiled.tilesets = {}
     Tiled.images = {}
+    Tiled.fonts = {}
 end
-Tiled.clearTiles()
+Tiled.clearCache()
 
 local function addIfNew(t, k, v)
     if t[k] then
@@ -283,6 +294,7 @@ end
 function Tiled.loadImage(imagefile)
     local image = Tiled.images[imagefile] or love.graphics.newImage(imagefile)
     Tiled.images[imagefile] = image
+    image:setFilter("nearest", "nearest")
     return image
 end
 
@@ -401,6 +413,23 @@ function Tiled.load(mapfile)
                         points[#points+1] = point.x
                         points[#points+1] = point.y
                     end
+                end
+                local text = object.text
+                if text then
+                    local fontfamily = object.fontfamily or "default"
+                    local fontname = string.format("%s%s%s", fontfamily,
+                        object.bold and " Bold" or "",
+                        object.italic and " Italic" or "")
+                    local ttf = mapdir..fontname..".ttf"
+                    local pixelsize = object.pixelsize or 16
+                    fontname = string.format("%s %d", fontname, pixelsize)
+                    local fnt = mapdir..fontname..".fnt"
+                    local font = Tiled.fonts[fontname]
+                        or love.filesystem.getInfo(fnt) and love.graphics.newFont(fnt)
+                        or love.filesystem.getInfo(ttf) and love.graphics.newFont(ttf, pixelsize)
+                        or love.graphics.newFont(pixelsize)
+                    font:setFilter("nearest", "nearest")
+                    object.text = love.graphics.newText(font, text)
                 end
                 object.rotation = math.rad(object.rotation)
                 object.z = z

@@ -62,6 +62,10 @@ function Scene:addAnimatedTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
     return sceneobject
 end
 
+function Scene:addText(id, text, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(id, text, nil, text:getWidth(), text:getHeight(), x, y, z, r, sx, sy, ox, oy, kx, ky)
+end
+
 function Scene:get(id)
     return self[id]
 end
@@ -119,10 +123,6 @@ end
 
 local sqrt2 = math.sqrt(2)
 function Scene:draw(viewx, viewy, vieww, viewh)
-    local tx = -math.floor(viewx)
-    local ty = -math.floor(viewy)
-    love.graphics.translate(tx, ty)
-
     local viewr = viewx + vieww
     local viewb = viewy + viewh
     for id, sceneobject in tablex.sortv(self, sortScene) do

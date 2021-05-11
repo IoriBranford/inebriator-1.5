@@ -6,6 +6,7 @@ local Physics = require "Physics"
 local Scene = require "Scene"
 local Timeline = require "Timeline"
 local Audio = require "Audio"
+local Hud = require "Hud"
 local Units
 local Trigger
 
@@ -52,10 +53,7 @@ function Gameplay.loadphase(stagefile)
 
     uiscene = Scene.new()
     local ui = Tiled.load("data/gameplay.lua")
-    local hud_inner = ui.layers.hud_inner
-
-    for i = 1, #hud_inner do
-    end
+    Hud.init(uiscene, ui.layers.hud_inner)
 end
 
 function Gameplay.quitphase()
@@ -64,10 +62,11 @@ function Gameplay.quitphase()
     player = nil
 
     Physics.clear()
+    Hud.clear()
     worldscene = nil
     uiscene = nil
     canvas = nil
-    Tiled.clearTiles()
+    Tiled.clearCache()
 end
 
 function Gameplay.loadStage(stagefile)
@@ -210,14 +209,22 @@ function Gameplay.draw()
 
     love.graphics.setCanvas(canvas)
     love.graphics.push()
+    local tx = -math.floor(viewx)
+    local ty = -math.floor(viewy)
+    love.graphics.translate(tx, ty)
     worldscene:draw(viewx, viewy, cameraw, camerah)
     Physics.draw(viewx, viewy, cameraw, camerah)
     love.graphics.pop()
-    uiscene:draw(0, 0, cameraw, camerah)
     love.graphics.setCanvas()
 
     local scale = math.min(math.floor(ghw / chw), math.floor(ghh / chh))
-    love.graphics.draw(canvas, ghw, ghh, 0, scale, scale, chw, chh)
+    love.graphics.push()
+    love.graphics.translate(ghw, ghh)
+    love.graphics.scale(scale)
+    love.graphics.translate(-chw, -chh)
+    love.graphics.draw(canvas, 0, 0, 0, 1, 1, 0, 0)
+    uiscene:draw(-0x1000000, -0x1000000, 0x2000000, 0x2000000)
+    love.graphics.pop()
     love.graphics.printf(tostring(love.timer.getFPS()), 0, 0, math.huge)
 end
 

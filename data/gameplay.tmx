@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" compressionlevel="0" width="52" height="40" tilewidth="8" tileheight="8" infinite="0" nextlayerid="25" nextobjectid="250">
+ <editorsettings>
+  <export target="gameplay.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="delayinitobjects" type="bool" value="true"/>
+  <property name="enemydefeatsound" type="file" value="snd/knockout.ogg"/>
+  <property name="enemyguardsound" type="file" value="snd/parry.ogg"/>
+  <property name="enemyhitsound" type="file" value="snd/hit.ogg"/>
+  <property name="losemusic" type="file" value="mus/gameover.vgm"/>
+  <property name="script" value="ShmupMap"/>
+  <property name="targetlocksound" type="file" value="snd/targetlock.ogg"/>
+  <property name="winmusic" type="file" value="mus/clear.vgm"/>
+ </properties>
+ <tileset firstgid="1" source="tilesets/hud_icons.tsx"/>
+ <tileset firstgid="9" source="tilesets/particles.tsx"/>
+ <tileset firstgid="73" source="tilesets/playerhitbox.tsx"/>
+ <tileset firstgid="74" source="tilesets/sparks_huge.tsx"/>
+ <tileset firstgid="94" source="tilesets/sparks_med.tsx"/>
+ <tileset firstgid="112" source="tilesets/sparks_small.tsx"/>
+ <tileset firstgid="128" source="tilesets/demonshots.tsx"/>
+ <tileset firstgid="136" source="tilesets/humanshots.tsx"/>
+ <tileset firstgid="200" source="tilesets/gameover.tsx"/>
+ <tileset firstgid="201" source="tilesets/emotes.tsx"/>
+ <tileset firstgid="233" source="tilesets/winebomb.tsx"/>
+ <tileset firstgid="235" source="tilesets/humanshotwarning.tsx"/>
+ <objectgroup id="15" name="healparticles">
+  <properties>
+   <property name="areaspreadh" type="float" value="16"/>
+   <property name="areaspreadw" type="float" value="16"/>
+   <property name="lifetime" type="float" value="0.25"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="60"/>
+   <property name="speedmin" type="float" value="60"/>
+   <property name="spread" type="float" value="0"/>
+   <property name="tileid" value="heal"/>
+   <property name="tileset" value="particles"/>
+  </properties>
+ </objectgroup>
+ <objectgroup id="2" name="enemyfireparticles">
+  <properties>
+   <property name="lifetime" type="float" value="0.25"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="360"/>
+   <property name="speedmin" type="float" value="240"/>
+   <property name="spread" type="float" value="10"/>
+   <property name="tileid" value="enemyfire"/>
+   <property name="tileset" value="particles"/>
+  </properties>
+ </objectgroup>
+ <objectgroup id="3" name="defeatparticles">
+  <properties>
+   <property name="lifetime" type="float" value="0.5"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="180"/>
+   <property name="speedmin" type="float" value="90"/>
+   <property name="tileid" value="defeat"/>
+   <property name="tileset" value="particles"/>
+  </properties>
+ </objectgroup>
+ <objectgroup id="4" name="damageparticles">
+  <properties>
+   <property name="lifetime" type="float" value="0.25"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="360"/>
+   <property name="speedmin" type="float" value="180"/>
+   <property name="spread" type="float" value="22.5"/>
+   <property name="tileid" value="damage"/>
+   <property name="tileset" value="particles"/>
+  </properties>
+ </objectgroup>
+ <objectgroup id="5" name="guardparticles">
+  <properties>
+   <property name="lifetime" type="float" value="0.25"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="360"/>
+   <property name="speedmin" type="float" value="180"/>
+   <property name="spread" type="float" value="22.5"/>
+   <property name="tileid" value="guard"/>
+   <property name="tileset" value="particles"/>
+  </properties>
+ </objectgroup>
+ <objectgroup id="6" name="launchbombparticles">
+  <properties>
+   <property name="lifetime" type="float" value="0.12"/>
+   <property name="maxparticles" value="4"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="480"/>
+   <property name="speedmin" type="float" value="400"/>
+   <property name="spread" type="float" value="30"/>
+   <property name="tileset" value="playerhitbox"/>
+  </properties>
+ </objectgroup>
+ <objectgroup id="7" name="deathparticles">
+  <properties>
+   <property name="lifetime" type="float" value="0.5"/>
+   <property name="script" value="ParticleLayer"/>
+   <property name="speedmax" type="float" value="360"/>
+   <property name="speedmin" type="float" value="120"/>
+   <property name="spread" type="float" value="90"/>
+   <property name="tileid" value="death"/>
+   <property name="tileset" value="particles"/>
+  </properties>
+ </objectgroup>
+ <objectgroup draworder="index" id="9" name="hud_inner">
+  <properties>
+   <property name="countdownsound" type="file" value="snd/equip.ogg"/>
+   <property name="extendsound" type="file" value="snd/extend.ogg"/>
+   <property name="gosound" type="file" value="snd/extend.ogg"/>
+   <property name="maxmultipliersound" type="file" value="snd/maxed.ogg"/>
+   <property name="newbombsound" type="file" value="snd/item1.ogg"/>
+   <property name="powerupsound" type="file" value="snd/item1.ogg"/>
+   <property name="script" value="ShmupStatus"/>
+  </properties>
+  <object id="41" name="timer" x="4" y="48" width="40" height="8" visible="0">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff">0:00</text>
+  </object>
+  <object id="2" name="wingright" gid="4" x="20" y="32" width="16" height="16" visible="0"/>
+  <object id="3" name="wingleft" gid="3" x="4" y="32" width="16" height="16" visible="0"/>
+  <object id="7" name="life9" gid="1" x="132" y="16" width="16" height="16"/>
+  <object id="8" name="life8" gid="1" x="116" y="16" width="16" height="16"/>
+  <object id="9" name="life7" gid="1" x="100" y="16" width="16" height="16"/>
+  <object id="10" name="life6" gid="1" x="84" y="16" width="16" height="16"/>
+  <object id="11" name="life5" gid="1" x="68" y="16" width="16" height="16"/>
+  <object id="12" name="life4" gid="1" x="52" y="16" width="16" height="16"/>
+  <object id="13" name="life3" gid="1" x="36" y="16" width="16" height="16"/>
+  <object id="14" name="life2" gid="1" x="20" y="16" width="16" height="16"/>
+  <object id="15" name="life1" gid="1" x="4" y="16" width="16" height="16"/>
+  <object id="28" name="reserves" x="4" y="36" width="32" height="8" visible="0">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center" valign="center">0</text>
+  </object>
+  <object id="29" name="score" x="4" y="4" width="232" height="8">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" valign="center">SCORE000000000 LIFE@001000000</text>
+  </object>
+  <object id="48" name="caravanrules" x="64" y="64" width="112" height="80" visible="0">
+   <properties>
+    <property name="textformat">%3d SECONDS
+%s BOMBS
+
+GOOD LUCK!!!</property>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">%3d SECONDS
+%s BOMBS
+
+GOOD LUCK!!!</text>
+  </object>
+  <object id="49" name="winebomb1" gid="233" x="8" y="308" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="50" name="winebomb2" gid="233" x="24" y="308" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="51" name="winebomb3" gid="233" x="40" y="308" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="52" name="winebomb4" gid="233" x="56" y="308" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="53" name="winebomb5" gid="233" x="72" y="308" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="54" name="activetriggers" x="0" y="272" width="240" height="48" visible="0">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="right" valign="bottom">activetriggers</text>
+  </object>
+  <object id="55" name="continueprompt" x="56" y="264" width="176" height="32" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right" valign="bottom">${joy_fire}: CONTINUE
+${joy_pausemenu}: SKIP</text>
+  </object>
+  <object id="56" name="battleprompt" x="8" y="264" width="224" height="32" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right" valign="bottom">${joy_fire} OR ${joy_pausemenu}:
+END TALK</text>
+  </object>
+  <object id="63" name="powerlevel" x="104" y="300" width="28" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" valign="center">Lv1</text>
+  </object>
+  <object id="158" name="difficulty" x="156" y="16" width="80" height="8">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="right" valign="center">${game_difficulty}</text>
+  </object>
+  <object id="160" name="hideupper" type="UIHider" x="0" y="0" width="240" height="48" visible="0">
+   <properties>
+    <property name="hideobjects">score
+life1
+life2
+life3
+life4
+life5
+life6
+life7
+life8
+life9
+difficulty
+reserves
+wingleft
+wingright
+timer</property>
+   </properties>
+  </object>
+  <object id="161" name="hidelower" type="UIHider" x="0" y="292" width="240" height="28" visible="0">
+   <properties>
+    <property name="hideobjects">bomb1
+bomb2
+bomb3
+winebomb1
+winebomb2
+winebomb3
+winebomb4
+winebomb5
+powerlevel
+powergauge</property>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup draworder="index" id="21" name="hud_outer_hori">
+  <properties>
+   <property name="canvasheight" type="int" value="320"/>
+   <property name="canvaswidth" type="int" value="416"/>
+   <property name="script" value="ShmupHUD"/>
+  </properties>
+  <object id="67" name="screen" x="0" y="0" width="240" height="320" visible="0"/>
+  <object id="69" name="score" x="-84" y="8" width="80" height="88">
+   <properties>
+    <property name="textformat">SCORE
+%10d
+
+NEXT LIFE
+%10d</property>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">SCORE
+ 000000000
+
+NEXT LIFE
+ 001000000</text>
+  </object>
+  <object id="73" name="life9" gid="1" x="-44" y="148" width="16" height="16"/>
+  <object id="74" name="life8" gid="1" x="-44" y="164" width="16" height="16"/>
+  <object id="75" name="life7" gid="1" x="-44" y="180" width="16" height="16"/>
+  <object id="76" name="life6" gid="1" x="-44" y="196" width="16" height="16"/>
+  <object id="77" name="life5" gid="1" x="-44" y="212" width="16" height="16"/>
+  <object id="78" name="life4" gid="1" x="-44" y="228" width="16" height="16"/>
+  <object id="79" name="life3" gid="1" x="-44" y="244" width="16" height="16"/>
+  <object id="80" name="life2" gid="1" x="-44" y="260" width="16" height="16"/>
+  <object id="81" name="life1" gid="1" x="-44" y="276" width="16" height="16"/>
+  <object id="82" name="wingright" gid="4" x="-64" y="276" width="16" height="16" visible="0"/>
+  <object id="83" name="wingleft" gid="3" x="-80" y="276" width="16" height="16" visible="0"/>
+  <object id="84" name="reserves" x="-80" y="276" width="32" height="16" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">0</text>
+  </object>
+  <object id="85" name="timer" x="-84" y="296" width="80" height="16" visible="0">
+   <properties>
+    <property name="textformat" value="TIME  %s"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">TIME  0:00</text>
+  </object>
+  <object id="86" name="caravanrules" x="240" y="72" width="88" height="108" visible="0">
+   <properties>
+    <property name="textformat">%3d SEC.
+%s BOMB
+
+GOOD LUCK!</property>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">%3d SEC.
+%s BOMB
+
+GOOD LUCK!</text>
+  </object>
+  <object id="88" name="powerlevel" x="-28" y="108" width="24" height="16" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Lv1</text>
+  </object>
+  <object id="90" name="winebomb1" gid="233" x="-14" y="284" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="91" name="winebomb2" gid="233" x="-14" y="264" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="92" name="winebomb3" gid="233" x="-14" y="244" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="93" name="winebomb4" gid="233" x="-14" y="224" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="94" name="winebomb5" gid="233" x="-14" y="204" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="106" type="Polygon" x="248" y="28" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="107" type="Polygon" x="284" y="28" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="108" type="Polygon" x="248" y="64" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="109" type="Polygon" x="284" y="64" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="110" type="Polygon" x="248" y="100" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="111" type="Polygon" x="284" y="100" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="112" type="Polygon" x="248" y="136" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="113" type="Polygon" x="284" y="136" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="114" type="Polygon" x="248" y="172" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="115" type="Polygon" x="284" y="172" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="116" type="Polygon" x="248" y="208" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="117" type="Polygon" x="284" y="208" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="118" type="Polygon" x="248" y="244" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="119" type="Polygon" x="284" y="244" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="120" type="Polygon" x="248" y="280" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="121" type="Polygon" x="284" y="280" width="32" height="32">
+   <properties>
+    <property name="fillcolor" type="color" value="#40000000"/>
+    <property name="linecolor" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="124" x="248" y="8" width="68" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">ENEMY</text>
+  </object>
+  <object id="141" name="enemy1" type="UIImage" gid="96" x="264" y="44" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="142" name="enemy2" type="UIImage" gid="96" x="300" y="44" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="143" name="enemy3" type="UIImage" gid="96" x="264" y="80" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="144" name="enemy4" type="UIImage" gid="96" x="300" y="80" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="145" name="enemy5" type="UIImage" gid="96" x="264" y="116" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="146" name="enemy6" type="UIImage" gid="96" x="300" y="116" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="147" name="enemy7" type="UIImage" gid="96" x="264" y="152" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="148" name="enemy8" type="UIImage" gid="96" x="300" y="152" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="149" name="enemy9" type="UIImage" gid="96" x="264" y="188" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="150" name="enemy10" type="UIImage" gid="96" x="300" y="188" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="151" name="enemy11" type="UIImage" gid="96" x="264" y="224" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="152" name="enemy12" type="UIImage" gid="96" x="300" y="224" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="153" name="enemy13" type="UIImage" gid="96" x="264" y="260" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="154" name="enemy14" type="UIImage" gid="96" x="300" y="260" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="155" name="enemy15" type="UIImage" gid="96" x="264" y="296" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="156" name="enemy16" type="UIImage" gid="96" x="300" y="296" width="32" height="32">
+   <properties>
+    <property name="fitrect" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="98" name="continueprompt" x="244" y="176" width="76" height="136" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" valign="bottom">${joy_fire}: CONTINUE
+
+${joy_pausemenu}: SKIP</text>
+  </object>
+  <object id="99" name="battleprompt" x="244" y="176" width="76" height="136" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" valign="bottom">${joy_fire} OR ${joy_pausemenu}:
+END TALK</text>
+  </object>
+  <object id="157" name="difficulty" x="-88" y="296" width="88" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">${game_difficulty}</text>
+  </object>
+ </objectgroup>
+ <objectgroup draworder="index" id="23" name="hud_outer_vert">
+  <properties>
+   <property name="canvasheight" type="int" value="384"/>
+   <property name="canvaswidth" type="int" value="240"/>
+   <property name="script" value="ShmupHUD"/>
+  </properties>
+  <object id="176" name="screen" x="0" y="0" width="240" height="320" visible="0"/>
+  <object id="177" name="score" x="4" y="-32" width="232" height="32">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">SCORE000000000 LIFE@001000000</text>
+  </object>
+  <object id="181" name="life9" gid="1" x="132" y="-16" width="16" height="16"/>
+  <object id="182" name="life8" gid="1" x="116" y="-16" width="16" height="16"/>
+  <object id="183" name="life7" gid="1" x="100" y="-16" width="16" height="16"/>
+  <object id="184" name="life6" gid="1" x="84" y="-16" width="16" height="16"/>
+  <object id="185" name="life5" gid="1" x="68" y="-16" width="16" height="16"/>
+  <object id="186" name="life4" gid="1" x="52" y="-16" width="16" height="16"/>
+  <object id="187" name="life3" gid="1" x="36" y="-16" width="16" height="16"/>
+  <object id="188" name="life2" gid="1" x="20" y="-16" width="16" height="16"/>
+  <object id="189" name="life1" gid="1" x="4" y="-16" width="16" height="16"/>
+  <object id="190" name="wingright" gid="4" x="84" y="328" width="16" height="16" visible="0"/>
+  <object id="191" name="wingleft" gid="3" x="68" y="328" width="16" height="16" visible="0"/>
+  <object id="192" name="reserves" x="68" y="328" width="32" height="16" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">0</text>
+  </object>
+  <object id="193" name="timer" x="156" y="-16" width="80" height="16">
+   <properties>
+    <property name="textformat" value="TIME  %s"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">TIME  0:00</text>
+  </object>
+  <object id="196" name="powerlevel" x="104" y="328" width="24" height="16" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Lv1</text>
+  </object>
+  <object id="198" name="winebomb1" gid="233" x="12" y="336" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="199" name="winebomb2" gid="233" x="28" y="336" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="200" name="winebomb3" gid="233" x="44" y="336" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="201" name="winebomb4" gid="233" x="60" y="336" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="202" name="winebomb5" gid="233" x="76" y="336" width="18" height="12" rotation="-90">
+   <properties>
+    <property name="collidable" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="238" name="difficulty" x="148" y="-16" width="88" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">${game_difficulty}</text>
+  </object>
+ </objectgroup>
+ <objectgroup draworder="index" id="10" name="results" visible="0">
+  <properties>
+   <property name="script" value="ShmupResults"/>
+  </properties>
+  <object id="100" name="livesicon" gid="1" x="16" y="184" width="16" height="16"/>
+  <object id="101" name="reserveicon" gid="3" x="12" y="88" width="16" height="16"/>
+  <object id="102" name="reserveicon2" gid="4" x="20" y="88" width="16" height="16"/>
+  <object id="103" name="timeicon" gid="2" x="16" y="104" width="16" height="16" visible="0"/>
+  <object id="104" name="winebombicon" gid="233" x="24" y="72" width="18" height="12" rotation="270"/>
+  <object id="30" name="reservepoints" x="32" y="64" width="96" height="16">
+   <properties>
+    <property name="textformat" value="%2d x %d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">NN x points</text>
+  </object>
+  <object id="31" name="reservetotal" x="144" y="64" width="80" height="16">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">rsrvtotal</text>
+  </object>
+  <object id="32" name="winebombpoints" x="32" y="64" width="96" height="16">
+   <properties>
+    <property name="textformat" value="%2d x %d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">NN x points</text>
+  </object>
+  <object id="33" name="winebombtotal" x="152" y="64" width="72" height="16">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">bombtotal</text>
+  </object>
+  <object id="47" name="livespoints" x="32" y="184" width="96" height="16">
+   <properties>
+    <property name="textformat" value="%2d x %d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">NN x points</text>
+  </object>
+  <object id="44" name="livestotal" x="144" y="184" width="80" height="16">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">livestotal</text>
+  </object>
+  <object id="45" name="timepoints" x="32" y="88" width="96" height="16" visible="0">
+   <properties>
+    <property name="textformat" value="%2d x %d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">NN x points</text>
+  </object>
+  <object id="46" name="timetotal" x="144" y="88" width="80" height="16" visible="0">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">timetotal</text>
+  </object>
+  <object id="168" name="lifemedalpoints" x="32" y="88" width="96" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">No Life Lost</text>
+  </object>
+  <object id="169" name="itemmedalpoints" x="32" y="112" width="96" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">No Item Lost</text>
+  </object>
+  <object id="170" name="wingmanmedalpoints" x="32" y="136" width="96" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">No Team Lost</text>
+  </object>
+  <object id="171" name="rescuemedalpoints" x="32" y="160" width="112" height="16" visible="0">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">No Friend Lost</text>
+  </object>
+  <object id="172" name="lifemedaltotal" x="152" y="88" width="72" height="16">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">lifemedalpoints</text>
+  </object>
+  <object id="173" name="itemmedaltotal" x="152" y="112" width="72" height="16">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">itemmedalpoints</text>
+  </object>
+  <object id="174" name="wingmanmedaltotal" x="152" y="136" width="72" height="16">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">wingmanmedalpoints</text>
+  </object>
+  <object id="175" name="rescuemedaltotal" x="152" y="160" width="72" height="16" visible="0">
+   <properties>
+    <property name="textformat" value="%d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">rescuemedalpoints</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="11" name="pausemenu" visible="0">
+  <properties>
+   <property name="pausesound" type="file" value="snd/pause.ogg"/>
+   <property name="script" value="MenuPause"/>
+  </properties>
+  <object id="37" name="title" type="UIButton" x="24" y="216" width="192" height="32">
+   <properties>
+    <property name="action" value="changeMap"/>
+    <property name="actionholdtime" type="float" value="1"/>
+    <property name="fillcolor" type="color" value="#80420000"/>
+    <property name="linecolor" type="color" value="#ff840002"/>
+    <property name="nextmap" type="file" value="mainmenu.lua"/>
+    <property name="pressfillcolor" type="color" value="#ffff8e90"/>
+    <property name="presslinecolor" type="color" value="#ffff0004"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">END GAME</text>
+  </object>
+  <object id="36" name="restart_checkpoint" type="UIButton" x="24" y="136" width="192" height="32">
+   <properties>
+    <property name="action" value="restartCheckpoint"/>
+    <property name="actionholdtime" type="float" value="1"/>
+    <property name="fillcolor" type="color" value="#80420000"/>
+    <property name="linecolor" type="color" value="#ff840002"/>
+    <property name="pressfillcolor" type="color" value="#ffff8e90"/>
+    <property name="presslinecolor" type="color" value="#ffff0004"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">RESTART AT CHECKPOINT</text>
+  </object>
+  <object id="35" name="resume" type="UIButton" x="24" y="96" width="192" height="32">
+   <properties>
+    <property name="action" value="togglePause"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">RESUME</text>
+  </object>
+  <object id="34" name="pause" x="0" y="48" width="240" height="16">
+   <text fontfamily="Lady Radical" wrap="1" color="#ffffff" halign="center" valign="center">PAUSE</text>
+  </object>
+  <object id="105" name="holdmessage" x="8" y="264" width="224" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">Hold 1 second, then release</text>
+  </object>
+  <object id="249" name="restart" type="UIButton" x="24" y="176" width="192" height="32">
+   <properties>
+    <property name="action" value="restartMap"/>
+    <property name="actionholdtime" type="float" value="1"/>
+    <property name="fillcolor" type="color" value="#80420000"/>
+    <property name="linecolor" type="color" value="#ff840002"/>
+    <property name="pressfillcolor" type="color" value="#ffff8e90"/>
+    <property name="presslinecolor" type="color" value="#ffff0004"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">RESTART STAGE</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="12" name="gameovermenu" visible="0">
+  <properties>
+   <property name="script" value="MenuGameOver"/>
+  </properties>
+  <object id="38" name="gameover" gid="200" x="120" y="76" width="192" height="40"/>
+  <object id="39" name="restart" type="UIButton" x="24" y="144" width="192" height="32">
+   <properties>
+    <property name="action" value="restartMap"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">RESTART STAGE</text>
+  </object>
+  <object id="40" name="title" type="UIButton" x="24" y="224" width="192" height="32">
+   <properties>
+    <property name="action" value="changeMap"/>
+    <property name="nextmap" type="file" value="mainmenu.lua"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">END GAME</text>
+  </object>
+  <object id="159" name="game_difficulty" type="UIOption" x="24" y="184" width="192" height="32">
+   <properties>
+    <property name="max" type="float" value="2"/>
+    <property name="min" type="float" value="1"/>
+    <property name="valuestr1" value="NORMAL"/>
+    <property name="valuestr2" value="HARD"/>
+    <property name="valuestr3" value="DEMONIC"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">DIFFICULTY:
+${game_difficulty}</text>
+  </object>
+  <object id="248" name="restart_checkpoint" type="UIButton" x="24" y="104" width="192" height="32">
+   <properties>
+    <property name="action" value="restartCheckpoint"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center" valign="center">RESTART AT CHECKPOINT</text>
+  </object>
+ </objectgroup>
+</map>
