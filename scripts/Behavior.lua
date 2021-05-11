@@ -4,19 +4,23 @@ local Units = require "Units"
 local Scene = require "Scene"
 local Tiled = require "Tiled"
 
-local function moveTowards(x0, x1, speed)
-	if x1 < x0 then
-		speed = -speed
-	end
-	x0 = x0 + speed
-	if speed > 0 and x0 > x1 or speed < 0 and x0 < x1 then
+local function moveTowards(x0, x1, dx)
+	x0 = x0 + dx
+	if dx > 0 and x0 > x1 or dx < 0 and x0 < x1 then
 		return x1
 	end
 	return x0
 end
 
-local function moveTowards2(x0, y0, x1, y1, speedx, speedy)
-	return moveTowards(x0, x1, speedx), moveTowards(y0, y1, speedy)
+local function moveTowards2(x0, y0, x1, y1, speed)
+	local dx, dy = x1-x0, y1-y0
+	local dist = math.sqrt(dx*dx + dy*dy)
+	if dist <= 0 then
+		return x0, y0
+	end
+	dx = dx * speed / dist
+	dy = dy * speed / dist
+	return moveTowards(x0, x1, dx), moveTowards(y0, y1, dy)
 end
 
 function Behavior.timeout(unit)
@@ -39,7 +43,7 @@ function Behavior.walkPath(unit, onPointReached)
 	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
 	local speed = unit.speed or 1
 	local x, y = unit.body:getPosition()
-	local newx, newy = moveTowards2(x, y, destx, desty, speed, speed)
+	local newx, newy = moveTowards2(x, y, destx, desty, speed)
 	unit.body:setLinearVelocity(newx - x, newy - y)
 	if newx == destx and newy == desty then
 		pathindex = pathindex + 2
