@@ -429,7 +429,8 @@ function Tiled.load(mapfile)
                         or love.filesystem.getInfo(ttf) and love.graphics.newFont(ttf, pixelsize)
                         or love.graphics.newFont(pixelsize)
                     font:setFilter("nearest", "nearest")
-                    object.text = love.graphics.newText(font, text)
+                    object.text = love.graphics.newText(font)
+                    object.text:setf(text, object.width, object.halign or "left")
                 end
                 object.rotation = math.rad(object.rotation)
                 object.z = z
