@@ -48,6 +48,7 @@
     objectgroup[i].scaley               Object scale y from gid flipy and tile height
     objectgroup[i][prop]=val            Object properties become fields of the object*
     objectgroup[i].polygon              Converted to LOVE-style array {x1, y1, x2, y2, ...}
+    objectgroup[i].polyline             Converted to LOVE-style array {x1, y1, x2, y2, ...}
 
     layergroup[i]                       Each layer in a layer group
     layergroup[name]                    You can access the in-group layer by name if it has one
@@ -387,6 +388,16 @@ function Tiled.load(mapfile)
                     object.polygon = points
                     for i = 1, #polygon do
                         local point = polygon[i]
+                        points[#points+1] = point.x
+                        points[#points+1] = point.y
+                    end
+                end
+                local polyline = object.polyline
+                if polyline then
+                    local points = {}
+                    object.polyline = points
+                    for i = 1, #polyline do
+                        local point = polyline[i]
                         points[#points+1] = point.x
                         points[#points+1] = point.y
                     end
