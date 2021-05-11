@@ -428,7 +428,10 @@ function Tiled.load(mapfile)
                         or love.filesystem.getInfo(fnt) and love.graphics.newFont(fnt)
                         or love.filesystem.getInfo(ttf) and love.graphics.newFont(ttf, pixelsize)
                         or love.graphics.newFont(pixelsize)
-                    font:setFilter("nearest", "nearest")
+                    if not Tiled.fonts[fontname] then
+                        font:setFilter("nearest", "nearest")
+                        Tiled.fonts[fontname] = font
+                    end
                     object.text = love.graphics.newText(font)
                     object.text:setf(text, object.width, object.halign or "left")
                 end
