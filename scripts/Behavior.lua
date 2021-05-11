@@ -32,14 +32,11 @@ function Behavior.walkPath(unit, onPointReached)
 	local polyline = path and path.polyline
 	local polygon = path and path.polygon
 	local points = polyline or polygon
-	if not points then
-		return
-	end
 	local pathindex = unit.pathindex or 2
-	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
-	if not destx or not desty then
+	if not points or pathindex > #points then
 		return
 	end
+	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
 	local speed = unit.speed or 1
 	local x, y = unit.body:getPosition()
 	local newx, newy = moveTowards2(x, y, destx, desty, speed, speed)
