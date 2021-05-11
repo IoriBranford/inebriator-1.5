@@ -19,15 +19,15 @@ function Physics.setCallback(callback)
     local beginContact = callback and function(f1, f2, contact)
         callback("beginContact", f1, f2, contact)
     end
-    
+
     local endContact = callback and function(f1, f2, contact)
         callback("endContact", f1, f2, contact)
     end
-    
+
     local preSolve = callback and function(f1, f2, contact)
         callback("preSolve", f1, f2, contact)
     end
-    
+
     local postSolve = callback and function(f1, f2, contact, ...)
         callback("postSolve", f1, f2, contact, ...)
     end
