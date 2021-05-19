@@ -4,8 +4,8 @@ local Units = require "Units"
 local Movement = require "Movement"
 
 function Behavior.timeout(unit)
-	local time = unit.time or 60
-	time = time - 1
+	local time = (unit.time or 60) - 1
+	unit.time = time
 	if time <= 0 then
 		Units.remove(unit)
 	end
