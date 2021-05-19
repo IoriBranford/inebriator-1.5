@@ -123,18 +123,24 @@ local function activateUnit(unit)
 end
 
 function Units.add(base, x, y, z)
-    local unit = {}
     if type(base) == "string" then
         base = unitprefabs[base]
     end
+    local id = base and base.id
+    if id then
+        if units[id] or addedunits[id] then
+            return nil, string.format("Duplicate unit id %s", id)
+        end
+    end
+
+    local unit = {}
     if base then
         for k, v in pairs(base) do
             unit[k] = v
         end
     end
 
-    local id = unit.id
-    if not id then
+    if not unit.id then
         id = nextunitid
         nextunitid = nextunitid + 1
         unit.id = id
@@ -176,7 +182,7 @@ function Units.deleteRemoved()
     for id, unit in pairs(removedunits) do
         unit.body = nil
         Physics.removeBody(id)
-        Scene.remove(id)
+        scene:remove(id)
         units[id] = nil
         thinkingunits[id] = nil
         removedunits[id] = nil
@@ -210,6 +216,7 @@ end
 function Units.addPrefabs(prefabs)
     for i = 1, #prefabs do
         local prefab = prefabs[i]
+        prefab.id = nil
         local name = prefab.name or ""
         if name ~= "" and not unitprefabs[name] then
             unitprefabs[name] = prefab
