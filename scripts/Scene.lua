@@ -1,12 +1,8 @@
 local tablex = require "pl.tablex"
 local Tiled = require "Tiled"
 
-local Scene = {}
-Scene.__index = Scene
-
-function Scene.new()
-    return setmetatable({}, Scene)
-end
+local SceneObject = {}
+SceneObject.__index = SceneObject
 
 local function setObjectTile(sceneobject, tile, animated)
     sceneobject.drawable = tile.image
@@ -22,26 +18,35 @@ local function setObjectTile(sceneobject, tile, animated)
         sceneobject.animationtime = 0
     end
 end
+SceneObject.setTile = setObjectTile
+
+local Scene = {}
+Scene.__index = Scene
+
+function Scene.new()
+    return setmetatable({}, Scene)
+end
 
 function Scene:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = {
-        id = id,
-        drawable = drawable,
-        quad = quad,
-        w = w or math.huge,
-        h = h or math.huge,
-        x = x or 0,
-        y = y or 0,
-        z = z or 0,
-        r = r or 0,
-        sx = sx or 1,
-        sy = sy or sx or 1,
-        ox = ox or 0,
-        oy = oy or 0,
-        kx = kx or 0,
-        ky = ky or 0,
-        hidden = nil
-    }
+    local sceneobject = setmetatable({}, SceneObject)
+    sceneobject.id = id
+    sceneobject.drawable = drawable
+    sceneobject[drawable:type():lower()] = drawable
+    sceneobject.quad = quad
+    sceneobject.w = w or math.huge
+    sceneobject.h = h or math.huge
+    sceneobject.x = x or 0
+    sceneobject.y = y or 0
+    sceneobject.z = z or 0
+    sceneobject.r = r or 0
+    sceneobject.sx = sx or 1
+    sceneobject.sy = sy or sx or 1
+    sceneobject.ox = ox or 0
+    sceneobject.oy = oy or 0
+    sceneobject.kx = kx or 0
+    sceneobject.ky = ky or 0
+    sceneobject.hidden = nil
+    sceneobject.draw = nil
 
     self[id] = sceneobject
     return sceneobject
@@ -52,13 +57,13 @@ function Scene:addChunk(id, chunk, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
 end
 
 function Scene:addTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:add(id, nil, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+    local sceneobject = self:add(id, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
     setObjectTile(sceneobject, tile)
     return sceneobject
 end
 
 function Scene:addAnimatedTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:add(id, nil, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+    local sceneobject = self:add(id, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
     setObjectTile(sceneobject, tile, true)
     return sceneobject
 end
