@@ -68,7 +68,9 @@ return {
                 height = 8,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               },
               {
                 id = 7,
@@ -533,7 +535,9 @@ return {
                 height = 12,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -567,7 +571,9 @@ return {
                 height = 16,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -601,7 +607,9 @@ return {
                 height = 20,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -635,7 +643,9 @@ return {
                 height = 24,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -669,7 +679,9 @@ return {
                 height = 28,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -703,7 +715,9 @@ return {
                 height = 12,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -737,7 +751,9 @@ return {
                 height = 16,
                 rotation = 0,
                 visible = true,
-                properties = {}
+                properties = {
+                  ["sensor"] = true
+                }
               }
             }
           }
@@ -859,8 +875,13 @@ return {
           gid = 29,
           visible = true,
           properties = {
+            ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["dy"] = -16,
+            ["module"] = "Behavior",
+            ["think"] = "timeout",
+            ["time"] = 60
           }
         },
         {
@@ -876,8 +897,13 @@ return {
           gid = 30,
           visible = true,
           properties = {
+            ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["dy"] = -16,
+            ["module"] = "Behavior",
+            ["think"] = "timeout",
+            ["time"] = 60
           }
         },
         {
@@ -893,8 +919,13 @@ return {
           gid = 31,
           visible = true,
           properties = {
+            ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["dy"] = -16,
+            ["module"] = "Behavior",
+            ["think"] = "timeout",
+            ["time"] = 60
           }
         },
         {
@@ -910,8 +941,13 @@ return {
           gid = 32,
           visible = true,
           properties = {
+            ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["dy"] = -16,
+            ["module"] = "Behavior",
+            ["think"] = "timeout",
+            ["time"] = 60
           }
         },
         {
@@ -927,8 +963,13 @@ return {
           gid = 33,
           visible = true,
           properties = {
+            ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["dy"] = -16,
+            ["module"] = "Behavior",
+            ["think"] = "timeout",
+            ["time"] = 60
           }
         },
         {
@@ -944,8 +985,13 @@ return {
           gid = 37,
           visible = true,
           properties = {
+            ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic"
+            ["bodytype"] = "dynamic",
+            ["dy"] = -16,
+            ["module"] = "Behavior",
+            ["think"] = "timeout",
+            ["time"] = 60
           }
         }
       }

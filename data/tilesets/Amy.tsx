@@ -14,6 +14,9 @@
   </properties>
   <objectgroup draworder="index" id="5">
    <object id="4" name="hull" type="Fixture" x="28" y="28" width="8" height="8">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
     <ellipse/>
    </object>
    <object id="7" name="wingman1" x="8" y="40">

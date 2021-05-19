@@ -7,7 +7,11 @@
    <property name="tilename" value="player_lv0"/>
   </properties>
   <objectgroup draworder="index" id="3">
-   <object id="2" name="hull" type="Fixture" x="8" y="10" width="16" height="12"/>
+   <object id="2" name="hull" type="Fixture" x="8" y="10" width="16" height="12">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
   </objectgroup>
  </tile>
  <tile id="1">
@@ -15,7 +19,11 @@
    <property name="tilename" value="player_lv1"/>
   </properties>
   <objectgroup draworder="index" id="2">
-   <object id="1" name="hull" type="Fixture" x="8" y="8" width="16" height="16"/>
+   <object id="1" name="hull" type="Fixture" x="8" y="8" width="16" height="16">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
   </objectgroup>
  </tile>
  <tile id="2">
@@ -23,7 +31,11 @@
    <property name="tilename" value="player_lv2"/>
   </properties>
   <objectgroup draworder="index" id="2">
-   <object id="1" name="hull" type="Fixture" x="8" y="6" width="16" height="20"/>
+   <object id="1" name="hull" type="Fixture" x="8" y="6" width="16" height="20">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
   </objectgroup>
  </tile>
  <tile id="3">
@@ -31,7 +43,11 @@
    <property name="tilename" value="player_lv3"/>
   </properties>
   <objectgroup draworder="index" id="2">
-   <object id="1" name="hull" type="Fixture" x="8" y="4" width="16" height="24"/>
+   <object id="1" name="hull" type="Fixture" x="8" y="4" width="16" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
   </objectgroup>
  </tile>
  <tile id="4">
@@ -39,7 +55,11 @@
    <property name="tilename" value="player_lv4"/>
   </properties>
   <objectgroup draworder="index" id="2">
-   <object id="1" name="hull" type="Fixture" x="8" y="2" width="16" height="28"/>
+   <object id="1" name="hull" type="Fixture" x="8" y="2" width="16" height="28">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
   </objectgroup>
  </tile>
  <tile id="5">
@@ -48,6 +68,9 @@
   </properties>
   <objectgroup draworder="index" id="2">
    <object id="1" name="hull" type="Fixture" x="10" y="10" width="12" height="12">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
     <ellipse/>
    </object>
   </objectgroup>
@@ -58,6 +81,9 @@
   </properties>
   <objectgroup draworder="index" id="2">
    <object id="1" name="hull" type="Fixture" x="8" y="8" width="16" height="16">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
     <ellipse/>
    </object>
   </objectgroup>

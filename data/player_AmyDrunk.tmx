@@ -16,38 +16,68 @@
   </object>
   <object id="2" name="AmyShot0" type="Unit" gid="29" x="88" y="32" width="32" height="32" rotation="-90">
    <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="dy" type="float" value="-16"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" type="int" value="60"/>
    </properties>
   </object>
   <object id="3" name="AmyShot1" type="Unit" gid="30" x="128" y="32" width="32" height="32" rotation="-90">
    <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="dy" type="float" value="-16"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" type="int" value="60"/>
    </properties>
   </object>
   <object id="4" name="AmyShot2" type="Unit" gid="31" x="168" y="32" width="32" height="32" rotation="-90">
    <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="dy" type="float" value="-16"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" type="int" value="60"/>
    </properties>
   </object>
   <object id="5" name="AmyShot3" type="Unit" gid="32" x="208" y="32" width="32" height="32" rotation="-90">
    <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="dy" type="float" value="-16"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" type="int" value="60"/>
    </properties>
   </object>
   <object id="6" name="AmyShot4" type="Unit" gid="33" x="248" y="32" width="32" height="32" rotation="-90">
    <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="dy" type="float" value="-16"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" type="int" value="60"/>
    </properties>
   </object>
   <object id="7" name="AmyDrunkBomb" type="Unit" gid="37" x="280" y="32" width="18" height="12" rotation="-90">
    <properties>
+    <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="dy" type="float" value="-16"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" type="int" value="60"/>
    </properties>
   </object>
  </objectgroup>
