@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" compressionlevel="0" width="52" height="40" tilewidth="8" tileheight="8" infinite="0" nextlayerid="25" nextobjectid="250">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" compressionlevel="0" width="30" height="40" tilewidth="8" tileheight="8" infinite="0" nextlayerid="25" nextobjectid="261">
  <editorsettings>
   <export target="gameplay.lua" format="lua"/>
  </editorsettings>
@@ -130,11 +130,26 @@
   <object id="28" name="reserves" x="4" y="36" width="32" height="8" visible="0">
    <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="center" valign="center">0</text>
   </object>
-  <object id="29" name="score" x="4" y="4" width="232" height="8">
+  <object id="29" name="SCORE" x="4" y="4" width="40" height="8">
    <properties>
     <property name="textformat" value="SCORE%9d LIFE@%9d"/>
    </properties>
-   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" valign="center">SCORE000000000 LIFE@001000000</text>
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff">SCORE</text>
+  </object>
+  <object id="252" name="NEXTLIFE" x="124" y="4" width="40" height="8">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff">LIFE@</text>
+  </object>
+  <object id="251" name="score" x="44" y="4" width="72" height="8">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="right">000000000</text>
+  </object>
+  <object id="250" name="extendscore" x="164" y="4" width="72" height="8">
+   <text fontfamily="Press Start 2P" pixelsize="8" wrap="1" color="#ffffff" halign="right">001000000</text>
   </object>
   <object id="48" name="caravanrules" x="64" y="64" width="112" height="80" visible="0">
    <properties>
@@ -231,20 +246,6 @@ powergauge</property>
    <property name="script" value="ShmupHUD"/>
   </properties>
   <object id="67" name="screen" x="0" y="0" width="240" height="320" visible="0"/>
-  <object id="69" name="score" x="-84" y="8" width="80" height="88">
-   <properties>
-    <property name="textformat">SCORE
-%10d
-
-NEXT LIFE
-%10d</property>
-   </properties>
-   <text fontfamily="Unifont" wrap="1" color="#ffffff">SCORE
- 000000000
-
-NEXT LIFE
- 001000000</text>
-  </object>
   <object id="73" name="life9" gid="1" x="-44" y="148" width="16" height="16"/>
   <object id="74" name="life8" gid="1" x="-44" y="164" width="16" height="16"/>
   <object id="75" name="life7" gid="1" x="-44" y="180" width="16" height="16"/>
@@ -496,6 +497,27 @@ END TALK</text>
   <object id="157" name="difficulty" x="-88" y="296" width="88" height="16">
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="center">${game_difficulty}</text>
   </object>
+  <object id="260" name="SCORE" x="-84" y="8" width="40" height="16">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">SCORE</text>
+  </object>
+  <object id="259" name="NEXTLIFE" x="-84" y="60" width="80" height="16">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">NEXT LIFE</text>
+  </object>
+  <object id="258" name="score" x="-76" y="24" width="72" height="16">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">000000000</text>
+  </object>
+  <object id="257" name="extendscore" x="-76" y="76" width="72" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">001000000</text>
+  </object>
  </objectgroup>
  <objectgroup draworder="index" id="23" name="hud_outer_vert">
   <properties>
@@ -504,12 +526,6 @@ END TALK</text>
    <property name="script" value="ShmupHUD"/>
   </properties>
   <object id="176" name="screen" x="0" y="0" width="240" height="320" visible="0"/>
-  <object id="177" name="score" x="4" y="-32" width="232" height="32">
-   <properties>
-    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
-   </properties>
-   <text fontfamily="Unifont" wrap="1" color="#ffffff">SCORE000000000 LIFE@001000000</text>
-  </object>
   <object id="181" name="life9" gid="1" x="132" y="-16" width="16" height="16"/>
   <object id="182" name="life8" gid="1" x="116" y="-16" width="16" height="16"/>
   <object id="183" name="life7" gid="1" x="100" y="-16" width="16" height="16"/>
@@ -560,6 +576,27 @@ END TALK</text>
   </object>
   <object id="238" name="difficulty" x="148" y="-16" width="88" height="16">
    <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">${game_difficulty}</text>
+  </object>
+  <object id="256" name="SCORE" x="4" y="-32" width="40" height="16">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">SCORE</text>
+  </object>
+  <object id="255" name="NEXTLIFE" x="124" y="-32" width="40" height="16">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff">LIFE@</text>
+  </object>
+  <object id="254" name="score" x="44" y="-32" width="72" height="16">
+   <properties>
+    <property name="textformat" value="SCORE%9d LIFE@%9d"/>
+   </properties>
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">000000000</text>
+  </object>
+  <object id="253" name="extendscore" x="164" y="-32" width="72" height="16">
+   <text fontfamily="Unifont" wrap="1" color="#ffffff" halign="right">001000000</text>
   </object>
  </objectgroup>
  <objectgroup draworder="index" id="10" name="results" visible="0">

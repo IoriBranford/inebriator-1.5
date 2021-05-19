@@ -4,12 +4,12 @@ return {
   tiledversion = "1.6.0",
   orientation = "orthogonal",
   renderorder = "right-up",
-  width = 52,
+  width = 30,
   height = 40,
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 25,
-  nextobjectid = 250,
+  nextobjectid = 261,
   properties = {
     ["delayinitobjects"] = true,
     ["enemydefeatsound"] = "snd/knockout.ogg",
@@ -1969,24 +1969,83 @@ return {
         },
         {
           id = 29,
-          name = "score",
+          name = "SCORE",
           type = "",
           shape = "text",
           x = 4,
           y = 4,
-          width = 232,
+          width = 40,
           height = 8,
           rotation = 0,
           visible = true,
-          text = "SCORE000000000 LIFE@001000000",
+          text = "SCORE",
           fontfamily = "Press Start 2P",
           pixelsize = 8,
           wrap = true,
           color = { 255, 255, 255 },
-          valign = "center",
           properties = {
             ["textformat"] = "SCORE%9d LIFE@%9d"
           }
+        },
+        {
+          id = 252,
+          name = "NEXTLIFE",
+          type = "",
+          shape = "text",
+          x = 124,
+          y = 4,
+          width = 40,
+          height = 8,
+          rotation = 0,
+          visible = true,
+          text = "LIFE@",
+          fontfamily = "Press Start 2P",
+          pixelsize = 8,
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 251,
+          name = "score",
+          type = "",
+          shape = "text",
+          x = 44,
+          y = 4,
+          width = 72,
+          height = 8,
+          rotation = 0,
+          visible = true,
+          text = "000000000",
+          fontfamily = "Press Start 2P",
+          pixelsize = 8,
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 250,
+          name = "extendscore",
+          type = "",
+          shape = "text",
+          x = 164,
+          y = 4,
+          width = 72,
+          height = 8,
+          rotation = 0,
+          visible = true,
+          text = "001000000",
+          fontfamily = "Press Start 2P",
+          pixelsize = 8,
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {}
         },
         {
           id = 48,
@@ -2245,25 +2304,6 @@ return {
           rotation = 0,
           visible = false,
           properties = {}
-        },
-        {
-          id = 69,
-          name = "score",
-          type = "",
-          shape = "text",
-          x = -84,
-          y = 8,
-          width = 80,
-          height = 88,
-          rotation = 0,
-          visible = true,
-          text = "SCORE\n 000000000\n\nNEXT LIFE\n 001000000",
-          fontfamily = "Unifont",
-          wrap = true,
-          color = { 255, 255, 255 },
-          properties = {
-            ["textformat"] = "SCORE\n%10d\n\nNEXT LIFE\n%10d"
-          }
         },
         {
           id = 73,
@@ -3157,6 +3197,82 @@ return {
           color = { 255, 255, 255 },
           halign = "center",
           properties = {}
+        },
+        {
+          id = 260,
+          name = "SCORE",
+          type = "",
+          shape = "text",
+          x = -84,
+          y = 8,
+          width = 40,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "SCORE",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 259,
+          name = "NEXTLIFE",
+          type = "",
+          shape = "text",
+          x = -84,
+          y = 60,
+          width = 80,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "NEXT LIFE",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 258,
+          name = "score",
+          type = "",
+          shape = "text",
+          x = -76,
+          y = 24,
+          width = 72,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "000000000",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 257,
+          name = "extendscore",
+          type = "",
+          shape = "text",
+          x = -76,
+          y = 76,
+          width = 72,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "001000000",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {}
         }
       }
     },
@@ -3189,25 +3305,6 @@ return {
           rotation = 0,
           visible = false,
           properties = {}
-        },
-        {
-          id = 177,
-          name = "score",
-          type = "",
-          shape = "text",
-          x = 4,
-          y = -32,
-          width = 232,
-          height = 32,
-          rotation = 0,
-          visible = true,
-          text = "SCORE000000000 LIFE@001000000",
-          fontfamily = "Unifont",
-          wrap = true,
-          color = { 255, 255, 255 },
-          properties = {
-            ["textformat"] = "SCORE%9d LIFE@%9d"
-          }
         },
         {
           id = 181,
@@ -3510,6 +3607,82 @@ return {
           rotation = 0,
           visible = true,
           text = "${game_difficulty}",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {}
+        },
+        {
+          id = 256,
+          name = "SCORE",
+          type = "",
+          shape = "text",
+          x = 4,
+          y = -32,
+          width = 40,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "SCORE",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 255,
+          name = "NEXTLIFE",
+          type = "",
+          shape = "text",
+          x = 124,
+          y = -32,
+          width = 40,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "LIFE@",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 254,
+          name = "score",
+          type = "",
+          shape = "text",
+          x = 44,
+          y = -32,
+          width = 72,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "000000000",
+          fontfamily = "Unifont",
+          wrap = true,
+          color = { 255, 255, 255 },
+          halign = "right",
+          properties = {
+            ["textformat"] = "SCORE%9d LIFE@%9d"
+          }
+        },
+        {
+          id = 253,
+          name = "extendscore",
+          type = "",
+          shape = "text",
+          x = 164,
+          y = -32,
+          width = 72,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          text = "001000000",
           fontfamily = "Unifont",
           wrap = true,
           color = { 255, 255, 255 },

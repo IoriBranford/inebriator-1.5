@@ -13,6 +13,9 @@ local Trigger
 local timeline
 
 local player
+local points
+local lives
+local bombs
 
 local cameravy
 local camerax, cameray
@@ -23,6 +26,7 @@ local stagewidth, stageheight
 local canvas
 local viewx, viewy
 local worldscene
+local hud
 
 local Player = {
     id = "player",
@@ -51,8 +55,28 @@ function Gameplay.loadphase(stagefile)
     Gameplay.loadStage(stagefile)
 
     Gui.load("data/gameplay.lua")
-    for name, layer in pairs(Gui.root) do
-        Gui.setLayerHidden(name, name ~= "hud_inner")
+
+    local hudtype = "hud_inner"
+    Gui.showOnlyLayer(hudtype, {
+        SCORE = true,
+        score = true,
+        NEXTLIFE = true,
+        extendscore = true,
+        difficulty = true,
+        powerlevel = true
+    })
+
+    points = 0
+    lives = 2
+    bombs = 0
+
+    hud = Gui.root[hudtype]
+    hud.difficulty.text:set("INEBRIATOR")
+    for i = 1, lives do
+        hud["life"..i].hidden = nil
+    end
+    for i = 1, bombs do
+        hud["winebomb"..i].hidden = nil
     end
 end
 
@@ -135,8 +159,6 @@ function Gameplay.loadStage(stagefile)
 end
 
 function Gameplay.fixedupdate()
-    Units.think()
-
     cameray = cameray + cameravy
     timeline:advance(-cameravy)
     if cameray <= 0 then
@@ -146,6 +168,7 @@ function Gameplay.fixedupdate()
 
     Units.activateAdded()
     Physics.fixedupdate()
+    Units.think()
     Units.deleteRemoved()
     camerax = (stagewidth - cameraw) * player.body:getX() / stagewidth
 end
