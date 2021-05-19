@@ -135,6 +135,31 @@ function Gameplay.loadStage(stagefile)
     end
 end
 
+local function inputPlayerAttack()
+    local firetime = player.firetime or 1
+    firetime = firetime - 1
+    if firetime >= 0 then
+        player.firetime = firetime
+    end
+    local playerbody = player.body
+    if not playerbody then
+        return
+    end
+    local x, y = playerbody:getPosition()
+    if love.keyboard.isDown("z") then
+        if firetime <= 0 then
+            if love.keyboard.isDown("lshift") then
+                Units.add("AmyShot0", x, y, player.z)
+                player.firetime = 3
+            else
+                Units.add("AmyShot0", x-8, y, player.z)
+                Units.add("AmyShot0", x+8, y, player.z)
+                player.firetime = 6
+            end
+        end
+    end
+end
+
 function Gameplay.fixedupdate()
     cameray = cameray + cameravy
     timeline:advance(-cameravy)
@@ -143,6 +168,7 @@ function Gameplay.fixedupdate()
         cameravy = 0
     end
 
+    inputPlayerAttack()
     Units.activateAdded()
     Physics.fixedupdate()
     Units.collide()
@@ -151,43 +177,47 @@ function Gameplay.fixedupdate()
     camerax = (stagewidth - cameraw) * player.body:getX() / stagewidth
 end
 
-function Gameplay.update(dsecs, fixedfrac)
+local function inputPlayerMove()
     local playerbody = player.body
-    if playerbody then
-        local vx, vy = 0, 0
-        if love.keyboard.isDown("left") then
-            vx = vx - 1
-        end
-        if love.keyboard.isDown("right") then
-            vx = vx + 1
-        end
-        if love.keyboard.isDown("up") then
-            vy = vy - 1
-        end
-        if love.keyboard.isDown("down") then
-            vy = vy + 1
-        end
-        if love.keyboard.isDown("lshift") then
-            vx = vx / 2
-            vy = vy / 2
-        end
-
-        local speed = player.speed
-        vx, vy = vx * speed, vy * speed + cameravy
-        local x, y = player.body:getPosition()
-        if x + vx < 0 then
-            vx = -x
-        elseif x + vx > stagewidth then
-            vx = stagewidth - x
-        end
-        if y + vy < cameray then
-            vy = cameray - y
-        elseif y + vy > cameray + camerah then
-            vy = cameray + camerah - y
-        end
-        playerbody:setLinearVelocity(vx, vy)
+    if not playerbody then
+        return
+    end
+    local vx, vy = 0, 0
+    if love.keyboard.isDown("left") then
+        vx = vx - 1
+    end
+    if love.keyboard.isDown("right") then
+        vx = vx + 1
+    end
+    if love.keyboard.isDown("up") then
+        vy = vy - 1
+    end
+    if love.keyboard.isDown("down") then
+        vy = vy + 1
+    end
+    if love.keyboard.isDown("lshift") then
+        vx = vx / 2
+        vy = vy / 2
     end
 
+    local speed = player.speed
+    vx, vy = vx * speed, vy * speed + cameravy
+    local x, y = player.body:getPosition()
+    if x + vx < 0 then
+        vx = -x
+    elseif x + vx > stagewidth then
+        vx = stagewidth - x
+    end
+    if y + vy < cameray then
+        vy = cameray - y
+    elseif y + vy > cameray + camerah then
+        vy = cameray + camerah - y
+    end
+    playerbody:setLinearVelocity(vx, vy)
+end
+
+function Gameplay.update(dsecs, fixedfrac)
+    inputPlayerMove()
     for id, body in Physics.iterateBodies() do
         worldscene:updateFromBody(id, body, fixedfrac)
     end
@@ -213,7 +243,7 @@ function Gameplay.draw()
     local ty = -math.floor(viewy)
     love.graphics.translate(tx, ty)
     worldscene:draw(viewx, viewy, cameraw, camerah)
-    Physics.draw(viewx, viewy, cameraw, camerah)
+    -- Physics.draw(viewx, viewy, cameraw, camerah)
     love.graphics.pop()
     love.graphics.setCanvas()
 
