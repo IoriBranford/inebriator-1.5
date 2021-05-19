@@ -30,9 +30,10 @@ local function addLayerToScene(layer)
             if sceneobject then
                 sceneobject.hidden = layerhidden or object.visible == false
                 local name = object.name or ""
-                if name ~= "" then
-                    scenelayer[name] = sceneobject
+                if name == "" or scenelayer[name] then
+                    name = object.id
                 end
+                scenelayer[name] = sceneobject
             end
         end
     end
@@ -64,6 +65,25 @@ function Gui.setLayerHidden(layername, hidden)
     end
     for _, sceneobject in pairs(layer) do
         sceneobject.hidden = hidden
+    end
+end
+
+function Gui.showOnlyLayer(layername, visibleobjects)
+    for name, layer in pairs(Gui.root) do
+        Gui.setLayerHidden(name, name ~= layername)
+    end
+    if visibleobjects then
+        Gui.showOnlyLayerObjects(layername, visibleobjects)
+    end
+end
+
+function Gui.showOnlyLayerObjects(layername, visibleobjects)
+    local layer = Gui.root[layername]
+    if not layer then
+        return
+    end
+    for name, sceneobject in pairs(layer) do
+        sceneobject.hidden = not visibleobjects[name]
     end
 end
 
