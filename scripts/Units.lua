@@ -4,23 +4,22 @@ local Physics = require "Physics"
 local Scene = require "Scene"
 local Tiled = require "Tiled"
 
-local Behavior
-
 local nextunitid
 local units
 local thinkingunits
 local addedunits
 local removedunits
 local scene
+local unitprefabs
 
 function Units.init(nextunitid0, scene0)
-    Behavior = Behavior or require "Behavior"
     nextunitid = nextunitid0 or 1
     units = {}
     thinkingunits = {}
     addedunits = {}
     removedunits = {}
     scene = scene0
+    unitprefabs = {}
 end
 
 function Units.clear()
@@ -29,20 +28,22 @@ function Units.clear()
     addedunits = nil
     removedunits = nil
     scene = nil
+    unitprefabs = nil
 end
 
 local function activateUnit(unit)
     local id = unit.id
     local x, y, z = unit.x, unit.y, unit.z
-    local think = unit.think
-    if Behavior[think] then
-        unit.think = Behavior[think]
-        thinkingunits[id] = unit
-    end
-
-    local start = unit.start and Behavior[unit.start]
-    if type(start) == "function" then
-        start(unit)
+    local module = unit.module
+    local start
+    if module then
+        module = require(module)
+        local think = unit.think and module[unit.think]
+        if type(think) == "function" then
+            unit.think = think
+            thinkingunits[id] = unit
+        end
+        start = unit.start and module[unit.start]
     end
 
     local tile = unit.tile
@@ -64,6 +65,9 @@ local function activateUnit(unit)
     if body then
         body:setFixedRotation(not unit.bodyrotation)
         body:setAngle(unit.bodyrotation and unit.rotation or 0)
+        local dx = unit.dx or 0
+        local dy = unit.dy or 0
+        body:setLinearVelocity(dx, dy)
 
         for i, fixture in pairs(body:getFixtures()) do
             fixture:destroy()
@@ -108,15 +112,21 @@ local function activateUnit(unit)
         end
     end
 
-    unit.beginContact = Behavior[unit.beginContact]
-
     units[id] = unit
     addedunits[id] = nil
+
+    if type(start) == "function" then
+        start(unit)
+    end
+
     return unit
 end
 
 function Units.add(base, x, y, z)
     local unit = {}
+    if type(base) == "string" then
+        base = unitprefabs[base]
+    end
     if base then
         for k, v in pairs(base) do
             unit[k] = v
@@ -142,6 +152,10 @@ function Units.add(base, x, y, z)
 
     addedunits[id] = unit
     return unit
+end
+
+function Units.get(id)
+    return units[id]
 end
 
 function Units.remove(unit)
@@ -191,6 +205,34 @@ function Units.onCollisionEvent(event, f1, f2, contact)
     if type(fun2) == "function" then
         fun2(u2, u1, contact)
     end
+end
+
+function Units.addPrefabs(prefabs)
+    for i = 1, #prefabs do
+        local prefab = prefabs[i]
+        local name = prefab.name or ""
+        if name ~= "" and not unitprefabs[name] then
+            unitprefabs[name] = prefab
+        end
+    end
+end
+
+function Units.collide()
+	for _, contact in Physics.iterateContacts() do
+		if contact:isTouching() then
+			local f1, f2 = contact:getFixtures()
+			local b1, b2 = f1:getBody(), f2:getBody()
+			local id1, id2 = b1:getUserData(), b2:getUserData()
+			local u1 = id1 and units[id1]
+            local u2 = id2 and units[id2]
+            if u1 and u1.collide then
+                u1:collide(u2)
+            end
+            if u2 and u2.collide then
+                u2:collide(u1)
+            end
+		end
+	end
 end
 
 return Units

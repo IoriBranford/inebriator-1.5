@@ -59,8 +59,8 @@ return {
             objects = {
               {
                 id = 4,
-                name = "body",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "ellipse",
                 x = 28,
                 y = 28,
@@ -68,9 +68,7 @@ return {
                 height = 8,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true
-                }
+                properties = {}
               },
               {
                 id = 7,
@@ -213,8 +211,8 @@ return {
           id = 4,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "lefttilt",
-            ["nextanim"] = "left"
+            ["nextanim"] = "left",
+            ["tilename"] = "lefttilt"
           },
           animation = {
             {
@@ -247,8 +245,8 @@ return {
           id = 7,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "leftuntilt",
-            ["nextanim"] = "forward"
+            ["nextanim"] = "forward",
+            ["tilename"] = "leftuntilt"
           },
           animation = {
             {
@@ -273,7 +271,7 @@ return {
           id = 8,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "left"
+            ["tilename"] = "left"
           },
           animation = {
             {
@@ -310,8 +308,8 @@ return {
           id = 12,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "righttilt",
-            ["nextanim"] = "right"
+            ["nextanim"] = "right",
+            ["tilename"] = "righttilt"
           },
           animation = {
             {
@@ -344,8 +342,8 @@ return {
           id = 15,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "rightuntilt",
-            ["nextanim"] = "forward"
+            ["nextanim"] = "forward",
+            ["tilename"] = "rightuntilt"
           },
           animation = {
             {
@@ -370,7 +368,7 @@ return {
           id = 16,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "right"
+            ["tilename"] = "right"
           },
           animation = {
             {
@@ -407,8 +405,8 @@ return {
           id = 20,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "bombready",
-            ["nextanim"] = "bomblaunch"
+            ["nextanim"] = "bomblaunch",
+            ["tilename"] = "bombready"
           },
           animation = {
             {
@@ -461,8 +459,8 @@ return {
           id = 26,
           type = "PlayerAmy",
           properties = {
-            ["name"] = "bomblaunch",
-            ["nextanim"] = "forward"
+            ["nextanim"] = "forward",
+            ["tilename"] = "bomblaunch"
           },
           animation = {
             {
@@ -526,7 +524,7 @@ return {
             objects = {
               {
                 id = 2,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "rectangle",
                 x = 8,
@@ -535,10 +533,7 @@ return {
                 height = 12,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -563,7 +558,7 @@ return {
             objects = {
               {
                 id = 1,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "rectangle",
                 x = 8,
@@ -572,10 +567,7 @@ return {
                 height = 16,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -600,7 +592,7 @@ return {
             objects = {
               {
                 id = 1,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "rectangle",
                 x = 8,
@@ -609,10 +601,7 @@ return {
                 height = 20,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -637,7 +626,7 @@ return {
             objects = {
               {
                 id = 1,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "rectangle",
                 x = 8,
@@ -646,10 +635,7 @@ return {
                 height = 24,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -674,7 +660,7 @@ return {
             objects = {
               {
                 id = 1,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "rectangle",
                 x = 8,
@@ -683,10 +669,7 @@ return {
                 height = 28,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -711,7 +694,7 @@ return {
             objects = {
               {
                 id = 1,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "ellipse",
                 x = 10,
@@ -720,10 +703,7 @@ return {
                 height = 12,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -748,7 +728,7 @@ return {
             objects = {
               {
                 id = 1,
-                name = "body",
+                name = "hull",
                 type = "Fixture",
                 shape = "ellipse",
                 x = 8,
@@ -757,10 +737,7 @@ return {
                 height = 16,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -839,29 +816,10 @@ return {
   },
   layers = {
     {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 15,
-      height = 20,
-      id = 1,
-      name = "Tile Layer 1",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      chunks = {}
-    },
-    {
       type = "objectgroup",
       draworder = "topdown",
       id = 2,
-      name = "unittypes",
+      name = "prefabs",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -872,7 +830,7 @@ return {
       objects = {
         {
           id = 1,
-          name = "player",
+          name = "AmyDrunk",
           type = "Unit",
           shape = "rectangle",
           x = 32,
@@ -883,12 +841,14 @@ return {
           gid = 1,
           visible = true,
           properties = {
-            ["bodytype"] = "dynamic"
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["speed"] = 3
           }
         },
         {
           id = 2,
-          name = "shot_lv0",
+          name = "AmyShot0",
           type = "Unit",
           shape = "rectangle",
           x = 88,
@@ -899,12 +859,13 @@ return {
           gid = 29,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic"
           }
         },
         {
           id = 3,
-          name = "shot_lv1",
+          name = "AmyShot1",
           type = "Unit",
           shape = "rectangle",
           x = 128,
@@ -915,12 +876,13 @@ return {
           gid = 30,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic"
           }
         },
         {
           id = 4,
-          name = "shot_lv2",
+          name = "AmyShot2",
           type = "Unit",
           shape = "rectangle",
           x = 168,
@@ -931,12 +893,13 @@ return {
           gid = 31,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic"
           }
         },
         {
           id = 5,
-          name = "shot_lv3",
+          name = "AmyShot3",
           type = "Unit",
           shape = "rectangle",
           x = 208,
@@ -947,12 +910,13 @@ return {
           gid = 32,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic"
           }
         },
         {
           id = 6,
-          name = "shot_lv4",
+          name = "AmyShot4",
           type = "Unit",
           shape = "rectangle",
           x = 248,
@@ -963,12 +927,13 @@ return {
           gid = 33,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic"
           }
         },
         {
           id = 7,
-          name = "bombbullet",
+          name = "AmyDrunkBomb",
           type = "Unit",
           shape = "rectangle",
           x = 280,
@@ -979,6 +944,7 @@ return {
           gid = 37,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic"
           }
         }

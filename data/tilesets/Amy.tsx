@@ -13,10 +13,7 @@
    <property name="tilename" value="forward"/>
   </properties>
   <objectgroup draworder="index" id="5">
-   <object id="4" name="body" x="28" y="28" width="8" height="8">
-    <properties>
-     <property name="collidable" type="bool" value="true"/>
-    </properties>
+   <object id="4" name="hull" type="Fixture" x="28" y="28" width="8" height="8">
     <ellipse/>
    </object>
    <object id="7" name="wingman1" x="8" y="40">
@@ -56,8 +53,8 @@
  <tile id="3" type="PlayerAmy"/>
  <tile id="4" type="PlayerAmy">
   <properties>
-   <property name="name" value="lefttilt"/>
    <property name="nextanim" value="left"/>
+   <property name="tilename" value="lefttilt"/>
   </properties>
   <animation>
    <frame tileid="4" duration="67"/>
@@ -70,8 +67,8 @@
  <tile id="6" type="PlayerAmy"/>
  <tile id="7" type="PlayerAmy">
   <properties>
-   <property name="name" value="leftuntilt"/>
    <property name="nextanim" value="forward"/>
+   <property name="tilename" value="leftuntilt"/>
   </properties>
   <animation>
    <frame tileid="7" duration="100"/>
@@ -82,7 +79,7 @@
  </tile>
  <tile id="8" type="PlayerAmy">
   <properties>
-   <property name="name" value="left"/>
+   <property name="tilename" value="left"/>
   </properties>
   <animation>
    <frame tileid="8" duration="100"/>
@@ -96,8 +93,8 @@
  <tile id="11" type="PlayerAmy"/>
  <tile id="12" type="PlayerAmy">
   <properties>
-   <property name="name" value="righttilt"/>
    <property name="nextanim" value="right"/>
+   <property name="tilename" value="righttilt"/>
   </properties>
   <animation>
    <frame tileid="12" duration="100"/>
@@ -110,8 +107,8 @@
  <tile id="14" type="PlayerAmy"/>
  <tile id="15" type="PlayerAmy">
   <properties>
-   <property name="name" value="rightuntilt"/>
    <property name="nextanim" value="forward"/>
+   <property name="tilename" value="rightuntilt"/>
   </properties>
   <animation>
    <frame tileid="15" duration="100"/>
@@ -122,7 +119,7 @@
  </tile>
  <tile id="16" type="PlayerAmy">
   <properties>
-   <property name="name" value="right"/>
+   <property name="tilename" value="right"/>
   </properties>
   <animation>
    <frame tileid="16" duration="100"/>
@@ -136,8 +133,8 @@
  <tile id="19" type="PlayerAmy"/>
  <tile id="20" type="PlayerAmy">
   <properties>
-   <property name="name" value="bombready"/>
    <property name="nextanim" value="bomblaunch"/>
+   <property name="tilename" value="bombready"/>
   </properties>
   <animation>
    <frame tileid="20" duration="50"/>
@@ -155,8 +152,8 @@
  <tile id="25" type="PlayerAmy"/>
  <tile id="26" type="PlayerAmy">
   <properties>
-   <property name="name" value="bomblaunch"/>
    <property name="nextanim" value="forward"/>
+   <property name="tilename" value="bomblaunch"/>
   </properties>
   <animation>
    <frame tileid="26" duration="50"/>

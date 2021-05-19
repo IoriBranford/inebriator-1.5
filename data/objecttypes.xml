@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objecttypes>
+ <objecttype name="PathPoint" color="#a0a0a4"/>
  <objecttype name="Fixture" color="#a0a0a4">
   <property name="friction" type="float" default="0"/>
   <property name="restitution" type="float" default="0"/>

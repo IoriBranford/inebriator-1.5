@@ -13,7 +13,7 @@ local initvisibleobjects = {
 }
 
 function GameplayGui.load()
-    Gui.load("data/gameplay.lua")
+    Gui.load("data/gui_gameplay.lua")
 	local hudtype = "hud_inner"
     Gui.showOnlyLayer(hudtype, initvisibleobjects)
     hud = Gui.root[hudtype]

@@ -14,26 +14,6 @@ function Physics.clear()
     world = nil
 end
 
-function Physics.setCallback(callback)
-    assert(type(callback) == "function")
-    local beginContact = callback and function(f1, f2, contact)
-        callback("beginContact", f1, f2, contact)
-    end
-
-    local endContact = callback and function(f1, f2, contact)
-        callback("endContact", f1, f2, contact)
-    end
-
-    local preSolve = callback and function(f1, f2, contact)
-        callback("preSolve", f1, f2, contact)
-    end
-
-    local postSolve = callback and function(f1, f2, contact, ...)
-        callback("postSolve", f1, f2, contact, ...)
-    end
-    world:setCallbacks(beginContact, endContact, preSolve, postSolve)
-end
-
 function Physics.addBody(id, x, y, type, shape, dim1, dim2)
     local body = love.physics.newBody(world, x, y, type)
     bodies[id] = body
@@ -83,6 +63,10 @@ end
 
 function Physics.iterateBodies()
     return pairs(bodies)
+end
+
+function Physics.iterateContacts()
+    return pairs(world:getContacts())
 end
 
 local function drawFixture(fixture)

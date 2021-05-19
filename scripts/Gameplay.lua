@@ -29,23 +29,12 @@ local canvas
 local viewx, viewy
 local worldscene
 
-local Player = {
-    id = "player",
-    bodytype = "dynamic",
-    bodytileshape = "body",
-    z = 100,
-    tileset = "Amy",
-    tileid = 0,
-    speed = 3
-}
-
 function Gameplay.loadphase(stagefile)
     Units = Units or require "Units"
     Trigger = Trigger or require "Trigger"
     timeline = Timeline.new()
 
     Physics.init()
-    Physics.setCallback(Units.onCollisionEvent)
 
     canvas = love.graphics.newCanvas(cameraw, camerah)
     canvas:setFilter("nearest")
@@ -54,6 +43,9 @@ function Gameplay.loadphase(stagefile)
 
     worldscene = Scene.new()
     Gameplay.loadStage(stagefile)
+    local playerfile = Tiled.load("data/player_AmyDrunk.lua")
+    Units.addPrefabs(playerfile.layers.prefabs)
+    player = Units.add("AmyDrunk", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
 
     points = 0
     extendpoints = 1000000
@@ -141,8 +133,6 @@ function Gameplay.loadStage(stagefile)
             end
         end
     end
-
-    player = Units.add(Player, camerax + cameraw / 2, cameray + camerah * 7 / 8)
 end
 
 function Gameplay.fixedupdate()
@@ -155,6 +145,7 @@ function Gameplay.fixedupdate()
 
     Units.activateAdded()
     Physics.fixedupdate()
+    Units.collide()
     Units.think()
     Units.deleteRemoved()
     camerax = (stagewidth - cameraw) * player.body:getX() / stagewidth

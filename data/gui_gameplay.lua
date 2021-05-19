@@ -579,7 +579,7 @@ return {
         {
           id = 0,
           properties = {
-            ["name"] = "player_lv0"
+            ["tilename"] = "player_lv0"
           },
           objectGroup = {
             type = "objectgroup",
@@ -596,8 +596,8 @@ return {
             objects = {
               {
                 id = 2,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 8,
                 y = 10,
@@ -605,10 +605,7 @@ return {
                 height = 12,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -616,7 +613,7 @@ return {
         {
           id = 1,
           properties = {
-            ["name"] = "player_lv1"
+            ["tilename"] = "player_lv1"
           },
           objectGroup = {
             type = "objectgroup",
@@ -633,8 +630,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 8,
                 y = 8,
@@ -642,10 +639,7 @@ return {
                 height = 16,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -653,7 +647,7 @@ return {
         {
           id = 2,
           properties = {
-            ["name"] = "player_lv2"
+            ["tilename"] = "player_lv2"
           },
           objectGroup = {
             type = "objectgroup",
@@ -670,8 +664,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 8,
                 y = 6,
@@ -679,10 +673,7 @@ return {
                 height = 20,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -690,7 +681,7 @@ return {
         {
           id = 3,
           properties = {
-            ["name"] = "player_lv3"
+            ["tilename"] = "player_lv3"
           },
           objectGroup = {
             type = "objectgroup",
@@ -707,8 +698,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 8,
                 y = 4,
@@ -716,10 +707,7 @@ return {
                 height = 24,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -727,7 +715,7 @@ return {
         {
           id = 4,
           properties = {
-            ["name"] = "player_lv4"
+            ["tilename"] = "player_lv4"
           },
           objectGroup = {
             type = "objectgroup",
@@ -744,8 +732,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 8,
                 y = 2,
@@ -753,10 +741,7 @@ return {
                 height = 28,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -764,7 +749,7 @@ return {
         {
           id = 5,
           properties = {
-            ["name"] = "wingman"
+            ["tilename"] = "wingman"
           },
           objectGroup = {
             type = "objectgroup",
@@ -781,8 +766,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "ellipse",
                 x = 10,
                 y = 10,
@@ -790,10 +775,7 @@ return {
                 height = 12,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }
@@ -801,7 +783,7 @@ return {
         {
           id = 6,
           properties = {
-            ["name"] = "bombshrapnel"
+            ["tilename"] = "bombshrapnel"
           },
           objectGroup = {
             type = "objectgroup",
@@ -818,8 +800,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "",
+                name = "hull",
+                type = "Fixture",
                 shape = "ellipse",
                 x = 8,
                 y = 8,
@@ -827,10 +809,7 @@ return {
                 height = 16,
                 rotation = 0,
                 visible = true,
-                properties = {
-                  ["collidable"] = true,
-                  ["sensor"] = true
-                }
+                properties = {}
               }
             }
           }

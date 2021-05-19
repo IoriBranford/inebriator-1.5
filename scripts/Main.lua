@@ -9,7 +9,7 @@ local fixedlimit = 1
 
 function love.load(args, unfilteredargs)
     love.graphics.setLineStyle("rough")
-    love.event.loadphase("Gameplay", "data/inebriator.lua")
+    love.event.loadphase("Gameplay", "data/stage_inebriator.lua")
 end
 
 local blankphase = {
