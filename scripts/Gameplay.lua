@@ -7,6 +7,7 @@ local Scene = require "Scene"
 local Timeline = require "Timeline"
 local Audio = require "Audio"
 local Gui = require "Gui"
+local GameplayGui = require "GameplayGui"
 local Units
 local Trigger
 
@@ -14,6 +15,7 @@ local timeline
 
 local player
 local points
+local extendpoints
 local lives
 local bombs
 
@@ -26,7 +28,6 @@ local stagewidth, stageheight
 local canvas
 local viewx, viewy
 local worldscene
-local hud
 
 local Player = {
     id = "player",
@@ -54,30 +55,16 @@ function Gameplay.loadphase(stagefile)
     worldscene = Scene.new()
     Gameplay.loadStage(stagefile)
 
-    Gui.load("data/gameplay.lua")
-
-    local hudtype = "hud_inner"
-    Gui.showOnlyLayer(hudtype, {
-        SCORE = true,
-        score = true,
-        NEXTLIFE = true,
-        extendscore = true,
-        difficulty = true,
-        powerlevel = true
-    })
-
     points = 0
+    extendpoints = 1000000
     lives = 2
     bombs = 0
 
-    hud = Gui.root[hudtype]
-    hud.difficulty.text:set("INEBRIATOR")
-    for i = 1, lives do
-        hud["life"..i].hidden = nil
-    end
-    for i = 1, bombs do
-        hud["winebomb"..i].hidden = nil
-    end
+    GameplayGui.load()
+    GameplayGui.setScore(points)
+    GameplayGui.setExtendScore(extendpoints)
+    GameplayGui.setLives(lives)
+    GameplayGui.setWineBombs(bombs)
 end
 
 function Gameplay.quitphase()
@@ -86,7 +73,7 @@ function Gameplay.quitphase()
     player = nil
 
     Physics.clear()
-    Gui.clear()
+    GameplayGui.clear()
     worldscene = nil
     canvas = nil
     Tiled.clearCache()
