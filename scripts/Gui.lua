@@ -68,6 +68,13 @@ function Gui.setLayerHidden(layername, hidden)
     end
 end
 
+function Gui.showLayer(layername, visibleobjects)
+    Gui.setLayerHidden(layername, nil)
+    if visibleobjects then
+        Gui.showOnlyLayerObjects(layername, visibleobjects)
+    end
+end
+
 function Gui.showOnlyLayer(layername, visibleobjects)
     for name, layer in pairs(Gui.root) do
         Gui.setLayerHidden(name, name ~= layername)
