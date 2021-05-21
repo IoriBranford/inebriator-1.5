@@ -2,6 +2,7 @@ local Behavior = {}
 
 local Units = require "Units"
 local Movement = require "Movement"
+local Audio = require "Audio"
 
 local function startTimeout(unit)
 	local time = unit.time or 60
@@ -71,7 +72,7 @@ function Behavior.collideDefault(unit, other)
 	local damageself = unit.hitdamageself or 0
 	local damage = damagefromenemy + damageself
 	unit.health = health - damage
-
+	Audio.play("data/sounds/hit.ogg")
 	if other.body then
 		local hitspark = damage > 0 and "ImpactDamage" or "ImpactNoDamage"
 		local x1, y1 = unit.body:getPosition()

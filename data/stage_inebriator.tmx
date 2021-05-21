@@ -11,7 +11,7 @@
   <property name="extendpoints" type="int" value="10000"/>
   <property name="lifemedalbonus" type="int" value="0"/>
   <property name="maxbombs" type="int" value="0"/>
-  <property name="music" type="file" value="mus/caravan.vgm"/>
+  <property name="music" type="file" value="music/caravan.vgm"/>
   <property name="nextmap" type="file" value="drunktitle.lua"/>
   <property name="overlaymap" type="file" value="gameplay.lua"/>
   <property name="playerid" type="int" value="1"/>

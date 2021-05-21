@@ -18,7 +18,7 @@ return {
     ["extendpoints"] = 10000,
     ["lifemedalbonus"] = 0,
     ["maxbombs"] = 0,
-    ["music"] = "mus/caravan.vgm",
+    ["music"] = "music/caravan.vgm",
     ["nextmap"] = "drunktitle.lua",
     ["overlaymap"] = "gameplay.lua",
     ["playerid"] = 1,

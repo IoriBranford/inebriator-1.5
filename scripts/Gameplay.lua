@@ -1,6 +1,5 @@
 local Gameplay = {}
 
-local tablex = require "pl.tablex"
 local Tiled = require "Tiled"
 local Physics = require "Physics"
 local Scene = require "Scene"
@@ -79,6 +78,7 @@ end
 
 function Gameplay.loadStage(stagefile)
     local map = Tiled.load(stagefile)
+    local directory = map.directory
     local mapobjects = map.objects
 
     Units.init(map.nextobjectid, worldscene)
@@ -135,9 +135,17 @@ function Gameplay.loadStage(stagefile)
                     layer.paths[object.id] = object
                 elseif typ == "Unit" then
                     object.group = layer
+                    local module = object.module
+                    if module then
+                        require(module)
+                    end
                 end
             end
         end
+    end
+    local music = map.music
+    if music then
+        Audio.playMusic(directory..music, 0)
     end
 end
 
@@ -154,6 +162,7 @@ local function inputPlayerAttack()
     local x, y = playerbody:getPosition()
     if love.keyboard.isDown("z") then
         if firetime <= 0 then
+            Audio.play("data/sounds/playershot.ogg")
             if love.keyboard.isDown("lshift") then
                 Units.add("AmyShot0", x, y, player.z)
                 player.firetime = 3

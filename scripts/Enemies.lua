@@ -1,9 +1,12 @@
 local Behavior = require "Behavior"
 local Units = require "Units"
+local Audio = require "Audio"
 
 local Enemies = {}
 
 function Enemies.defeatStandard(unit)
+    Audio.play("data/sounds/knockout.ogg")
+    Audio.play("data/sounds/boom1.ogg")
     local x, y = unit.body:getPosition()
     Units.add("ExplosionEnemy", x, y, unit.z)
     Units.remove(unit)
