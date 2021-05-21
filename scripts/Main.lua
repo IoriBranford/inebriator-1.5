@@ -1,4 +1,6 @@
 require("pl.strict").module("_G", _G)
+local Tiled = require "Tiled"
+local Audio = require "Audio"
 
 local dsecs = 0
 local dfixed = 0
@@ -8,7 +10,12 @@ local fixedrate = 60
 local fixedlimit = 1
 
 function love.load(args, unfilteredargs)
+    Tiled.setFontPath("data/fonts/")
     love.graphics.setLineStyle("rough")
+    local files = love.filesystem.getDirectoryItems("data/sounds/")
+    for _, file in ipairs(files) do
+        Audio.load("data/sounds/"..file)
+    end
     love.event.loadphase("Gameplay", "data/stage_inebriator.lua")
 end
 
@@ -74,6 +81,7 @@ function love.quit()
     if love.quitphase then
         love.quitphase()
     end
+    Audio.clear()
 end
 
 function love.run()

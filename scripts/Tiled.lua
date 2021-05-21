@@ -3,6 +3,7 @@
 
     Adds and modifies the following fields for convenience:
 
+    map.directory                       Directory path containing the file
     map.objects                         All map objects by id
     map.tiles                           All map tiles by gid
     map.backgroundcolor                 Converted from range 0...255 to range 0.0...1.0
@@ -74,6 +75,7 @@
 ]] --
 
 local Tiled = {}
+Tiled.fontpath = ""
 
 function Tiled.clearCache()
     Tiled.tilesets = {}
@@ -81,6 +83,13 @@ function Tiled.clearCache()
     Tiled.fonts = {}
 end
 Tiled.clearCache()
+
+function Tiled.setFontPath(fontpath)
+    Tiled.fontpath = fontpath
+    if fontpath[-1] ~= "/" then
+        fontpath = fontpath.."/"
+    end
+end
 
 local function addIfNew(t, k, v)
     if t[k] then
@@ -308,11 +317,12 @@ function Tiled.load(mapfile)
     assert(map, err)
     map = map()
 
-    local mapdir = string.match(mapfile, "^(.+/)") or ""
+    local directory = string.match(mapfile, "^(.+/)") or ""
+    map.directory = directory
 
     if map.image then
         local tileset = map
-        tileset.image = mapdir..tileset.image
+        tileset.image = directory..tileset.image
         tileset = Tiled.addTileset(tileset)
         return tileset
     end
@@ -331,7 +341,7 @@ function Tiled.load(mapfile)
     local tilesets = map.tilesets
     for i = 1, #tilesets do
         local tileset = tilesets[i]
-        tileset.image = mapdir..tileset.image
+        tileset.image = directory..tileset.image
         tileset = Tiled.addTileset(tileset)
         for t = 0, tileset.tilecount - 1 do
             maptiles[#maptiles + 1] = tileset[t]
@@ -425,10 +435,10 @@ function Tiled.load(mapfile)
                     local fontname = string.format("%s%s%s", fontfamily,
                         object.bold and " Bold" or "",
                         object.italic and " Italic" or "")
-                    local ttf = mapdir..fontname..".ttf"
+                    local ttf = Tiled.fontpath..fontname..".ttf"
                     local pixelsize = object.pixelsize or 16
                     fontname = string.format("%s %d", fontname, pixelsize)
-                    local fnt = mapdir..fontname..".fnt"
+                    local fnt = Tiled.fontpath..fontname..".fnt"
                     local font = Tiled.fonts[fontname]
                         or love.filesystem.getInfo(fnt) and love.graphics.newFont(fnt)
                         or love.filesystem.getInfo(ttf) and love.graphics.newFont(ttf, pixelsize)
