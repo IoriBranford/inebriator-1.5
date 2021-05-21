@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="4" nextobjectid="11">
+ <tileset firstgid="1" source="tilesets/humanshots.tsx"/>
+ <tileset firstgid="65" source="tilesets/sparks_huge.tsx"/>
+ <tileset firstgid="85" source="tilesets/sparks_med.tsx"/>
+ <tileset firstgid="103" source="tilesets/sparks_small.tsx"/>
+ <objectgroup id="2" name="bullets">
+  <object id="1" name="BulletPike" type="Unit" gid="1" x="24" y="8" width="32" height="16"/>
+  <object id="2" name="BulletArrow" type="Unit" gid="6" x="24" y="24" width="32" height="16"/>
+  <object id="3" name="BulletSword" type="Unit" gid="5" x="56" y="8" width="32" height="16"/>
+ </objectgroup>
+ <objectgroup id="3" name="effects">
+  <object id="4" name="ExplosionLargeEnemy" type="Unit" gid="65" x="48" y="128" width="96" height="96">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+  <object id="5" name="ExplosionPlayer" type="Unit" gid="75" x="160" y="128" width="96" height="96">
+   <properties>
+    <property name="bodytileshape" value="blast"/>
+    <property name="bodytype" value="dynamic"/>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+  <object id="6" name="ExplosionEnemy" type="Unit" gid="85" x="16" y="56" width="32" height="32">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+  <object id="7" name="ExplosionFriendly" type="Unit" gid="91" x="56" y="56" width="32" height="32">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+  <object id="8" name="Teleportation" type="Unit" gid="97" x="96" y="56" width="32" height="32">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+  <object id="9" name="ImpactDamage" type="Unit" gid="103" x="136" y="48" width="16" height="16">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+  <object id="10" name="ImpactNoDamage" type="Unit" gid="111" x="168" y="48" width="16" height="16">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="timeout"/>
+    <property name="time" value="animation"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

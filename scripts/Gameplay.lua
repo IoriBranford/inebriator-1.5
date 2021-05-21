@@ -43,8 +43,14 @@ function Gameplay.loadphase(stagefile)
 
     worldscene = Scene.new()
     Gameplay.loadStage(stagefile)
+    local prefabsfile = Tiled.load("data/prefabs_gameplay.lua")
+    for i, prefabs in ipairs(prefabsfile.layers) do
+        Units.addPrefabs(prefabs)
+    end
     local playerfile = Tiled.load("data/player_AmyDrunk.lua")
-    Units.addPrefabs(playerfile.layers.prefabs)
+    for i, prefabs in ipairs(playerfile.layers) do
+        Units.addPrefabs(prefabs)
+    end
     player = Units.add("AmyDrunk", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
 
     points = 0
@@ -249,7 +255,7 @@ function Gameplay.draw()
 
     local scale = math.min(math.floor(ghw / chw), math.floor(ghh / chh))
     love.graphics.push()
-    love.graphics.translate(ghw, ghh)
+    love.graphics.translate(math.floor(ghw), math.floor(ghh))
     love.graphics.scale(scale)
     love.graphics.translate(-chw, -chh)
     love.graphics.draw(canvas, 0, 0, 0, 1, 1, 0, 0)
