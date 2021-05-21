@@ -125,18 +125,22 @@ local function activateUnit(unit)
     return unit
 end
 
-function Units.add(base, x, y, z)
-    if type(base) == "string" then
-        if not unitprefabs[base] then
+function Units.add(base, id)
+    if type(base) ~= "table" then
+        if base and not unitprefabs[base] then
             return nil, string.format("No such prefab %s", base)
         end
         base = unitprefabs[base]
     end
-    local id = base and base.id
-    if id then
-        if units[id] or addedunits[id] then
-            return nil, string.format("Duplicate unit id %s", id)
-        end
+
+    id = id or (base and base.id)
+    if not id then
+        id = nextunitid
+        nextunitid = nextunitid + 1
+    end
+
+    if units[id] or addedunits[id] then
+        return nil, string.format("Duplicate unit id %s", id)
     end
 
     local unit = {}
@@ -145,11 +149,19 @@ function Units.add(base, x, y, z)
             unit[k] = v
         end
     end
+    unit.id = id
+    addedunits[unit.id] = unit
+    return unit
+end
 
-    if not unit.id then
-        id = nextunitid
-        nextunitid = nextunitid + 1
-        unit.id = id
+function Units.add_position(base, x, y, z)
+    return Units.add_id_position(base, nil, x, y, z)
+end
+
+function Units.add_id_position(base, id, x, y, z)
+    local unit, err = Units.add(base, id)
+    if not unit then
+        return nil, err
     end
 
     if x then
@@ -162,7 +174,6 @@ function Units.add(base, x, y, z)
         unit.z = z
     end
 
-    addedunits[id] = unit
     return unit
 end
 

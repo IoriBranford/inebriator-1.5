@@ -6,7 +6,7 @@ function Trigger.addUnits(objects)
     for i = 1, #objects do
         local object = objects[i]
         if object.type == "Unit" then
-            Units.add(object)
+            Units.add_position(object)
         end
     end
 end

@@ -50,7 +50,7 @@ function Gameplay.loadphase(stagefile)
     for i, prefabs in ipairs(playerfile.layers) do
         Units.addPrefabs(prefabs)
     end
-    player = Units.add("AmyDrunk", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
+    player = Units.add_id_position("AmyDrunk", "player", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
 
     points = 0
     extendpoints = 1000000
@@ -134,7 +134,7 @@ function Gameplay.loadStage(stagefile)
                     layer.paths = layer.paths or {}
                     layer.paths[object.id] = object
                 elseif typ == "Unit" then
-                    object.group = layer
+                    object.layer = layer
                     local module = object.module
                     if module then
                         require(module)
@@ -164,11 +164,11 @@ local function inputPlayerAttack()
         if firetime <= 0 then
             Audio.play("data/sounds/playershot.ogg")
             if love.keyboard.isDown("lshift") then
-                Units.add("AmyShot0", x, y, player.z)
+                Units.add_position("AmyShot0", x, y, player.z)
                 player.firetime = 3
             else
-                Units.add("AmyShot0", x-8, y, player.z)
-                Units.add("AmyShot0", x+8, y, player.z)
+                Units.add_position("AmyShot0", x-8, y, player.z)
+                Units.add_position("AmyShot0", x+8, y, player.z)
                 player.firetime = 6
             end
         end

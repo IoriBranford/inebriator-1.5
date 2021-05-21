@@ -24,16 +24,22 @@ function Behavior.thinkTimeout(unit)
 	end
 end
 
-function Behavior.fire(unit, bullettype, dx, dy)
+function Behavior.fire(unit, bullettype, dirx, diry)
 	local x, y = unit.body:getPosition()
-	local bullet = Units.add(bullettype, x, y, unit.z)
+	local bullet = Units.add_position(bullettype, x, y, unit.z)
+	local speed = bullet.speed or 1
+	local dx = dirx*speed
+	local dy = diry*speed
 	bullet.dx = dx
 	bullet.dy = dy
+	if dx ~= 0 or dy ~= 0 then
+		bullet.rotation = math.atan2(dy, dx)
+	end
 	return bullet
 end
 
 function Behavior.walkPath(unit, onPointReached)
-	local path = unit.path and unit.group.paths[unit.path.id]
+	local path = unit.path and unit.layer.paths[unit.path.id]
 	local polyline = path and path.polyline
 	local polygon = path and path.polygon
 	local points = polyline or polygon
@@ -79,7 +85,7 @@ function Behavior.collideDefault(unit, other)
 		local x2, y2 = other.body:getPosition()
 		local dx, dy = x2-x1, y2-y1
 		local x, y = x1 + dx/4, y1 + dy/4
-		Units.add(hitspark, x, y, unit.z)
+		Units.add_position(hitspark, x, y, unit.z)
 	end
 end
 
