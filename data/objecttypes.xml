@@ -15,11 +15,17 @@
   <property name="bodyrotation" type="bool" default="false"/>
   <property name="bodytileshape" type="string"/>
   <property name="bodytype" type="string"/>
+  <property name="collide" type="string" default=""/>
   <property name="dx" type="float" default="0"/>
   <property name="dy" type="float" default="0"/>
+  <property name="enemyteam" type="string"/>
+  <property name="health" type="int" default="0"/>
+  <property name="hitdamageenemy" type="int" default="0"/>
+  <property name="hitdamageself" type="int" default="0"/>
   <property name="module" type="string"/>
   <property name="path" type="object" default="0"/>
   <property name="start" type="string"/>
+  <property name="team" type="string"/>
   <property name="think" type="string"/>
  </objecttype>
 </objecttypes>
