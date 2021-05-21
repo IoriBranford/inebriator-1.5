@@ -47,6 +47,7 @@ return {
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
+            id = 2,
             name = "",
             visible = true,
             opacity = 1,
@@ -57,18 +58,18 @@ return {
             properties = {},
             objects = {
               {
-                id = 1,
-                name = "",
-                type = "",
-                shape = "ellipse",
-                x = 23.5,
-                y = 7.5,
-                width = 1,
-                height = 1,
+                id = 2,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 22,
+                y = 7,
+                width = 4,
+                height = 2,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["collidable"] = true
+                  ["sensor"] = true
                 }
               }
             }
@@ -129,18 +130,18 @@ return {
             properties = {},
             objects = {
               {
-                id = 1,
-                name = "",
-                type = "",
-                shape = "ellipse",
-                x = 23.5,
-                y = 7.5,
-                width = 1,
-                height = 1,
+                id = 2,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 22,
+                y = 7,
+                width = 6,
+                height = 2,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["collidable"] = true
+                  ["sensor"] = true
                 }
               }
             }
@@ -165,18 +166,18 @@ return {
             properties = {},
             objects = {
               {
-                id = 1,
-                name = "",
-                type = "",
-                shape = "ellipse",
-                x = 23.5,
-                y = 7.5,
-                width = 1,
-                height = 1,
+                id = 2,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 20,
+                y = 7,
+                width = 8,
+                height = 2,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["collidable"] = true
+                  ["sensor"] = true
                 }
               }
             }
@@ -1148,7 +1149,20 @@ return {
           rotation = 0,
           gid = 1,
           visible = true,
-          properties = {}
+          properties = {
+            ["bodyrotation"] = true,
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["enemyteam"] = "player",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 1,
+            ["hitdamageself"] = 1,
+            ["module"] = "Behavior",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "enemy",
+            ["think"] = "thinkDefaultBullet",
+            ["time"] = 300
+          }
         },
         {
           id = 2,
@@ -1162,7 +1176,20 @@ return {
           rotation = 0,
           gid = 6,
           visible = true,
-          properties = {}
+          properties = {
+            ["bodyrotation"] = true,
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["enemyteam"] = "player",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 1,
+            ["hitdamageself"] = 1,
+            ["module"] = "Behavior",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "enemy",
+            ["think"] = "thinkDefaultBullet",
+            ["time"] = 300
+          }
         },
         {
           id = 3,
@@ -1176,7 +1203,20 @@ return {
           rotation = 0,
           gid = 5,
           visible = true,
-          properties = {}
+          properties = {
+            ["bodyrotation"] = true,
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["enemyteam"] = "player",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 1,
+            ["hitdamageself"] = 1,
+            ["module"] = "Behavior",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "enemy",
+            ["think"] = "thinkDefaultBullet",
+            ["time"] = 300
+          }
         }
       }
     },
