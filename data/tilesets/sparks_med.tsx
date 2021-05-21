@@ -4,7 +4,7 @@
  <image source="sparks_med.png" width="192" height="96"/>
  <tile id="0">
   <properties>
-   <property name="name" value="explosion"/>
+   <property name="tilename" value="explosion"/>
   </properties>
   <animation>
    <frame tileid="0" duration="67"/>
@@ -17,7 +17,7 @@
  </tile>
  <tile id="6">
   <properties>
-   <property name="name" value="wingmanexplosion"/>
+   <property name="tilename" value="wingmanexplosion"/>
   </properties>
   <animation>
    <frame tileid="6" duration="67"/>
@@ -30,7 +30,7 @@
  </tile>
  <tile id="12">
   <properties>
-   <property name="name" value="teleport"/>
+   <property name="tilename" value="teleport"/>
   </properties>
   <animation>
    <frame tileid="12" duration="16"/>

@@ -2,9 +2,9 @@
 <tileset version="1.5" tiledversion="1.6.0" name="sparks_huge" tilewidth="96" tileheight="96" tilecount="20" columns="5" objectalignment="topleft">
  <tileoffset x="-48" y="-48"/>
  <image source="sparks_huge.png" width="480" height="384"/>
- <tile id="0" type="Spark">
+ <tile id="0">
   <properties>
-   <property name="name" value="explosion"/>
+   <property name="tilename" value="explosion"/>
   </properties>
   <animation>
    <frame tileid="0" duration="67"/>
@@ -19,14 +19,14 @@
    <frame tileid="9" duration="67"/>
   </animation>
  </tile>
- <tile id="10" type="PlayerDeath">
+ <tile id="10">
   <properties>
-   <property name="name" value="playerexplosion"/>
+   <property name="tilename" value="playerexplosion"/>
   </properties>
-  <objectgroup draworder="index">
-   <object id="1" x="6" y="6" width="84" height="84">
+  <objectgroup draworder="index" id="2">
+   <object id="1" name="blast" type="Fixture" x="6" y="6" width="84" height="84">
     <properties>
-     <property name="collidable" type="bool" value="true"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
     <ellipse/>
    </object>
