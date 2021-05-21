@@ -53,8 +53,10 @@ end
 
 function Physics.removeBody(id)
     local body = bodies[id]
-    bodies[id] = nil
-    body:destroy()
+    if body then
+        bodies[id] = nil
+        body:destroy()
+    end
 end
 
 function Physics.fixedupdate()
