@@ -20,6 +20,7 @@
     tileset[i].originy                  Origin y (negative of tile offset)
     tileset[i][prop]=val                Tile properties become fields of the tile*
 
+    tileset[i].animation.duration       Total duration of all frames of animation, in seconds
     tileset[i].animation[i].duration    Converted from milliseconds to seconds, LOVE's standard time unit
     tileset[i].animation[i].tile        Tile within the tileset
 
@@ -172,11 +173,15 @@ function Tiled.addTileset(tileset)
 
         local animation = tiledata.animation
         if animation then
+            local totalduration = 0
             for f = 1, #animation do
                 local frame = animation[f]
-                frame.duration = frame.duration / 1000
+                local duration = frame.duration
+                totalduration = totalduration + duration
+                frame.duration = duration / 1000
                 frame.tile = tileset[frame.tileid]
             end
+            animation.duration = totalduration / 1000
         end
 
         local shapes = tiledata.objectGroup
