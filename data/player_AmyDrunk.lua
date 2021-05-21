@@ -859,7 +859,11 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["speed"] = 3
+            ["enemyteam"] = "enemy",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 4,
+            ["speed"] = 3,
+            ["team"] = "player"
           }
         },
         {
@@ -879,8 +883,14 @@ return {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
             ["dy"] = -16,
+            ["enemyteam"] = "enemy",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 16,
+            ["hitdamageself"] = 1,
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "player",
+            ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
         },
@@ -901,8 +911,14 @@ return {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
             ["dy"] = -16,
+            ["enemyteam"] = "enemy",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 17,
+            ["hitdamageself"] = 1,
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "player",
+            ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
         },
@@ -923,8 +939,14 @@ return {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
             ["dy"] = -16,
+            ["enemyteam"] = "enemy",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 18,
+            ["hitdamageself"] = 1,
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "player",
+            ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
         },
@@ -945,8 +967,14 @@ return {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
             ["dy"] = -16,
+            ["enemyteam"] = "enemy",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 19,
+            ["hitdamageself"] = 1,
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "player",
+            ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
         },
@@ -967,8 +995,14 @@ return {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
             ["dy"] = -16,
+            ["enemyteam"] = "enemy",
+            ["health"] = 1,
+            ["hitdamageenemy"] = 20,
+            ["hitdamageself"] = 1,
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "player",
+            ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
         },
@@ -989,8 +1023,12 @@ return {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
             ["dy"] = -16,
+            ["enemyteam"] = "enemy",
+            ["hitdamageenemy"] = 2,
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startDefaultBullet",
+            ["team"] = "player",
+            ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
         }

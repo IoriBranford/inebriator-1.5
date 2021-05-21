@@ -5587,8 +5587,11 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["enemyteam"] = "player",
+            ["health"] = 15,
             ["module"] = "Enemies",
             ["path"] = { id = 255 },
+            ["team"] = "enemy",
             ["think"] = "walkPath_fireTimed"
           }
         },
@@ -5607,7 +5610,11 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["module"] = "Enemies"
+            ["enemyteam"] = "player",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["team"] = "enemy",
+            ["think"] = "walkPath_fireTimed"
           }
         },
         {
@@ -5625,8 +5632,11 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["enemyteam"] = "player",
+            ["health"] = 15,
             ["module"] = "Enemies",
             ["path"] = { id = 264 },
+            ["team"] = "enemy",
             ["think"] = "walkPath_fireTimed"
           }
         },

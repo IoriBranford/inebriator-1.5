@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 4,
-  nextobjectid = 9,
+  nextobjectid = 11,
   properties = {},
   tilesets = {
     {
@@ -1011,6 +1011,115 @@ return {
           }
         }
       }
+    },
+    {
+      name = "sparks_small",
+      firstgid = 103,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 8,
+      image = "tilesets/sparks_small.png",
+      imagewidth = 128,
+      imageheight = 32,
+      objectalignment = "topleft",
+      tileoffset = {
+        x = -8,
+        y = -8
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {
+        ["commonanimation"] = 0
+      },
+      wangsets = {},
+      tilecount = 16,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["tilename"] = "enemydamage"
+          },
+          animation = {
+            {
+              tileid = 0,
+              duration = 16
+            },
+            {
+              tileid = 1,
+              duration = 16
+            },
+            {
+              tileid = 2,
+              duration = 16
+            },
+            {
+              tileid = 3,
+              duration = 16
+            },
+            {
+              tileid = 4,
+              duration = 16
+            },
+            {
+              tileid = 5,
+              duration = 16
+            },
+            {
+              tileid = 6,
+              duration = 16
+            },
+            {
+              tileid = 7,
+              duration = 16
+            }
+          }
+        },
+        {
+          id = 8,
+          properties = {
+            ["tilename"] = "enemyguard"
+          },
+          animation = {
+            {
+              tileid = 8,
+              duration = 16
+            },
+            {
+              tileid = 9,
+              duration = 16
+            },
+            {
+              tileid = 10,
+              duration = 16
+            },
+            {
+              tileid = 11,
+              duration = 16
+            },
+            {
+              tileid = 12,
+              duration = 16
+            },
+            {
+              tileid = 13,
+              duration = 16
+            },
+            {
+              tileid = 14,
+              duration = 16
+            },
+            {
+              tileid = 15,
+              duration = 16
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -1098,7 +1207,8 @@ return {
           visible = true,
           properties = {
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
             ["time"] = "animation"
           }
         },
@@ -1118,7 +1228,8 @@ return {
             ["bodytileshape"] = "blast",
             ["bodytype"] = "dynamic",
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
             ["time"] = "animation"
           }
         },
@@ -1136,7 +1247,8 @@ return {
           visible = true,
           properties = {
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
             ["time"] = "animation"
           }
         },
@@ -1154,7 +1266,8 @@ return {
           visible = true,
           properties = {
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
             ["time"] = "animation"
           }
         },
@@ -1172,7 +1285,46 @@ return {
           visible = true,
           properties = {
             ["module"] = "Behavior",
-            ["think"] = "timeout",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
+            ["time"] = "animation"
+          }
+        },
+        {
+          id = 9,
+          name = "ImpactDamage",
+          type = "Unit",
+          shape = "rectangle",
+          x = 136,
+          y = 48,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 103,
+          visible = true,
+          properties = {
+            ["module"] = "Behavior",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
+            ["time"] = "animation"
+          }
+        },
+        {
+          id = 10,
+          name = "ImpactNoDamage",
+          type = "Unit",
+          shape = "rectangle",
+          x = 168,
+          y = 48,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          gid = 111,
+          visible = true,
+          properties = {
+            ["module"] = "Behavior",
+            ["start"] = "startTimeout",
+            ["think"] = "thinkTimeout",
             ["time"] = "animation"
           }
         }

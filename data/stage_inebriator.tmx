@@ -106,14 +106,12 @@
   <object id="260" template="units/WineGuard.tx" x="96" y="1136">
    <properties>
     <property name="path" type="object" value="255"/>
-    <property name="think" value="walkPath_fireTimed"/>
    </properties>
   </object>
   <object id="261" template="units/WineGuard.tx" x="144" y="1144"/>
   <object id="262" template="units/WineGuard.tx" x="192" y="1136">
    <properties>
     <property name="path" type="object" value="264"/>
-    <property name="think" value="walkPath_fireTimed"/>
    </properties>
   </object>
   <object id="263" template="triggers/addUnits.tx" x="-16" y="1152"/>

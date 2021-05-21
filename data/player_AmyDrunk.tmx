@@ -11,7 +11,11 @@
    <properties>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="health" type="int" value="1"/>
+    <property name="hitdamageenemy" type="int" value="4"/>
     <property name="speed" type="float" value="3"/>
+    <property name="team" value="player"/>
    </properties>
   </object>
   <object id="2" name="AmyShot0" type="Unit" gid="29" x="88" y="32" width="32" height="32" rotation="-90">
@@ -20,8 +24,14 @@
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
     <property name="dy" type="float" value="-16"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="health" type="int" value="1"/>
+    <property name="hitdamageenemy" type="int" value="16"/>
+    <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="think" value="timeout"/>
+    <property name="start" value="startDefaultBullet"/>
+    <property name="team" value="player"/>
+    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
    </properties>
   </object>
@@ -31,8 +41,14 @@
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
     <property name="dy" type="float" value="-16"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="health" type="int" value="1"/>
+    <property name="hitdamageenemy" type="int" value="17"/>
+    <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="think" value="timeout"/>
+    <property name="start" value="startDefaultBullet"/>
+    <property name="team" value="player"/>
+    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
    </properties>
   </object>
@@ -42,8 +58,14 @@
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
     <property name="dy" type="float" value="-16"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="health" type="int" value="1"/>
+    <property name="hitdamageenemy" type="int" value="18"/>
+    <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="think" value="timeout"/>
+    <property name="start" value="startDefaultBullet"/>
+    <property name="team" value="player"/>
+    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
    </properties>
   </object>
@@ -53,8 +75,14 @@
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
     <property name="dy" type="float" value="-16"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="health" type="int" value="1"/>
+    <property name="hitdamageenemy" type="int" value="19"/>
+    <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="think" value="timeout"/>
+    <property name="start" value="startDefaultBullet"/>
+    <property name="team" value="player"/>
+    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
    </properties>
   </object>
@@ -64,8 +92,14 @@
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
     <property name="dy" type="float" value="-16"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="health" type="int" value="1"/>
+    <property name="hitdamageenemy" type="int" value="20"/>
+    <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="think" value="timeout"/>
+    <property name="start" value="startDefaultBullet"/>
+    <property name="team" value="player"/>
+    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
    </properties>
   </object>
@@ -75,8 +109,12 @@
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
     <property name="dy" type="float" value="-16"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="hitdamageenemy" type="int" value="2"/>
     <property name="module" value="Behavior"/>
-    <property name="think" value="timeout"/>
+    <property name="start" value="startDefaultBullet"/>
+    <property name="team" value="player"/>
+    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
    </properties>
   </object>

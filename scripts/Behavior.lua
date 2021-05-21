@@ -3,8 +3,20 @@ local Behavior = {}
 local Units = require "Units"
 local Movement = require "Movement"
 
-function Behavior.timeout(unit)
-	local time = (unit.time or 60) - 1
+local function startTimeout(unit)
+	local time = unit.time or 60
+	if time == "animation" then
+		local tile = unit.tile
+		time = tile and tile.animation.duration or 1
+		time = time * 60
+	end
+	unit.time = time
+end
+Behavior.startTimeout = startTimeout
+
+function Behavior.thinkTimeout(unit)
+	local time = unit.time or 60
+	time = time - 1
 	unit.time = time
 	if time <= 0 then
 		Units.remove(unit)
@@ -43,6 +55,43 @@ function Behavior.walkPath(unit, onPointReached)
 		end
 	end
 	unit.pathindex = pathindex
+end
+
+function Behavior.collideDefault(unit, other)
+	local health = unit.health
+	if not health then
+		return
+	end
+	local team = unit.team
+	local otherenemyteam = other.enemyteam
+	if not team or not otherenemyteam or otherenemyteam ~= team then
+		return
+	end
+	local damagefromenemy = other.hitdamageenemy or 0
+	local damageself = unit.hitdamageself or 0
+	local damage = damagefromenemy + damageself
+	unit.health = health - damage
+
+	if other.body then
+		local hitspark = damage > 0 and "ImpactDamage" or "ImpactNoDamage"
+		local x1, y1 = unit.body:getPosition()
+		local x2, y2 = other.body:getPosition()
+		local dx, dy = x2-x1, y2-y1
+		local x, y = x1 + dx/4, y1 + dy/4
+		Units.add(hitspark, x, y, unit.z)
+	end
+end
+
+function Behavior.startDefaultBullet(unit)
+	startTimeout(unit)
+end
+
+function Behavior.thinkDefaultBullet(unit)
+	Behavior.thinkTimeout(unit)
+	local health = unit.health or 0
+	if health < 1 then
+		Units.remove(unit)
+	end
 end
 
 return Behavior

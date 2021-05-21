@@ -1,7 +1,7 @@
 local Units = {}
 
 local Physics = require "Physics"
-local Scene = require "Scene"
+local Behavior
 local Tiled = require "Tiled"
 
 local nextunitid
@@ -13,6 +13,7 @@ local scene
 local unitprefabs
 
 function Units.init(nextunitid0, scene0)
+    Behavior = Behavior or require "Behavior"
     nextunitid = nextunitid0 or 1
     units = {}
     thinkingunits = {}
@@ -35,7 +36,7 @@ local function activateUnit(unit)
     local id = unit.id
     local x, y, z = unit.x, unit.y, unit.z
     local module = unit.module
-    local start
+    local start, collide
     if module then
         module = require(module)
         local think = unit.think and module[unit.think]
@@ -44,6 +45,7 @@ local function activateUnit(unit)
             thinkingunits[id] = unit
         end
         start = unit.start and module[unit.start]
+        unit.collide = unit.collide and module[unit.collide] or Behavior.collideDefault
     end
 
     local tile = unit.tile
@@ -51,6 +53,7 @@ local function activateUnit(unit)
         local tileset = unit.tileset
         local tileid = unit.tileid
         tile = tileset and tileid and Tiled.tilesets[tileset][tileid]
+        unit.tile = tile
     end
     if tile then
         scene:addAnimatedTile(id, tile, x, y, z, unit.rotation, unit.scalex, unit.scaley)
@@ -124,6 +127,9 @@ end
 
 function Units.add(base, x, y, z)
     if type(base) == "string" then
+        if not unitprefabs[base] then
+            return nil, string.format("No such prefab %s", base)
+        end
         base = unitprefabs[base]
     end
     local id = base and base.id
@@ -232,10 +238,10 @@ function Units.collide()
 			local id1, id2 = b1:getUserData(), b2:getUserData()
 			local u1 = id1 and units[id1]
             local u2 = id2 and units[id2]
-            if u1 and u1.collide then
+            if u1 and type(u1.collide)=="function" then
                 u1:collide(u2)
             end
-            if u2 and u2.collide then
+            if u2 and type(u2.collide)=="function" then
                 u2:collide(u1)
             end
 		end
