@@ -859,9 +859,10 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["enemyteam"] = "enemy",
+            ["enemyteam"] = "enemyshot",
             ["health"] = 1,
             ["hitdamageenemy"] = 4,
+            ["module"] = "Behavior",
             ["speed"] = 3,
             ["team"] = "player"
           }
@@ -889,7 +890,7 @@ return {
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
             ["start"] = "startDefaultBullet",
-            ["team"] = "player",
+            ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
@@ -917,7 +918,7 @@ return {
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
             ["start"] = "startDefaultBullet",
-            ["team"] = "player",
+            ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
@@ -945,7 +946,7 @@ return {
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
             ["start"] = "startDefaultBullet",
-            ["team"] = "player",
+            ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
@@ -973,7 +974,7 @@ return {
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
             ["start"] = "startDefaultBullet",
-            ["team"] = "player",
+            ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
@@ -1001,7 +1002,7 @@ return {
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
             ["start"] = "startDefaultBullet",
-            ["team"] = "player",
+            ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }
@@ -1027,7 +1028,7 @@ return {
             ["hitdamageenemy"] = 2,
             ["module"] = "Behavior",
             ["start"] = "startDefaultBullet",
-            ["team"] = "player",
+            ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 60
           }

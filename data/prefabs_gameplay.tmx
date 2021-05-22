@@ -18,8 +18,9 @@
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
+    <property name="speed" type="float" value="2"/>
     <property name="start" value="startDefaultBullet"/>
-    <property name="team" value="enemy"/>
+    <property name="team" value="enemyshot"/>
     <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="300"/>
    </properties>
@@ -34,8 +35,9 @@
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
+    <property name="speed" type="float" value="4"/>
     <property name="start" value="startDefaultBullet"/>
-    <property name="team" value="enemy"/>
+    <property name="team" value="enemyshot"/>
     <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="300"/>
    </properties>
@@ -50,8 +52,9 @@
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
+    <property name="speed" type="float" value="3"/>
     <property name="start" value="startDefaultBullet"/>
-    <property name="team" value="enemy"/>
+    <property name="team" value="enemyshot"/>
     <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="300"/>
    </properties>
@@ -70,6 +73,7 @@
    <properties>
     <property name="bodytileshape" value="blast"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="enemyteam" value="enemyshot"/>
     <property name="module" value="Behavior"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>

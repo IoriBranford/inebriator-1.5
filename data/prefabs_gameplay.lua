@@ -1158,8 +1158,9 @@ return {
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
+            ["speed"] = 2,
             ["start"] = "startDefaultBullet",
-            ["team"] = "enemy",
+            ["team"] = "enemyshot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
@@ -1185,8 +1186,9 @@ return {
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
+            ["speed"] = 4,
             ["start"] = "startDefaultBullet",
-            ["team"] = "enemy",
+            ["team"] = "enemyshot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
@@ -1212,8 +1214,9 @@ return {
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
             ["module"] = "Behavior",
+            ["speed"] = 3,
             ["start"] = "startDefaultBullet",
-            ["team"] = "enemy",
+            ["team"] = "enemyshot",
             ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
@@ -1267,6 +1270,7 @@ return {
           properties = {
             ["bodytileshape"] = "blast",
             ["bodytype"] = "dynamic",
+            ["enemyteam"] = "enemyshot",
             ["module"] = "Behavior",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
