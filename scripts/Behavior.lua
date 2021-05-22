@@ -24,9 +24,9 @@ function Behavior.thinkTimeout(unit)
 	end
 end
 
-function Behavior.fire(unit, bullettype, dirx, diry)
+function Behavior.fire(unit, bullettype, dirx, diry, z)
 	local x, y = unit.body:getPosition()
-	local bullet = Units.add_position(bullettype, x, y, unit.z)
+	local bullet = Units.add_position(bullettype, x, y, z or unit.z)
 	local speed = bullet.speed or 1
 	local dx = dirx*speed
 	local dy = diry*speed

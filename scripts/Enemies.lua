@@ -24,7 +24,7 @@ function Enemies.walkPath_fireTimed(unit)
             dx = dx/dist
             dy = dy/dist
         end
-        Behavior.fire(unit, "BulletPike", dx, dy)
+        Behavior.fire(unit, "BulletPike", dx, dy, player.z)
     end
 	local health = unit.health or 1
 	if health < 1 then
