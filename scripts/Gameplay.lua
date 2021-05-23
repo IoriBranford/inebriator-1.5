@@ -35,11 +35,6 @@ function Gameplay.getCameraVelY()
     return cameravy
 end
 
-function Gameplay.prepPlayerRespawn(time)
-    player = nil
-    respawntime = time
-end
-
 function Gameplay.loadphase(stagefile)
     Units = Units or require "Units"
     Trigger = Trigger or require "Trigger"
@@ -193,6 +188,22 @@ local function inputPlayerAttack()
     end
 end
 
+local function handlePlayerHit()
+    local invincibletime = player.invincibletime
+    if invincibletime > 0 then
+        player.health = 1
+    elseif player.health < 1 then
+        -- Audio.play("data/sounds/scream.ogg")
+        Audio.play("data/sounds/selfdestruct.ogg")
+        local x, y = player.body:getPosition()
+        local explosion = Units.add_position("ExplosionPlayer", x, y, player.z)
+        explosion.dy = cameravy
+        Units.remove(player)
+        player = nil
+        respawntime = 60
+    end
+end
+
 function Gameplay.fixedupdate()
     cameray = cameray + cameravy
     timeline:advance(-cameravy)
@@ -231,6 +242,7 @@ function Gameplay.fixedupdate()
     if player then
         local x, y = player.body:getPosition()
         camerax = (stagewidth - cameraw) * x / stagewidth
+        handlePlayerHit()
     end
 
     Units.deleteRemoved()
