@@ -7,6 +7,7 @@ local Timeline = require "Timeline"
 local Audio = require "Audio"
 local Gui = require "Gui"
 local GameplayGui = require "GameplayGui"
+local Movement = require "Movement"
 local Units
 local Trigger
 
@@ -18,8 +19,10 @@ local extendpoints
 local lives
 local bombs
 
+local respawntime
 local cameravy
 local camerax, cameray
+local camerax0
 local cameraw, camerah = 240, 320
 
 local stagewidth, stageheight
@@ -27,6 +30,15 @@ local stagewidth, stageheight
 local canvas
 local viewx, viewy
 local worldscene
+
+function Gameplay.getCameraVelY()
+    return cameravy
+end
+
+function Gameplay.prepPlayerRespawn(time)
+    player = nil
+    respawntime = time
+end
 
 function Gameplay.loadphase(stagefile)
     Units = Units or require "Units"
@@ -50,13 +62,12 @@ function Gameplay.loadphase(stagefile)
     for i, prefabs in ipairs(playerfile.layers) do
         Units.addPrefabs(prefabs)
     end
-    player = Units.add_id_position("AmyDrunk", "player", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
 
     points = 0
     extendpoints = 1000000
-    lives = 2
+    lives = 3
     bombs = 0
-
+    respawntime = 0
     GameplayGui.load()
     GameplayGui.setScore(points)
     GameplayGui.setExtendScore(extendpoints)
@@ -89,7 +100,8 @@ function Gameplay.loadStage(stagefile)
     stagewidth = stagecols * cellwidth
     stageheight = stagerows * cellheight
 
-    camerax, cameray = stagewidth / 2 - cameraw / 2, stageheight - camerah
+    camerax0, cameray = stagewidth / 2 - cameraw / 2, stageheight - camerah
+    camerax = camerax0
 
     local layers = map.layers
     for i = 1, #layers do
@@ -189,6 +201,27 @@ function Gameplay.fixedupdate()
         cameravy = 0
     end
 
+    if not player and respawntime then
+        respawntime = respawntime - 1
+        if respawntime <= 0 then
+            if lives > 0 then
+                local dx = camerax0 - camerax
+                if dx == 0 then
+                    player = Units.add_id_position("AmyDrunk", "player", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
+                    player.invincibletime = 180
+                    lives = lives - 1
+                    GameplayGui.setLives(lives)
+                else
+                    camerax = Movement.moveTowards(camerax, camerax0, 2 * dx / math.abs(dx))
+                end
+            else
+                cameravy = 0
+                Audio.playMusic("data/music/gameover.vgm", 0)
+                respawntime = nil
+            end
+        end
+    end
+
     inputPlayerAttack()
     Units.activateAdded()
     Physics.fixedupdate()
@@ -198,15 +231,6 @@ function Gameplay.fixedupdate()
     if player then
         local x, y = player.body:getPosition()
         camerax = (stagewidth - cameraw) * x / stagewidth
-
-        if player.health < 1 then
-            -- Audio.play("data/sounds/scream.ogg")
-            Audio.play("data/sounds/selfdestruct.ogg")
-            local explosion = Units.add_position("ExplosionPlayer", x, y, player.z)
-            explosion.dy = cameravy
-            Units.remove(player)
-            player = nil
-        end
     end
 
     Units.deleteRemoved()

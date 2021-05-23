@@ -14,9 +14,10 @@
     <property name="enemyteam" value="enemyshot"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="4"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Player"/>
     <property name="speed" type="float" value="3"/>
     <property name="team" value="player"/>
+    <property name="think" value="thinkGameplay"/>
    </properties>
   </object>
   <object id="2" name="AmyShot0" type="Unit" gid="29" x="88" y="32" width="32" height="32" rotation="-90">

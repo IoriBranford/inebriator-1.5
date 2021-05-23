@@ -862,9 +862,10 @@ return {
             ["enemyteam"] = "enemyshot",
             ["health"] = 1,
             ["hitdamageenemy"] = 4,
-            ["module"] = "Behavior",
+            ["module"] = "Player",
             ["speed"] = 3,
-            ["team"] = "player"
+            ["team"] = "player",
+            ["think"] = "thinkGameplay"
           }
         },
         {
