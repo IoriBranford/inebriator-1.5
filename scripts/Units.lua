@@ -211,10 +211,50 @@ function Units.think()
         local think = unit.think
         if think then
             think(unit)
-            if not unit.think then
-                thinkingunits[id] = nil
+            local body = unit.body
+            if body then
+                local nextx = unit.nextx
+                local nexty = unit.nexty
+                local nextrotation = unit.nextrotation
+                if nextx then
+                    body:setX(nextx)
+                    unit.nextx = nil
+                end
+                if nexty then
+                    body:setY(nexty)
+                    unit.nexty = nil
+                end
+                if nextrotation then
+                    body:setAngle(nextrotation)
+                    unit.nextrotation = nil
+                end
+
+                local nextvelx = unit.nextvelx
+                local nextvely = unit.nextvely
+                if nextvelx or nextvely then
+                    local velx, vely = body:getLinearVelocity()
+                    body:setLinearVelocity(nextvelx or velx, nextvely or vely)
+                    unit.nextvelx = nil
+                    unit.nextvely = nil
+                end
+
+                local nextavel = unit.nextavel
+                if nextavel then
+                    body:setAngularVelocity(nextavel)
+                    unit.nextavel = nil
+                end
             end
         end
+    end
+end
+
+function Units.updateFromBody(id, body)
+    local unit = units[id]
+    if unit then
+        unit.velx, unit.vely = body:getLinearVelocity()
+        unit.avel = body:getAngularVelocity()
+        unit.x, unit.y = body:getPosition()
+        unit.rotation = body:getAngle()
     end
 end
 
