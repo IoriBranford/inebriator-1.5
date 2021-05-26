@@ -1270,9 +1270,11 @@ return {
           properties = {
             ["bodytileshape"] = "blast",
             ["bodytype"] = "dynamic",
-            ["enemyteam"] = "enemyshot",
+            ["enemyteam"] = "enemy",
+            ["hitdamageenemy"] = 1,
             ["module"] = "Behavior",
             ["start"] = "startTimeout",
+            ["team"] = "playershot",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"
           }

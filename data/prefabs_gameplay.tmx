@@ -73,9 +73,11 @@
    <properties>
     <property name="bodytileshape" value="blast"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="enemyteam" value="enemyshot"/>
+    <property name="enemyteam" value="enemy"/>
+    <property name="hitdamageenemy" type="int" value="1"/>
     <property name="module" value="Behavior"/>
     <property name="start" value="startTimeout"/>
+    <property name="team" value="playershot"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>
    </properties>
