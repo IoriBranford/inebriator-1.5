@@ -5,7 +5,7 @@
   <properties>
    <property name="bodytileshape" value="hull"/>
    <property name="bodytype" value="dynamic"/>
-   <property name="enemyteam" value="player"/>
+   <property name="enemyteam" value="playershot"/>
    <property name="health" type="int" value="15"/>
    <property name="module" value="Enemies"/>
    <property name="team" value="enemy"/>

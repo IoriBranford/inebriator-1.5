@@ -5587,7 +5587,7 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["enemyteam"] = "player",
+            ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
             ["path"] = { id = 255 },
@@ -5610,7 +5610,7 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["enemyteam"] = "player",
+            ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
             ["team"] = "enemy",
@@ -5632,7 +5632,7 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["enemyteam"] = "player",
+            ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
             ["path"] = { id = 264 },
