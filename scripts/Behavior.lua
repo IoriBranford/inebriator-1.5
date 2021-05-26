@@ -86,4 +86,45 @@ function Behavior.thinkDefaultBullet(unit)
 	end
 end
 
+function Behavior.doCollisions(unit)
+	local body = unit.body
+	local team = unit.team
+	if not body or not team then
+		return
+	end
+	local damage = 0
+	local damageself = unit.hitdamageself or 0
+	local x1, y1 = unit.x, unit.y
+	local z = unit.z
+	for _, contact in pairs(body:getContacts()) do
+		if contact:isTouching() then
+			local f1, f2 = contact:getFixtures()
+			local b1, b2 = f1:getBody(), f2:getBody()
+			if b2 == body then
+				b1, b2 = b2, b1
+			end
+			local id2 = b2:getUserData()
+            local other = id2 and Units.get(id2)
+            if other then
+				if other.enemyteam == team then
+					local damagefromenemy = other.hitdamageenemy or 0
+					local hitdamage = damagefromenemy + damageself
+					damage = damage + hitdamage
+
+					Audio.play("data/sounds/hit.ogg")
+					local hitspark = hitdamage > 0 and "ImpactDamage" or "ImpactNoDamage"
+					local x2, y2 = other.x, other.y
+					local distx, disty = x2-x1, y2-y1
+					local x, y = x1 + distx/4, y1 + disty/4
+					Units.add_position(hitspark, x, y, z)
+				end
+            end
+		end
+	end
+	local health = unit.health
+	if health then
+		unit.health = health - damage
+	end
+end
+
 return Behavior
