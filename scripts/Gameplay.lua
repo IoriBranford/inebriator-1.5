@@ -165,11 +165,7 @@ local function inputPlayerAttack()
     if firetime >= 0 then
         player.firetime = firetime
     end
-    local playerbody = player.body
-    if not playerbody then
-        return
-    end
-    local x, y = playerbody:getPosition()
+    local x, y = player.x, player.y
     if love.keyboard.isDown("z") then
         if firetime <= 0 then
             Audio.play("data/sounds/playershot.ogg")
@@ -195,8 +191,7 @@ local function handlePlayerHit()
     elseif player.health < 1 then
         -- Audio.play("data/sounds/scream.ogg")
         Audio.play("data/sounds/selfdestruct.ogg")
-        local x, y = player.body:getPosition()
-        local explosion = Units.add_position("ExplosionPlayer", x, y, player.z)
+        local explosion = Units.add_position("ExplosionPlayer", player.x, player.y, player.z)
         explosion.vely = cameravy
         Units.remove(player)
         player = nil
@@ -236,11 +231,14 @@ function Gameplay.fixedupdate()
     inputPlayerAttack()
     Units.activateAdded()
     Physics.fixedupdate()
+    for id, body in Physics.iterateBodies() do
+        Units.updateFromBody(id, body)
+    end
     Units.collide()
     Units.think()
 
     if player then
-        local x, y = player.body:getPosition()
+        local x, y = player.x, player.y
         camerax = (stagewidth - cameraw) * x / stagewidth
         handlePlayerHit()
     end

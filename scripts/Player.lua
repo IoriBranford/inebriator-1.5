@@ -7,7 +7,7 @@ local Player = {}
 
 function Player.thinkGameplay(player)
     local invincibletime = player.invincibletime or 1
-    invincibletime = invincibletime - 1
+    invincibletime = math.max(0, invincibletime - 1)
     player.invincibletime = invincibletime
 end
 

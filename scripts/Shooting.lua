@@ -2,7 +2,7 @@ local Units = require "Units"
 local Shooting = {}
 
 local function shoot(shooter, shottype)
-    local x, y = shooter.body:getPosition()
+    local x, y = shooter.x, shooter.y
     local shot = Units.add_position(shottype, x, y)
     shot.shooterid = shooter.id
     return shot
@@ -38,7 +38,7 @@ end
 Shooting.shoot_dir_speed = shoot_dir_speed
 
 local function shoot_targetPos_speed(shooter, shottype, targetx, targety, movespeed)
-    local x, y = shooter.body:getPosition()
+    local x, y = shooter.x, shooter.y
     local distx, disty = targetx-x, targety-y
     local dist = math.sqrt(distx*distx+disty*disty)
     local dirx, diry = 0, 0
@@ -56,14 +56,10 @@ end
 Shooting.shoot_targetPos = shoot_targetPos
 
 local function shoot_targetUnit_speed(shooter, shottype, targetunit, movespeed)
-    local targetx, targety
-    local targetbody = targetunit.body
-    if targetbody then
-        targetx, targety = targetbody:getPosition()
-    else
-        targetx, targety = targetunit.x, targetunit.y
-    end
-    return shoot_targetPos_speed(shooter, shottype, targetx, targety, movespeed)
+    local targetx, targety = targetunit.x, targetunit.y
+    local shot = shoot_targetPos_speed(shooter, shottype, targetx, targety, movespeed)
+    shot.z = targetunit.z
+    return shot
 end
 Shooting.shoot_targetUnit_speed = shoot_targetUnit_speed
 

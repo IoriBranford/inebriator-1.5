@@ -25,20 +25,6 @@ function Behavior.thinkTimeout(unit)
 	end
 end
 
--- function Behavior.fire(unit, bullettype, dirx, diry, z)
--- 	local x, y = unit.body:getPosition()
--- 	local bullet = Units.add_position(bullettype, x, y, z or unit.z)
--- 	local movespeed = bullet.movespeed or 1
--- 	local velx = dirx*movespeed
--- 	local vely = diry*movespeed
--- 	bullet.velx = velx
--- 	bullet.vely = vely + Gameplay.getCameraVelY()
--- 	if velx ~= 0 or vely ~= 0 then
--- 		bullet.rotation = math.atan2(vely, velx)
--- 	end
--- 	return bullet
--- end
-
 function Behavior.walkPath(unit, onPointReached)
 	local path = unit.path and unit.layer.paths[unit.path.id]
 	local polyline = path and path.polyline
@@ -50,10 +36,10 @@ function Behavior.walkPath(unit, onPointReached)
 	end
 	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
 	local movespeed = unit.movespeed or 1
-	local x, y = unit.body:getPosition()
-	local newx, newy = Movement.moveTowardsPoint_Speed(x, y, destx, desty, movespeed)
-	unit.body:setLinearVelocity(newx - x, newy - y)
-	if newx == destx and newy == desty then
+	local x, y = unit.x, unit.y
+	local nextx, nexty = Movement.moveTowardsPoint_Speed(x, y, destx, desty, movespeed)
+	unit.nextx, unit.nexty = nextx, nexty
+	if nextx == destx and nexty == desty then
 		pathindex = pathindex + 2
 		if polygon and pathindex > #points then
 			pathindex = 2
@@ -80,14 +66,12 @@ function Behavior.collideDefault(unit, other)
 	local damage = damagefromenemy + damageself
 	unit.health = health - damage
 	Audio.play("data/sounds/hit.ogg")
-	if other.body then
-		local hitspark = damage > 0 and "ImpactDamage" or "ImpactNoDamage"
-		local x1, y1 = unit.body:getPosition()
-		local x2, y2 = other.body:getPosition()
-		local distx, disty = x2-x1, y2-y1
-		local x, y = x1 + distx/4, y1 + disty/4
-		Units.add_position(hitspark, x, y, unit.z)
-	end
+	local hitspark = damage > 0 and "ImpactDamage" or "ImpactNoDamage"
+	local x1, y1 = unit.x, unit.y
+	local x2, y2 = other.x, other.y
+	local distx, disty = x2-x1, y2-y1
+	local x, y = x1 + distx/4, y1 + disty/4
+	Units.add_position(hitspark, x, y, unit.z)
 end
 
 function Behavior.startDefaultBullet(unit)
