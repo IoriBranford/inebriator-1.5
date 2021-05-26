@@ -1,4 +1,5 @@
 local Behavior = require "Behavior"
+local Shooting = require "Shooting"
 local Units = require "Units"
 local Audio = require "Audio"
 
@@ -17,14 +18,7 @@ function Enemies.walkPath_fireTimed(unit)
     local x, y = unit.body:getPosition()
     local player = Units.get("player")
     if player and player.body then
-        local px, py = player.body:getPosition()
-        local dx, dy = px-x, py-y
-        local dist = math.sqrt(dx*dx + dy*dy)
-        if dist ~= 0 then
-            dx = dx/dist
-            dy = dy/dist
-        end
-        Behavior.fire(unit, "BulletPike", dx, dy, player.z)
+        Shooting.shoot_targetUnit(unit, "BulletPike", player)
     end
 	local health = unit.health or 1
 	if health < 1 then

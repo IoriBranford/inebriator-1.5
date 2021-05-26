@@ -68,9 +68,9 @@ local function activateUnit(unit)
     if body then
         body:setFixedRotation(not unit.bodyrotation)
         body:setAngle(unit.bodyrotation and unit.rotation or 0)
-        local dx = unit.dx or 0
-        local dy = unit.dy or 0
-        body:setLinearVelocity(dx, dy)
+        local velx = unit.velx or 0
+        local vely = unit.vely or 0
+        body:setLinearVelocity(velx, vely)
 
         for i, fixture in pairs(body:getFixtures()) do
             fixture:destroy()

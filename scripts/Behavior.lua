@@ -1,5 +1,6 @@
 local Behavior = {}
 
+local Gameplay = require "Gameplay"
 local Units = require "Units"
 local Movement = require "Movement"
 local Audio = require "Audio"
@@ -24,19 +25,19 @@ function Behavior.thinkTimeout(unit)
 	end
 end
 
-function Behavior.fire(unit, bullettype, dirx, diry, z)
-	local x, y = unit.body:getPosition()
-	local bullet = Units.add_position(bullettype, x, y, z or unit.z)
-	local speed = bullet.speed or 1
-	local dx = dirx*speed
-	local dy = diry*speed
-	bullet.dx = dx
-	bullet.dy = dy
-	if dx ~= 0 or dy ~= 0 then
-		bullet.rotation = math.atan2(dy, dx)
-	end
-	return bullet
-end
+-- function Behavior.fire(unit, bullettype, dirx, diry, z)
+-- 	local x, y = unit.body:getPosition()
+-- 	local bullet = Units.add_position(bullettype, x, y, z or unit.z)
+-- 	local movespeed = bullet.movespeed or 1
+-- 	local velx = dirx*movespeed
+-- 	local vely = diry*movespeed
+-- 	bullet.velx = velx
+-- 	bullet.vely = vely + Gameplay.getCameraVelY()
+-- 	if velx ~= 0 or vely ~= 0 then
+-- 		bullet.rotation = math.atan2(vely, velx)
+-- 	end
+-- 	return bullet
+-- end
 
 function Behavior.walkPath(unit, onPointReached)
 	local path = unit.path and unit.layer.paths[unit.path.id]
@@ -48,9 +49,9 @@ function Behavior.walkPath(unit, onPointReached)
 		return
 	end
 	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
-	local speed = unit.speed or 1
+	local movespeed = unit.movespeed or 1
 	local x, y = unit.body:getPosition()
-	local newx, newy = Movement.moveTowardsPoint_Speed(x, y, destx, desty, speed)
+	local newx, newy = Movement.moveTowardsPoint_Speed(x, y, destx, desty, movespeed)
 	unit.body:setLinearVelocity(newx - x, newy - y)
 	if newx == destx and newy == desty then
 		pathindex = pathindex + 2
@@ -83,8 +84,8 @@ function Behavior.collideDefault(unit, other)
 		local hitspark = damage > 0 and "ImpactDamage" or "ImpactNoDamage"
 		local x1, y1 = unit.body:getPosition()
 		local x2, y2 = other.body:getPosition()
-		local dx, dy = x2-x1, y2-y1
-		local x, y = x1 + dx/4, y1 + dy/4
+		local distx, disty = x2-x1, y2-y1
+		local x, y = x1 + distx/4, y1 + disty/4
 		Units.add_position(hitspark, x, y, unit.z)
 	end
 end

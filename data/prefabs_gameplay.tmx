@@ -18,7 +18,7 @@
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="speed" type="float" value="2"/>
+    <property name="movespeed" type="float" value="2"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -35,7 +35,7 @@
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="speed" type="float" value="4"/>
+    <property name="movespeed" type="float" value="4"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -52,7 +52,7 @@
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
     <property name="module" value="Behavior"/>
-    <property name="speed" type="float" value="3"/>
+    <property name="movespeed" type="float" value="3"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
     <property name="think" value="thinkDefaultBullet"/>

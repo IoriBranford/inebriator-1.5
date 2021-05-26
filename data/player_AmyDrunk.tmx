@@ -15,7 +15,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="4"/>
     <property name="module" value="Player"/>
-    <property name="speed" type="float" value="3"/>
+    <property name="movespeed" type="float" value="3"/>
     <property name="team" value="player"/>
     <property name="think" value="thinkGameplay"/>
    </properties>
@@ -25,7 +25,7 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="dy" type="float" value="-16"/>
+    <property name="vely" type="float" value="-16"/>
     <property name="enemyteam" value="enemy"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="16"/>
@@ -42,7 +42,7 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="dy" type="float" value="-16"/>
+    <property name="vely" type="float" value="-16"/>
     <property name="enemyteam" value="enemy"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="17"/>
@@ -59,7 +59,7 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="dy" type="float" value="-16"/>
+    <property name="vely" type="float" value="-16"/>
     <property name="enemyteam" value="enemy"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="18"/>
@@ -76,7 +76,7 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="dy" type="float" value="-16"/>
+    <property name="vely" type="float" value="-16"/>
     <property name="enemyteam" value="enemy"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="19"/>
@@ -93,7 +93,7 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="dy" type="float" value="-16"/>
+    <property name="vely" type="float" value="-16"/>
     <property name="enemyteam" value="enemy"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="20"/>
@@ -110,7 +110,7 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
-    <property name="dy" type="float" value="-16"/>
+    <property name="vely" type="float" value="-16"/>
     <property name="enemyteam" value="enemy"/>
     <property name="hitdamageenemy" type="int" value="2"/>
     <property name="module" value="Behavior"/>

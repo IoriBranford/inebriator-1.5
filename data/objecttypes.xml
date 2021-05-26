@@ -16,17 +16,17 @@
   <property name="bodytileshape" type="string"/>
   <property name="bodytype" type="string"/>
   <property name="collide" type="string" default=""/>
-  <property name="dx" type="float" default="0"/>
-  <property name="dy" type="float" default="0"/>
   <property name="enemyteam" type="string"/>
   <property name="health" type="int" default="0"/>
   <property name="hitdamageenemy" type="int" default="0"/>
   <property name="hitdamageself" type="int" default="0"/>
   <property name="module" type="string"/>
+  <property name="movespeed" type="float" default="0"/>
   <property name="path" type="object" default="0"/>
-  <property name="speed" type="float" default="0"/>
   <property name="start" type="string"/>
   <property name="team" type="string"/>
   <property name="think" type="string"/>
+  <property name="velx" type="float" default="0"/>
+  <property name="vely" type="float" default="0"/>
  </objecttype>
 </objecttypes>

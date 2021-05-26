@@ -175,12 +175,12 @@ local function inputPlayerAttack()
             Audio.play("data/sounds/playershot.ogg")
             if love.keyboard.isDown("lshift") then
                 local bullet = Units.add_position("AmyShot0", x, y, player.z)
-                bullet.dy = bullet.dy + cameravy
+                bullet.vely = bullet.vely + cameravy
                 player.firetime = 3
             else
-                for dx = -8, 8, 16 do
-                    local bullet = Units.add_position("AmyShot0", x+dx, y, player.z)
-                    bullet.dy = bullet.dy + cameravy
+                for cameraoffcenter = -8, 8, 16 do
+                    local bullet = Units.add_position("AmyShot0", x+cameraoffcenter, y, player.z)
+                    bullet.vely = bullet.vely + cameravy
                 end
                 player.firetime = 6
             end
@@ -197,7 +197,7 @@ local function handlePlayerHit()
         Audio.play("data/sounds/selfdestruct.ogg")
         local x, y = player.body:getPosition()
         local explosion = Units.add_position("ExplosionPlayer", x, y, player.z)
-        explosion.dy = cameravy
+        explosion.vely = cameravy
         Units.remove(player)
         player = nil
         respawntime = 60
@@ -216,14 +216,14 @@ function Gameplay.fixedupdate()
         respawntime = respawntime - 1
         if respawntime <= 0 then
             if lives > 0 then
-                local dx = camerax0 - camerax
-                if dx == 0 then
+                local cameraoffcenter = camerax0 - camerax
+                if cameraoffcenter == 0 then
                     player = Units.add_id_position("AmyDrunk", "player", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
                     player.invincibletime = 180
                     lives = lives - 1
                     GameplayGui.setLives(lives)
                 else
-                    camerax = Movement.moveTowards(camerax, camerax0, 2 * dx / math.abs(dx))
+                    camerax = Movement.moveTowards(camerax, camerax0, 2 * cameraoffcenter / math.abs(cameraoffcenter))
                 end
             else
                 cameravy = 0
@@ -271,8 +271,8 @@ local function inputPlayerMove()
         vy = vy / 2
     end
 
-    local speed = player.speed
-    vx, vy = vx * speed, vy * speed + cameravy
+    local movespeed = player.movespeed
+    vx, vy = vx * movespeed, vy * movespeed + cameravy
     local x, y = player.body:getPosition()
     if x + vx < 0 then
         vx = -x
