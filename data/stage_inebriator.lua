@@ -5546,7 +5546,7 @@ return {
           gid = 700,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startDefeatedDrunkEnemy",
             ["think"] = "thinkDefeatedDrunkEnemy"
           }

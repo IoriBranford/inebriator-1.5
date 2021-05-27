@@ -1,4 +1,4 @@
-local Behavior = require "Behavior"
+local Unit = require "Unit"
 local Audio = require "Audio"
 local Units = require "Units"
 local Gameplay = require "Gameplay"
@@ -11,6 +11,6 @@ function Player.thinkGameplay(player)
     player.invincibletime = invincibletime
 end
 
-Player.collideDefault = Behavior.collideDefault
+Player.collideDefault = Unit.collideDefault
 
 return Player

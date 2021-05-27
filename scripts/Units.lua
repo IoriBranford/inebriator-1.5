@@ -1,7 +1,7 @@
 local Units = {}
 
 local Physics = require "Physics"
-local Behavior
+local Unit
 local Tiled = require "Tiled"
 
 local nextunitid
@@ -13,7 +13,7 @@ local scene
 local unitprefabs
 
 function Units.init(nextunitid0, scene0)
-    Behavior = Behavior or require "Behavior"
+    Unit = Unit or require "Unit"
     nextunitid = nextunitid0 or 1
     units = {}
     thinkingunits = {}
@@ -45,7 +45,7 @@ local function activateUnit(unit)
             thinkingunits[id] = unit
         end
         start = unit.start and module[unit.start]
-        unit.collide = unit.collide and module[unit.collide] or Behavior.collideDefault
+        unit.collide = unit.collide and module[unit.collide] or Unit.collideDefault
     end
 
     local tile = unit.tile

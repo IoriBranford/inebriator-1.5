@@ -1,4 +1,4 @@
-local Behavior = {}
+local Unit = {}
 
 local Gameplay = require "Gameplay"
 local Units = require "Units"
@@ -14,9 +14,9 @@ local function startTimeout(unit)
 	end
 	unit.time = time
 end
-Behavior.startTimeout = startTimeout
+Unit.startTimeout = startTimeout
 
-function Behavior.thinkTimeout(unit)
+function Unit.thinkTimeout(unit)
 	local time = unit.time or 60
 	time = time - 1
 	unit.time = time
@@ -25,7 +25,7 @@ function Behavior.thinkTimeout(unit)
 	end
 end
 
-function Behavior.walkPath(unit, onPointReached)
+function Unit.walkPath(unit, onPointReached)
 	local path = unit.path and unit.layer.paths[unit.path.id]
 	local polyline = path and path.polyline
 	local polygon = path and path.polygon
@@ -51,7 +51,7 @@ function Behavior.walkPath(unit, onPointReached)
 	unit.pathindex = pathindex
 end
 
-function Behavior.collideDefault(unit, other)
+function Unit.collideDefault(unit, other)
 	local health = unit.health
 	if not health then
 		return
@@ -74,23 +74,23 @@ function Behavior.collideDefault(unit, other)
 	Units.add_position(hitspark, x, y, unit.z)
 end
 
-function Behavior.startDefaultBullet(unit)
+function Unit.startDefaultBullet(unit)
 	startTimeout(unit)
 end
 
-function Behavior.thinkDefaultBullet(unit)
-	Behavior.thinkTimeout(unit)
+function Unit.thinkDefaultBullet(unit)
+	Unit.thinkTimeout(unit)
 	local health = unit.health or 0
 	if health < 1 then
 		Units.remove(unit)
 	end
 end
 
-function Behavior.startDefeatedDrunkEnemy(unit)
+function Unit.startDefeatedDrunkEnemy(unit)
 	unit.emote = Units.add_position("EmoteDrunk", unit.x, unit.y-16, unit.z+1)
 end
 
-function Behavior.thinkDefeatedDrunkEnemy(unit)
+function Unit.thinkDefeatedDrunkEnemy(unit)
 	local camerabottom = Gameplay.getCameraBottom()
 	if unit.y > camerabottom then
 		Units.remove(unit)
@@ -98,7 +98,7 @@ function Behavior.thinkDefeatedDrunkEnemy(unit)
 	end
 end
 
-function Behavior.doCollisions(unit)
+function Unit.doCollisions(unit)
 	local body = unit.body
 	local team = unit.team
 	if not body or not team then
@@ -139,4 +139,4 @@ function Behavior.doCollisions(unit)
 	end
 end
 
-return Behavior
+return Unit

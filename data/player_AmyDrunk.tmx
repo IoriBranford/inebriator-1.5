@@ -29,7 +29,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="16"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -46,7 +46,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="17"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -63,7 +63,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="18"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -80,7 +80,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="19"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -97,7 +97,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="20"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkDefaultBullet"/>
@@ -112,7 +112,7 @@
     <property name="bodytype" value="dynamic"/>
     <property name="enemyteam" value="enemy"/>
     <property name="hitdamageenemy" type="int" value="2"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkDefaultBullet"/>

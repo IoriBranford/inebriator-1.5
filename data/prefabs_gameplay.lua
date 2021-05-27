@@ -1354,7 +1354,7 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["movespeed"] = 2,
             ["start"] = "startDefaultBullet",
             ["team"] = "enemyshot",
@@ -1382,7 +1382,7 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["movespeed"] = 4,
             ["start"] = "startDefaultBullet",
             ["team"] = "enemyshot",
@@ -1410,7 +1410,7 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["movespeed"] = 3,
             ["start"] = "startDefaultBullet",
             ["team"] = "enemyshot",
@@ -1475,7 +1475,7 @@ return {
           gid = 65,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"
@@ -1498,7 +1498,7 @@ return {
             ["bodytype"] = "dynamic",
             ["enemyteam"] = "enemy",
             ["hitdamageenemy"] = 1,
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["team"] = "playershot",
             ["think"] = "thinkTimeout",
@@ -1518,7 +1518,7 @@ return {
           gid = 85,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"
@@ -1537,7 +1537,7 @@ return {
           gid = 91,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"
@@ -1556,7 +1556,7 @@ return {
           gid = 97,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"
@@ -1575,7 +1575,7 @@ return {
           gid = 103,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"
@@ -1594,7 +1594,7 @@ return {
           gid = 111,
           visible = true,
           properties = {
-            ["module"] = "Behavior",
+            ["module"] = "Unit",
             ["start"] = "startTimeout",
             ["think"] = "thinkTimeout",
             ["time"] = "animation"

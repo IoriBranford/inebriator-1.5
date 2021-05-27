@@ -146,7 +146,7 @@
  <objectgroup id="40" name="prefabs">
   <object id="266" name="DefeatedWineGuard" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
     <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>

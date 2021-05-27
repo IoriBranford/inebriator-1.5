@@ -18,7 +18,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="movespeed" type="float" value="2"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
@@ -35,7 +35,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="movespeed" type="float" value="4"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
@@ -52,7 +52,7 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="movespeed" type="float" value="3"/>
     <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
@@ -67,7 +67,7 @@
  <objectgroup id="3" name="effects">
   <object id="4" name="ExplosionLargeEnemy" type="Unit" gid="65" x="48" y="128" width="96" height="96">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>
@@ -79,7 +79,7 @@
     <property name="bodytype" value="dynamic"/>
     <property name="enemyteam" value="enemy"/>
     <property name="hitdamageenemy" type="int" value="1"/>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="team" value="playershot"/>
     <property name="think" value="thinkTimeout"/>
@@ -88,7 +88,7 @@
   </object>
   <object id="6" name="ExplosionEnemy" type="Unit" gid="85" x="16" y="56" width="32" height="32">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>
@@ -96,7 +96,7 @@
   </object>
   <object id="7" name="ExplosionFriendly" type="Unit" gid="91" x="56" y="56" width="32" height="32">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>
@@ -104,7 +104,7 @@
   </object>
   <object id="8" name="Teleportation" type="Unit" gid="97" x="96" y="56" width="32" height="32">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>
@@ -112,7 +112,7 @@
   </object>
   <object id="9" name="ImpactDamage" type="Unit" gid="103" x="136" y="48" width="16" height="16">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>
@@ -120,7 +120,7 @@
   </object>
   <object id="10" name="ImpactNoDamage" type="Unit" gid="111" x="168" y="48" width="16" height="16">
    <properties>
-    <property name="module" value="Behavior"/>
+    <property name="module" value="Unit"/>
     <property name="start" value="startTimeout"/>
     <property name="think" value="thinkTimeout"/>
     <property name="time" value="animation"/>

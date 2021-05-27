@@ -1,4 +1,4 @@
-local Behavior = require "Behavior"
+local Unit = require "Unit"
 local Shooting = require "Shooting"
 local Units = require "Units"
 local Audio = require "Audio"
@@ -25,13 +25,13 @@ function Enemies.walkPath_fireTimed(unit)
         Enemies.defeatStandard(unit)
         return
     end
-    Behavior.walkPath(unit)
+    Unit.walkPath(unit)
     local player = Units.get("player")
     if player and age % 60 == 0 then
         Shooting.shoot_targetUnit(unit, "BulletPike", player)
     end
 end
 
-Enemies.collideDefault = Behavior.collideDefault
+Enemies.collideDefault = Unit.collideDefault
 
 return Enemies
