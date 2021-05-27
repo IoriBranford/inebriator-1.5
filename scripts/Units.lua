@@ -7,7 +7,7 @@ local Tiled = require "Tiled"
 local nextunitid
 local units
 local thinkingunits
-local addedunits
+local newunitqueue
 local removedunits
 local scene
 local unitprefabs
@@ -17,7 +17,7 @@ function Units.init(nextunitid0, scene0)
     nextunitid = nextunitid0 or 1
     units = {}
     thinkingunits = {}
-    addedunits = {}
+    newunitqueue = {}
     removedunits = {}
     scene = scene0
     unitprefabs = {}
@@ -26,7 +26,7 @@ end
 function Units.clear()
     units = nil
     thinkingunits = nil
-    addedunits = nil
+    newunitqueue = nil
     removedunits = nil
     scene = nil
     unitprefabs = nil
@@ -116,7 +116,6 @@ local function activateUnit(unit)
     end
 
     units[id] = unit
-    addedunits[id] = nil
 
     if type(start) == "function" then
         start(unit)
@@ -139,7 +138,7 @@ function Units.add(base, id)
         nextunitid = nextunitid + 1
     end
 
-    if units[id] or addedunits[id] then
+    if units[id] then
         return nil, string.format("Duplicate unit id %s", id)
     end
 
@@ -150,7 +149,7 @@ function Units.add(base, id)
         end
     end
     unit.id = id
-    addedunits[unit.id] = unit
+    newunitqueue[#newunitqueue+1] = unit
     return unit
 end
 
@@ -190,8 +189,13 @@ function Units.remove(unit)
 end
 
 function Units.activateAdded()
-    for id, unit in pairs(addedunits) do
-        activateUnit(unit)
+    local i = 1
+    while i <= #newunitqueue do
+        activateUnit(newunitqueue[i])
+        i = i + 1
+    end
+    for i = #newunitqueue, 1, -1 do
+        newunitqueue[i] = nil
     end
 end
 
