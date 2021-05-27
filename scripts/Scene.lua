@@ -1,8 +1,27 @@
-local tablex = require "pl.tablex"
 local Tiled = require "Tiled"
 
 local SceneObject = {}
 SceneObject.__index = SceneObject
+
+function SceneObject.__lt(a, b)
+    local az = a.z or 0
+    local bz = b.z or 0
+    if az < bz then
+        return true
+    end
+    if az == bz then
+        local ay = a.y or 0
+        local by = b.y or 0
+        if ay < by then
+            return true
+        end
+        if ay == by then
+            local ax = a.x or 0
+            local bx = b.x or 0
+            return ax < bx
+        end
+    end
+end
 
 local function setObjectTile(sceneobject, tile, animated)
     sceneobject.drawable = tile.image
@@ -24,7 +43,10 @@ local Scene = {}
 Scene.__index = Scene
 
 function Scene.new()
-    return setmetatable({}, Scene)
+    local scene = {
+        byid = {}
+    }
+    return setmetatable(scene, Scene)
 end
 
 function Scene:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
@@ -48,7 +70,7 @@ function Scene:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.hidden = nil
     sceneobject.draw = nil
 
-    self[id] = sceneobject
+    self.byid[id] = sceneobject
     return sceneobject
 end
 
@@ -80,15 +102,15 @@ function Scene:addCustom(id, draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox,
 end
 
 function Scene:get(id)
-    return self[id]
+    return self.byid[id]
 end
 
 function Scene:remove(id)
-    self[id] = nil
+    self.byid[id] = nil
 end
 
 function Scene:updateFromBody(id, body, fixedfrac)
-    local sceneobject = self[id]
+    local sceneobject = self.byid[id]
     if sceneobject then
         local vx, vy = body:getLinearVelocity()
         local av = body:getAngularVelocity()
@@ -101,7 +123,7 @@ function Scene:updateFromBody(id, body, fixedfrac)
 end
 
 function Scene:updateAnimations(dsecs)
-    for id, sceneobject in pairs(self) do
+    for id, sceneobject in pairs(self.byid) do
         local animation = sceneobject.animation
         if animation then
             local aframe = sceneobject.animationframe
@@ -114,59 +136,49 @@ function Scene:updateAnimations(dsecs)
     end
 end
 
-local function sortScene(a, b)
-    local az = a.z or 0
-    local bz = b.z or 0
-    if az < bz then
-        return true
-    end
-    if az == bz then
-        local ay = a.y or 0
-        local by = b.y or 0
-        if ay < by then
-            return true
-        end
-        if ay == by then
-            local ax = a.x or 0
-            local bx = b.x or 0
-            return ax < bx
-        end
-    end
-end
-
-local sqrt2 = math.sqrt(2)
+-- local sqrt2 = math.sqrt(2)
 function Scene:draw(viewx, viewy, vieww, viewh)
-    local viewr = viewx + vieww
-    local viewb = viewy + viewh
-    for id, sceneobject in tablex.sortv(self, sortScene) do
+    -- local viewr = viewx + vieww
+    -- local viewb = viewy + viewh
+    local count = 0
+    for id, sceneobject in pairs(self.byid) do
         if not sceneobject.hidden then
-            local x = sceneobject.x
-            local y = sceneobject.y
-            local ox = sceneobject.ox
-            local oy = sceneobject.oy
-            local sx = sceneobject.sx
-            local sy = sceneobject.sy
-            local sxsqrt2 = sx*sqrt2
-            local sysqrt2 = sy*sqrt2
-            local l = x - sxsqrt2*ox
-            local t = y - sysqrt2*oy
-            local r = l + sxsqrt2*sceneobject.w
-            local b = t + sysqrt2*sceneobject.h
-            l, r = math.min(l, r), math.max(l, r)
-            t, b = math.min(t, b), math.max(t, b)
-            if r > viewx and viewr > l and b > viewy and viewb > t then
-                local quad = sceneobject.quad
-                if sceneobject.draw then
-                    sceneobject:draw()
-                elseif quad then
-                    love.graphics.draw(sceneobject.drawable, quad, math.floor(x), math.floor(y),
-                        sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
-                else
-                    love.graphics.draw(sceneobject.drawable, math.floor(x), math.floor(y),
-                        sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
-                end
-            end
+            count = count + 1
+            self[count] = sceneobject
         end
+    end
+    for i = #self, count+1, -1 do
+        self[i] = nil
+    end
+    table.sort(self)
+    for i = 1, #self do
+        local sceneobject = self[i]
+        local x = sceneobject.x
+        local y = sceneobject.y
+        local ox = sceneobject.ox
+        local oy = sceneobject.oy
+        local sx = sceneobject.sx
+        local sy = sceneobject.sy
+        -- local sxsqrt2 = sx*sqrt2
+        -- local sysqrt2 = sy*sqrt2
+        -- local l = x - sxsqrt2*ox
+        -- local t = y - sysqrt2*oy
+        -- local r = l + sxsqrt2*sceneobject.w
+        -- local b = t + sysqrt2*sceneobject.h
+        -- l, r = math.min(l, r), math.max(l, r)
+        -- t, b = math.min(t, b), math.max(t, b)
+        -- if r > viewx and viewr > l and b > viewy and viewb > t then
+            local quad = sceneobject.quad
+            if sceneobject.draw then
+                sceneobject:draw()
+            elseif quad then
+                love.graphics.draw(sceneobject.drawable, quad, math.floor(x), math.floor(y),
+                    sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
+            else
+                love.graphics.draw(sceneobject.drawable, math.floor(x), math.floor(y),
+                    sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
+            end
+        -- end
     end
 end
 
