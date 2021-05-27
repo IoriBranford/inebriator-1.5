@@ -86,6 +86,13 @@ function Behavior.thinkDefaultBullet(unit)
 	end
 end
 
+function Behavior.thinkDefeatedDrunkEnemy(unit)
+	local camerabottom = Gameplay.getCameraBottom()
+	if unit.y > camerabottom then
+		Units.remove(unit)
+	end
+end
+
 function Behavior.doCollisions(unit)
 	local body = unit.body
 	local team = unit.team

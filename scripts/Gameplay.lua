@@ -31,6 +31,10 @@ local canvas
 local viewx, viewy
 local worldscene
 
+function Gameplay.getCameraBottom()
+    return cameray + camerah
+end
+
 function Gameplay.getCameraVelY()
     return cameravy
 end
@@ -149,6 +153,10 @@ function Gameplay.loadStage(stagefile)
                 end
             end
         end
+    end
+    local prefabs = layers.prefabs
+    if prefabs then
+        Units.addPrefabs(prefabs)
     end
     local music = map.music
     if music then

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="40" nextobjectid="266">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="41" nextobjectid="267">
  <editorsettings>
   <export target="stage_inebriator.lua" format="lua"/>
  </editorsettings>
@@ -96,7 +96,7 @@
   </chunk>
   </data>
  </layer>
- <objectgroup id="39" name="enemy1">
+ <objectgroup id="39" name="spawn_enemy1">
   <object id="255" type="Path" x="96" y="1136">
    <polyline points="0,0 0,80 16,96 16,304"/>
   </object>
@@ -144,6 +144,14 @@
   </chunk>
   </data>
  </layer>
+ <objectgroup id="40" name="prefabs">
+  <object id="266" name="DefeatedWineGuard" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Behavior"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+ </objectgroup>
  <group id="38" name="oldobjects" visible="0">
   <objectgroup id="6" name="camera">
    <properties>

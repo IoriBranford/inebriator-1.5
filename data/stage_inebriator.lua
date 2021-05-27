@@ -8,8 +8,8 @@ return {
   height = 100,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 40,
-  nextobjectid = 266,
+  nextlayerid = 41,
+  nextobjectid = 267,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -4294,7 +4294,7 @@ return {
         {
           id = 72,
           properties = {
-            ["name"] = "kocaptain"
+            ["tilename"] = "kocaptain"
           },
           objectGroup = {
             type = "objectgroup",
@@ -4329,7 +4329,7 @@ return {
         {
           id = 75,
           properties = {
-            ["name"] = "koguard"
+            ["tilename"] = "koguard"
           },
           objectGroup = {
             type = "objectgroup",
@@ -4396,7 +4396,7 @@ return {
         {
           id = 81,
           properties = {
-            ["name"] = "konun"
+            ["tilename"] = "konun"
           },
           objectGroup = {
             type = "objectgroup",
@@ -4431,7 +4431,7 @@ return {
         {
           id = 84,
           properties = {
-            ["name"] = "kohighpriest"
+            ["tilename"] = "kohighpriest"
           },
           objectGroup = {
             type = "objectgroup",
@@ -4466,7 +4466,7 @@ return {
         {
           id = 87,
           properties = {
-            ["name"] = "kohighpriestess"
+            ["tilename"] = "kohighpriestess"
           },
           objectGroup = {
             type = "objectgroup",
@@ -5525,7 +5525,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 39,
-      name = "enemy1",
+      name = "spawn_enemy1",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -5587,6 +5587,7 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedWineGuard",
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
@@ -5610,6 +5611,7 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedWineGuard",
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
@@ -5632,6 +5634,7 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedWineGuard",
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
@@ -5711,6 +5714,38 @@ return {
         {
           x = 0, y = 80, width = 16, height = 16,
           data = "eJxjYBgcwBqIbYDYlspqRwoYbuHHx0icGC6gwYjwJ8yvGiToHykAAEt3BDE="
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 40,
+      name = "prefabs",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 266,
+          name = "DefeatedWineGuard",
+          type = "Unit",
+          shape = "rectangle",
+          x = 304,
+          y = 1248,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 700,
+          visible = true,
+          properties = {
+            ["module"] = "Behavior",
+            ["think"] = "thinkDefeatedDrunkEnemy"
+          }
         }
       }
     },

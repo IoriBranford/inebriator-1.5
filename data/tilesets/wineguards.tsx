@@ -41,7 +41,7 @@
  </tile>
  <tile id="72">
   <properties>
-   <property name="name" value="kocaptain"/>
+   <property name="tilename" value="kocaptain"/>
   </properties>
   <objectgroup draworder="index">
    <object id="1" type="CollisionEnemy" x="0" y="12" width="24" height="16">
@@ -53,7 +53,7 @@
  </tile>
  <tile id="75">
   <properties>
-   <property name="name" value="koguard"/>
+   <property name="tilename" value="koguard"/>
   </properties>
   <objectgroup draworder="index">
    <object id="1" type="CollisionEnemy" x="0" y="13" width="24" height="16">
@@ -74,7 +74,7 @@
  </tile>
  <tile id="81">
   <properties>
-   <property name="name" value="konun"/>
+   <property name="tilename" value="konun"/>
   </properties>
   <objectgroup draworder="index">
    <object id="2" type="CollisionEnemy" x="0" y="8" width="24" height="16">
@@ -86,7 +86,7 @@
  </tile>
  <tile id="84">
   <properties>
-   <property name="name" value="kohighpriest"/>
+   <property name="tilename" value="kohighpriest"/>
   </properties>
   <objectgroup draworder="index">
    <object id="1" type="CollisionEnemy" x="0" y="8" width="24" height="16">
@@ -98,7 +98,7 @@
  </tile>
  <tile id="87">
   <properties>
-   <property name="name" value="kohighpriestess"/>
+   <property name="tilename" value="kohighpriestess"/>
   </properties>
   <objectgroup draworder="index">
    <object id="1" type="CollisionEnemy" x="0" y="10" width="24" height="16">

@@ -9,6 +9,10 @@ function Enemies.defeatStandard(unit)
     Audio.play("data/sounds/knockout.ogg")
     Audio.play("data/sounds/boom1.ogg")
     Units.add_position("ExplosionEnemy", unit.x, unit.y, unit.z)
+    local defeatdrop = unit.defeatdrop
+    if defeatdrop then
+        Units.add_position(defeatdrop, unit.x, unit.y, unit.z)
+    end
     Units.remove(unit)
 end
 
