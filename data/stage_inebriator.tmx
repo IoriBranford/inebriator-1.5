@@ -23,8 +23,7 @@
  <tileset firstgid="625" source="tilesets/wineguards.tsx"/>
  <tileset firstgid="715" source="tilesets/winecivilians.tsx"/>
  <tileset firstgid="811" source="tilesets/wineitems.tsx"/>
- <tileset firstgid="819" source="tilesets/emotes.tsx"/>
- <tileset firstgid="851" source="tilesets/explosion_giant.tsx"/>
+ <tileset firstgid="819" source="tilesets/explosion_giant.tsx"/>
  <layer id="1" name="town04_f_low" width="18" height="100">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="16" height="16">
@@ -148,6 +147,7 @@
   <object id="266" name="DefeatedWineGuard" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
    <properties>
     <property name="module" value="Behavior"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
     <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>

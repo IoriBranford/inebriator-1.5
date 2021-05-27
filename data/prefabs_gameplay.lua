@@ -8,8 +8,8 @@ return {
   height = 20,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 4,
-  nextobjectid = 11,
+  nextlayerid = 5,
+  nextobjectid = 12,
   properties = {},
   tilesets = {
     {
@@ -1121,6 +1121,203 @@ return {
           }
         }
       }
+    },
+    {
+      name = "emotes",
+      firstgid = 119,
+      tilewidth = 24,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 8,
+      image = "tilesets/emotes.png",
+      imagewidth = 192,
+      imageheight = 64,
+      objectalignment = "topleft",
+      tileoffset = {
+        x = -12,
+        y = -16
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 24,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 32,
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["tilename"] = "drunk"
+          },
+          animation = {
+            {
+              tileid = 0,
+              duration = 125
+            },
+            {
+              tileid = 1,
+              duration = 125
+            },
+            {
+              tileid = 2,
+              duration = 125
+            },
+            {
+              tileid = 3,
+              duration = 125
+            }
+          }
+        },
+        {
+          id = 4,
+          properties = {
+            ["tilename"] = "heart"
+          },
+          animation = {
+            {
+              tileid = 4,
+              duration = 125
+            },
+            {
+              tileid = 5,
+              duration = 125
+            },
+            {
+              tileid = 6,
+              duration = 125
+            },
+            {
+              tileid = 7,
+              duration = 125
+            }
+          }
+        },
+        {
+          id = 8,
+          properties = {
+            ["tilename"] = "sweat"
+          },
+          animation = {
+            {
+              tileid = 8,
+              duration = 66
+            },
+            {
+              tileid = 9,
+              duration = 66
+            },
+            {
+              tileid = 10,
+              duration = 66
+            }
+          }
+        },
+        {
+          id = 11,
+          properties = {
+            ["tilename"] = "help"
+          },
+          animation = {
+            {
+              tileid = 11,
+              duration = 125
+            },
+            {
+              tileid = 12,
+              duration = 125
+            },
+            {
+              tileid = 13,
+              duration = 125
+            },
+            {
+              tileid = 14,
+              duration = 125
+            },
+            {
+              tileid = 15,
+              duration = 125
+            }
+          }
+        },
+        {
+          id = 16,
+          properties = {
+            ["tilename"] = "stun"
+          },
+          animation = {
+            {
+              tileid = 16,
+              duration = 125
+            },
+            {
+              tileid = 17,
+              duration = 125
+            },
+            {
+              tileid = 18,
+              duration = 125
+            },
+            {
+              tileid = 17,
+              duration = 125
+            }
+          }
+        },
+        {
+          id = 19,
+          properties = {
+            ["tilename"] = "hostile"
+          }
+        },
+        {
+          id = 20,
+          properties = {
+            ["tilename"] = "angry"
+          },
+          animation = {
+            {
+              tileid = 20,
+              duration = 125
+            },
+            {
+              tileid = 21,
+              duration = 125
+            },
+            {
+              tileid = 22,
+              duration = 125
+            }
+          }
+        },
+        {
+          id = 24,
+          properties = {
+            ["tilename"] = "..."
+          },
+          animation = {
+            {
+              tileid = 24,
+              duration = 250
+            },
+            {
+              tileid = 25,
+              duration = 250
+            },
+            {
+              tileid = 26,
+              duration = 250
+            },
+            {
+              tileid = 27,
+              duration = 250
+            }
+          }
+        }
+      }
     }
   },
   layers = {
@@ -1220,6 +1417,35 @@ return {
             ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "emotes",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 11,
+          name = "EmoteDrunk",
+          type = "Unit",
+          shape = "rectangle",
+          x = 96,
+          y = 16,
+          width = 24,
+          height = 16,
+          rotation = 0,
+          gid = 119,
+          visible = true,
+          properties = {}
         }
       }
     },

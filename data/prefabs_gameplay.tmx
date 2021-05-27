@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="4" nextobjectid="11">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="5" nextobjectid="12">
  <editorsettings>
   <export target="prefabs_gameplay.lua" format="lua"/>
  </editorsettings>
@@ -7,6 +7,7 @@
  <tileset firstgid="65" source="tilesets/sparks_huge.tsx"/>
  <tileset firstgid="85" source="tilesets/sparks_med.tsx"/>
  <tileset firstgid="103" source="tilesets/sparks_small.tsx"/>
+ <tileset firstgid="119" source="tilesets/emotes.tsx"/>
  <objectgroup id="2" name="bullets">
   <object id="1" name="BulletPike" type="Unit" gid="1" x="24" y="8" width="32" height="16">
    <properties>
@@ -59,6 +60,9 @@
     <property name="time" type="int" value="300"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup id="4" name="emotes">
+  <object id="11" name="EmoteDrunk" type="Unit" gid="119" x="96" y="16" width="24" height="16"/>
  </objectgroup>
  <objectgroup id="3" name="effects">
   <object id="4" name="ExplosionLargeEnemy" type="Unit" gid="65" x="48" y="128" width="96" height="96">

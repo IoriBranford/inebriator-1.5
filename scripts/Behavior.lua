@@ -10,7 +10,7 @@ local function startTimeout(unit)
 	if time == "animation" then
 		local tile = unit.tile
 		time = tile and tile.animation.duration or 1
-		time = time * 60
+		time = math.floor(time * 60)
 	end
 	unit.time = time
 end
@@ -86,10 +86,15 @@ function Behavior.thinkDefaultBullet(unit)
 	end
 end
 
+function Behavior.startDefeatedDrunkEnemy(unit)
+	unit.emote = Units.add_position("EmoteDrunk", unit.x, unit.y-16, unit.z+1)
+end
+
 function Behavior.thinkDefeatedDrunkEnemy(unit)
 	local camerabottom = Gameplay.getCameraBottom()
 	if unit.y > camerabottom then
 		Units.remove(unit)
+		Units.remove(unit.emote)
 	end
 end
 

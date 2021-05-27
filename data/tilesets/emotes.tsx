@@ -4,7 +4,7 @@
  <image source="emotes.png" width="192" height="64"/>
  <tile id="0">
   <properties>
-   <property name="name" value="drunk"/>
+   <property name="tilename" value="drunk"/>
   </properties>
   <animation>
    <frame tileid="0" duration="125"/>
@@ -15,7 +15,7 @@
  </tile>
  <tile id="4">
   <properties>
-   <property name="name" value="heart"/>
+   <property name="tilename" value="heart"/>
   </properties>
   <animation>
    <frame tileid="4" duration="125"/>
@@ -26,7 +26,7 @@
  </tile>
  <tile id="8">
   <properties>
-   <property name="name" value="sweat"/>
+   <property name="tilename" value="sweat"/>
   </properties>
   <animation>
    <frame tileid="8" duration="66"/>
@@ -36,7 +36,7 @@
  </tile>
  <tile id="11">
   <properties>
-   <property name="name" value="help"/>
+   <property name="tilename" value="help"/>
   </properties>
   <animation>
    <frame tileid="11" duration="125"/>
@@ -48,7 +48,7 @@
  </tile>
  <tile id="16">
   <properties>
-   <property name="name" value="stun"/>
+   <property name="tilename" value="stun"/>
   </properties>
   <animation>
    <frame tileid="16" duration="125"/>
@@ -59,12 +59,12 @@
  </tile>
  <tile id="19">
   <properties>
-   <property name="name" value="hostile"/>
+   <property name="tilename" value="hostile"/>
   </properties>
  </tile>
  <tile id="20">
   <properties>
-   <property name="name" value="angry"/>
+   <property name="tilename" value="angry"/>
   </properties>
   <animation>
    <frame tileid="20" duration="125"/>
@@ -74,7 +74,7 @@
  </tile>
  <tile id="24">
   <properties>
-   <property name="name" value="..."/>
+   <property name="tilename" value="..."/>
   </properties>
   <animation>
    <frame tileid="24" duration="250"/>
