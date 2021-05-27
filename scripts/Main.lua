@@ -10,6 +10,10 @@ local fixedrate = 60
 local fixedlimit = 1
 
 function love.load(args, unfilteredargs)
+    love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
+    if love.filesystem.getInfo("gamecontrollerdb.txt") then
+        love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
+    end
     Tiled.setFontPath("data/fonts/")
     love.graphics.setLineStyle("rough")
     local files = love.filesystem.getDirectoryItems("data/sounds/")
