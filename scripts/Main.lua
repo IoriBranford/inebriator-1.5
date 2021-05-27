@@ -8,6 +8,7 @@ local numfixed = 0
 local fixedfrac = 0
 local fixedrate = 60
 local fixedlimit = 1
+local variableupdate = true
 
 function love.load(args, unfilteredargs)
     love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
@@ -132,7 +133,11 @@ function love.run()
         end
 
         if love.update then
-            love.update(dsecs, fixedfrac)
+            if variableupdate then
+                love.update(dsecs, fixedfrac)
+            elseif numfixed > 0 then
+                love.update(numfixed / fixedrate, 0)
+            end
         end -- will pass 0 if love.timer is disabled
 
         if love.graphics and love.graphics.isActive() then
