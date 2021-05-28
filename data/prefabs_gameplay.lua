@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 5,
-  nextobjectid = 12,
+  nextobjectid = 13,
   properties = {},
   tilesets = {
     {
@@ -1445,7 +1445,25 @@ return {
           rotation = 0,
           gid = 119,
           visible = true,
-          properties = {}
+          properties = {
+            ["bodytype"] = "dynamic"
+          }
+        },
+        {
+          id = 12,
+          name = "EmoteSweat",
+          type = "Unit",
+          shape = "rectangle",
+          x = 136,
+          y = 16,
+          width = 24,
+          height = 16,
+          rotation = 0,
+          gid = 127,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic"
+          }
         }
       }
     },

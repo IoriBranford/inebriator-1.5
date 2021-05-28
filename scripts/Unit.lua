@@ -5,6 +5,14 @@ local Units = require "Units"
 local Movement = require "Movement"
 local Audio = require "Audio"
 
+local function matchVelocity(follower, leader)
+	local followerbody = follower.body
+	local leaderbody = leader.body
+	if followerbody and leaderbody then
+		followerbody:setLinearVelocity(leaderbody:getLinearVelocity())
+	end
+end
+
 local function startTimeout(unit)
 	local time = unit.time or 60
 	if time == "animation" then
@@ -38,17 +46,17 @@ function Unit.walkPath(unit, onPointReached)
 	local movespeed = unit.movespeed or 1
 	local x, y = unit.x, unit.y
 	local nextx, nexty = Movement.moveTowardsPoint_Speed(x, y, destx, desty, movespeed)
-	unit.nextx, unit.nexty = nextx, nexty
+	unit.body:setLinearVelocity(nextx-x, nexty-y)
 	if nextx == destx and nexty == desty then
 		pathindex = pathindex + 2
 		if polygon and pathindex > #points then
 			pathindex = 2
 		end
+		unit.pathindex = pathindex
 		if onPointReached then
 			onPointReached(unit)
 		end
 	end
-	unit.pathindex = pathindex
 end
 
 function Unit.collideDefault(unit, other)
@@ -95,6 +103,24 @@ function Unit.thinkDefeatedDrunkEnemy(unit)
 	if unit.y > camerabottom then
 		Units.remove(unit)
 		Units.remove(unit.emote)
+	end
+end
+
+function Unit.startFleeingCivilian(unit)
+	unit.emote = Units.add_position("EmoteSweat", unit.x, unit.y-16, unit.z+1)
+end
+
+function Unit.thinkFleeingCivilian(unit)
+	Unit.walkPath(unit)
+	local path = unit.path and unit.layer.paths[unit.path.id]
+	local points = path and path.polyline
+	local pathindex = unit.pathindex or 2
+	local emote = unit.emote
+	if points and pathindex > #points then
+		Units.remove(unit)
+		Units.remove(emote)
+	else
+		matchVelocity(emote, unit)
 	end
 end
 

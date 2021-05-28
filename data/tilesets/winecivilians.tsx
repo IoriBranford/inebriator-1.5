@@ -17,7 +17,7 @@
   <property name="rowstype" value="direction"/>
  </properties>
  <image source="winecivilians.png" width="576" height="128"/>
- <tile id="0" type="WineCivilian">
+ <tile id="0">
   <objectgroup draworder="index">
    <object id="2" type="CollisionCivilian" x="6" y="12" width="12" height="16">
     <properties>
@@ -26,105 +26,122 @@
    </object>
   </objectgroup>
   <animation>
-   <frame tileid="0" duration="125"/>
-   <frame tileid="1" duration="125"/>
-   <frame tileid="2" duration="125"/>
-   <frame tileid="1" duration="125"/>
+   <frame tileid="0" duration="100"/>
+   <frame tileid="1" duration="100"/>
+   <frame tileid="2" duration="100"/>
+   <frame tileid="1" duration="100"/>
   </animation>
  </tile>
- <tile id="1" type="WineCivilian"/>
- <tile id="2" type="WineCivilian"/>
- <tile id="3" type="WineCivilian"/>
- <tile id="4" type="WineCivilian"/>
- <tile id="5" type="WineCivilian"/>
- <tile id="6" type="WineCivilian"/>
- <tile id="7" type="WineCivilian"/>
- <tile id="8" type="WineCivilian"/>
- <tile id="9" type="WineCivilian"/>
- <tile id="10" type="WineCivilian"/>
- <tile id="11" type="WineCivilian"/>
- <tile id="12" type="WineCivilian"/>
- <tile id="13" type="WineCivilian"/>
- <tile id="14" type="WineCivilian"/>
- <tile id="15" type="WineCivilian"/>
- <tile id="16" type="WineCivilian"/>
- <tile id="17" type="WineCivilian"/>
- <tile id="18" type="WineCivilian"/>
- <tile id="19" type="WineCivilian"/>
- <tile id="20" type="WineCivilian"/>
- <tile id="21" type="WineCivilian"/>
- <tile id="22" type="WineCivilian"/>
- <tile id="23" type="WineCivilian"/>
- <tile id="24" type="WineCivilian"/>
- <tile id="25" type="WineCivilian"/>
- <tile id="26" type="WineCivilian"/>
- <tile id="27" type="WineCivilian"/>
- <tile id="28" type="WineCivilian"/>
- <tile id="29" type="WineCivilian"/>
- <tile id="30" type="WineCivilian"/>
- <tile id="31" type="WineCivilian"/>
- <tile id="32" type="WineCivilian"/>
- <tile id="33" type="WineCivilian"/>
- <tile id="34" type="WineCivilian"/>
- <tile id="35" type="WineCivilian"/>
- <tile id="36" type="WineCivilian"/>
- <tile id="37" type="WineCivilian"/>
- <tile id="38" type="WineCivilian"/>
- <tile id="39" type="WineCivilian"/>
- <tile id="40" type="WineCivilian"/>
- <tile id="41" type="WineCivilian"/>
- <tile id="42" type="WineCivilian"/>
- <tile id="43" type="WineCivilian"/>
- <tile id="44" type="WineCivilian"/>
- <tile id="45" type="WineCivilian"/>
- <tile id="46" type="WineCivilian"/>
- <tile id="47" type="WineCivilian"/>
- <tile id="48" type="WineCivilian"/>
- <tile id="49" type="WineCivilian"/>
- <tile id="50" type="WineCivilian"/>
- <tile id="51" type="WineCivilian"/>
- <tile id="52" type="WineCivilian"/>
- <tile id="53" type="WineCivilian"/>
- <tile id="54" type="WineCivilian"/>
- <tile id="55" type="WineCivilian"/>
- <tile id="56" type="WineCivilian"/>
- <tile id="57" type="WineCivilian"/>
- <tile id="58" type="WineCivilian"/>
- <tile id="59" type="WineCivilian"/>
- <tile id="60" type="WineCivilian"/>
- <tile id="61" type="WineCivilian"/>
- <tile id="62" type="WineCivilian"/>
- <tile id="63" type="WineCivilian"/>
- <tile id="64" type="WineCivilian"/>
- <tile id="65" type="WineCivilian"/>
- <tile id="66" type="WineCivilian"/>
- <tile id="67" type="WineCivilian"/>
- <tile id="68" type="WineCivilian"/>
- <tile id="69" type="WineCivilian"/>
- <tile id="70" type="WineCivilian"/>
- <tile id="71" type="WineCivilian"/>
- <tile id="72" type="WineCivilian"/>
- <tile id="73" type="WineCivilian"/>
- <tile id="74" type="WineCivilian"/>
- <tile id="75" type="WineCivilian"/>
- <tile id="76" type="WineCivilian"/>
- <tile id="77" type="WineCivilian"/>
- <tile id="78" type="WineCivilian"/>
- <tile id="79" type="WineCivilian"/>
- <tile id="80" type="WineCivilian"/>
- <tile id="81" type="WineCivilian"/>
- <tile id="82" type="WineCivilian"/>
- <tile id="83" type="WineCivilian"/>
- <tile id="84" type="WineCivilian"/>
- <tile id="85" type="WineCivilian"/>
- <tile id="86" type="WineCivilian"/>
- <tile id="87" type="WineCivilian"/>
- <tile id="88" type="WineCivilian"/>
- <tile id="89" type="WineCivilian"/>
- <tile id="90" type="WineCivilian"/>
- <tile id="91" type="WineCivilian"/>
- <tile id="92" type="WineCivilian"/>
- <tile id="93" type="WineCivilian"/>
- <tile id="94" type="WineCivilian"/>
- <tile id="95" type="WineCivilian"/>
+ <tile id="6">
+  <animation>
+   <frame tileid="6" duration="100"/>
+   <frame tileid="7" duration="100"/>
+   <frame tileid="8" duration="100"/>
+   <frame tileid="7" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="9">
+  <animation>
+   <frame tileid="9" duration="100"/>
+   <frame tileid="10" duration="100"/>
+   <frame tileid="11" duration="100"/>
+   <frame tileid="10" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="12">
+  <animation>
+   <frame tileid="12" duration="100"/>
+   <frame tileid="13" duration="100"/>
+   <frame tileid="14" duration="100"/>
+   <frame tileid="13" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="15">
+  <animation>
+   <frame tileid="15" duration="100"/>
+   <frame tileid="16" duration="100"/>
+   <frame tileid="17" duration="100"/>
+   <frame tileid="16" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="18">
+  <animation>
+   <frame tileid="18" duration="100"/>
+   <frame tileid="19" duration="100"/>
+   <frame tileid="20" duration="100"/>
+   <frame tileid="19" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="21">
+  <animation>
+   <frame tileid="21" duration="100"/>
+   <frame tileid="22" duration="100"/>
+   <frame tileid="23" duration="100"/>
+   <frame tileid="22" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="54">
+  <animation>
+   <frame tileid="54" duration="100"/>
+   <frame tileid="55" duration="100"/>
+   <frame tileid="56" duration="100"/>
+   <frame tileid="55" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="57">
+  <animation>
+   <frame tileid="57" duration="100"/>
+   <frame tileid="58" duration="100"/>
+   <frame tileid="59" duration="100"/>
+   <frame tileid="58" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="60">
+  <animation>
+   <frame tileid="60" duration="100"/>
+   <frame tileid="61" duration="100"/>
+   <frame tileid="62" duration="100"/>
+   <frame tileid="61" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="63">
+  <animation>
+   <frame tileid="63" duration="100"/>
+   <frame tileid="64" duration="100"/>
+   <frame tileid="65" duration="100"/>
+   <frame tileid="64" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="66">
+  <animation>
+   <frame tileid="66" duration="100"/>
+   <frame tileid="67" duration="100"/>
+   <frame tileid="68" duration="100"/>
+   <frame tileid="67" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="69">
+  <animation>
+   <frame tileid="69" duration="100"/>
+   <frame tileid="70" duration="100"/>
+   <frame tileid="71" duration="100"/>
+   <frame tileid="70" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="72">
+  <animation>
+   <frame tileid="72" duration="100"/>
+   <frame tileid="73" duration="100"/>
+   <frame tileid="74" duration="100"/>
+   <frame tileid="73" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="75">
+  <animation>
+   <frame tileid="75" duration="100"/>
+   <frame tileid="76" duration="100"/>
+   <frame tileid="77" duration="100"/>
+   <frame tileid="76" duration="100"/>
+  </animation>
+ </tile>
 </tileset>

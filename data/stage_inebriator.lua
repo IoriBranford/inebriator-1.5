@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 41,
-  nextobjectid = 267,
+  nextobjectid = 276,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -4541,7 +4541,6 @@ return {
       tiles = {
         {
           id = 0,
-          type = "WineCivilian",
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4574,401 +4573,315 @@ return {
           animation = {
             {
               tileid = 0,
-              duration = 125
+              duration = 100
             },
             {
               tileid = 1,
-              duration = 125
+              duration = 100
             },
             {
               tileid = 2,
-              duration = 125
+              duration = 100
             },
             {
               tileid = 1,
-              duration = 125
+              duration = 100
             }
           }
         },
         {
-          id = 1,
-          type = "WineCivilian"
-        },
-        {
-          id = 2,
-          type = "WineCivilian"
-        },
-        {
-          id = 3,
-          type = "WineCivilian"
-        },
-        {
-          id = 4,
-          type = "WineCivilian"
-        },
-        {
-          id = 5,
-          type = "WineCivilian"
-        },
-        {
           id = 6,
-          type = "WineCivilian"
-        },
-        {
-          id = 7,
-          type = "WineCivilian"
-        },
-        {
-          id = 8,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 6,
+              duration = 100
+            },
+            {
+              tileid = 7,
+              duration = 100
+            },
+            {
+              tileid = 8,
+              duration = 100
+            },
+            {
+              tileid = 7,
+              duration = 100
+            }
+          }
         },
         {
           id = 9,
-          type = "WineCivilian"
-        },
-        {
-          id = 10,
-          type = "WineCivilian"
-        },
-        {
-          id = 11,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 9,
+              duration = 100
+            },
+            {
+              tileid = 10,
+              duration = 100
+            },
+            {
+              tileid = 11,
+              duration = 100
+            },
+            {
+              tileid = 10,
+              duration = 100
+            }
+          }
         },
         {
           id = 12,
-          type = "WineCivilian"
-        },
-        {
-          id = 13,
-          type = "WineCivilian"
-        },
-        {
-          id = 14,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 12,
+              duration = 100
+            },
+            {
+              tileid = 13,
+              duration = 100
+            },
+            {
+              tileid = 14,
+              duration = 100
+            },
+            {
+              tileid = 13,
+              duration = 100
+            }
+          }
         },
         {
           id = 15,
-          type = "WineCivilian"
-        },
-        {
-          id = 16,
-          type = "WineCivilian"
-        },
-        {
-          id = 17,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 15,
+              duration = 100
+            },
+            {
+              tileid = 16,
+              duration = 100
+            },
+            {
+              tileid = 17,
+              duration = 100
+            },
+            {
+              tileid = 16,
+              duration = 100
+            }
+          }
         },
         {
           id = 18,
-          type = "WineCivilian"
-        },
-        {
-          id = 19,
-          type = "WineCivilian"
-        },
-        {
-          id = 20,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 18,
+              duration = 100
+            },
+            {
+              tileid = 19,
+              duration = 100
+            },
+            {
+              tileid = 20,
+              duration = 100
+            },
+            {
+              tileid = 19,
+              duration = 100
+            }
+          }
         },
         {
           id = 21,
-          type = "WineCivilian"
-        },
-        {
-          id = 22,
-          type = "WineCivilian"
-        },
-        {
-          id = 23,
-          type = "WineCivilian"
-        },
-        {
-          id = 24,
-          type = "WineCivilian"
-        },
-        {
-          id = 25,
-          type = "WineCivilian"
-        },
-        {
-          id = 26,
-          type = "WineCivilian"
-        },
-        {
-          id = 27,
-          type = "WineCivilian"
-        },
-        {
-          id = 28,
-          type = "WineCivilian"
-        },
-        {
-          id = 29,
-          type = "WineCivilian"
-        },
-        {
-          id = 30,
-          type = "WineCivilian"
-        },
-        {
-          id = 31,
-          type = "WineCivilian"
-        },
-        {
-          id = 32,
-          type = "WineCivilian"
-        },
-        {
-          id = 33,
-          type = "WineCivilian"
-        },
-        {
-          id = 34,
-          type = "WineCivilian"
-        },
-        {
-          id = 35,
-          type = "WineCivilian"
-        },
-        {
-          id = 36,
-          type = "WineCivilian"
-        },
-        {
-          id = 37,
-          type = "WineCivilian"
-        },
-        {
-          id = 38,
-          type = "WineCivilian"
-        },
-        {
-          id = 39,
-          type = "WineCivilian"
-        },
-        {
-          id = 40,
-          type = "WineCivilian"
-        },
-        {
-          id = 41,
-          type = "WineCivilian"
-        },
-        {
-          id = 42,
-          type = "WineCivilian"
-        },
-        {
-          id = 43,
-          type = "WineCivilian"
-        },
-        {
-          id = 44,
-          type = "WineCivilian"
-        },
-        {
-          id = 45,
-          type = "WineCivilian"
-        },
-        {
-          id = 46,
-          type = "WineCivilian"
-        },
-        {
-          id = 47,
-          type = "WineCivilian"
-        },
-        {
-          id = 48,
-          type = "WineCivilian"
-        },
-        {
-          id = 49,
-          type = "WineCivilian"
-        },
-        {
-          id = 50,
-          type = "WineCivilian"
-        },
-        {
-          id = 51,
-          type = "WineCivilian"
-        },
-        {
-          id = 52,
-          type = "WineCivilian"
-        },
-        {
-          id = 53,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 21,
+              duration = 100
+            },
+            {
+              tileid = 22,
+              duration = 100
+            },
+            {
+              tileid = 23,
+              duration = 100
+            },
+            {
+              tileid = 22,
+              duration = 100
+            }
+          }
         },
         {
           id = 54,
-          type = "WineCivilian"
-        },
-        {
-          id = 55,
-          type = "WineCivilian"
-        },
-        {
-          id = 56,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 54,
+              duration = 100
+            },
+            {
+              tileid = 55,
+              duration = 100
+            },
+            {
+              tileid = 56,
+              duration = 100
+            },
+            {
+              tileid = 55,
+              duration = 100
+            }
+          }
         },
         {
           id = 57,
-          type = "WineCivilian"
-        },
-        {
-          id = 58,
-          type = "WineCivilian"
-        },
-        {
-          id = 59,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 57,
+              duration = 100
+            },
+            {
+              tileid = 58,
+              duration = 100
+            },
+            {
+              tileid = 59,
+              duration = 100
+            },
+            {
+              tileid = 58,
+              duration = 100
+            }
+          }
         },
         {
           id = 60,
-          type = "WineCivilian"
-        },
-        {
-          id = 61,
-          type = "WineCivilian"
-        },
-        {
-          id = 62,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 60,
+              duration = 100
+            },
+            {
+              tileid = 61,
+              duration = 100
+            },
+            {
+              tileid = 62,
+              duration = 100
+            },
+            {
+              tileid = 61,
+              duration = 100
+            }
+          }
         },
         {
           id = 63,
-          type = "WineCivilian"
-        },
-        {
-          id = 64,
-          type = "WineCivilian"
-        },
-        {
-          id = 65,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 63,
+              duration = 100
+            },
+            {
+              tileid = 64,
+              duration = 100
+            },
+            {
+              tileid = 65,
+              duration = 100
+            },
+            {
+              tileid = 64,
+              duration = 100
+            }
+          }
         },
         {
           id = 66,
-          type = "WineCivilian"
-        },
-        {
-          id = 67,
-          type = "WineCivilian"
-        },
-        {
-          id = 68,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 66,
+              duration = 100
+            },
+            {
+              tileid = 67,
+              duration = 100
+            },
+            {
+              tileid = 68,
+              duration = 100
+            },
+            {
+              tileid = 67,
+              duration = 100
+            }
+          }
         },
         {
           id = 69,
-          type = "WineCivilian"
-        },
-        {
-          id = 70,
-          type = "WineCivilian"
-        },
-        {
-          id = 71,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 69,
+              duration = 100
+            },
+            {
+              tileid = 70,
+              duration = 100
+            },
+            {
+              tileid = 71,
+              duration = 100
+            },
+            {
+              tileid = 70,
+              duration = 100
+            }
+          }
         },
         {
           id = 72,
-          type = "WineCivilian"
-        },
-        {
-          id = 73,
-          type = "WineCivilian"
-        },
-        {
-          id = 74,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 72,
+              duration = 100
+            },
+            {
+              tileid = 73,
+              duration = 100
+            },
+            {
+              tileid = 74,
+              duration = 100
+            },
+            {
+              tileid = 73,
+              duration = 100
+            }
+          }
         },
         {
           id = 75,
-          type = "WineCivilian"
-        },
-        {
-          id = 76,
-          type = "WineCivilian"
-        },
-        {
-          id = 77,
-          type = "WineCivilian"
-        },
-        {
-          id = 78,
-          type = "WineCivilian"
-        },
-        {
-          id = 79,
-          type = "WineCivilian"
-        },
-        {
-          id = 80,
-          type = "WineCivilian"
-        },
-        {
-          id = 81,
-          type = "WineCivilian"
-        },
-        {
-          id = 82,
-          type = "WineCivilian"
-        },
-        {
-          id = 83,
-          type = "WineCivilian"
-        },
-        {
-          id = 84,
-          type = "WineCivilian"
-        },
-        {
-          id = 85,
-          type = "WineCivilian"
-        },
-        {
-          id = 86,
-          type = "WineCivilian"
-        },
-        {
-          id = 87,
-          type = "WineCivilian"
-        },
-        {
-          id = 88,
-          type = "WineCivilian"
-        },
-        {
-          id = 89,
-          type = "WineCivilian"
-        },
-        {
-          id = 90,
-          type = "WineCivilian"
-        },
-        {
-          id = 91,
-          type = "WineCivilian"
-        },
-        {
-          id = 92,
-          type = "WineCivilian"
-        },
-        {
-          id = 93,
-          type = "WineCivilian"
-        },
-        {
-          id = 94,
-          type = "WineCivilian"
-        },
-        {
-          id = 95,
-          type = "WineCivilian"
+          animation = {
+            {
+              tileid = 75,
+              duration = 100
+            },
+            {
+              tileid = 76,
+              duration = 100
+            },
+            {
+              tileid = 77,
+              duration = 100
+            },
+            {
+              tileid = 76,
+              duration = 100
+            }
+          }
         }
       }
     },
@@ -5321,6 +5234,641 @@ return {
         {
           x = 0, y = 80, width = 16, height = 16,
           data = "eJxjYBgFo2AUoAMnRuLEhjoAAHgyAIc="
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 32,
+      name = "reception",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {
+        ["script"] = "PathGraph"
+      },
+      objects = {
+        {
+          id = 25,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 128,
+          y = 1456,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 787,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 274 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 26,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 160,
+          y = 1456,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 790,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 275 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 29,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 88,
+          y = 1368,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 769,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 269 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 30,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 80,
+          y = 1384,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 772,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 269 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 31,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 176,
+          y = 1288,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 727,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 271 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 32,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 184,
+          y = 1448,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 727,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 273 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 33,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 176,
+          y = 1368,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 730,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 272 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 34,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 104,
+          y = 1288,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 775,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 268 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 35,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 192,
+          y = 1384,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 736,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 272 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 36,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 200,
+          y = 1432,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 733,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 273 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 37,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 104,
+          y = 1376,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 778,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 269 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 38,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 216,
+          y = 1376,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 724,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 272 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 39,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 80,
+          y = 1288,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 784,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 268 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 40,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 96,
+          y = 1432,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 778,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 270 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 41,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 88,
+          y = 1456,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 772,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 270 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 42,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 184,
+          y = 1304,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 730,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 271 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 43,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 176,
+          y = 1432,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 724,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 273 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 44,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 112,
+          y = 1440,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 784,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 270 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 45,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 200,
+          y = 1288,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 736,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 271 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 46,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 72,
+          y = 1440,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 775,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 270 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 47,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 200,
+          y = 1360,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 721,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 272 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 48,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 88,
+          y = 1304,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 781,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic",
+            ["module"] = "Unit",
+            ["movespeed"] = 4,
+            ["path"] = { id = 268 },
+            ["start"] = "startFleeingCivilian",
+            ["think"] = "thinkFleeingCivilian"
+          }
+        },
+        {
+          id = 267,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -16,
+          y = 1280,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 16, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 268,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 16,
+          y = 1296,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -32, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 269,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 16,
+          y = 1376,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -32, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 270,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 16,
+          y = 1456,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -32, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 271,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 336,
+          y = 1296,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = -64, y = 0 },
+            { x = -32, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 272,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 336,
+          y = 1376,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = -64, y = 0 },
+            { x = -32, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 273,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 336,
+          y = 1456,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = -64, y = 0 },
+            { x = -32, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 274,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 128,
+          y = 1456,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = -272 }
+          },
+          properties = {}
+        },
+        {
+          id = 275,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 160,
+          y = 1456,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = -272 }
+          },
+          properties = {}
         }
       }
     },
@@ -9206,412 +9754,6 @@ return {
               gid = 10,
               visible = true,
               properties = {}
-            }
-          }
-        },
-        {
-          type = "objectgroup",
-          draworder = "topdown",
-          id = 32,
-          name = "reception",
-          visible = true,
-          opacity = 1,
-          offsetx = 0,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          properties = {
-            ["script"] = "PathGraph"
-          },
-          objects = {
-            {
-              id = 25,
-              name = "receptionist",
-              type = "",
-              shape = "rectangle",
-              x = 128,
-              y = 1456,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 739,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 26,
-              name = "receptionist",
-              type = "",
-              shape = "rectangle",
-              x = 160,
-              y = 1456,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 742,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 27,
-              name = "trigger",
-              type = "Trigger",
-              shape = "rectangle",
-              x = 128,
-              y = 1304,
-              width = 32,
-              height = 168,
-              rotation = 0,
-              visible = true,
-              properties = {
-                ["activateobjectslayer"] = "ground"
-              }
-            },
-            {
-              id = 29,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 72,
-              y = 1368,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 721,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 30,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 64,
-              y = 1384,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 724,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 31,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 192,
-              y = 1296,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 751,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 32,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 200,
-              y = 1456,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 799,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 33,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 192,
-              y = 1368,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 730,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 34,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 88,
-              y = 1288,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 775,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 35,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 208,
-              y = 1384,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 808,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 36,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 216,
-              y = 1440,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 757,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 37,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 88,
-              y = 1376,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 778,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 38,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 232,
-              y = 1376,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 772,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 39,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 64,
-              y = 1288,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 736,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 40,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 80,
-              y = 1432,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 754,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 41,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 72,
-              y = 1456,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 796,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 42,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 200,
-              y = 1312,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 802,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 43,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 192,
-              y = 1440,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 748,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 44,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 96,
-              y = 1440,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 784,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 45,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 216,
-              y = 1296,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 760,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 46,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 56,
-              y = 1440,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 727,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 47,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 216,
-              y = 1360,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 769,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
-            },
-            {
-              id = 48,
-              name = "",
-              type = "",
-              shape = "rectangle",
-              x = 72,
-              y = 1304,
-              width = 24,
-              height = 32,
-              rotation = 0,
-              gid = 805,
-              visible = true,
-              properties = {
-                ["pathid"] = "fleepaths",
-                ["pathmode"] = "relative"
-              }
             }
           }
         },
