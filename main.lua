@@ -1,2 +1,2 @@
-love.filesystem.setRequirePath("scripts/?.lua;scripts/?/init.lua;"..love.filesystem.getRequirePath())
+love.filesystem.setRequirePath("scripts/?.lua;scripts/?/init.lua;libraries/?.lua;libraries/?/init.lua;"..love.filesystem.getRequirePath())
 require "Main"

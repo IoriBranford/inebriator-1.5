@@ -5,5 +5,9 @@
 		"?.lua",
 		"?/init.lua",
 		"?/?.lua",
+	],
+	"Lua.workspace.ignoreDir": [
+		".vscode",
+		"libraries"
 	]
 }
