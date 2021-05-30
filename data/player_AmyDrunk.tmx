@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="3" nextobjectid="8">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="3" nextobjectid="9">
  <editorsettings>
   <export target="player_AmyDrunk.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="tilesets/Amy.tsx"/>
  <tileset firstgid="29" source="tilesets/demonshots.tsx"/>
  <tileset firstgid="37" source="tilesets/winebomb.tsx"/>
+ <tileset firstgid="39" source="tilesets/playerhitbox.tsx"/>
  <objectgroup id="2" name="prefabs">
   <object id="1" name="AmyDrunk" type="Unit" gid="1" x="32" y="32" width="64" height="64">
    <properties>
@@ -16,6 +17,7 @@
     <property name="hitdamageenemy" type="int" value="4"/>
     <property name="module" value="Player"/>
     <property name="movespeed" type="float" value="3"/>
+    <property name="start" value="startGameplay"/>
     <property name="team" value="player"/>
     <property name="think" value="thinkGameplay"/>
    </properties>
@@ -118,6 +120,11 @@
     <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
+   </properties>
+  </object>
+  <object id="8" name="PlayerHitbox" type="Unit" gid="39" x="88" y="8" width="8" height="8">
+   <properties>
+    <property name="bodytype" value="dynamic"/>
    </properties>
   </object>
  </objectgroup>

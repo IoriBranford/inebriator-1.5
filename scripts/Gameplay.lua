@@ -8,6 +8,7 @@ local Audio = require "Audio"
 local Gui = require "Gui"
 local GameplayGui = require "GameplayGui"
 local Movement = require "Movement"
+local Player
 local Units
 local Trigger
 
@@ -42,6 +43,7 @@ end
 function Gameplay.loadphase(stagefile)
     Units = Units or require "Units"
     Trigger = Trigger or require "Trigger"
+    Player = Player or require "Player"
     timeline = Timeline.new()
 
     Physics.init()
@@ -272,12 +274,11 @@ local function inputPlayerMove()
     if love.keyboard.isDown("down") then
         vy = vy + 1
     end
-    if love.keyboard.isDown("lshift") then
-        vx = vx / 2
-        vy = vy / 2
-    end
 
     local movespeed = player.movespeed
+    if love.keyboard.isDown("lshift") then
+        movespeed = movespeed - 1
+    end
     vx, vy = vx * movespeed, vy * movespeed + cameravy
     local x, y = player.body:getPosition()
     if x + vx < 0 then
@@ -290,7 +291,7 @@ local function inputPlayerMove()
     elseif y + vy > cameray + camerah then
         vy = cameray + camerah - y
     end
-    playerbody:setLinearVelocity(vx, vy)
+    Player.setVelocity(player, vx, vy)
 end
 
 function Gameplay.update(dsecs, fixedfrac)

@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 3,
-  nextobjectid = 8,
+  nextobjectid = 9,
   properties = {},
   tilesets = {
     {
@@ -828,6 +828,32 @@ return {
           }
         }
       }
+    },
+    {
+      name = "playerhitbox",
+      firstgid = 39,
+      tilewidth = 8,
+      tileheight = 8,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "tilesets/playerhitbox.png",
+      imagewidth = 8,
+      imageheight = 8,
+      objectalignment = "topleft",
+      tileoffset = {
+        x = -4,
+        y = -4
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 8,
+        height = 8
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -864,6 +890,7 @@ return {
             ["hitdamageenemy"] = 4,
             ["module"] = "Player",
             ["movespeed"] = 3,
+            ["start"] = "startGameplay",
             ["team"] = "player",
             ["think"] = "thinkGameplay"
           }
@@ -884,7 +911,6 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["vely"] = -16,
             ["enemyteam"] = "enemy",
             ["health"] = 1,
             ["hitdamageenemy"] = 16,
@@ -893,7 +919,8 @@ return {
             ["start"] = "startDefaultBullet",
             ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
-            ["time"] = 60
+            ["time"] = 60,
+            ["vely"] = -16
           }
         },
         {
@@ -912,7 +939,6 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["vely"] = -16,
             ["enemyteam"] = "enemy",
             ["health"] = 1,
             ["hitdamageenemy"] = 17,
@@ -921,7 +947,8 @@ return {
             ["start"] = "startDefaultBullet",
             ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
-            ["time"] = 60
+            ["time"] = 60,
+            ["vely"] = -16
           }
         },
         {
@@ -940,7 +967,6 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["vely"] = -16,
             ["enemyteam"] = "enemy",
             ["health"] = 1,
             ["hitdamageenemy"] = 18,
@@ -949,7 +975,8 @@ return {
             ["start"] = "startDefaultBullet",
             ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
-            ["time"] = 60
+            ["time"] = 60,
+            ["vely"] = -16
           }
         },
         {
@@ -968,7 +995,6 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["vely"] = -16,
             ["enemyteam"] = "enemy",
             ["health"] = 1,
             ["hitdamageenemy"] = 19,
@@ -977,7 +1003,8 @@ return {
             ["start"] = "startDefaultBullet",
             ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
-            ["time"] = 60
+            ["time"] = 60,
+            ["vely"] = -16
           }
         },
         {
@@ -996,7 +1023,6 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["vely"] = -16,
             ["enemyteam"] = "enemy",
             ["health"] = 1,
             ["hitdamageenemy"] = 20,
@@ -1005,7 +1031,8 @@ return {
             ["start"] = "startDefaultBullet",
             ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
-            ["time"] = 60
+            ["time"] = 60,
+            ["vely"] = -16
           }
         },
         {
@@ -1024,14 +1051,30 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["vely"] = -16,
             ["enemyteam"] = "enemy",
             ["hitdamageenemy"] = 2,
             ["module"] = "Unit",
             ["start"] = "startDefaultBullet",
             ["team"] = "playershot",
             ["think"] = "thinkDefaultBullet",
-            ["time"] = 60
+            ["time"] = 60,
+            ["vely"] = -16
+          }
+        },
+        {
+          id = 8,
+          name = "PlayerHitbox",
+          type = "Unit",
+          shape = "rectangle",
+          x = 88,
+          y = 8,
+          width = 8,
+          height = 8,
+          rotation = 0,
+          gid = 39,
+          visible = true,
+          properties = {
+            ["bodytype"] = "dynamic"
           }
         }
       }
