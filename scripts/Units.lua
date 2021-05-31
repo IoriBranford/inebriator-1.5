@@ -56,7 +56,7 @@ local function activateUnit(unit)
         unit.tile = tile
     end
     if tile then
-        scene:addAnimatedTile(id, tile, x, y, z, unit.rotation, unit.scalex, unit.scaley)
+        unit.sprite = scene:addAnimatedTile(id, tile, x, y, z, unit.rotation, unit.scalex, unit.scaley)
     end
 
     local body = unit.body
@@ -142,7 +142,35 @@ function Units.add(base, id)
         return nil, string.format("Duplicate unit id %s", id)
     end
 
-    local unit = {}
+    local unit = {
+        id = id,
+
+        width = 0,
+        height = 0,
+        x = 0,
+        y = 0,
+        z = 0,
+        rotation = 0,
+
+        velx = 0,
+        vely = 0,
+        avel = 0,
+
+        tile = nil,
+        sprite = nil,
+        spritebatch = nil,
+        spritebatchindex = nil,
+
+        body = nil,
+        bodytype = nil,
+        bodytileshape = nil,
+        bodyrotation = nil,
+
+        module = nil,
+        start = nil,
+        think = nil,
+    }
+
     if base then
         for k, v in pairs(base) do
             unit[k] = v
@@ -229,6 +257,33 @@ function Units.updateFromBody(id, body)
     end
 end
 
+function Units.updatePositions()
+    for id, unit in pairs(units) do
+        local body = unit.body
+        if body then
+            unit.velx, unit.vely = body:getLinearVelocity()
+            unit.avel = body:getAngularVelocity()
+            unit.x, unit.y = body:getPosition()
+            unit.rotation = body:getAngle()
+        else
+            unit.x = unit.x + unit.velx
+            unit.y = unit.y + unit.vely
+            unit.rotation = unit.rotation + unit.avel
+        end
+    end
+end
+
+function Units.updateBody(id, body)
+    local unit = units[id]
+    if unit then
+        assert(unit.body == body, "unit.body ~= body")
+        body:setLinearVelocity(unit.velx, unit.vely)
+        body:setAngularVelocity(unit.avel)
+        body:setPosition(unit.x, unit.y)
+        body:setAngle(unit.rotation)
+    end
+end
+
 function Units.onCollisionEvent(event, f1, f2, contact)
     local id1, id2 = f1:getUserData(), f2:getUserData()
     local u1, u2 = units[id1], units[id2]
@@ -268,6 +323,10 @@ function Units.collide()
             end
 		end
 	end
+end
+
+function Units.iterate()
+    return pairs(units)
 end
 
 return Units

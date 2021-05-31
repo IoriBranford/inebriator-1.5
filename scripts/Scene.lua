@@ -109,6 +109,19 @@ function Scene:remove(id)
     self.byid[id] = nil
 end
 
+function Scene:updateFromUnit(id, unit, fixedfrac)
+    local sceneobject = self.byid[id]
+    if sceneobject then
+        local vx, vy = unit.velx, unit.vely
+        local av = unit.avel
+        local x, y = unit.x, unit.y
+        local r = unit.rotation
+        sceneobject.x = x + vx * fixedfrac
+        sceneobject.y = y + vy * fixedfrac
+        sceneobject.r = r + av * fixedfrac
+    end
+end
+
 function Scene:updateFromBody(id, body, fixedfrac)
     local sceneobject = self.byid[id]
     if sceneobject then
