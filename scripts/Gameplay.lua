@@ -8,6 +8,7 @@ local Audio = require "Audio"
 local Gui = require "Gui"
 local GameplayGui = require "GameplayGui"
 local Movement = require "Movement"
+local Controls = require "Controls"
 local Player
 local Units
 local Trigger
@@ -176,10 +177,11 @@ local function inputPlayerAttack()
         player.firetime = firetime
     end
     local x, y = player.x, player.y
-    if love.keyboard.isDown("z") then
+    local fire, focus, bomb = Controls.getButtonInput()
+    if fire or focus then
         if firetime <= 0 then
             Audio.play("data/sounds/playershot.ogg")
-            if love.keyboard.isDown("lshift") then
+            if focus then
                 local bullet = Units.add_position("AmyShot0", x, y, player.z)
                 bullet.vely = bullet.vely + cameravy
                 player.firetime = 3
@@ -203,7 +205,7 @@ local function handlePlayerHit()
         Audio.play("data/sounds/selfdestruct.ogg")
         local explosion = Units.add_position("ExplosionPlayer", player.x, player.y, player.z)
         explosion.vely = cameravy
-        Units.remove(player)
+        Player.remove(player)
         player = nil
         respawntime = 60
     end
@@ -261,22 +263,10 @@ local function inputPlayerMove()
     if not playerbody then
         return
     end
-    local vx, vy = 0, 0
-    if love.keyboard.isDown("left") then
-        vx = vx - 1
-    end
-    if love.keyboard.isDown("right") then
-        vx = vx + 1
-    end
-    if love.keyboard.isDown("up") then
-        vy = vy - 1
-    end
-    if love.keyboard.isDown("down") then
-        vy = vy + 1
-    end
-
+    local vx, vy = Controls.getDirectionInput()
+    local fire, focus, bomb = Controls.getButtonInput()
     local movespeed = player.movespeed
-    if love.keyboard.isDown("lshift") then
+    if focus then
         movespeed = movespeed - 1
     end
     vx, vy = vx * movespeed, vy * movespeed + cameravy

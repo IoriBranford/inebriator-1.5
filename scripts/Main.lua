@@ -1,6 +1,7 @@
 require("pl.strict").module("_G", _G)
 local Tiled = require "Tiled"
 local Audio = require "Audio"
+local Config = require "Config"
 
 local dsecs = 0
 local dfixed = 0
@@ -11,6 +12,7 @@ local fixedlimit = 1
 local variableupdate = true
 
 function love.load(args, unfilteredargs)
+    Config.load()
     love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
     if love.filesystem.getInfo("gamecontrollerdb.txt") then
         love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
