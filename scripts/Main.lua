@@ -13,6 +13,7 @@ local variableupdate = true
 
 function love.load(args, unfilteredargs)
     Config.load()
+    Config.applyDisplayMode()
     love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
     if love.filesystem.getInfo("gamecontrollerdb.txt") then
         love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
@@ -89,6 +90,7 @@ function love.quit()
         love.quitphase()
     end
     Audio.clear()
+    Config.save()
 end
 
 function love.run()

@@ -1,5 +1,6 @@
 local Gameplay = {}
 
+local Config = require "Config"
 local Tiled = require "Tiled"
 local Physics = require "Physics"
 local Scene = require "Scene"
@@ -315,12 +316,20 @@ function Gameplay.draw()
     love.graphics.pop()
     love.graphics.setCanvas()
 
-    local scale = math.min(math.floor(ghw / chw), math.floor(ghh / chh))
+    local scale
+    local portraitrotation = Config.isPortraitRotation()
+    if portraitrotation then
+        scale = math.min(math.floor(ghh / chw), math.floor(ghw / chh))
+    else
+        scale = math.min(math.floor(ghw / chw), math.floor(ghh / chh))
+    end
+    local rotation = math.rad(Config.rotation)
     love.graphics.push()
     love.graphics.translate(math.floor(ghw), math.floor(ghh))
+    love.graphics.rotate(rotation)
     love.graphics.scale(scale)
     love.graphics.translate(-chw, -chh)
-    love.graphics.draw(canvas, 0, 0, 0, 1, 1, 0, 0)
+    love.graphics.draw(canvas, 0, 0, 0, 1, 1)
     Gui.draw()
     love.graphics.pop()
     love.graphics.printf(tostring(love.timer.getFPS()), 0, 0, math.huge)
