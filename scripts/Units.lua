@@ -144,7 +144,7 @@ function Units.add(base, id)
 
     local unit = {
         id = id,
-
+        age = 0,
         width = 0,
         height = 0,
         x = 0,
@@ -244,6 +244,7 @@ function Units.think()
         if think then
             think(unit)
         end
+        unit.age = unit.age + 1
     end
 end
 

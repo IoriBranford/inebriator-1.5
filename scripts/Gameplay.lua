@@ -52,7 +52,7 @@ function Gameplay.loadphase(stagefile)
 
     canvas = love.graphics.newCanvas(cameraw, camerah)
     canvas:setFilter("nearest")
-    cameravy, camerax, cameray = -1, 0, 0
+    cameravy, camerax, cameray = -.5, 0, 0
     stagewidth, stageheight = 0, 0
 
     worldscene = Scene.new()
@@ -169,7 +169,7 @@ function Gameplay.loadStage(stagefile)
 end
 
 local function inputPlayerAttack()
-    if not player then
+    if not player or not player.body then
         return
     end
     local firetime = player.firetime or 1
@@ -177,7 +177,7 @@ local function inputPlayerAttack()
     if firetime >= 0 then
         player.firetime = firetime
     end
-    local x, y = player.x, player.y
+    local x, y = player.body:getPosition()
     local fire, focus, bomb = Controls.getButtonInput()
     if fire or focus then
         if firetime <= 0 then

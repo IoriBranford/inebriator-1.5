@@ -39,6 +39,7 @@ function Unit.walkPath(unit, onPointReached)
 	local polygon = path and path.polygon
 	local points = polyline or polygon
 	local pathindex = unit.pathindex or 2
+	unit.pathindex = pathindex
 	if not points or pathindex > #points then
 		return
 	end

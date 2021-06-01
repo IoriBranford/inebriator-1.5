@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 41,
-  nextobjectid = 276,
+  nextobjectid = 282,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -4160,7 +4160,7 @@ return {
       }
     },
     {
-      name = "wineguards",
+      name = "EnemyPawns",
       firstgid = 625,
       tilewidth = 24,
       tileheight = 32,
@@ -5114,6 +5114,39 @@ return {
   },
   layers = {
     {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 40,
+      name = "prefabs",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 266,
+          name = "DefeatedEnemyPawn",
+          type = "Unit",
+          shape = "rectangle",
+          x = 304,
+          y = 1248,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 700,
+          visible = true,
+          properties = {
+            ["module"] = "Unit",
+            ["start"] = "startDefeatedDrunkEnemy",
+            ["think"] = "thinkDefeatedDrunkEnemy"
+          }
+        }
+      }
+    },
+    {
       type = "tilelayer",
       x = 0,
       y = 0,
@@ -5165,7 +5198,7 @@ return {
         },
         {
           x = 0, y = 64, width = 16, height = 16,
-          data = "eJytk0EKwjAQRVNQL1DapFmoF1Br40K8/xXUA4hW3agXEH9gAt8giaCLB+2bmTb5TTulVJngDC6J+iwzfwXPRL0DDgzAKKpZ8o58S34JVmAMpnLPzw7ekNfk51Jbg43c8/uD5/mSvM7sP4eTNRtZr9/bEfRSr0ADavKGcrdRfo4yj3P95E2UH+dsyfM+G/Lh+4U8LPVV5PmcaPL1j/m1f5r3eQzV+xn0eZ+Enjz3hnmfx0Qy4X/nIPA/xL0LcdtCqR3YF/l57g3n8obrO3h8Mc+9LyAYOc8="
+          data = "eJzFk0EKgzAQRbOQXkA0MQvpBVrUdCG9/02K2vYQpT8wgU8oE6gLF2+RN47JfM1kjKkVnuCl1C+F/jf4KPUJBFCBU1bz5AP5gfwIbqAHZ1nzu5N35C35q9RmcJc1758899fkbWH+EkHO7OS8cbYFbFJvQAda8o5y91l+gTLPc/3lXZYf5+zJ85wd+fT9Uh6enmvI839iybc78xt29mvEvFdh+6M/3p2HoN2hI/u/rrcvtA=="
         },
         {
           x = 16, y = 64, width = 16, height = 16,
@@ -5173,7 +5206,7 @@ return {
         },
         {
           x = 0, y = 80, width = 16, height = 16,
-          data = "eJylklsOgjAUREuiboCAUp8boBVh/7tQF+CP+KMuQOM0mSY3tQiRj5M0zQzhnt5aKWXBAZQkJVdwIa24X4A9yEENMjABUzAb0JfZnGzAFuwG9GV2zrtjotQJnJP+fix7x/kBngP6MtvQnfNg6KKv77M+X43w595Cj/BnR/rz/mP+buBF3h3+CjrIuAep+p4z9KLF3qTcgYaz1JE5Qy+W33Bnv8cl/6GIzBl6Mcwb4S+GnzP0Iql+9At0NFn+0V+59yHrjv4HMeFSAA=="
+          data = "eJztz0EOgjAQBdBpglyAQFNU4AIWDN7/FuoB3Cgb4AAYP8lPmAVl4ZrFS2H4f0gTEUkC3vCiz0Zu7+/9NR1M9A1kHKRw4+nVtwgOFKt5DhnN75b9GlqVK6CkSs1r7pifG+658P9O5e5G5EFPs8w98567Qvfv0RloNOuZ60bfoZPT8Y/+CR1L50D/B3YlPLo="
         },
         {
           x = 16, y = 80, width = 16, height = 16,
@@ -5242,7 +5275,7 @@ return {
       draworder = "topdown",
       id = 32,
       name = "reception",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -5876,7 +5909,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 39,
-      name = "spawn_enemy1",
+      name = "pawns1",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -5890,46 +5923,100 @@ return {
           name = "",
           type = "Path",
           shape = "polyline",
-          x = 96,
-          y = 1136,
+          x = 16,
+          y = 1192,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
-            { x = 0, y = 0 },
-            { x = 0, y = 80 },
-            { x = 16, y = 96 },
-            { x = 16, y = 304 }
+            { x = 16, y = 0 },
+            { x = 16, y = 56 },
+            { x = 32, y = 72 },
+            { x = 32, y = 88 },
+            { x = 48, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 152 },
+            { x = 80, y = 264 }
           },
           properties = {}
         },
         {
-          id = 264,
+          id = 279,
           name = "",
           type = "Path",
           shape = "polyline",
-          x = 192,
-          y = 1136,
+          x = 48,
+          y = 1192,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
-            { x = 0, y = 0 },
-            { x = 0, y = 80 },
-            { x = -16, y = 96 },
-            { x = -16, y = 304 }
+            { x = 16, y = 0 },
+            { x = 16, y = 56 },
+            { x = 32, y = 72 },
+            { x = 32, y = 88 },
+            { x = 48, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 152 },
+            { x = 80, y = 264 }
+          },
+          properties = {}
+        },
+        {
+          id = 280,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 80,
+          y = 1192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 16, y = 0 },
+            { x = 16, y = 56 },
+            { x = 32, y = 72 },
+            { x = 32, y = 88 },
+            { x = 48, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 152 },
+            { x = 80, y = 264 }
+          },
+          properties = {}
+        },
+        {
+          id = 281,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 112,
+          y = 1192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 16, y = 0 },
+            { x = 16, y = 56 },
+            { x = 32, y = 72 },
+            { x = 32, y = 88 },
+            { x = 48, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 152 },
+            { x = 80, y = 264 }
           },
           properties = {}
         },
         {
           id = 260,
-          name = "WineGuard",
+          name = "EnemyPawn",
           type = "Unit",
           shape = "rectangle",
-          x = 96,
-          y = 1136,
+          x = 32,
+          y = 1192,
           width = 24,
           height = 32,
           rotation = 0,
@@ -5938,22 +6025,23 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedWineGuard",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
             ["path"] = { id = 255 },
+            ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "walkPath_fireTimed"
+            ["think"] = "thinkPawn"
           }
         },
         {
           id = 261,
-          name = "WineGuard",
+          name = "EnemyPawn",
           type = "Unit",
           shape = "rectangle",
-          x = 144,
-          y = 1144,
+          x = 128,
+          y = 1192,
           width = 24,
           height = 32,
           rotation = 0,
@@ -5962,21 +6050,23 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedWineGuard",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
+            ["path"] = { id = 281 },
+            ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "walkPath_fireTimed"
+            ["think"] = "thinkPawn"
           }
         },
         {
           id = 262,
-          name = "WineGuard",
+          name = "EnemyPawn",
           type = "Unit",
           shape = "rectangle",
-          x = 192,
-          y = 1136,
+          x = 64,
+          y = 1192,
           width = 24,
           height = 32,
           rotation = 0,
@@ -5985,13 +6075,39 @@ return {
           properties = {
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedWineGuard",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
-            ["path"] = { id = 264 },
+            ["path"] = { id = 279 },
+            ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "walkPath_fireTimed"
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 276,
+          name = "EnemyPawn",
+          type = "Unit",
+          shape = "rectangle",
+          x = 96,
+          y = 1192,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["path"] = { id = 280 },
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -6000,7 +6116,7 @@ return {
           type = "Trigger",
           shape = "polyline",
           x = -16,
-          y = 1152,
+          y = 1200,
           width = 0,
           height = 0,
           rotation = 0,
@@ -6056,7 +6172,7 @@ return {
         },
         {
           x = 0, y = 64, width = 16, height = 16,
-          data = "eJxjYGBg0GBkGPIgCogjqSA+UsFo+FEGrIHYBohtqayW1gAA+sgFxA=="
+          data = "eJxjYGBg0GBkGPIgCogjqSA+UsFo+I1MAAAcqARc"
         },
         {
           x = 16, y = 64, width = 16, height = 16,
@@ -6064,40 +6180,7 @@ return {
         },
         {
           x = 0, y = 80, width = 16, height = 16,
-          data = "eJxjYBgcwBqIbYDYlspqRwoYbuHHx0icGC6gwYjwJ8yvGiToHykAAEt3BDE="
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 40,
-      name = "prefabs",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 266,
-          name = "DefeatedWineGuard",
-          type = "Unit",
-          shape = "rectangle",
-          x = 304,
-          y = 1248,
-          width = 24,
-          height = 32,
-          rotation = 0,
-          gid = 700,
-          visible = true,
-          properties = {
-            ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
-          }
+          data = "eJxjYBgFo2DwAT5G4sRwAQ2gWmsgbQPFtlCxUYAKAJS/AWE="
         }
       }
     },

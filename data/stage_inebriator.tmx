@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="41" nextobjectid="276">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="41" nextobjectid="282">
  <editorsettings>
   <export target="stage_inebriator.lua" format="lua"/>
  </editorsettings>
@@ -24,6 +24,15 @@
  <tileset firstgid="715" source="tilesets/winecivilians.tsx"/>
  <tileset firstgid="811" source="tilesets/wineitems.tsx"/>
  <tileset firstgid="819" source="tilesets/explosion_giant.tsx"/>
+ <objectgroup id="40" name="prefabs">
+  <object id="266" name="DefeatedEnemyPawn" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Unit"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer id="1" name="town04_f_low" width="18" height="100">
   <data encoding="base64" compression="zlib">
    <chunk x="0" y="0" width="16" height="16">
@@ -51,13 +60,13 @@
    eJwTZ2RgEAdicoH4qH6K9BsyQjC5QBiKR/WP6icHAABwGALb
   </chunk>
    <chunk x="0" y="64" width="16" height="16">
-   eJytk0EKwjAQRVNQL1DapFmoF1Br40K8/xXUA4hW3agXEH9gAt8giaCLB+2bmTb5TTulVJngDC6J+iwzfwXPRL0DDgzAKKpZ8o58S34JVmAMpnLPzw7ekNfk51Jbg43c8/uD5/mSvM7sP4eTNRtZr9/bEfRSr0ADavKGcrdRfo4yj3P95E2UH+dsyfM+G/Lh+4U8LPVV5PmcaPL1j/m1f5r3eQzV+xn0eZ+Enjz3hnmfx0Qy4X/nIPA/xL0LcdtCqR3YF/l57g3n8obrO3h8Mc+9LyAYOc8=
+   eJzFk0EKgzAQRbOQXkA0MQvpBVrUdCG9/02K2vYQpT8wgU8oE6gLF2+RN47JfM1kjKkVnuCl1C+F/jf4KPUJBFCBU1bz5AP5gfwIbqAHZ1nzu5N35C35q9RmcJc1758899fkbWH+EkHO7OS8cbYFbFJvQAda8o5y91l+gTLPc/3lXZYf5+zJ85wd+fT9Uh6enmvI839iybc78xt29mvEvFdh+6M/3p2HoN2hI/u/rrcvtA==
   </chunk>
    <chunk x="16" y="64" width="16" height="16">
    eJytksEJACAMA7NDQXSIKur+u1nBCXoG8jxIQkxSUV4WnoDf4Q74Jpa/vAxZ3f4L8mQ/Dw/AX5bmd8jT/el/K+TJf3/0J/kP8xQEGQ==
   </chunk>
    <chunk x="0" y="80" width="16" height="16">
-   eJylklsOgjAUREuiboCAUp8boBVh/7tQF+CP+KMuQOM0mSY3tQiRj5M0zQzhnt5aKWXBAZQkJVdwIa24X4A9yEENMjABUzAb0JfZnGzAFuwG9GV2zrtjotQJnJP+fix7x/kBngP6MtvQnfNg6KKv77M+X43w595Cj/BnR/rz/mP+buBF3h3+CjrIuAep+p4z9KLF3qTcgYaz1JE5Qy+W33Bnv8cl/6GIzBl6Mcwb4S+GnzP0Iql+9At0NFn+0V+59yHrjv4HMeFSAA==
+   eJztz0EOgjAQBdBpglyAQFNU4AIWDN7/FuoB3Cgb4AAYP8lPmAVl4ZrFS2H4f0gTEUkC3vCiz0Zu7+/9NR1M9A1kHKRw4+nVtwgOFKt5DhnN75b9GlqVK6CkSs1r7pifG+658P9O5e5G5EFPs8w98567Qvfv0RloNOuZ60bfoZPT8Y/+CR1L50D/B3YlPLo=
   </chunk>
    <chunk x="16" y="80" width="16" height="16">
    eJyl0+sNABAMReG7g0QZQpDafzbuCk6T/vzSB12Shv4jXjbgXbsAb9uhX8Dnywm87QHeNoD3/Ak9fX/Sv2uT/VXx/7OhJ/srYvdzASMvBBE=
@@ -95,7 +104,7 @@
   </chunk>
   </data>
  </layer>
- <objectgroup id="32" name="reception">
+ <objectgroup id="32" name="reception" visible="0">
   <properties>
    <property name="script" value="PathGraph"/>
   </properties>
@@ -345,25 +354,40 @@
    <polyline points="0,0 0,-272"/>
   </object>
  </objectgroup>
- <objectgroup id="39" name="spawn_enemy1">
-  <object id="255" type="Path" x="96" y="1136">
-   <polyline points="0,0 0,80 16,96 16,304"/>
+ <objectgroup id="39" name="pawns1">
+  <object id="255" type="Path" x="16" y="1192">
+   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
   </object>
-  <object id="264" type="Path" x="192" y="1136">
-   <polyline points="0,0 0,80 -16,96 -16,304"/>
+  <object id="279" type="Path" x="48" y="1192">
+   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
   </object>
-  <object id="260" template="units/WineGuard.tx" x="96" y="1136">
+  <object id="280" type="Path" x="80" y="1192">
+   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
+  </object>
+  <object id="281" type="Path" x="112" y="1192">
+   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
+  </object>
+  <object id="260" template="units/EnemyPawn.tx" x="32" y="1192">
    <properties>
     <property name="path" type="object" value="255"/>
    </properties>
   </object>
-  <object id="261" template="units/WineGuard.tx" x="144" y="1144"/>
-  <object id="262" template="units/WineGuard.tx" x="192" y="1136">
+  <object id="261" template="units/EnemyPawn.tx" x="128" y="1192">
    <properties>
-    <property name="path" type="object" value="264"/>
+    <property name="path" type="object" value="281"/>
    </properties>
   </object>
-  <object id="263" template="triggers/addUnits.tx" x="-16" y="1152"/>
+  <object id="262" template="units/EnemyPawn.tx" x="64" y="1192">
+   <properties>
+    <property name="path" type="object" value="279"/>
+   </properties>
+  </object>
+  <object id="276" template="units/EnemyPawn.tx" x="96" y="1192">
+   <properties>
+    <property name="path" type="object" value="280"/>
+   </properties>
+  </object>
+  <object id="263" template="triggers/addUnits.tx" x="-16" y="1200"/>
  </objectgroup>
  <layer id="4" name="town04_f_high" width="18" height="100">
   <data encoding="base64" compression="zlib">
@@ -383,25 +407,16 @@
    eJxjYBgFo2DogogBtr9ogO3nY6RMPwDLPwDa
   </chunk>
    <chunk x="0" y="64" width="16" height="16">
-   eJxjYGBg0GBkGPIgCogjqSA+UsFo+FEGrIHYBohtqayW1gAA+sgFxA==
+   eJxjYGBg0GBkGPIgCogjqSA+UsFo+I1MAAAcqARc
   </chunk>
    <chunk x="16" y="64" width="16" height="16">
    eJzTYGQYBaNgFIxQAACn/wAq
   </chunk>
    <chunk x="0" y="80" width="16" height="16">
-   eJxjYBgcwBqIbYDYlspqRwoYbuHHx0icGC6gwYjwJ8yvGiToHykAAEt3BDE=
+   eJxjYBgFo2DwAT5G4sRwAQ2gWmsgbQPFtlCxUYAKAJS/AWE=
   </chunk>
   </data>
  </layer>
- <objectgroup id="40" name="prefabs">
-  <object id="266" name="DefeatedWineGuard" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
-   <properties>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
-   </properties>
-  </object>
- </objectgroup>
  <group id="38" name="oldobjects" visible="0">
   <objectgroup id="6" name="camera">
    <properties>

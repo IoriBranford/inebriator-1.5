@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <tileset firstgid="1" source="../tilesets/wineguards.tsx"/>
- <object name="WineGuard" type="Unit" gid="22" width="24" height="32">
+ <object name="EnemyPawn" type="Unit" gid="22" width="24" height="32">
   <properties>
    <property name="bodytileshape" value="hull"/>
    <property name="bodytype" value="dynamic"/>
-   <property name="defeatdrop" value="DefeatedWineGuard"/>
+   <property name="defeatdrop" value="DefeatedEnemyPawn"/>
    <property name="enemyteam" value="playershot"/>
    <property name="health" type="int" value="15"/>
    <property name="module" value="Enemies"/>
+   <property name="start" value="startPawn"/>
    <property name="team" value="enemy"/>
-   <property name="think" value="walkPath_fireTimed"/>
+   <property name="think" value="thinkPawn"/>
   </properties>
  </object>
 </template>
