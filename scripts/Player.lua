@@ -16,6 +16,9 @@ function Player.thinkGameplay(player)
 end
 
 function Player.setVelocity(player, vx, vy)
+    player.velx, player.vely = vx, vy
+    player.hitbox.velx, player.hitbox.vely = vx, vy
+
     if player.body then
         player.body:setLinearVelocity(vx, vy)
         player.hitbox.body:setLinearVelocity(vx, vy)

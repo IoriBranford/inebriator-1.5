@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 41,
-  nextobjectid = 282,
+  nextobjectid = 286,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -4160,7 +4160,7 @@ return {
       }
     },
     {
-      name = "EnemyPawns",
+      name = "wineguards",
       firstgid = 625,
       tilewidth = 24,
       tileheight = 32,
@@ -4192,6 +4192,9 @@ return {
       tiles = {
         {
           id = 0,
+          properties = {
+            ["tilename"] = "EnemyKnight0"
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4224,24 +4227,143 @@ return {
           animation = {
             {
               tileid = 0,
-              duration = 125
+              duration = 100
             },
             {
               tileid = 1,
-              duration = 125
+              duration = 100
             },
             {
               tileid = 2,
-              duration = 125
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 3,
+          properties = {
+            ["tilename"] = "EnemyPawn0"
+          },
+          animation = {
+            {
+              tileid = 3,
+              duration = 100
             },
             {
-              tileid = 1,
-              duration = 125
+              tileid = 4,
+              duration = 100
+            },
+            {
+              tileid = 5,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 6,
+          properties = {
+            ["tilename"] = "EnemyRook0"
+          },
+          animation = {
+            {
+              tileid = 6,
+              duration = 100
+            },
+            {
+              tileid = 7,
+              duration = 100
+            },
+            {
+              tileid = 8,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 9,
+          properties = {
+            ["tilename"] = "EnemyBishop0"
+          },
+          animation = {
+            {
+              tileid = 9,
+              duration = 100
+            },
+            {
+              tileid = 10,
+              duration = 100
+            },
+            {
+              tileid = 11,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 12,
+          properties = {
+            ["tilename"] = "EnemyKing0"
+          },
+          animation = {
+            {
+              tileid = 12,
+              duration = 100
+            },
+            {
+              tileid = 13,
+              duration = 100
+            },
+            {
+              tileid = 14,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 15,
+          properties = {
+            ["tilename"] = "EnemyQueen0"
+          },
+          animation = {
+            {
+              tileid = 15,
+              duration = 100
+            },
+            {
+              tileid = 16,
+              duration = 100
+            },
+            {
+              tileid = 17,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 18,
+          properties = {
+            ["tilename"] = "EnemyKnight1"
+          },
+          animation = {
+            {
+              tileid = 18,
+              duration = 100
+            },
+            {
+              tileid = 19,
+              duration = 100
+            },
+            {
+              tileid = 20,
+              duration = 100
             }
           }
         },
         {
           id = 21,
+          properties = {
+            ["tilename"] = "EnemyPawn1"
+          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4275,27 +4397,340 @@ return {
           animation = {
             {
               tileid = 21,
-              duration = 150
+              duration = 100
             },
             {
               tileid = 22,
-              duration = 150
+              duration = 100
             },
             {
               tileid = 23,
-              duration = 150
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 24,
+          properties = {
+            ["tilename"] = "EnemyRook1"
+          },
+          animation = {
+            {
+              tileid = 24,
+              duration = 100
             },
             {
-              tileid = 22,
-              duration = 150
+              tileid = 25,
+              duration = 100
+            },
+            {
+              tileid = 26,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 27,
+          properties = {
+            ["tilename"] = "EnemyBishop1"
+          },
+          animation = {
+            {
+              tileid = 27,
+              duration = 100
+            },
+            {
+              tileid = 28,
+              duration = 100
+            },
+            {
+              tileid = 29,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 30,
+          properties = {
+            ["tilename"] = "EnemyKing1"
+          },
+          animation = {
+            {
+              tileid = 30,
+              duration = 100
+            },
+            {
+              tileid = 31,
+              duration = 100
+            },
+            {
+              tileid = 32,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 33,
+          properties = {
+            ["tilename"] = "EnemyQueen1"
+          },
+          animation = {
+            {
+              tileid = 33,
+              duration = 100
+            },
+            {
+              tileid = 34,
+              duration = 100
+            },
+            {
+              tileid = 35,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 36,
+          properties = {
+            ["tilename"] = "EnemyKnight2"
+          },
+          animation = {
+            {
+              tileid = 36,
+              duration = 100
+            },
+            {
+              tileid = 37,
+              duration = 100
+            },
+            {
+              tileid = 38,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 39,
+          properties = {
+            ["tilename"] = "EnemyPawn2"
+          },
+          animation = {
+            {
+              tileid = 39,
+              duration = 100
+            },
+            {
+              tileid = 40,
+              duration = 100
+            },
+            {
+              tileid = 41,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 42,
+          properties = {
+            ["tilename"] = "EnemyRook2"
+          },
+          animation = {
+            {
+              tileid = 42,
+              duration = 100
+            },
+            {
+              tileid = 43,
+              duration = 100
+            },
+            {
+              tileid = 44,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 45,
+          properties = {
+            ["tilename"] = "EnemyBishop2"
+          },
+          animation = {
+            {
+              tileid = 45,
+              duration = 100
+            },
+            {
+              tileid = 46,
+              duration = 100
+            },
+            {
+              tileid = 47,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 48,
+          properties = {
+            ["tilename"] = "EnemyKing2"
+          },
+          animation = {
+            {
+              tileid = 48,
+              duration = 100
+            },
+            {
+              tileid = 49,
+              duration = 100
+            },
+            {
+              tileid = 50,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 51,
+          properties = {
+            ["tilename"] = "EnemyQueen2"
+          },
+          animation = {
+            {
+              tileid = 51,
+              duration = 100
+            },
+            {
+              tileid = 52,
+              duration = 100
+            },
+            {
+              tileid = 53,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 54,
+          properties = {
+            ["tilename"] = "EnemyKnight3"
+          },
+          animation = {
+            {
+              tileid = 54,
+              duration = 100
+            },
+            {
+              tileid = 55,
+              duration = 100
+            },
+            {
+              tileid = 56,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 57,
+          properties = {
+            ["tilename"] = "EnemyPawn3"
+          },
+          animation = {
+            {
+              tileid = 57,
+              duration = 100
+            },
+            {
+              tileid = 58,
+              duration = 100
+            },
+            {
+              tileid = 59,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 60,
+          properties = {
+            ["tilename"] = "EnemyRook3"
+          },
+          animation = {
+            {
+              tileid = 60,
+              duration = 100
+            },
+            {
+              tileid = 61,
+              duration = 100
+            },
+            {
+              tileid = 62,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 63,
+          properties = {
+            ["tilename"] = "EnemyBishop3"
+          },
+          animation = {
+            {
+              tileid = 63,
+              duration = 100
+            },
+            {
+              tileid = 64,
+              duration = 100
+            },
+            {
+              tileid = 65,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 66,
+          properties = {
+            ["tilename"] = "EnemyKing3"
+          },
+          animation = {
+            {
+              tileid = 66,
+              duration = 100
+            },
+            {
+              tileid = 67,
+              duration = 100
+            },
+            {
+              tileid = 68,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 69,
+          properties = {
+            ["tilename"] = "EnemyQueen3"
+          },
+          animation = {
+            {
+              tileid = 69,
+              duration = 100
+            },
+            {
+              tileid = 70,
+              duration = 100
+            },
+            {
+              tileid = 71,
+              duration = 100
             }
           }
         },
         {
           id = 72,
-          properties = {
-            ["tilename"] = "kocaptain"
-          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4328,9 +4763,6 @@ return {
         },
         {
           id = 75,
-          properties = {
-            ["tilename"] = "koguard"
-          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4395,9 +4827,6 @@ return {
         },
         {
           id = 81,
-          properties = {
-            ["tilename"] = "konun"
-          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4430,9 +4859,6 @@ return {
         },
         {
           id = 84,
-          properties = {
-            ["tilename"] = "kohighpriest"
-          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4465,9 +4891,6 @@ return {
         },
         {
           id = 87,
-          properties = {
-            ["tilename"] = "kohighpriestess"
-          },
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
@@ -4582,9 +5005,22 @@ return {
             {
               tileid = 2,
               duration = 100
+            }
+          }
+        },
+        {
+          id = 3,
+          animation = {
+            {
+              tileid = 3,
+              duration = 100
             },
             {
-              tileid = 1,
+              tileid = 4,
+              duration = 100
+            },
+            {
+              tileid = 5,
               duration = 100
             }
           }
@@ -4603,10 +5039,6 @@ return {
             {
               tileid = 8,
               duration = 100
-            },
-            {
-              tileid = 7,
-              duration = 100
             }
           }
         },
@@ -4623,10 +5055,6 @@ return {
             },
             {
               tileid = 11,
-              duration = 100
-            },
-            {
-              tileid = 10,
               duration = 100
             }
           }
@@ -4645,10 +5073,6 @@ return {
             {
               tileid = 14,
               duration = 100
-            },
-            {
-              tileid = 13,
-              duration = 100
             }
           }
         },
@@ -4665,10 +5089,6 @@ return {
             },
             {
               tileid = 17,
-              duration = 100
-            },
-            {
-              tileid = 16,
               duration = 100
             }
           }
@@ -4687,10 +5107,6 @@ return {
             {
               tileid = 20,
               duration = 100
-            },
-            {
-              tileid = 19,
-              duration = 100
             }
           }
         },
@@ -4708,9 +5124,175 @@ return {
             {
               tileid = 23,
               duration = 100
+            }
+          }
+        },
+        {
+          id = 24,
+          animation = {
+            {
+              tileid = 24,
+              duration = 100
             },
             {
-              tileid = 22,
+              tileid = 25,
+              duration = 100
+            },
+            {
+              tileid = 26,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 27,
+          animation = {
+            {
+              tileid = 27,
+              duration = 100
+            },
+            {
+              tileid = 28,
+              duration = 100
+            },
+            {
+              tileid = 29,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 30,
+          animation = {
+            {
+              tileid = 30,
+              duration = 100
+            },
+            {
+              tileid = 31,
+              duration = 100
+            },
+            {
+              tileid = 32,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 33,
+          animation = {
+            {
+              tileid = 33,
+              duration = 100
+            },
+            {
+              tileid = 34,
+              duration = 100
+            },
+            {
+              tileid = 35,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 36,
+          animation = {
+            {
+              tileid = 36,
+              duration = 100
+            },
+            {
+              tileid = 37,
+              duration = 100
+            },
+            {
+              tileid = 38,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 39,
+          animation = {
+            {
+              tileid = 39,
+              duration = 100
+            },
+            {
+              tileid = 40,
+              duration = 100
+            },
+            {
+              tileid = 41,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 42,
+          animation = {
+            {
+              tileid = 42,
+              duration = 100
+            },
+            {
+              tileid = 43,
+              duration = 100
+            },
+            {
+              tileid = 44,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 45,
+          animation = {
+            {
+              tileid = 45,
+              duration = 100
+            },
+            {
+              tileid = 46,
+              duration = 100
+            },
+            {
+              tileid = 47,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 48,
+          animation = {
+            {
+              tileid = 48,
+              duration = 100
+            },
+            {
+              tileid = 49,
+              duration = 100
+            },
+            {
+              tileid = 50,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 51,
+          animation = {
+            {
+              tileid = 51,
+              duration = 100
+            },
+            {
+              tileid = 52,
+              duration = 100
+            },
+            {
+              tileid = 53,
               duration = 100
             }
           }
@@ -4729,10 +5311,6 @@ return {
             {
               tileid = 56,
               duration = 100
-            },
-            {
-              tileid = 55,
-              duration = 100
             }
           }
         },
@@ -4749,10 +5327,6 @@ return {
             },
             {
               tileid = 59,
-              duration = 100
-            },
-            {
-              tileid = 58,
               duration = 100
             }
           }
@@ -4771,10 +5345,6 @@ return {
             {
               tileid = 62,
               duration = 100
-            },
-            {
-              tileid = 61,
-              duration = 100
             }
           }
         },
@@ -4791,10 +5361,6 @@ return {
             },
             {
               tileid = 65,
-              duration = 100
-            },
-            {
-              tileid = 64,
               duration = 100
             }
           }
@@ -4813,10 +5379,6 @@ return {
             {
               tileid = 68,
               duration = 100
-            },
-            {
-              tileid = 67,
-              duration = 100
             }
           }
         },
@@ -4833,10 +5395,6 @@ return {
             },
             {
               tileid = 71,
-              duration = 100
-            },
-            {
-              tileid = 70,
               duration = 100
             }
           }
@@ -4855,10 +5413,6 @@ return {
             {
               tileid = 74,
               duration = 100
-            },
-            {
-              tileid = 73,
-              duration = 100
             }
           }
         },
@@ -4876,9 +5430,107 @@ return {
             {
               tileid = 77,
               duration = 100
+            }
+          }
+        },
+        {
+          id = 78,
+          animation = {
+            {
+              tileid = 78,
+              duration = 100
             },
             {
-              tileid = 76,
+              tileid = 79,
+              duration = 100
+            },
+            {
+              tileid = 80,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 81,
+          animation = {
+            {
+              tileid = 81,
+              duration = 100
+            },
+            {
+              tileid = 82,
+              duration = 100
+            },
+            {
+              tileid = 83,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 84,
+          animation = {
+            {
+              tileid = 84,
+              duration = 100
+            },
+            {
+              tileid = 85,
+              duration = 100
+            },
+            {
+              tileid = 86,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 87,
+          animation = {
+            {
+              tileid = 87,
+              duration = 100
+            },
+            {
+              tileid = 88,
+              duration = 100
+            },
+            {
+              tileid = 89,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 90,
+          animation = {
+            {
+              tileid = 90,
+              duration = 100
+            },
+            {
+              tileid = 91,
+              duration = 100
+            },
+            {
+              tileid = 92,
+              duration = 100
+            }
+          }
+        },
+        {
+          id = 93,
+          animation = {
+            {
+              tileid = 93,
+              duration = 100
+            },
+            {
+              tileid = 94,
+              duration = 100
+            },
+            {
+              tileid = 95,
               duration = 100
             }
           }
@@ -5275,7 +5927,7 @@ return {
       draworder = "topdown",
       id = 32,
       name = "reception",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -6029,7 +6681,30 @@ return {
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
-            ["path"] = { id = 255 },
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 285,
+          name = "EnemyPawn",
+          type = "Unit",
+          shape = "rectangle",
+          x = 160,
+          y = 1192,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
             ["think"] = "thinkPawn"
@@ -6054,7 +6729,30 @@ return {
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
-            ["path"] = { id = 281 },
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 284,
+          name = "EnemyPawn",
+          type = "Unit",
+          shape = "rectangle",
+          x = 256,
+          y = 1192,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
             ["think"] = "thinkPawn"
@@ -6079,7 +6777,30 @@ return {
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
-            ["path"] = { id = 279 },
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 283,
+          name = "EnemyPawn",
+          type = "Unit",
+          shape = "rectangle",
+          x = 192,
+          y = 1192,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
             ["think"] = "thinkPawn"
@@ -6104,7 +6825,30 @@ return {
             ["enemyteam"] = "playershot",
             ["health"] = 15,
             ["module"] = "Enemies",
-            ["path"] = { id = 280 },
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 282,
+          name = "EnemyPawn",
+          type = "Unit",
+          shape = "rectangle",
+          x = 224,
+          y = 1192,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedEnemyPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
             ["think"] = "thinkPawn"

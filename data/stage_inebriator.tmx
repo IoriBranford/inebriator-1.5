@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="41" nextobjectid="282">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="41" nextobjectid="286">
  <editorsettings>
   <export target="stage_inebriator.lua" format="lua"/>
  </editorsettings>
@@ -104,7 +104,7 @@
   </chunk>
   </data>
  </layer>
- <objectgroup id="32" name="reception" visible="0">
+ <objectgroup id="32" name="reception">
   <properties>
    <property name="script" value="PathGraph"/>
   </properties>
@@ -367,26 +367,14 @@
   <object id="281" type="Path" x="112" y="1192">
    <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
   </object>
-  <object id="260" template="units/EnemyPawn.tx" x="32" y="1192">
-   <properties>
-    <property name="path" type="object" value="255"/>
-   </properties>
-  </object>
-  <object id="261" template="units/EnemyPawn.tx" x="128" y="1192">
-   <properties>
-    <property name="path" type="object" value="281"/>
-   </properties>
-  </object>
-  <object id="262" template="units/EnemyPawn.tx" x="64" y="1192">
-   <properties>
-    <property name="path" type="object" value="279"/>
-   </properties>
-  </object>
-  <object id="276" template="units/EnemyPawn.tx" x="96" y="1192">
-   <properties>
-    <property name="path" type="object" value="280"/>
-   </properties>
-  </object>
+  <object id="260" template="units/EnemyPawn.tx" x="32" y="1192"/>
+  <object id="285" template="units/EnemyPawn.tx" x="160" y="1192"/>
+  <object id="261" template="units/EnemyPawn.tx" x="128" y="1192"/>
+  <object id="284" template="units/EnemyPawn.tx" x="256" y="1192"/>
+  <object id="262" template="units/EnemyPawn.tx" x="64" y="1192"/>
+  <object id="283" template="units/EnemyPawn.tx" x="192" y="1192"/>
+  <object id="276" template="units/EnemyPawn.tx" x="96" y="1192"/>
+  <object id="282" template="units/EnemyPawn.tx" x="224" y="1192"/>
   <object id="263" template="triggers/addUnits.tx" x="-16" y="1200"/>
  </objectgroup>
  <layer id="4" name="town04_f_high" width="18" height="100">

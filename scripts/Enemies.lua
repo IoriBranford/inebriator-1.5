@@ -34,24 +34,37 @@ function Enemies.startPawn(unit)
     unit.movespeed = 2
 end
 
+local hsqrt2 = math.sqrt(2)/2
 function Enemies.thinkPawn(unit)
 	local health = unit.health or 1
 	if health < 1 then
         Enemies.defeatStandard(unit)
         return
     end
-    Unit.walkPath(unit)
-    if unit.pathindex > 4 then
-        unit.movespeed = 1
-    end
     local player = Units.get("player")
-    local velx, vely = unit.body:getLinearVelocity()
-    if velx ~= 0 and player and unit.age % 16 == 0 then
-        local shotvelx = velx < 0 and -2 or 2
-        local shotvely = 2
-        local shot = Shooting.shoot_vel(unit, "BulletPike", shotvelx, shotvely)
-        shot.z = player.z
+    local velx, vely = 0, 1
+    if unit.age < 15 then
+        vely = 2
+    else
+        if player then
+            local px, py = player.x, player.y
+            local dx, dy = px - unit.x, py - unit.y
+            local dist = math.len(dx, dy)
+            local dotright = math.dot(dx, dy, hsqrt2, hsqrt2)
+            local dotleft = math.dot(dx, dy, -hsqrt2, hsqrt2)
+            if dist - dotleft < 1 then
+                velx = -1
+            elseif dist - dotright < 1 then
+                velx = 1
+            end
+            if velx ~= 0 and unit.age % 15 == 0 then
+                local shotvelx, shotvely = velx*2, vely*2
+                local shot = Shooting.shoot_vel(unit, "BulletPike", shotvelx, shotvely)
+                shot.z = player.z
+            end
+        end
     end
+    unit.velx, unit.vely = velx, vely
 end
 
 Enemies.collideDefault = Unit.collideDefault

@@ -244,11 +244,12 @@ function Gameplay.fixedupdate()
     inputPlayerAttack()
     Units.activateAdded()
     Physics.fixedupdate()
-    for id, body in Physics.iterateBodies() do
-        Units.updateFromBody(id, body)
-    end
+    Units.updatePositions()
     Units.collide()
     Units.think()
+    for id, body in Physics.iterateBodies() do
+        Units.updateBody(id, body)
+    end
 
     if player then
         local x, y = player.x, player.y
@@ -260,8 +261,7 @@ function Gameplay.fixedupdate()
 end
 
 local function inputPlayerMove()
-    local playerbody = player and player.body
-    if not playerbody then
+    if not player then
         return
     end
     local vx, vy = Controls.getDirectionInput()
@@ -271,7 +271,7 @@ local function inputPlayerMove()
         movespeed = movespeed - 1
     end
     vx, vy = vx * movespeed, vy * movespeed + cameravy
-    local x, y = player.body:getPosition()
+    local x, y = player.x, player.y
     if x + vx < 0 then
         vx = -x
     elseif x + vx > stagewidth then
@@ -287,8 +287,8 @@ end
 
 function Gameplay.update(dsecs, fixedfrac)
     inputPlayerMove()
-    for id, body in Physics.iterateBodies() do
-        worldscene:updateFromBody(id, body, fixedfrac)
+    for id, unit in Units.iterate() do
+        worldscene:updateFromUnit(id, unit, fixedfrac)
     end
 
     worldscene:updateAnimations(dsecs)

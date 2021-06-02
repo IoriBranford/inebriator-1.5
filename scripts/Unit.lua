@@ -6,11 +6,7 @@ local Movement = require "Movement"
 local Audio = require "Audio"
 
 local function matchVelocity(follower, leader)
-	local followerbody = follower.body
-	local leaderbody = leader.body
-	if followerbody and leaderbody then
-		followerbody:setLinearVelocity(leaderbody:getLinearVelocity())
-	end
+	follower.velx, follower.vely = leader.velx, leader.vely
 end
 
 local function startTimeout(unit)
@@ -47,7 +43,7 @@ function Unit.walkPath(unit, onPointReached)
 	local movespeed = unit.movespeed or 1
 	local x, y = unit.x, unit.y
 	local nextx, nexty = Movement.moveTowardsPoint_Speed(x, y, destx, desty, movespeed)
-	unit.body:setLinearVelocity(nextx-x, nexty-y)
+	unit.velx, unit.vely = nextx - x, nexty - y
 	if nextx == destx and nexty == desty then
 		pathindex = pathindex + 2
 		if polygon and pathindex > #points then
