@@ -251,6 +251,7 @@ end
 function Units.updateFromBody(id, body)
     local unit = units[id]
     if unit then
+        assert(unit.body == body, "unit.body ~= body")
         unit.velx, unit.vely = body:getLinearVelocity()
         unit.avel = body:getAngularVelocity()
         unit.x, unit.y = body:getPosition()
