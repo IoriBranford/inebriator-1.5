@@ -1,4 +1,5 @@
 require("pl.strict").module("_G", _G)
+require "Math"
 local Tiled = require "Tiled"
 local Audio = require "Audio"
 local Config = require "Config"
