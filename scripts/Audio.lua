@@ -1,3 +1,4 @@
+local Config = require "Config"
 local Audio = {}
 local GameMusicEmu = require "GameMusicEmu"
 
@@ -40,6 +41,7 @@ function Audio.play(file, track)
     if clip then
         clip:stop()
         clip:play(track)
+        clip:setVolume(Config.soundvolume)
     end
     return clip
 end
@@ -78,6 +80,7 @@ end
 function Audio.playMusic(file, track)
     Audio.stopMusic()
     music = Audio.play(file, track)
+    music:setVolume(Config.musicvolume)
     return music
 end
 
