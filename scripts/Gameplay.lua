@@ -66,7 +66,7 @@ function Gameplay.loadphase(stagefile)
     for i, prefabs in ipairs(playerfile.layers) do
         Units.addPrefabs(prefabs)
     end
-
+    viewx, viewy = camerax, cameray
     points = 0
     extendpoints = 1000000
     lives = 3
