@@ -23,9 +23,10 @@ local lives
 local bombs
 
 local respawntime
-local cameravy
+local cameravx, cameravy
 local camerax, cameray
 local camerax0
+local cameravxscalefactor
 local cameraw, camerah = 240, 320
 
 local stagewidth, stageheight
@@ -52,7 +53,7 @@ function Gameplay.loadphase(stagefile)
 
     canvas = love.graphics.newCanvas(cameraw, camerah)
     canvas:setFilter("nearest")
-    cameravy, camerax, cameray = -.5, 0, 0
+    cameravx, cameravy, camerax, cameray = 0, -.5, 0, 0
     stagewidth, stageheight = 0, 0
 
     worldscene = Scene.new()
@@ -105,6 +106,8 @@ function Gameplay.loadStage(stagefile)
 
     camerax0, cameray = stagewidth / 2 - cameraw / 2, stageheight - camerah
     camerax = camerax0
+
+    cameravxscalefactor = (stagewidth - cameraw) / stagewidth
 
     local layers = map.layers
     for i = 1, #layers do
@@ -213,8 +216,16 @@ local function handlePlayerHit()
 end
 
 function Gameplay.fixedupdate()
+    camerax = camerax + cameravx
     cameray = cameray + cameravy
     timeline:advance(-cameravy)
+    if camerax < 0 then
+        camerax = 0
+        cameravx = 0
+    elseif camerax + cameraw > stagewidth then
+        camerax = stagewidth - cameraw
+        cameravx = 0
+    end
     if cameray <= 0 then
         cameray = 0
         cameravy = 0
@@ -252,8 +263,6 @@ function Gameplay.fixedupdate()
     end
 
     if player then
-        local x, y = player.x, player.y
-        camerax = (stagewidth - cameraw) * x / stagewidth
         handlePlayerHit()
     end
 
@@ -293,8 +302,9 @@ function Gameplay.update(dsecs, fixedfrac)
 
     worldscene:updateAnimations(dsecs)
 
-    -- local playervx = player.body:getLinearVelocity()
-    viewx = camerax -- + playervx*fixedfrac
+    local playervx = player and player.velx or 0
+    cameravx = playervx *cameravxscalefactor
+    viewx = camerax + cameravx*fixedfrac
     viewy = cameray + cameravy*fixedfrac
     Audio.update(dsecs)
     Gui.update(dsecs)
