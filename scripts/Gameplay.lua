@@ -332,7 +332,8 @@ function Gameplay.draw()
     love.graphics.draw(canvas, 0, 0, 0, 1, 1)
     Gui.draw()
     love.graphics.pop()
-    love.graphics.printf(tostring(love.timer.getFPS()), 0, 0, math.huge)
+    love.graphics.printf(tostring(love.timer.getFPS()).." fps", 0, 0, love.graphics.getWidth(), "right")
+    love.graphics.printf(tostring(math.floor(collectgarbage("count"))).." kb", 0, 16, love.graphics.getWidth(), "right")
 end
 
 return Gameplay
