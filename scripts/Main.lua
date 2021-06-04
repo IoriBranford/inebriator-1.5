@@ -3,6 +3,7 @@ require "Math"
 local Tiled = require "Tiled"
 local Audio = require "Audio"
 local Config = require "Config"
+local Controls = require "Controls"
 
 local dsecs = 0
 local dfixed = 0
@@ -15,10 +16,7 @@ local variableupdate = true
 function love.load(args, unfilteredargs)
     Config.load()
     Config.applyDisplayMode()
-    love.joystick.loadGamepadMappings("data/gamecontrollerdb.txt")
-    if love.filesystem.getInfo("gamecontrollerdb.txt") then
-        love.joystick.loadGamepadMappings("gamecontrollerdb.txt")
-    end
+    Controls.init()
     Tiled.setFontPath("data/fonts/")
     love.graphics.setLineStyle("rough")
     local files = love.filesystem.getDirectoryItems("data/sounds/")
