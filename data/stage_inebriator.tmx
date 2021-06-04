@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="41" nextobjectid="286">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-up" width="18" height="100" tilewidth="16" tileheight="16" infinite="1" nextlayerid="45" nextobjectid="330">
  <editorsettings>
   <export target="stage_inebriator.lua" format="lua"/>
  </editorsettings>
@@ -25,13 +25,56 @@
  <tileset firstgid="811" source="tilesets/wineitems.tsx"/>
  <tileset firstgid="819" source="tilesets/explosion_giant.tsx"/>
  <objectgroup id="40" name="prefabs">
-  <object id="266" name="DefeatedEnemyPawn" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
+  <object id="266" name="DefeatedPawn" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
    <properties>
     <property name="module" value="Unit"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
     <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
+  <object id="294" name="DefeatedKnight" type="Unit" gid="697" x="328" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Unit"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+  <object id="295" name="DefeatedRook" type="Unit" gid="703" x="352" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Unit"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+  <object id="296" name="DefeatedBishop" type="Unit" gid="706" x="376" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Unit"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+  <object id="297" name="DefeatedKing" type="Unit" gid="709" x="400" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Unit"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+  <object id="298" name="DefeatedQueen" type="Unit" gid="712" x="424" y="1248" width="24" height="32">
+   <properties>
+    <property name="module" value="Unit"/>
+    <property name="start" value="startDefeatedDrunkEnemy"/>
+    <property name="think" value="thinkDefeatedDrunkEnemy"/>
+   </properties>
+  </object>
+  <object id="286" template="units/WineGlassRed.tx" x="304" y="1280"/>
+  <object id="287" template="units/WineGlassMedium.tx" x="320" y="1280"/>
+  <object id="288" template="units/WineGlassWhite.tx" x="336" y="1280"/>
+  <object id="289" template="units/WineGlassDark.tx" x="352" y="1280"/>
+  <object id="290" template="units/WineBottleRed.tx" x="304" y="1312"/>
+  <object id="291" template="units/WineBottleMedium.tx" x="320" y="1312"/>
+  <object id="292" template="units/WineBottleWhite.tx" x="336" y="1312"/>
+  <object id="293" template="units/WineBottleDark.tx" x="352" y="1312"/>
  </objectgroup>
  <layer id="1" name="town04_f_low" width="18" height="100">
   <data encoding="base64" compression="zlib">
@@ -60,16 +103,16 @@
    eJwTZ2RgEAdicoH4qH6K9BsyQjC5QBiKR/WP6icHAABwGALb
   </chunk>
    <chunk x="0" y="64" width="16" height="16">
-   eJzFk0EKgzAQRbOQXkA0MQvpBVrUdCG9/02K2vYQpT8wgU8oE6gLF2+RN47JfM1kjKkVnuCl1C+F/jf4KPUJBFCBU1bz5AP5gfwIbqAHZ1nzu5N35C35q9RmcJc1758899fkbWH+EkHO7OS8cbYFbFJvQAda8o5y91l+gTLPc/3lXZYf5+zJ85wd+fT9Uh6enmvI839iybc78xt29mvEvFdh+6M/3p2HoN2hI/u/rrcvtA==
+   eJylklkKwjAYhBMQL1DaLC54AbfGB/H+V1BPIC4v6gXEKSQw/NYE9OF7yEymyT9pq5SqMlzANePPC/kbeGX8FgQwAEPhedID6SvS12ADpmAW1/ztpFvSDemL6G3BLq75/KRzviLdFOYvEeKdbbxvN9sJnKNfAwca0i317kV/gTqXvfbpVvTHPXvSeU5Henq/1IenfTXp/J8Y0ps/+yvlnVZqpDN+IT9GdpLJf2P5Y36PvQdw1J956YWe/B3eAzx78tLr3v4NuWUs5A==
   </chunk>
    <chunk x="16" y="64" width="16" height="16">
    eJytksEJACAMA7NDQXSIKur+u1nBCXoG8jxIQkxSUV4WnoDf4Q74Jpa/vAxZ3f4L8mQ/Dw/AX5bmd8jT/el/K+TJf3/0J/kP8xQEGQ==
   </chunk>
    <chunk x="0" y="80" width="16" height="16">
-   eJztz0EOgjAQBdBpglyAQFNU4AIWDN7/FuoB3Cgb4AAYP8lPmAVl4ZrFS2H4f0gTEUkC3vCiz0Zu7+/9NR1M9A1kHKRw4+nVtwgOFKt5DhnN75b9GlqVK6CkSs1r7pifG+658P9O5e5G5EFPs8w98567Qvfv0RloNOuZ60bfoZPT8Y/+CR1L50D/B3YlPLo=
+   eJwTZmBgEMaDZRgZGGQZ8asZTPqvAtVeA+LrjJj60eWMseh/D5T7AMQfsehHl5MYhP4fauEnSWP/ywH1GuHRb0CmuTCsTyAckfF1LO4wxKEfFlbI+CMJ+kHhKglULwXF0kCsh0UdALyYMn4=
   </chunk>
    <chunk x="16" y="80" width="16" height="16">
-   eJyl0+sNABAMReG7g0QZQpDafzbuCk6T/vzSB12Shv4jXjbgXbsAb9uhX8Dnywm87QHeNoD3/Ak9fX/Sv2uT/VXx/7OhJ/srYvdzASMvBBE=
+   eJwTZmBg0GUgHwgDsQSF+oUp1C9JoX4DCvXrU6jfhEL94hTqN6ZQP6XxT6n7KQ0/StOPIYX6BzL/AAAskQNX
   </chunk>
    <chunk x="0" y="96" width="16" height="16">
    eJwTZ2BgEMaBZRgZGMShWJYRuxpRCvWLUahfjgkTyzPh1i+LpnYUjIKRDAAaEAXI
@@ -94,13 +137,13 @@
    eJxjYBgFo2DkgiIK9fdQqH8ZhfopBQAyDwGl
   </chunk>
    <chunk x="0" y="64" width="16" height="16">
-   eJxjYEAF3IwMDDxAzMvIgAFwyTlhUTvUwE4g3kEF8ZEKRsNvaAIAkTwJOA==
+   eJxjYEAF3IwMDDxAzMvIgAFwyTlhUTvUwE4g3kEF8ZEKRsMPAqyB2AaIbUmUGygAAG9rCqA=
   </chunk>
    <chunk x="16" y="64" width="16" height="16">
    eJxjYKAMODFSaMAoGAWjYMAAAP8/AEQ=
   </chunk>
    <chunk x="0" y="80" width="16" height="16">
-   eJxjYBgFo2AUoAMnRuLEhjoAAHgyAIc=
+   eJxjYBhcwBqIbYDYlkS5UQABo+FHHQALK2Q8HMMNAPLUBDk=
   </chunk>
   </data>
  </layer>
@@ -128,7 +171,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="29" type="Unit" gid="769" x="88" y="1368" width="24" height="32">
+  <object id="29" type="Unit" gid="769" x="80" y="1360" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -138,7 +181,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="30" type="Unit" gid="772" x="80" y="1384" width="24" height="32">
+  <object id="30" type="Unit" gid="772" x="88" y="1384" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -168,7 +211,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="33" type="Unit" gid="730" x="176" y="1368" width="24" height="32">
+  <object id="33" type="Unit" gid="730" x="176" y="1360" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -188,7 +231,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="35" type="Unit" gid="736" x="192" y="1384" width="24" height="32">
+  <object id="35" type="Unit" gid="736" x="192" y="1376" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -208,7 +251,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="37" type="Unit" gid="778" x="104" y="1376" width="24" height="32">
+  <object id="37" type="Unit" gid="778" x="104" y="1368" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -218,7 +261,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="38" type="Unit" gid="724" x="216" y="1376" width="24" height="32">
+  <object id="38" type="Unit" gid="724" x="216" y="1368" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -228,7 +271,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="39" type="Unit" gid="784" x="80" y="1288" width="24" height="32">
+  <object id="39" type="Unit" gid="784" x="80" y="1280" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -288,7 +331,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="45" type="Unit" gid="736" x="200" y="1288" width="24" height="32">
+  <object id="45" type="Unit" gid="736" x="200" y="1280" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -308,7 +351,7 @@
     <property name="think" value="thinkFleeingCivilian"/>
    </properties>
   </object>
-  <object id="47" type="Unit" gid="721" x="200" y="1360" width="24" height="32">
+  <object id="47" type="Unit" gid="721" x="200" y="1352" width="24" height="32">
    <properties>
     <property name="bodytype" value="dynamic"/>
     <property name="module" value="Unit"/>
@@ -355,27 +398,41 @@
   </object>
  </objectgroup>
  <objectgroup id="39" name="pawns1">
-  <object id="255" type="Path" x="16" y="1192">
-   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
+  <object id="262" template="units/Pawn.tx" x="128" y="1208"/>
+  <object id="276" template="units/Pawn.tx" x="160" y="1208"/>
+  <object id="263" template="triggers/addUnits.tx" x="-16" y="1216"/>
+  <object id="319" type="Path" x="128" y="1208">
+   <polyline points="0,0 0,40 0,272"/>
   </object>
-  <object id="279" type="Path" x="48" y="1192">
-   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
+  <object id="320" type="Path" x="160" y="1208">
+   <polyline points="0,0 0,40 0,272"/>
   </object>
-  <object id="280" type="Path" x="80" y="1192">
-   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
+ </objectgroup>
+ <objectgroup id="43" name="pawns2">
+  <object id="260" template="units/Pawn.tx" x="96" y="1192"/>
+  <object id="261" template="units/Pawn.tx" x="192" y="1192"/>
+  <object id="318" type="Path" x="96" y="1192">
+   <polyline points="0,0 32,32 32,264"/>
   </object>
-  <object id="281" type="Path" x="112" y="1192">
-   <polyline points="16,0 16,56 32,72 32,88 48,104 48,120 80,152 80,264"/>
+  <object id="321" type="Path" x="192" y="1192">
+   <polyline points="0,0 -32,32 -32,264"/>
   </object>
-  <object id="260" template="units/EnemyPawn.tx" x="32" y="1192"/>
-  <object id="285" template="units/EnemyPawn.tx" x="160" y="1192"/>
-  <object id="261" template="units/EnemyPawn.tx" x="128" y="1192"/>
-  <object id="284" template="units/EnemyPawn.tx" x="256" y="1192"/>
-  <object id="262" template="units/EnemyPawn.tx" x="64" y="1192"/>
-  <object id="283" template="units/EnemyPawn.tx" x="192" y="1192"/>
-  <object id="276" template="units/EnemyPawn.tx" x="96" y="1192"/>
-  <object id="282" template="units/EnemyPawn.tx" x="224" y="1192"/>
-  <object id="263" template="triggers/addUnits.tx" x="-16" y="1200"/>
+  <object id="322" template="triggers/addUnits.tx" x="-16" y="1200"/>
+ </objectgroup>
+ <objectgroup id="44" name="pawns3">
+  <object id="323" template="triggers/addUnits.tx" x="-16" y="1184"/>
+  <object id="324" template="units/Pawn.tx" x="72" y="1176"/>
+  <object id="325" template="units/Pawn.tx" x="96" y="1176"/>
+  <object id="329" template="units/Pawn.tx" x="120" y="1176"/>
+  <object id="326" type="Path" x="64" y="1168">
+   <polyline points="32,8 80,56 80,280"/>
+  </object>
+  <object id="327" type="Path" x="40" y="1168">
+   <polyline points="32,8 8,32 8,96 24,112 72,112 88,128 88,256"/>
+  </object>
+  <object id="328" type="Path" x="88" y="1168">
+   <polyline points="32,8 80,56 80,280"/>
+  </object>
  </objectgroup>
  <layer id="4" name="town04_f_high" width="18" height="100">
   <data encoding="base64" compression="zlib">
@@ -395,16 +452,37 @@
    eJxjYBgFo2DogogBtr9ogO3nY6RMPwDLPwDa
   </chunk>
    <chunk x="0" y="64" width="16" height="16">
-   eJxjYGBg0GBkGPIgCogjqSA+UsFo+I1MAAAcqARc
+   eJxjYGBg0GBkGPIgCogjqSA+UsFo+FEPcJEpNxAAACkABHA=
   </chunk>
    <chunk x="16" y="64" width="16" height="16">
    eJzTYGQYBaNgFIxQAACn/wAq
   </chunk>
    <chunk x="0" y="80" width="16" height="16">
-   eJxjYBgFo2DwAT5G4sRwAQ2gWmsgbQPFtlCxUYAKAJS/AWE=
+   eJxjYBh8gItMuVEAAaPhNwqIBQBxsAAp
   </chunk>
   </data>
  </layer>
+ <objectgroup id="41" name="items">
+  <object id="299" template="units/WineGlassWhite.tx" x="72" y="1232"/>
+  <object id="311" template="units/WineGlassWhite.tx" x="184" y="1392"/>
+  <object id="304" template="units/WineGlassWhite.tx" x="200" y="1320"/>
+  <object id="308" template="units/WineGlassWhite.tx" x="200" y="1240"/>
+  <object id="300" template="units/WineGlassRed.tx" x="88" y="1240"/>
+  <object id="317" template="units/WineGlassRed.tx" x="104" y="1312"/>
+  <object id="310" template="units/WineGlassRed.tx" x="200" y="1400"/>
+  <object id="312" template="units/WineGlassRed.tx" x="216" y="1232"/>
+  <object id="314" template="units/WineGlassRed.tx" x="88" y="1400"/>
+  <object id="303" template="units/WineGlassRed.tx" x="184" y="1312"/>
+  <object id="307" template="units/WineGlassRed.tx" x="72" y="1392"/>
+  <object id="301" template="units/WineGlassMedium.tx" x="104" y="1232"/>
+  <object id="313" template="units/WineGlassMedium.tx" x="72" y="1312"/>
+  <object id="309" template="units/WineGlassMedium.tx" x="216" y="1392"/>
+  <object id="302" template="units/WineGlassMedium.tx" x="216" y="1312"/>
+  <object id="306" template="units/WineGlassMedium.tx" x="104" y="1392"/>
+  <object id="315" template="units/WineGlassDark.tx" x="88" y="1320"/>
+  <object id="316" template="units/WineGlassDark.tx" x="184" y="1232"/>
+  <object id="305" template="triggers/addUnits.tx" x="-40" y="1280"/>
+ </objectgroup>
  <group id="38" name="oldobjects" visible="0">
   <objectgroup id="6" name="camera">
    <properties>

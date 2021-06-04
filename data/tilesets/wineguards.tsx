@@ -11,7 +11,7 @@
  <image source="wineguards.png" width="432" height="160"/>
  <tile id="0">
   <properties>
-   <property name="tilename" value="EnemyKnight0"/>
+   <property name="tilename" value="Knight0"/>
   </properties>
   <objectgroup draworder="index">
    <object id="4" type="CollisionEnemy" x="6" y="12" width="12" height="16">
@@ -28,7 +28,7 @@
  </tile>
  <tile id="3">
   <properties>
-   <property name="tilename" value="EnemyPawn0"/>
+   <property name="tilename" value="Pawn0"/>
   </properties>
   <animation>
    <frame tileid="3" duration="100"/>
@@ -38,7 +38,7 @@
  </tile>
  <tile id="6">
   <properties>
-   <property name="tilename" value="EnemyRook0"/>
+   <property name="tilename" value="Rook0"/>
   </properties>
   <animation>
    <frame tileid="6" duration="100"/>
@@ -48,7 +48,7 @@
  </tile>
  <tile id="9">
   <properties>
-   <property name="tilename" value="EnemyBishop0"/>
+   <property name="tilename" value="Bishop0"/>
   </properties>
   <animation>
    <frame tileid="9" duration="100"/>
@@ -58,7 +58,7 @@
  </tile>
  <tile id="12">
   <properties>
-   <property name="tilename" value="EnemyKing0"/>
+   <property name="tilename" value="King0"/>
   </properties>
   <animation>
    <frame tileid="12" duration="100"/>
@@ -68,7 +68,7 @@
  </tile>
  <tile id="15">
   <properties>
-   <property name="tilename" value="EnemyQueen0"/>
+   <property name="tilename" value="Queen0"/>
   </properties>
   <animation>
    <frame tileid="15" duration="100"/>
@@ -78,7 +78,7 @@
  </tile>
  <tile id="18">
   <properties>
-   <property name="tilename" value="EnemyKnight1"/>
+   <property name="tilename" value="Knight1"/>
   </properties>
   <animation>
    <frame tileid="18" duration="100"/>
@@ -88,7 +88,7 @@
  </tile>
  <tile id="21">
   <properties>
-   <property name="tilename" value="EnemyPawn1"/>
+   <property name="tilename" value="Pawn1"/>
   </properties>
   <objectgroup draworder="index" id="2">
    <object id="1" name="hull" type="Fixture" x="6" y="8" width="12" height="16">
@@ -105,7 +105,7 @@
  </tile>
  <tile id="24">
   <properties>
-   <property name="tilename" value="EnemyRook1"/>
+   <property name="tilename" value="Rook1"/>
   </properties>
   <animation>
    <frame tileid="24" duration="100"/>
@@ -115,7 +115,7 @@
  </tile>
  <tile id="27">
   <properties>
-   <property name="tilename" value="EnemyBishop1"/>
+   <property name="tilename" value="Bishop1"/>
   </properties>
   <animation>
    <frame tileid="27" duration="100"/>
@@ -125,7 +125,7 @@
  </tile>
  <tile id="30">
   <properties>
-   <property name="tilename" value="EnemyKing1"/>
+   <property name="tilename" value="King1"/>
   </properties>
   <animation>
    <frame tileid="30" duration="100"/>
@@ -135,7 +135,7 @@
  </tile>
  <tile id="33">
   <properties>
-   <property name="tilename" value="EnemyQueen1"/>
+   <property name="tilename" value="Queen1"/>
   </properties>
   <animation>
    <frame tileid="33" duration="100"/>
@@ -145,7 +145,7 @@
  </tile>
  <tile id="36">
   <properties>
-   <property name="tilename" value="EnemyKnight2"/>
+   <property name="tilename" value="Knight2"/>
   </properties>
   <animation>
    <frame tileid="36" duration="100"/>
@@ -155,7 +155,7 @@
  </tile>
  <tile id="39">
   <properties>
-   <property name="tilename" value="EnemyPawn2"/>
+   <property name="tilename" value="Pawn2"/>
   </properties>
   <animation>
    <frame tileid="39" duration="100"/>
@@ -165,7 +165,7 @@
  </tile>
  <tile id="42">
   <properties>
-   <property name="tilename" value="EnemyRook2"/>
+   <property name="tilename" value="Rook2"/>
   </properties>
   <animation>
    <frame tileid="42" duration="100"/>
@@ -175,7 +175,7 @@
  </tile>
  <tile id="45">
   <properties>
-   <property name="tilename" value="EnemyBishop2"/>
+   <property name="tilename" value="Bishop2"/>
   </properties>
   <animation>
    <frame tileid="45" duration="100"/>
@@ -185,7 +185,7 @@
  </tile>
  <tile id="48">
   <properties>
-   <property name="tilename" value="EnemyKing2"/>
+   <property name="tilename" value="King2"/>
   </properties>
   <animation>
    <frame tileid="48" duration="100"/>
@@ -195,7 +195,7 @@
  </tile>
  <tile id="51">
   <properties>
-   <property name="tilename" value="EnemyQueen2"/>
+   <property name="tilename" value="Queen2"/>
   </properties>
   <animation>
    <frame tileid="51" duration="100"/>
@@ -205,7 +205,7 @@
  </tile>
  <tile id="54">
   <properties>
-   <property name="tilename" value="EnemyKnight3"/>
+   <property name="tilename" value="Knight3"/>
   </properties>
   <animation>
    <frame tileid="54" duration="100"/>
@@ -215,7 +215,7 @@
  </tile>
  <tile id="57">
   <properties>
-   <property name="tilename" value="EnemyPawn3"/>
+   <property name="tilename" value="Pawn3"/>
   </properties>
   <animation>
    <frame tileid="57" duration="100"/>
@@ -225,7 +225,7 @@
  </tile>
  <tile id="60">
   <properties>
-   <property name="tilename" value="EnemyRook3"/>
+   <property name="tilename" value="Rook3"/>
   </properties>
   <animation>
    <frame tileid="60" duration="100"/>
@@ -235,7 +235,7 @@
  </tile>
  <tile id="63">
   <properties>
-   <property name="tilename" value="EnemyBishop3"/>
+   <property name="tilename" value="Bishop3"/>
   </properties>
   <animation>
    <frame tileid="63" duration="100"/>
@@ -245,7 +245,7 @@
  </tile>
  <tile id="66">
   <properties>
-   <property name="tilename" value="EnemyKing3"/>
+   <property name="tilename" value="King3"/>
   </properties>
   <animation>
    <frame tileid="66" duration="100"/>
@@ -255,7 +255,7 @@
  </tile>
  <tile id="69">
   <properties>
-   <property name="tilename" value="EnemyQueen3"/>
+   <property name="tilename" value="Queen3"/>
   </properties>
   <animation>
    <frame tileid="69" duration="100"/>

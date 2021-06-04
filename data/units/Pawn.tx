@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <tileset firstgid="1" source="../tilesets/wineguards.tsx"/>
- <object name="EnemyPawn" type="Unit" gid="22" width="24" height="32">
+ <object name="Pawn" type="Unit" gid="22" width="24" height="32">
   <properties>
    <property name="bodytileshape" value="hull"/>
    <property name="bodytype" value="dynamic"/>
-   <property name="defeatdrop" value="DefeatedEnemyPawn"/>
+   <property name="defeatdrop" value="DefeatedPawn"/>
    <property name="enemyteam" value="playershot"/>
    <property name="health" type="int" value="15"/>
    <property name="module" value="Enemies"/>
