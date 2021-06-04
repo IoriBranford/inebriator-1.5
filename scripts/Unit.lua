@@ -29,8 +29,37 @@ function Unit.thinkTimeout(unit)
 	end
 end
 
+function Unit.findPathAtPosition(unit)
+	local paths = unit.layer.paths
+	if not paths then
+		return
+	end
+	local x, y = unit.x, unit.y
+	for id, path in pairs(paths) do
+		local points = path.polyline or path.polygon
+		local pathx, pathy = path.x + points[1], path.y + points[2]
+		if math.abs(pathx - x) < 1 and math.abs(pathy-y) < 1 then
+			unit.path = path
+			return path
+		end
+	end
+end
+
+function Unit.reachedPathEnd(unit)
+	local path = unit.path
+	if not path then
+		return
+	end
+	local polyline = path.polyline
+	if not polyline then
+		return
+	end
+	local pathindex = unit.pathindex
+	return pathindex and pathindex > #polyline
+end
+
 function Unit.walkPath(unit, onPointReached)
-	local path = unit.path and unit.layer.paths[unit.path.id]
+	local path = unit.path or Unit.findPathAtPosition(unit)
 	local polyline = path and path.polyline
 	local polygon = path and path.polygon
 	local points = polyline or polygon
@@ -109,11 +138,8 @@ end
 
 function Unit.thinkFleeingCivilian(unit)
 	Unit.walkPath(unit)
-	local path = unit.path and unit.layer.paths[unit.path.id]
-	local points = path and path.polyline
-	local pathindex = unit.pathindex or 2
 	local emote = unit.emote
-	if points and pathindex > #points then
+	if Unit.reachedPathEnd(unit) then
 		Units.remove(unit)
 		Units.remove(emote)
 	else

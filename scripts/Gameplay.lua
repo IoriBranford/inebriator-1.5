@@ -157,10 +157,15 @@ function Gameplay.loadStage(stagefile)
                     if module then
                         require(module)
                     end
+                    local path = object.path
+                    if path then
+                        object.path = mapobjects[path.id]
+                    end
                 end
             end
         end
     end
+    timeline:sort()
     local prefabs = layers.prefabs
     if prefabs then
         Units.addPrefabs(prefabs)
