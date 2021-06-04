@@ -210,7 +210,7 @@ local function handlePlayerHit()
     if invincibletime > 0 then
         player.health = 1
     elseif player.health < 1 then
-        -- Audio.play("data/sounds/scream.ogg")
+        Audio.play("data/sounds/scream.ogg")
         Audio.play("data/sounds/selfdestruct.ogg")
         local explosion = Units.add_position("ExplosionPlayer", player.x, player.y, player.z)
         explosion.vely = cameravy
