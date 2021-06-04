@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../tilesets/wineitems.tsx"/>
+ <object name="WineBottleDark" type="Unit" gid="8" width="8" height="24">
+  <properties>
+   <property name="alcohol" type="int" value="16"/>
+   <property name="bodytileshape" value="hull"/>
+   <property name="bodytype" value="dynamic"/>
+   <property name="team" value="item"/>
+  </properties>
+ </object>
+</template>

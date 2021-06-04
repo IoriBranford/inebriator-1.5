@@ -5,66 +5,76 @@
   <property name="commoncollision" type="int" value="0"/>
  </properties>
  <image source="wineitems.png" width="32" height="48"/>
- <tile id="0" type="ItemLiquor">
-  <properties>
-   <property name="alcohol" type="float" value="0.02"/>
-   <property name="itemtype" value="glass_redwine"/>
-   <property name="name" value="glass_redwine"/>
-  </properties>
-  <objectgroup draworder="index">
-   <object id="2" x="0" y="0" width="8" height="24">
+ <tile id="0">
+  <objectgroup draworder="index" id="2">
+   <object id="2" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
     <properties>
-     <property name="collidable" type="bool" value="true"/>
      <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>
  </tile>
- <tile id="1" type="ItemLiquor">
-  <properties>
-   <property name="itemtype" value="glass_mediumwine"/>
-   <property name="name" value="glass_mediumwine"/>
-  </properties>
+ <tile id="1">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
- <tile id="2" type="ItemLiquor">
-  <properties>
-   <property name="itemtype" value="glass_lightwine"/>
-   <property name="name" value="glass_lightwine"/>
-  </properties>
+ <tile id="2">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
- <tile id="3" type="ItemLiquor">
-  <properties>
-   <property name="alcohol" type="float" value="0.02"/>
-   <property name="itemtype" value="glass_darkwine"/>
-   <property name="name" value="glass_darkwine"/>
-  </properties>
+ <tile id="3">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
- <tile id="4" type="ItemLiquor">
-  <properties>
-   <property name="alcohol" type="float" value="0.2"/>
-   <property name="itemtype" value="bottle_redwine"/>
-   <property name="name" value="bottle_redwine"/>
-  </properties>
+ <tile id="4">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
- <tile id="5" type="ItemLiquor">
-  <properties>
-   <property name="alcohol" type="float" value="0.15"/>
-   <property name="itemtype" value="bottle_mediumwine"/>
-   <property name="name" value="bottle_mediumwine"/>
-  </properties>
+ <tile id="5">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
- <tile id="6" type="ItemLiquor">
-  <properties>
-   <property name="alcohol" type="float" value="0.1"/>
-   <property name="itemtype" value="bottle_lightwine"/>
-   <property name="name" value="bottle_lightwine"/>
-  </properties>
+ <tile id="6">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
- <tile id="7" type="ItemLiquor">
-  <properties>
-   <property name="alcohol" type="float" value="0.25"/>
-   <property name="itemtype" value="bottle_darkwine"/>
-   <property name="name" value="bottle_darkwine"/>
-  </properties>
+ <tile id="7">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="8" height="24">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
  </tile>
 </tileset>
