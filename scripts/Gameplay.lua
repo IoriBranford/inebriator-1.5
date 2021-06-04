@@ -294,6 +294,12 @@ local function inputPlayerMove()
     Player.setVelocity(player, vx, vy)
 end
 
+function Gameplay.keypressed(key)
+    if key=="escape" then
+        love.event.quit()
+    end
+end
+
 function Gameplay.update(dsecs, fixedfrac)
     inputPlayerMove()
     for id, unit in Units.iterate() do
