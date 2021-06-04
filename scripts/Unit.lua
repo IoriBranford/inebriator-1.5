@@ -1,9 +1,9 @@
-local Unit = {}
-
-local Gameplay = require "Gameplay"
+local Stage = require "Stage"
 local Units = require "Units"
 local Movement = require "Movement"
 local Audio = require "Audio"
+
+local Unit = {}
 
 local function matchVelocity(follower, leader)
 	follower.velx, follower.vely = leader.velx, leader.vely
@@ -125,7 +125,7 @@ function Unit.startDefeatedDrunkEnemy(unit)
 end
 
 function Unit.thinkDefeatedDrunkEnemy(unit)
-	local camerabottom = Gameplay.getCameraBottom()
+	local camerabottom = Stage.getCameraBottom()
 	if unit.y > camerabottom then
 		Units.remove(unit)
 		Units.remove(unit.emote)

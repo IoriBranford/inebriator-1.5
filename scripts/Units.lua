@@ -12,15 +12,19 @@ local removedunits
 local scene
 local unitprefabs
 
-function Units.init(nextunitid0, scene0)
+function Units.init(scene0)
     Unit = Unit or require "Unit"
-    nextunitid = nextunitid0 or 1
+    nextunitid = 1
     units = {}
     thinkingunits = {}
     newunitqueue = {}
     removedunits = {}
     scene = scene0
     unitprefabs = {}
+end
+
+function Units.setNextId(id)
+    nextunitid = id
 end
 
 function Units.clear()

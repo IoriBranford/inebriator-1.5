@@ -109,6 +109,16 @@ function Scene:remove(id)
     self.byid[id] = nil
 end
 
+function Scene:clear()
+    local byid = self.byid
+    for id, _ in pairs(byid) do
+        byid[id] = nil
+    end
+    for i = #self, 1, -1 do
+        self[i] = nil
+    end
+end
+
 function Scene:updateFromUnit(id, unit, fixedfrac)
     local sceneobject = self.byid[id]
     if sceneobject then
