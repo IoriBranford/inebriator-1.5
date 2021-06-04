@@ -41,30 +41,21 @@ function Enemies.thinkPawn(unit)
         Enemies.defeatStandard(unit)
         return
     end
-    local player = Units.get("player")
-    local velx, vely = 0, 1
-    if unit.age < 15 then
-        vely = 2
-    else
-        if player then
+    Unit.walkPath(unit)
+    if unit.pathindex > 4 then
+        unit.movespeed = 1
+        local player = Units.get("player")
+        if player and unit.age % 60 == 0 then
             local px, py = player.x, player.y
             local dx, dy = px - unit.x, py - unit.y
-            local dist = math.len(dx, dy)
-            local dotright = math.dot(dx, dy, hsqrt2, hsqrt2)
-            local dotleft = math.dot(dx, dy, -hsqrt2, hsqrt2)
-            if dist - dotleft < 1 then
-                velx = -1
-            elseif dist - dotright < 1 then
-                velx = 1
-            end
-            if velx ~= 0 and unit.age % 15 == 0 then
-                local shotvelx, shotvely = velx*2, vely*2
-                local shot = Shooting.shoot_vel(unit, "BulletPike", shotvelx, shotvely)
-                shot.z = player.z
+            if dy >= math.abs(dy) * hsqrt2 then
+                Shooting.shoot_targetUnit_speed(unit, "BulletPike", player, 2)
             end
         end
     end
-    unit.velx, unit.vely = velx, vely
+    if Unit.reachedPathEnd(unit) then
+        Units.remove(unit)
+    end
 end
 
 Enemies.collideDefault = Unit.collideDefault
