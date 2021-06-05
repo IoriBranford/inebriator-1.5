@@ -8,8 +8,8 @@ return {
   height = 100,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 61,
-  nextobjectid = 383,
+  nextlayerid = 68,
+  nextobjectid = 446,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -4197,7 +4197,7 @@ return {
           },
           objectGroup = {
             type = "objectgroup",
-            draworder = "index",
+            draworder = "topdown",
             name = "",
             visible = true,
             opacity = 1,
@@ -4208,18 +4208,18 @@ return {
             properties = {},
             objects = {
               {
-                id = 4,
-                name = "",
-                type = "CollisionEnemy",
+                id = 1,
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 6,
-                y = 12,
+                y = 8,
                 width = 12,
                 height = 16,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -4240,9 +4240,102 @@ return {
           }
         },
         {
+          id = 1,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 2,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 3,
           properties = {
             ["tilename"] = "Pawn0"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4260,9 +4353,102 @@ return {
           }
         },
         {
+          id = 4,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 5,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 6,
           properties = {
             ["tilename"] = "Rook0"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4280,9 +4466,102 @@ return {
           }
         },
         {
+          id = 7,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 8,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 9,
           properties = {
             ["tilename"] = "Bishop0"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4300,9 +4579,102 @@ return {
           }
         },
         {
+          id = 10,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 11,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 12,
           properties = {
             ["tilename"] = "King0"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4320,9 +4692,102 @@ return {
           }
         },
         {
+          id = 13,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 14,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 15,
           properties = {
             ["tilename"] = "Queen0"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4340,9 +4805,102 @@ return {
           }
         },
         {
+          id = 16,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 17,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 18,
           properties = {
             ["tilename"] = "Knight1"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4356,6 +4914,70 @@ return {
             {
               tileid = 20,
               duration = 100
+            }
+          }
+        },
+        {
+          id = 19,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 20,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
             }
           }
         },
@@ -4410,9 +5032,102 @@ return {
           }
         },
         {
+          id = 22,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 23,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 24,
           properties = {
             ["tilename"] = "Rook1"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4430,9 +5145,102 @@ return {
           }
         },
         {
+          id = 25,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 26,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 27,
           properties = {
             ["tilename"] = "Bishop1"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4450,9 +5258,102 @@ return {
           }
         },
         {
+          id = 28,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 29,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 30,
           properties = {
             ["tilename"] = "King1"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4470,9 +5371,102 @@ return {
           }
         },
         {
+          id = 31,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 32,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 33,
           properties = {
             ["tilename"] = "Queen1"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4490,9 +5484,102 @@ return {
           }
         },
         {
+          id = 34,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 35,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 36,
           properties = {
             ["tilename"] = "Knight2"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4510,9 +5597,102 @@ return {
           }
         },
         {
+          id = 37,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 38,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 39,
           properties = {
             ["tilename"] = "Pawn2"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4530,9 +5710,102 @@ return {
           }
         },
         {
+          id = 40,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 41,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 42,
           properties = {
             ["tilename"] = "Rook2"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4550,9 +5823,102 @@ return {
           }
         },
         {
+          id = 43,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 44,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 45,
           properties = {
             ["tilename"] = "Bishop2"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4570,9 +5936,102 @@ return {
           }
         },
         {
+          id = 46,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 47,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 48,
           properties = {
             ["tilename"] = "King2"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4590,9 +6049,102 @@ return {
           }
         },
         {
+          id = 49,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 50,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 51,
           properties = {
             ["tilename"] = "Queen2"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4610,9 +6162,102 @@ return {
           }
         },
         {
+          id = 52,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 53,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 54,
           properties = {
             ["tilename"] = "Knight3"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4630,9 +6275,102 @@ return {
           }
         },
         {
+          id = 55,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 56,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 57,
           properties = {
             ["tilename"] = "Pawn3"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4650,9 +6388,102 @@ return {
           }
         },
         {
+          id = 58,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 59,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 60,
           properties = {
             ["tilename"] = "Rook3"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4670,9 +6501,102 @@ return {
           }
         },
         {
+          id = 61,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 62,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 63,
           properties = {
             ["tilename"] = "Bishop3"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4690,9 +6614,102 @@ return {
           }
         },
         {
+          id = 64,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 65,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 66,
           properties = {
             ["tilename"] = "King3"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4710,9 +6727,102 @@ return {
           }
         },
         {
+          id = 67,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 68,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
           id = 69,
           properties = {
             ["tilename"] = "Queen3"
+          },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
           },
           animation = {
             {
@@ -4726,6 +6836,70 @@ return {
             {
               tileid = 71,
               duration = 100
+            }
+          }
+        },
+        {
+          id = 70,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          }
+        },
+        {
+          id = 71,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "topdown",
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 6,
+                y = 8,
+                width = 12,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
             }
           }
         },
@@ -5923,6 +8097,25 @@ return {
   },
   layers = {
     {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 18,
+      height = 100,
+      id = 45,
+      name = "Copy of town04_f_low",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJzt0LENgFAMQ8Fsl6FYHgom+BLYxRUpXhHJup2Zfe56bw/79O+rbtnBhw8fPulu2cGHDx8+6W7ZwYcPHz7pbtnBhw8fPulu2cGHDx8+6W7Zwedfnxv8OKon"
+    },
+    {
       type = "objectgroup",
       draworder = "topdown",
       id = 40,
@@ -6196,25 +8389,6 @@ return {
           }
         }
       }
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 18,
-      height = 100,
-      id = 45,
-      name = "Copy of town04_f_low",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJzt0LENgFAMQ8Fsl6FYHgom+BLYxRUpXhHJup2Zfe56bw/79O+rbtnBhw8fPulu2cGHDx8+6W7ZwYcPHz7pbtnBhw8fPulu2cGHDx8+6W7Zwedfnxv8OKon"
     },
     {
       type = "objectgroup",
@@ -6698,7 +8872,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -16,
           y = 1280,
           width = 0,
           height = 0,
@@ -6885,7 +9059,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -6893,7 +9068,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -16,
           y = 1200,
           width = 0,
           height = 0,
@@ -6962,7 +9137,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -6970,7 +9146,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -24,
           y = 1184,
           width = 0,
           height = 0,
@@ -7039,7 +9215,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7047,7 +9224,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -32,
           y = 1168,
           width = 0,
           height = 0,
@@ -7116,7 +9293,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7124,7 +9302,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -40,
           y = 1152,
           width = 0,
           height = 0,
@@ -7193,7 +9371,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7201,7 +9380,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -48,
           y = 1136,
           width = 0,
           height = 0,
@@ -7270,7 +9449,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7278,7 +9458,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -56,
           y = 1120,
           width = 0,
           height = 0,
@@ -7347,7 +9527,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7355,7 +9536,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
+          x = -64,
           y = 1104,
           width = 0,
           height = 0,
@@ -7409,7 +9590,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = 296,
-          y = 1064,
+          y = 1080,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7424,7 +9605,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7432,8 +9614,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 1072,
+          x = -40,
+          y = 1088,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7453,15 +9635,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = 296,
-          y = 1064,
+          y = 1080,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = -64, y = 16 },
-            { x = -304, y = 256 }
+            { x = -80, y = 16 },
+            { x = -320, y = 256 }
           },
           properties = {}
         }
@@ -7486,7 +9668,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = 296,
-          y = 1032,
+          y = 1056,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7501,7 +9683,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7509,8 +9692,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 1040,
+          x = -40,
+          y = 1064,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7530,15 +9713,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = 296,
-          y = 1032,
+          y = 1056,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = -64, y = 16 },
-            { x = -304, y = 256 }
+            { x = -80, y = 16 },
+            { x = -320, y = 256 }
           },
           properties = {}
         }
@@ -7563,7 +9746,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = 296,
-          y = 1000,
+          y = 1032,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7578,7 +9761,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7586,8 +9770,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 1008,
+          x = -40,
+          y = 1040,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7607,15 +9791,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = 296,
-          y = 1000,
+          y = 1032,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = -64, y = 16 },
-            { x = -304, y = 256 }
+            { x = -80, y = 16 },
+            { x = -320, y = 256 }
           },
           properties = {}
         }
@@ -7640,7 +9824,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = 296,
-          y = 968,
+          y = 1008,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7655,7 +9839,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7663,8 +9848,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 976,
+          x = -40,
+          y = 1016,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7684,15 +9869,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = 296,
-          y = 968,
+          y = 1008,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = -64, y = 16 },
-            { x = -304, y = 256 }
+            { x = -80, y = 16 },
+            { x = -320, y = 256 }
           },
           properties = {}
         }
@@ -7717,7 +9902,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = -8,
-          y = 1016,
+          y = 1040,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7732,7 +9917,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7740,8 +9926,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 1024,
+          x = -64,
+          y = 1048,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7761,15 +9947,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = -8,
-          y = 1016,
+          y = 1040,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 64, y = 16 },
-            { x = 304, y = 256 }
+            { x = 80, y = 16 },
+            { x = 320, y = 256 }
           },
           properties = {}
         }
@@ -7794,7 +9980,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = -8,
-          y = 984,
+          y = 1016,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7809,7 +9995,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7817,8 +10004,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 992,
+          x = -64,
+          y = 1024,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7838,15 +10025,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = -8,
-          y = 984,
+          y = 1016,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 64, y = 16 },
-            { x = 304, y = 256 }
+            { x = 80, y = 16 },
+            { x = 320, y = 256 }
           },
           properties = {}
         }
@@ -7871,7 +10058,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = -8,
-          y = 952,
+          y = 992,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7886,7 +10073,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7894,8 +10082,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 960,
+          x = -64,
+          y = 1000,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7915,15 +10103,15 @@ return {
           type = "Path",
           shape = "polyline",
           x = -8,
-          y = 952,
+          y = 992,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 64, y = 16 },
-            { x = 304, y = 256 }
+            { x = 80, y = 16 },
+            { x = 320, y = 256 }
           },
           properties = {}
         }
@@ -7948,7 +10136,7 @@ return {
           type = "Unit",
           shape = "rectangle",
           x = -8,
-          y = 920,
+          y = 968,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7963,7 +10151,8 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn"
+            ["think"] = "thinkPawn",
+            ["z"] = 2
           }
         },
         {
@@ -7971,8 +10160,8 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -72,
-          y = 928,
+          x = -64,
+          y = 976,
           width = 0,
           height = 0,
           rotation = 0,
@@ -7992,15 +10181,824 @@ return {
           type = "Path",
           shape = "polyline",
           x = -8,
-          y = 920,
+          y = 968,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 64, y = 16 },
-            { x = 304, y = 256 }
+            { x = 80, y = 16 },
+            { x = 320, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 65,
+      name = "pawnscissors1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 415,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -64,
+          y = 936,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 16, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 414,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 272,
+          y = 928,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 435,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 304,
+          y = 960,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 418,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 16,
+          y = 912,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 429,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -16,
+          y = 944,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 419,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 240,
+          y = 896,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 420,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 48,
+          y = 880,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 424,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 208,
+          y = 864,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 425,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 80,
+          y = 848,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 431,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 80,
+          y = 800,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 48 },
+            { x = 8, y = 80 },
+            { x = 24, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 128 },
+            { x = 96, y = 128 },
+            { x = 320, y = 128 }
+          },
+          properties = {}
+        },
+        {
+          id = 432,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 48,
+          y = 832,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 48 },
+            { x = 8, y = 80 },
+            { x = 24, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 128 },
+            { x = 96, y = 128 },
+            { x = 320, y = 128 }
+          },
+          properties = {}
+        },
+        {
+          id = 433,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 16,
+          y = 864,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 48 },
+            { x = 8, y = 80 },
+            { x = 24, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 128 },
+            { x = 96, y = 128 },
+            { x = 320, y = 128 }
+          },
+          properties = {}
+        },
+        {
+          id = 434,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = -16,
+          y = 896,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 48 },
+            { x = 8, y = 80 },
+            { x = 24, y = 104 },
+            { x = 48, y = 120 },
+            { x = 80, y = 128 },
+            { x = 96, y = 128 },
+            { x = 320, y = 128 }
+          },
+          properties = {}
+        },
+        {
+          id = 436,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 208,
+          y = 848,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 16 },
+            { x = -8, y = 48 },
+            { x = -24, y = 72 },
+            { x = -48, y = 88 },
+            { x = -80, y = 96 },
+            { x = -320, y = 96 }
+          },
+          properties = {}
+        },
+        {
+          id = 437,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 240,
+          y = 880,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 16 },
+            { x = -8, y = 48 },
+            { x = -24, y = 72 },
+            { x = -48, y = 88 },
+            { x = -80, y = 96 },
+            { x = -320, y = 96 }
+          },
+          properties = {}
+        },
+        {
+          id = 438,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 272,
+          y = 912,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 16 },
+            { x = -8, y = 48 },
+            { x = -24, y = 72 },
+            { x = -48, y = 88 },
+            { x = -80, y = 96 },
+            { x = -320, y = 96 }
+          },
+          properties = {}
+        },
+        {
+          id = 439,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 304,
+          y = 944,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 16 },
+            { x = -8, y = 48 },
+            { x = -24, y = 72 },
+            { x = -48, y = 88 },
+            { x = -80, y = 96 },
+            { x = -320, y = 96 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 61,
+      name = "knight1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 396,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 272,
+          y = 768,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 443,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 336,
+          y = 736,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["path"] = { id = 409 },
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 384,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -40,
+          y = 784,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 16, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 409,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 80,
+          y = 704,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 192, y = 64 },
+            { x = 160, y = 128 },
+            { x = 96, y = 160 },
+            { x = 32, y = 128 },
+            { x = -32, y = 96 },
+            { x = -96, y = 64 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 62,
+      name = "knight2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 387,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -40,
+          y = 736,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 16, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 394,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 16,
+          y = 720,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 444,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -48,
+          y = 688,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["path"] = { id = 393 },
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 393,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 208,
+          y = 624,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = -192, y = 96 },
+            { x = -160, y = 160 },
+            { x = -96, y = 192 },
+            { x = 96, y = 96 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 63,
+      name = "knight3",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 397,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -40,
+          y = 656,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 16, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 398,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 16,
+          y = 640,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 445,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -48,
+          y = 608,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["path"] = { id = 406 },
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 406,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 48,
+          y = 640,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = -32, y = 0 },
+            { x = 32, y = 32 },
+            { x = 0, y = 96 },
+            { x = 64, y = 64 },
+            { x = 128, y = 96 },
+            { x = 192, y = 64 },
+            { x = 256, y = 96 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 64,
+      name = "knight4",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 400,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -64,
+          y = 352,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 16, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 404,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 48,
+          y = 336,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 643,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedKnight",
+            ["enemyteam"] = "playershot",
+            ["health"] = 30,
+            ["module"] = "Enemies",
+            ["movespeed"] = 2,
+            ["team"] = "enemy",
+            ["think"] = "thinkKnight",
+            ["z"] = 2
+          }
+        },
+        {
+          id = 407,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 48,
+          y = 336,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 64 },
+            { x = 96, y = 32 },
+            { x = 128, y = 96 },
+            { x = 192, y = 128 },
+            { x = 224, y = 192 },
+            { x = 288, y = 224 }
           },
           properties = {}
         }

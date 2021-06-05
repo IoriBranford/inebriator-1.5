@@ -60,6 +60,29 @@ function Enemies.thinkPawn(unit)
     end
 end
 
+function Enemies.thinkKnight(unit)
+	local health = unit.health or 1
+	if health < 1 then
+        Enemies.defeatStandard(unit)
+        return
+    end
+    Unit.walkPath(unit)
+    if unit.pathindex > 4 then
+        local player = Units.get("player")
+        if player and unit.age % 30 == 0 then
+            local px, py = player.x, player.y
+            local dx, dy = px - unit.x, py - unit.y
+            local dist = math.len(dx, dy)
+            if dist <= 180 and  dy >= dist * cos60 then
+                Shooting.shoot_targetUnit_speed(unit, "BulletSword", player, 3)
+            end
+        end
+    end
+    if Unit.reachedPathEnd(unit) then
+        Units.remove(unit)
+    end
+end
+
 Enemies.collideDefault = Unit.collideDefault
 
 return Enemies
