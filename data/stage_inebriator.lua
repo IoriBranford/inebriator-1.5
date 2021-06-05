@@ -8,8 +8,8 @@ return {
   height = 100,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 45,
-  nextobjectid = 330,
+  nextlayerid = 61,
+  nextobjectid = 383,
   properties = {
     ["blurupdatespeed"] = 1,
     ["cameraid"] = 2,
@@ -6045,7 +6045,7 @@ return {
         },
         {
           id = 286,
-          name = "WineGlassRed",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 304,
@@ -6064,7 +6064,7 @@ return {
         },
         {
           id = 287,
-          name = "WineGlassMedium",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 320,
@@ -6083,7 +6083,7 @@ return {
         },
         {
           id = 288,
-          name = "WineGlassWhite",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 336,
@@ -6102,7 +6102,7 @@ return {
         },
         {
           id = 289,
-          name = "WineGlassDark",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 352,
@@ -6121,7 +6121,7 @@ return {
         },
         {
           id = 290,
-          name = "WineBottleRed",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 304,
@@ -6140,7 +6140,7 @@ return {
         },
         {
           id = 291,
-          name = "WineBottleMedium",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 320,
@@ -6159,7 +6159,7 @@ return {
         },
         {
           id = 292,
-          name = "WineBottleWhite",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 336,
@@ -6178,7 +6178,7 @@ return {
         },
         {
           id = 293,
-          name = "WineBottleDark",
+          name = "",
           type = "Unit",
           shape = "rectangle",
           x = 352,
@@ -6203,8 +6203,8 @@ return {
       y = 0,
       width = 18,
       height = 100,
-      id = 1,
-      name = "town04_f_low",
+      id = 45,
+      name = "Copy of town04_f_low",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -6214,112 +6214,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      chunks = {
-        {
-          x = 0, y = 0, width = 16, height = 16,
-          data = "eJzlkbENwjAQRS8pYIAoQCJWICERYgeYhp45KFmChj3MCBEBJGADBP+kj2SfEBQUFBTP/v7+d5bOTkR2YBGJOOoYzLAsJUQ9vXNezRn7BQwl1HMEVxKins110KMLpkavwcagns1dscfomxi9BXvQkgM9m/PJwMg7H0FDTp5fgjF1+4a7Vy/R60zzY25fUnEeE86k5hz1nNJ7ZnS2BVGvD3JmC2ZK1g1Ym7KuYibhGz3e2T/0qdk7Z4/sQ/4feQC/kGhb"
-        },
-        {
-          x = 16, y = 0, width = 16, height = 16,
-          data = "eJy7xMDAcJmBfPAGiN9SoJ+NkYGBnZF8/e+AepmYyNcvBsT65GtneAbF5ILHUDxQ+v9CMbnACIglKdBvADWDXCAMxaP6yQMAfh8Ngw=="
-        },
-        {
-          x = 0, y = 16, width = 16, height = 16,
-          data = "eJyTZGRgkAJiaSAWZoBgSRLEZIBYHIhlkcRJERvVP7T1ywGxIRAbIYmTIgZjDzR+CsTPsODnBORg+l8A8QIgXoiEFwHxSwJyyPp3AfFuJLwHST8uOWT9V4D4KhK+hqQflxwA55RAOQ=="
-        },
-        {
-          x = 16, y = 16, width = 16, height = 16,
-          data = "eJyTYmRgkAZicoE4UK/sqP4Rq98QqNeIAv3CUDyqf2D0AwAr0QMx"
-        },
-        {
-          x = 0, y = 32, width = 16, height = 16,
-          data = "eJyl0O0JwjAQBuA4Q8GPoiOoLaiDqGOoK4jfjqGOUR2jukD+WHdQfAMXuEiSNvjjoZdc3uNoJISI4AknODMXKFhPnSWrC8rqfAZX5sbyGZ0lq3/zOdyZR2Det39O83x53/6S0bNC9nftVnV/124h/78s79vf1dP5F7wtPiW9ASTQgybUIYU+xHRu0Tt116VvQndx7T8NGGPOBKbCrEfopR5Dys/wdg4LYdYd9FawtthAm/J7vD3AUZi1ym9habFjeZcq+S+1DIy0"
-        },
-        {
-          x = 16, y = 32, width = 16, height = 16,
-          data = "eJwTZmBgEGYgHwiP6h/VT4F+EyA2pkC/FCMEkwvEGSF4pOoHAJkRAto="
-        },
-        {
-          x = 0, y = 48, width = 16, height = 16,
-          data = "eJwTZ2RgCGJgYAgG4hAGVLYsUK4FiOux4FYglgFicSDOAarNBeI8BlQ2SH8bEM/Egmch6W8Dqm0H4g4GVLYJUE4KDzaG6seFcfkLmY1PPy5/IbPx6cflL2S2ISNlWJhhcOOnQPycAv0vgPglkWol0dKHNCNCPzY5dP0yaPEni6Qfm9xg0y+HljaMkPRjkwPpAQCFzDpn"
-        },
-        {
-          x = 16, y = 48, width = 16, height = 16,
-          data = "eJwTZ2RgEAdicoH4qH6K9BsyQjC5QBiKR/WP6icHAABwGALb"
-        },
-        {
-          x = 0, y = 64, width = 16, height = 16,
-          data = "eJylkk0OwiAUhCFRL9C0pfh7AY0WF8b7X0E9gam6US9gHBJIJk8CCxff4s0wBYb2Sqkqww3cM/66kH+AT8bvgQMjMBGeJd2RviV9B/ZgAVZh5m9H3ZDekr4J3gEcw8z7R53zFelt4f4lXDizCef1d7uCIfg16EBDuqHerejPUeey15RuRH/csyWd79mRHt8v9mFpXU06/yct6c2f/ZXynVZqqjO+mH0vY+pshuxcp70Uvpdl6EbmpZfihLVncNG/eem5RP4J7wXeibz0/Nt/AYp9LLw="
-        },
-        {
-          x = 16, y = 64, width = 16, height = 16,
-          data = "eJytksEJACAMA7NDQXSIKur+u1nBCXoG8jxIQkxSUV4WnoDf4Q74Jpa/vAxZ3f4L8mQ/Dw/AX5bmd8jT/el/K+TJf3/0J/kP8xQEGQ=="
-        },
-        {
-          x = 0, y = 80, width = 16, height = 16,
-          data = "eJylkkEKwjAQRSegvUA2ptXWE1Sr9z9G7TFsb9AfUBiGmUnExYPA/Ld5JBJRdDgHokvwN5kDOIKmwte2PRjAtcLXtjM2L7CEsq9t33ivYKvwre0//aw23Lcae224bzX22nBf3p6KL9twX95OIBV69Ng+fuintfSa3Staes1uhY4c+Tczk+F/W3G0/2b5uWvCvv3QgVHZ7btrMiQ="
-        },
-        {
-          x = 16, y = 80, width = 16, height = 16,
-          data = "eJwTZmBg0GUgH0hAMblAGIrJBZJQTC4wgGJyAcjt+hTqN6FQvziF+o0p1E9p/FPqfkrDj5L0A9JvSKH+gcw/AKnRA38="
-        },
-        {
-          x = 0, y = 96, width = 16, height = 16,
-          data = "eJwTZ2BgEMaBZRgZGMShWJYRuxpRCvWLUahfjgkTyzPh1i+LpnYUjIKRDAAaEAXI"
-        },
-        {
-          x = 16, y = 96, width = 16, height = 16,
-          data = "eJwTZmBg0GUgHwhDMSX6xSjQL8cEwaNgFIwC0gEA8EIA0A=="
-        }
-      }
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 18,
-      height = 100,
-      id = 2,
-      name = "town04_f_mid",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      chunks = {
-        {
-          x = 0, y = 16, width = 16, height = 16,
-          data = "eJxjYEAAZSYGBlUmBhRArNio/lH9xYwMDKWM5ImNAgaGv4yQsFWBhq8hE3FyyABZDTFyAMpUDu0="
-        },
-        {
-          x = 0, y = 32, width = 16, height = 16,
-          data = "eJxjYECAv4wMDMpMDAwqQKwKxIZMxMkhA2Q1pMiN2k8d+4uB6kqAuJSRNLlRQBk4gINNDFgMxEuwsJHBcmCcrQDilWTG3UGgvkNAfBhNPwAzvhrV"
-        },
-        {
-          x = 0, y = 48, width = 16, height = 16,
-          data = "eJxjYGBgWAzESxggAJmNDg7iEAeBAzjY9ABfgfgbFjY1wAEg5mZkYOBlxGTTw/6RBq4D8Q0gvkmiHCUgH4i7yNDXjUW/GhMDgzoQazBhqkeXg+lHznP2wLTlAMSOjJj60eWWkuFmdAAAWpcbcA=="
-        },
-        {
-          x = 16, y = 48, width = 16, height = 16,
-          data = "eJxjYBgFo2DkgiIK9fdQqH8ZhfopBQAyDwGl"
-        },
-        {
-          x = 0, y = 64, width = 16, height = 16,
-          data = "eJxjYEAF3IwMDDxAzMvIgAFwyTlhUUtvEAXEkRSI7wTiHVjUkSo+VMFo+FEHWAOxDRDbkig3UAAA5KkO0g=="
-        },
-        {
-          x = 16, y = 64, width = 16, height = 16,
-          data = "eJxjYKAMODFSaMAoGAWjYMAAAP8/AEQ="
-        },
-        {
-          x = 0, y = 80, width = 16, height = 16,
-          data = "eJxjYBgcwBqIbYDYlspqRxrAFzaj4UY8gIUVMh6O4QYA8tQEOQ=="
-        }
-      }
+      data = "eJzt0LENgFAMQ8Fsl6FYHgom+BLYxRUpXhHJup2Zfe56bw/79O+rbtnBhw8fPulu2cGHDx8+6W7ZwYcPHz7pbtnBhw8fPulu2cGHDx8+6W7Zwedfnxv8OKon"
     },
     {
       type = "objectgroup",
@@ -6803,7 +6698,7 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -16,
+          x = -72,
           y = 1280,
           width = 0,
           height = 0,
@@ -6811,7 +6706,7 @@ return {
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 16, y = 0 }
+            { x = 32, y = 0 }
           },
           properties = {
             ["command"] = "addUnits",
@@ -6959,8 +6854,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 39,
-      name = "pawns1",
+      id = 48,
+      name = "pawn1",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -6970,12 +6865,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 262,
-          name = "Pawn",
+          id = 340,
+          name = "",
           type = "Unit",
           shape = "rectangle",
-          x = 128,
-          y = 1208,
+          x = 240,
+          y = 1192,
           width = 24,
           height = 32,
           rotation = 0,
@@ -6994,12 +6889,65 @@ return {
           }
         },
         {
-          id = 276,
-          name = "Pawn",
+          id = 342,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1200,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 343,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 240,
+          y = 1192,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = 32 },
+            { x = 0, y = 272 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 39,
+      name = "pawn2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 262,
+          name = "",
           type = "Unit",
           shape = "rectangle",
-          x = 160,
-          y = 1208,
+          x = 208,
+          y = 1176,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7022,15 +6970,15 @@ return {
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -16,
-          y = 1216,
+          x = -72,
+          y = 1184,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 16, y = 0 }
+            { x = 32, y = 0 }
           },
           properties = {
             ["command"] = "addUnits",
@@ -7042,33 +6990,15 @@ return {
           name = "",
           type = "Path",
           shape = "polyline",
-          x = 128,
-          y = 1208,
+          x = 208,
+          y = 1176,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 0, y = 40 },
-            { x = 0, y = 272 }
-          },
-          properties = {}
-        },
-        {
-          id = 320,
-          name = "",
-          type = "Path",
-          shape = "polyline",
-          x = 160,
-          y = 1208,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 0, y = 0 },
-            { x = 0, y = 40 },
+            { x = 0, y = 32 },
             { x = 0, y = 272 }
           },
           properties = {}
@@ -7078,8 +7008,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 43,
-      name = "pawns2",
+      id = 46,
+      name = "pawn3",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -7089,12 +7019,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 260,
-          name = "Pawn",
+          id = 330,
+          name = "",
           type = "Unit",
           shape = "rectangle",
-          x = 96,
-          y = 1192,
+          x = 176,
+          y = 1160,
           width = 24,
           height = 32,
           rotation = 0,
@@ -7113,92 +7043,50 @@ return {
           }
         },
         {
-          id = 261,
-          name = "Pawn",
-          type = "Unit",
-          shape = "rectangle",
-          x = 192,
-          y = 1192,
-          width = 24,
-          height = 32,
-          rotation = 0,
-          gid = 646,
-          visible = true,
-          properties = {
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedPawn",
-            ["enemyteam"] = "playershot",
-            ["health"] = 15,
-            ["module"] = "Enemies",
-            ["start"] = "startPawn",
-            ["team"] = "enemy",
-            ["think"] = "thinkPawn"
-          }
-        },
-        {
-          id = 318,
-          name = "",
-          type = "Path",
-          shape = "polyline",
-          x = 96,
-          y = 1192,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 0, y = 0 },
-            { x = 32, y = 32 },
-            { x = 32, y = 264 }
-          },
-          properties = {}
-        },
-        {
-          id = 321,
-          name = "",
-          type = "Path",
-          shape = "polyline",
-          x = 192,
-          y = 1192,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 0, y = 0 },
-            { x = -32, y = 32 },
-            { x = -32, y = 264 }
-          },
-          properties = {}
-        },
-        {
-          id = 322,
+          id = 332,
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -16,
-          y = 1200,
+          x = -72,
+          y = 1168,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 16, y = 0 }
+            { x = 32, y = 0 }
           },
           properties = {
             ["command"] = "addUnits",
             ["commandparam"] = "layer"
           }
+        },
+        {
+          id = 333,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 176,
+          y = 1160,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = 32 },
+            { x = 0, y = 272 }
+          },
+          properties = {}
         }
       }
     },
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 44,
-      name = "pawns3",
+      id = 47,
+      name = "pawn4",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -7208,19 +7096,43 @@ return {
       properties = {},
       objects = {
         {
-          id = 323,
+          id = 335,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 144,
+          y = 1144,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 337,
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -16,
-          y = 1184,
+          x = -72,
+          y = 1152,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 16, y = 0 }
+            { x = 32, y = 0 }
           },
           properties = {
             ["command"] = "addUnits",
@@ -7228,194 +7140,30 @@ return {
           }
         },
         {
-          id = 324,
-          name = "Pawn",
-          type = "Unit",
-          shape = "rectangle",
-          x = 72,
-          y = 1176,
-          width = 24,
-          height = 32,
-          rotation = 0,
-          gid = 646,
-          visible = true,
-          properties = {
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedPawn",
-            ["enemyteam"] = "playershot",
-            ["health"] = 15,
-            ["module"] = "Enemies",
-            ["start"] = "startPawn",
-            ["team"] = "enemy",
-            ["think"] = "thinkPawn"
-          }
-        },
-        {
-          id = 325,
-          name = "Pawn",
-          type = "Unit",
-          shape = "rectangle",
-          x = 96,
-          y = 1176,
-          width = 24,
-          height = 32,
-          rotation = 0,
-          gid = 646,
-          visible = true,
-          properties = {
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedPawn",
-            ["enemyteam"] = "playershot",
-            ["health"] = 15,
-            ["module"] = "Enemies",
-            ["start"] = "startPawn",
-            ["team"] = "enemy",
-            ["think"] = "thinkPawn"
-          }
-        },
-        {
-          id = 329,
-          name = "Pawn",
-          type = "Unit",
-          shape = "rectangle",
-          x = 120,
-          y = 1176,
-          width = 24,
-          height = 32,
-          rotation = 0,
-          gid = 646,
-          visible = true,
-          properties = {
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["defeatdrop"] = "DefeatedPawn",
-            ["enemyteam"] = "playershot",
-            ["health"] = 15,
-            ["module"] = "Enemies",
-            ["start"] = "startPawn",
-            ["team"] = "enemy",
-            ["think"] = "thinkPawn"
-          }
-        },
-        {
-          id = 326,
+          id = 338,
           name = "",
           type = "Path",
           shape = "polyline",
-          x = 64,
-          y = 1168,
+          x = 144,
+          y = 1144,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
-            { x = 32, y = 8 },
-            { x = 80, y = 56 },
-            { x = 80, y = 280 }
+            { x = 0, y = 0 },
+            { x = 0, y = 32 },
+            { x = 0, y = 272 }
           },
           properties = {}
-        },
-        {
-          id = 327,
-          name = "",
-          type = "Path",
-          shape = "polyline",
-          x = 40,
-          y = 1168,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 32, y = 8 },
-            { x = 8, y = 32 },
-            { x = 8, y = 96 },
-            { x = 24, y = 112 },
-            { x = 72, y = 112 },
-            { x = 88, y = 128 },
-            { x = 88, y = 256 }
-          },
-          properties = {}
-        },
-        {
-          id = 328,
-          name = "",
-          type = "Path",
-          shape = "polyline",
-          x = 88,
-          y = 1168,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          polyline = {
-            { x = 32, y = 8 },
-            { x = 80, y = 56 },
-            { x = 80, y = 280 }
-          },
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 18,
-      height = 100,
-      id = 4,
-      name = "town04_f_high",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      chunks = {
-        {
-          x = 0, y = 0, width = 16, height = 16,
-          data = "eJxjYBgFo2AUDAcQycjAEM1ImhgAQ+oCIw=="
-        },
-        {
-          x = 0, y = 16, width = 16, height = 16,
-          data = "eJzt0NEJgzAUheF78ugCdY7SZbRjVdpukKeq7RJWdIsu0nNAaBSEcJ/7QxC/awjG7NcDZi1sVa6pgfaGz9SVdgo+U3f6DT5TL9oTPlMzbYLPVMl/auAzdaR38Jm60Eb47J/Zh3dScdVcZ65DyJul9Rn3uveNzoh8Fsv79nzt0ywmsy9c1iod"
-        },
-        {
-          x = 0, y = 32, width = 16, height = 16,
-          data = "eJxjYMAERkwMDBsYsUgAgQQTdnEQeIymR5wJu9xyNDl0wAVVgw6WQ+VwuQ1kB0gO5kZ0+0FyRljksAFcduADIDtgbsRmPwMDwm+U2E+O20YB7UAYEBdgYSODXmCc9QFxPw3ijhj7cQEAURQTkg=="
-        },
-        {
-          x = 0, y = 48, width = 16, height = 16,
-          data = "eJxjYBh4cBuI72BhUwt8BOLPWNj0sn8kgb1AvA+I95MoRwkIBeICMvQVYhHjYWJg4AViPibi5fLJsJuagI8RwQal708MmGkclxwAh4wW0w=="
-        },
-        {
-          x = 16, y = 48, width = 16, height = 16,
-          data = "eJxjYBgFo2DogogBtr9ogO3nY6RMPwDLPwDa"
-        },
-        {
-          x = 0, y = 64, width = 16, height = 16,
-          data = "eJxjYGBg0GBkGHBwG4jvUCD+FYi/YVFHqvhQBaPhN3gAF5lyAwEAm9oWCg=="
-        },
-        {
-          x = 16, y = 64, width = 16, height = 16,
-          data = "eJzTYGQYBaNgFIxQAACn/wAq"
-        },
-        {
-          x = 0, y = 80, width = 16, height = 16,
-          data = "eJxjYBg8gItGakcawBc2o+E2CpABAHGwACk="
         }
       }
     },
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 41,
-      name = "items",
+      id = 50,
+      name = "pawn5",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -7425,366 +7173,836 @@ return {
       properties = {},
       objects = {
         {
-          id = 299,
-          name = "WineGlassWhite",
+          id = 350,
+          name = "",
           type = "Unit",
           shape = "rectangle",
-          x = 72,
-          y = 1232,
-          width = 8,
-          height = 24,
+          x = 112,
+          y = 1128,
+          width = 24,
+          height = 32,
           rotation = 0,
-          gid = 813,
+          gid = 646,
           visible = true,
           properties = {
-            ["alcohol"] = 1,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
-            ["team"] = "item"
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
           }
         },
         {
-          id = 311,
-          name = "WineGlassWhite",
-          type = "Unit",
-          shape = "rectangle",
-          x = 184,
-          y = 1392,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 813,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 304,
-          name = "WineGlassWhite",
-          type = "Unit",
-          shape = "rectangle",
-          x = 232,
-          y = 1320,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 813,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 308,
-          name = "WineGlassWhite",
-          type = "Unit",
-          shape = "rectangle",
-          x = 200,
-          y = 1240,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 813,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 300,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 88,
-          y = 1240,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 317,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 72,
-          y = 1312,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 310,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 200,
-          y = 1400,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 312,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 216,
-          y = 1232,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 314,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 88,
-          y = 1400,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 303,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 216,
-          y = 1312,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 307,
-          name = "WineGlassRed",
-          type = "Unit",
-          shape = "rectangle",
-          x = 72,
-          y = 1392,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 811,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 301,
-          name = "WineGlassMedium",
-          type = "Unit",
-          shape = "rectangle",
-          x = 104,
-          y = 1232,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 812,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 313,
-          name = "WineGlassMedium",
-          type = "Unit",
-          shape = "rectangle",
-          x = 40,
-          y = 1312,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 812,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 309,
-          name = "WineGlassMedium",
-          type = "Unit",
-          shape = "rectangle",
-          x = 216,
-          y = 1392,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 812,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 302,
-          name = "WineGlassMedium",
-          type = "Unit",
-          shape = "rectangle",
-          x = 248,
-          y = 1312,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 812,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 306,
-          name = "WineGlassMedium",
-          type = "Unit",
-          shape = "rectangle",
-          x = 104,
-          y = 1392,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 812,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 315,
-          name = "WineGlassDark",
-          type = "Unit",
-          shape = "rectangle",
-          x = 56,
-          y = 1320,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 814,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 316,
-          name = "WineGlassDark",
-          type = "Unit",
-          shape = "rectangle",
-          x = 184,
-          y = 1232,
-          width = 8,
-          height = 24,
-          rotation = 0,
-          gid = 814,
-          visible = true,
-          properties = {
-            ["alcohol"] = 1,
-            ["bodytileshape"] = "hull",
-            ["bodytype"] = "dynamic",
-            ["team"] = "item"
-          }
-        },
-        {
-          id = 305,
+          id = 351,
           name = "",
           type = "Trigger",
           shape = "polyline",
-          x = -40,
-          y = 1280,
+          x = -72,
+          y = 1136,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           polyline = {
             { x = 0, y = 0 },
-            { x = 16, y = 0 }
+            { x = 32, y = 0 }
           },
           properties = {
             ["command"] = "addUnits",
             ["commandparam"] = "layer"
           }
+        },
+        {
+          id = 352,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 112,
+          y = 1128,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = 32 },
+            { x = 0, y = 272 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 51,
+      name = "pawn6",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 353,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 80,
+          y = 1112,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 354,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1120,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 355,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 80,
+          y = 1112,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = 32 },
+            { x = 0, y = 272 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 52,
+      name = "pawn7",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 356,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 48,
+          y = 1096,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 357,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1104,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 358,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 48,
+          y = 1096,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 0, y = 32 },
+            { x = 0, y = 272 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 53,
+      name = "pawndiagonal1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 359,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 296,
+          y = 1064,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 360,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1072,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 361,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 296,
+          y = 1064,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -64, y = 16 },
+            { x = -304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 54,
+      name = "pawndiagonal2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 362,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 296,
+          y = 1032,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 363,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1040,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 364,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 296,
+          y = 1032,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -64, y = 16 },
+            { x = -304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 55,
+      name = "pawndiagonal3",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 365,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 296,
+          y = 1000,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 366,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1008,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 367,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 296,
+          y = 1000,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -64, y = 16 },
+            { x = -304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 59,
+      name = "pawndiagonal4",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 377,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = 296,
+          y = 968,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 378,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 976,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 379,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = 296,
+          y = 968,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = -64, y = 16 },
+            { x = -304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 56,
+      name = "pawndiagonalright1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 368,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -8,
+          y = 1016,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 369,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 1024,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 370,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = -8,
+          y = 1016,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 64, y = 16 },
+            { x = 304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 57,
+      name = "pawndiagonalright2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 371,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -8,
+          y = 984,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 372,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 992,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 373,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = -8,
+          y = 984,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 64, y = 16 },
+            { x = 304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 58,
+      name = "pawndiagonalright3",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 374,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -8,
+          y = 952,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 375,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 960,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 376,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = -8,
+          y = 952,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 64, y = 16 },
+            { x = 304, y = 256 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 60,
+      name = "pawndiagonalright4",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 380,
+          name = "",
+          type = "Unit",
+          shape = "rectangle",
+          x = -8,
+          y = 920,
+          width = 24,
+          height = 32,
+          rotation = 0,
+          gid = 646,
+          visible = true,
+          properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["defeatdrop"] = "DefeatedPawn",
+            ["enemyteam"] = "playershot",
+            ["health"] = 15,
+            ["module"] = "Enemies",
+            ["start"] = "startPawn",
+            ["team"] = "enemy",
+            ["think"] = "thinkPawn"
+          }
+        },
+        {
+          id = 381,
+          name = "",
+          type = "Trigger",
+          shape = "polyline",
+          x = -72,
+          y = 928,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 32, y = 0 }
+          },
+          properties = {
+            ["command"] = "addUnits",
+            ["commandparam"] = "layer"
+          }
+        },
+        {
+          id = 382,
+          name = "",
+          type = "Path",
+          shape = "polyline",
+          x = -8,
+          y = 920,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polyline = {
+            { x = 0, y = 0 },
+            { x = 64, y = 16 },
+            { x = 304, y = 256 }
+          },
+          properties = {}
         }
       }
     },
@@ -7800,6 +8018,440 @@ return {
       parallaxy = 1,
       properties = {},
       layers = {
+        {
+          type = "objectgroup",
+          draworder = "topdown",
+          id = 41,
+          name = "items",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          objects = {
+            {
+              id = 299,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 72,
+              y = 1232,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 813,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 311,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 184,
+              y = 1392,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 813,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 304,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 232,
+              y = 1320,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 813,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 308,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 200,
+              y = 1240,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 813,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 300,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 88,
+              y = 1240,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 317,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 72,
+              y = 1312,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 310,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 200,
+              y = 1400,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 312,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 216,
+              y = 1232,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 314,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 88,
+              y = 1400,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 303,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 216,
+              y = 1312,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 307,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 72,
+              y = 1392,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 811,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 301,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 104,
+              y = 1232,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 812,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 313,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 40,
+              y = 1312,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 812,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 309,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 216,
+              y = 1392,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 812,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 302,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 248,
+              y = 1312,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 812,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 306,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 104,
+              y = 1392,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 812,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 315,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 56,
+              y = 1320,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 814,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 316,
+              name = "",
+              type = "Unit",
+              shape = "rectangle",
+              x = 184,
+              y = 1232,
+              width = 8,
+              height = 24,
+              rotation = 0,
+              gid = 814,
+              visible = true,
+              properties = {
+                ["alcohol"] = 1,
+                ["bodytileshape"] = "hull",
+                ["bodytype"] = "dynamic",
+                ["team"] = "item"
+              }
+            },
+            {
+              id = 305,
+              name = "",
+              type = "Trigger",
+              shape = "polyline",
+              x = -40,
+              y = 1280,
+              width = 0,
+              height = 0,
+              rotation = 0,
+              visible = true,
+              polyline = {
+                { x = 0, y = 0 },
+                { x = 32, y = 0 }
+              },
+              properties = {
+                ["command"] = "addUnits",
+                ["commandparam"] = "layer"
+              }
+            }
+          }
+        },
+        {
+          type = "tilelayer",
+          x = 0,
+          y = 0,
+          width = 18,
+          height = 100,
+          id = 1,
+          name = "town04_f_low",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          encoding = "base64",
+          compression = "zlib",
+          data = "eJztmF1OFEEQx3s3igfY7MeMsHgBWGZnJcYb6KN6DDW++2D8Qi/ggyYm6hF8MUFPgYAHIIIaPw8gWi1V8T9Fdc8Hm4CRhx/pqa7+T1d1T3exa865t8SNlnNr3G4TF+jPTVfE23zfmjHmM/GFmFXtizTgkSvibdpP2jOkeYpYVu2nxEuFt2k/aX8l2vSejiu2XxHviW1mh23aD9tCQizA8wdii/kI9hGxxO0eP29H+AU6rhX33Tpi/JwSGedpwrkbc779c5dt4uPXYJHxtj74pzxmkX1HPH7AGl0en7FPh8f24D1jV1x3zZjfkbJWUuJ/TJiE9ntKnG4dzDZL9Ik56G9iO9b5P3WGREaMof8gtqMG3nnITkmf1vF33jPiOfDC7d1/sT5LZ5V4DbwBnVCfpbNObACboBPqaxKXf96CdtO43rDOqmseVx2dWFzrrFtFJxYX1gSi2SSu0FzrxlVn/xylffjJ2fXRbkmfjJf6ydc2vubxdY3UTSk/S10ltZTUqxMmd3v36jTw5+sl0rtMXHHF9jKfmyHO8njhKo25Rlx3xbY/v28Tdwzuwh0hrNCYB8RDV2x7nXvELYP7hk6Iujqh/NTVieVnhXhs8KRGfiYla51XzE8oXmxX0QnFi+0qOqF4sS2+sf1ah8OuB5rUD1Y9UBd/FlrnXgyp8wVf74uO1RfS0ft8DnSsvn9FR+pPYQw6Vh+OLftft8p6+TtlocTH3127JT4ZzycnThAzqj8Few72JWWX3wX8XTYkzvAzxiz2Adj7YE84LrlHzxHn3d/fDGQ+YkedDth7PKd+SexVkNxk/L4xx47fZhfmLvaBWp+M5455zmGNdP4tu9QNA5VnXJcU7Bh/AvYRxyGxSd5S8O+CHePog73Dfb0p5DmvoJOUnDXyXejfhnz+TkJuZ+Hb1n2C3lsdzt8851Dr6D5h0dDZoDGbxLvWfh3dJ2ubGzrfyOc78cPQ0X0SjxWXBnVC4J4I5dDSQd+Bmk8oh5ZOyNfKYUwHfRO1d3QOYzro68+HJWNeTfI8MmxN9vPE0Gmyn60z9bD3c9lvwUPjDtaU3RWSVyu3Os+xtZe8hvaukATWHnOK6L0uZK54D1v5RvReFwYRnT/fTatYD1rnXpVcYw0W+zb8+dOdgo4ndu9U1fEaw/Z+5tthnTnD3/Mb0J3zKg=="
+        },
+        {
+          type = "tilelayer",
+          x = 0,
+          y = 0,
+          width = 18,
+          height = 100,
+          id = 2,
+          name = "town04_f_mid",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          encoding = "base64",
+          compression = "zlib",
+          data = "eJztlUtuwjAURZ1MoasovynjFvHZBWwCic8m2u6iLZ8dwCzAIoCFwAyJa6CSmzqR7ViJVN0jXenJN35xnvNsIQghpHieQyGqodsY8zCPrzzjQIhp4DZGzLkE972oPPajGZp5OtRnbTyuh+uRyF6eJPRzmkfyJUqIbfiEvjSxyhx7vYCWGfd8g/lbaJeSx2Q9t1wG74sS4iI4QWdN7JMIKqG2T8HfuIj1kN/soQN0tPR8MoTeHOa9Q6OEPDXcJ3WooblX4p7M86H4ao+38a92oK7mfIh739DM4TtskP1TfvSQjSfpZTgrs8xNYwD1PYyvoZWH8f8K65wvL9Ar1LL0iBk2NWS9s8P/OV9+aqqK9SVxruRaWiA="
+        },
+        {
+          type = "tilelayer",
+          x = 0,
+          y = 0,
+          width = 18,
+          height = 100,
+          id = 4,
+          name = "town04_f_high",
+          visible = true,
+          opacity = 1,
+          offsetx = 0,
+          offsety = 0,
+          parallaxx = 1,
+          parallaxy = 1,
+          properties = {},
+          encoding = "base64",
+          compression = "zlib",
+          data = "eJztlT1Ow0AQhWdSRpA2OQJ1xFVA/ByCn3sABQi4QSp+Qh9SBgQ3gC4nAAQ1b0VWjKz1ej1rQRLNJ43ivOeRn3c9NpFhGIaebSbaZZ0muYJ3zTpNMoH3wDpNcg5vvaXTJJfwL1inSe7gDVmnSZ7hPbFOk/Rwz2es0yR9+Des0ySn8B5ZpxnpTPlnlndm89xtpXkhbhP2oeocd80Bftuz/8U8rt95A6rO43DPWdk1ewn900JvMY8nNY/PXsTfc8r6uHN89tD69ANejJR9i+WJ7RdRvf2qypOT1ZgfNlH7gWPJEfb6GHXyB3uekmcReUG9Bo6b5g31ETj+rzzGLyPUPWpc02uSDdLN1AFqq8RbwfdkFdUJfFdinmNPkcVzmNFbRke849z8vFN4hkKe7F3LeFfm9MYom/O6+ifqqwF9WbF1XlzaSs9Io84a2nrnY8+zYcwX34f5bdU="
+        },
         {
           type = "objectgroup",
           draworder = "topdown",
