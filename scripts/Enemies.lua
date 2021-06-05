@@ -5,6 +5,9 @@ local Audio = require "Audio"
 
 local Enemies = {}
 
+local cos45 = math.cos(math.pi/4)
+local cos60 = math.cos(math.pi/3)
+
 function Enemies.defeatStandard(unit)
     Audio.play("data/sounds/knockout.ogg")
     Audio.play("data/sounds/boom1.ogg")
@@ -34,7 +37,6 @@ function Enemies.startPawn(unit)
     unit.movespeed = 2
 end
 
-local hsqrt2 = math.sqrt(2)/2
 function Enemies.thinkPawn(unit)
 	local health = unit.health or 1
 	if health < 1 then
@@ -43,12 +45,12 @@ function Enemies.thinkPawn(unit)
     end
     Unit.walkPath(unit)
     if unit.pathindex > 4 then
-        unit.movespeed = 1
+        unit.movespeed = unit.velx == 0 and .5 or 1
         local player = Units.get("player")
         if player and unit.age % 60 == 0 then
             local px, py = player.x, player.y
             local dx, dy = px - unit.x, py - unit.y
-            if dy >= math.abs(dy) * hsqrt2 then
+            if dy >= math.len(dx, dy) * cos45 then
                 Shooting.shoot_targetUnit_speed(unit, "BulletPike", player, 2)
             end
         end
