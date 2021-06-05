@@ -67,14 +67,14 @@
     <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
-  <object id="286" template="units/WineGlassRed.tx" x="304" y="1280"/>
-  <object id="287" template="units/WineGlassMedium.tx" x="320" y="1280"/>
-  <object id="288" template="units/WineGlassWhite.tx" x="336" y="1280"/>
-  <object id="289" template="units/WineGlassDark.tx" x="352" y="1280"/>
-  <object id="290" template="units/WineBottleRed.tx" x="304" y="1312"/>
-  <object id="291" template="units/WineBottleMedium.tx" x="320" y="1312"/>
-  <object id="292" template="units/WineBottleWhite.tx" x="336" y="1312"/>
-  <object id="293" template="units/WineBottleDark.tx" x="352" y="1312"/>
+  <object id="286" template="units/WineGlassRed.tx" name="WineGlassRed" x="304" y="1280"/>
+  <object id="287" template="units/WineGlassMedium.tx" name="WineGlassMedium" x="320" y="1280"/>
+  <object id="288" template="units/WineGlassWhite.tx" name="WineGlassWhite" x="336" y="1280"/>
+  <object id="289" template="units/WineGlassDark.tx" name="WineGlassDark" x="352" y="1280"/>
+  <object id="290" template="units/WineBottleRed.tx" name="WineBottleRed" x="304" y="1312"/>
+  <object id="291" template="units/WineBottleMedium.tx" name="WineBottleMedium" x="320" y="1312"/>
+  <object id="292" template="units/WineBottleWhite.tx" name="WineBottleWhite" x="336" y="1312"/>
+  <object id="293" template="units/WineBottleDark.tx" name="WineBottleDark" x="352" y="1312"/>
  </objectgroup>
  <layer id="45" name="Copy of town04_f_low" width="18" height="100">
   <data encoding="base64" compression="zlib">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <tileset firstgid="1" source="../tilesets/wineguards.tsx"/>
- <object name="Pawn" type="Unit" gid="22" width="24" height="32">
+ <object type="Unit" gid="22" width="24" height="32">
   <properties>
    <property name="bodytileshape" value="hull"/>
    <property name="bodytype" value="dynamic"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
  <tileset firstgid="1" source="../tilesets/wineitems.tsx"/>
- <object name="WineBottleWhite" type="Unit" gid="7" width="8" height="24">
+ <object type="Unit" gid="7" width="8" height="24">
   <properties>
    <property name="alcohol" type="int" value="10"/>
    <property name="bodytileshape" value="hull"/>
