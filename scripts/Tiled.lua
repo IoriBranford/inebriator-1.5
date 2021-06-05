@@ -44,6 +44,7 @@
 
     objectgroup[i]                      Each object in the object group
     objectgroup[name]                   You can access the object by name if it has one
+    objectgroup[i].z                    Drawing order (default is objectgroup's z)
     objectgroup[i].tile                 Object tile from gid
     objectgroup[i].rotation             Converted from degrees to radians, LOVE's standard rotation unit
     objectgroup[i].scalex               Object scale x from gid flipx and tile width
@@ -451,8 +452,8 @@ function Tiled.load(mapfile)
                     object.text:setf(text, object.width, object.halign or "left")
                 end
                 object.rotation = math.rad(object.rotation)
-                object.z = z
                 propertiesToFields(object)
+                object.z = object.z or z
             end
             layer.objects = nil
         elseif layertype == "imagelayer" then
