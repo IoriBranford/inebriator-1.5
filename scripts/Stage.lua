@@ -51,7 +51,7 @@ function Stage.init(stagefile, playercharacter)
     Physics.init()
     Units.init(scene)
 
-    cameravx, cameravy, camerax, cameray = 0, -.5, 0, 0
+    cameravx, cameravy, camerax, cameray = 0, -1, 0, 0
     stagewidth, stageheight = 0, 0
 
     Stage.load(stagefile)
@@ -195,7 +195,7 @@ local function handlePlayerHit()
     if invincibletime > 0 then
         player.health = 1
     elseif player.health < 1 then
-        Audio.play("data/sounds/scream.ogg")
+        Audio.play("data/sounds/shriek.ogg")
         Audio.play("data/sounds/selfdestruct.ogg")
         local explosion = Units.add_position("ExplosionPlayer", player.x, player.y, player.z)
         explosion.vely = cameravy
