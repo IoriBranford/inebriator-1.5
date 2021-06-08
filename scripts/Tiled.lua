@@ -39,12 +39,12 @@
     map.layers[name]                    You can access the top-level layer by name if it has one
     layer.x                             = layer.offsetx
     layer.y                             = layer.offsety
-    layer.z                             Layer order
+    layer.z                             Drawing order, default depends on layer order, set with layer property "z" (float)
     layer[prop]=val                     Layer properties become fields of the layer*
 
     objectgroup[i]                      Each object in the object group
     objectgroup[name]                   You can access the object by name if it has one
-    objectgroup[i].z                    Drawing order (default is objectgroup's z)
+    objectgroup[i].z                    Drawing order, default is objectgroup's z, set with object property "z" (float)
     objectgroup[i].tile                 Object tile from gid
     objectgroup[i].rotation             Converted from degrees to radians, LOVE's standard rotation unit
     objectgroup[i].scalex               Object scale x from gid flipx and tile width
@@ -53,7 +53,7 @@
     objectgroup[i].polygon              Converted to LOVE-style array {x1, y1, x2, y2, ...}
     objectgroup[i].polyline             Converted to LOVE-style array {x1, y1, x2, y2, ...}
     objectgroup[i].text                 Converted to LOVE Text object
-                                        Font file should be in map directory and follow this naming:
+                                        Font file should be in Tiled.fontpath and follow this naming:
                                         "fontfamily.ttf"
                                         "fontfamily Bold.ttf"
                                         "fontfamily Italic.ttf"
@@ -68,11 +68,12 @@
 
     * Can't overwrite existing fields
 
-    Limitations:
-    Diagonal flip flag unused
-    Tile object alignment is always Top Left
-    External tilesets unsupported
-    A SpriteBatch using multiple tilesets will have wrong tiles
+    Unsupported:
+        Diagonal flip flag
+        Tileset margin and spacing
+        Tile object alignment other than Top Left
+        External tilesets
+        Tile layer using multiple tilesets
 ]] --
 
 local Tiled = {}
@@ -313,6 +314,19 @@ function Tiled.loadImage(imagefile)
     return image
 end
 
+local function setLayersZ(layers, z1, dz)
+    local layer1 = layers[1]
+    if layer1 then
+        layer1.z = layer1.properties.z or z1
+        layer1.properties.z = nil
+    end
+    for i = 2, #layers do
+        local layer = layers[i]
+        layer.z = layer.properties.z or (layers[i-1].z + dz)
+        layer.properties.z = nil
+    end
+end
+
 function Tiled.load(mapfile)
     local map, err = love.filesystem.load(mapfile)
     assert(map, err)
@@ -365,12 +379,12 @@ function Tiled.load(mapfile)
         local z = layer.z
         if layertype == "group" then
             local grouplayers = layer.layers
-            local scalez = (parent.scalez or 1) / (#grouplayers+1)
+            local scalez = (parent.scalez or 1) / #grouplayers
             layer.scalez = scalez
+            setLayersZ(grouplayers, z, scalez)
             for i = 1, #grouplayers do
                 local grouplayer = grouplayers[i]
                 layer[i] = grouplayer
-                grouplayer.z = z + i*scalez
                 doLayer(grouplayer, layer)
             end
             layer.layers = nil
@@ -460,13 +474,12 @@ function Tiled.load(mapfile)
             layer.image = Tiled.loadImage(layer.image)
         end
         propertiesToFields(layer)
-        return z
     end
 
     local layers = map.layers
+    setLayersZ(layers, 1, 1)
     for i = 1, #layers do
         local layer = layers[i]
-        layer.z = i
         doLayer(layer, layers)
     end
     propertiesToFields(map)
