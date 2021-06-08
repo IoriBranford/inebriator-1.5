@@ -7,9 +7,9 @@
             "enabled": true,
             "name": "Run",
             "saveBeforeExecute": true,
-            "shortcut": null,
+            "shortcut": "Alt+R",
             "showOutput": true,
-            "workingDirectory": ""
+            "workingDirectory": "%projectpath"
         }
     ],
     "extensionsPath": "extensions",
