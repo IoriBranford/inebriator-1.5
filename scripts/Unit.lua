@@ -85,6 +85,48 @@ function Unit.walkPath(unit, onPointReached)
 	end
 end
 
+local gravity = -1/64
+function Unit.jumpPath(unit, onPointReached)
+	local path = unit.path or Unit.findPathAtPosition(unit)
+	local polyline = path and path.polyline
+	local polygon = path and path.polygon
+	local points = polyline or polygon
+	local pathindex = unit.pathindex or 2
+	unit.pathindex = pathindex
+	if not points or pathindex > #points then
+		return
+	end
+	local destx, desty = path.x + points[pathindex-1], path.y + points[pathindex]
+	local movespeed = unit.movespeed or 1
+	local x, y = unit.x, unit.y + unit.z - unit.layer.z
+	local nextx, nexty = Movement.moveTowardsPoint_Speed(x, y, destx, desty, movespeed)
+	local velz = unit.velz
+	if not velz then
+		local dx, dy = destx-x, desty-y
+		local dist = math.len(dx, dy)
+		local time = dist / movespeed
+		velz = -.5 * gravity * time
+		-- v0 = -.5*a*t
+	else
+		velz = velz + gravity
+	end
+	unit.velz = velz
+	unit.z = unit.z + velz
+	unit.velx, unit.vely = nextx - x, nexty - y - (unit.z - unit.layer.z)
+	if nextx == destx and nexty == desty then
+		unit.velz = nil
+		unit.z = unit.layer.z
+		pathindex = pathindex + 2
+		if polygon and pathindex > #points then
+			pathindex = 2
+		end
+		unit.pathindex = pathindex
+		if onPointReached then
+			onPointReached(unit)
+		end
+	end
+end
+
 function Unit.collideDefault(unit, other)
 	local health = unit.health
 	if not health then

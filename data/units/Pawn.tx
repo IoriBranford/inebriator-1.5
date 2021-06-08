@@ -12,7 +12,6 @@
    <property name="start" value="startPawn"/>
    <property name="team" value="enemy"/>
    <property name="think" value="thinkPawn"/>
-   <property name="z" type="float" value="2"/>
   </properties>
  </object>
 </template>

@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.6.0",
+  tiledversion = "1.7.0",
   orientation = "orthogonal",
   renderorder = "right-up",
   width = 18,
@@ -8110,7 +8110,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = -1
+      },
       encoding = "base64",
       compression = "zlib",
       data = "eJzt0LENgFAMQ8Fsl6FYHgom+BLYxRUpXhHJup2Zfe56bw/79O+rbtnBhw8fPulu2cGHDx8+6W7ZwYcPHz7pbtnBhw8fPulu2cGHDx8+6W7Zwedfnxv8OKon"
@@ -8126,7 +8128,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 266,
@@ -8402,7 +8406,8 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {
-        ["script"] = "PathGraph"
+        ["script"] = "PathGraph",
+        ["z"] = 0
       },
       objects = {
         {
@@ -9036,7 +9041,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 340,
@@ -9059,8 +9066,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9114,7 +9120,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 262,
@@ -9137,8 +9145,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9192,7 +9199,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 330,
@@ -9215,8 +9224,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9270,7 +9278,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 335,
@@ -9293,8 +9303,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9348,7 +9357,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 350,
@@ -9371,8 +9382,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9426,7 +9436,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 353,
@@ -9449,8 +9461,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9504,7 +9515,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 356,
@@ -9527,8 +9540,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9582,7 +9594,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 359,
@@ -9605,8 +9619,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9660,7 +9673,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 362,
@@ -9683,8 +9698,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9738,7 +9752,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 365,
@@ -9761,8 +9777,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9816,7 +9831,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 377,
@@ -9839,8 +9856,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9894,7 +9910,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 368,
@@ -9917,8 +9935,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -9972,7 +9989,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 371,
@@ -9995,8 +10014,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10050,7 +10068,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 374,
@@ -10073,8 +10093,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10128,7 +10147,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 380,
@@ -10151,8 +10172,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10206,7 +10226,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 415,
@@ -10249,8 +10271,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10274,8 +10295,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10299,8 +10319,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10324,8 +10343,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10349,8 +10367,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10374,8 +10391,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10399,8 +10415,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10424,8 +10439,7 @@ return {
             ["module"] = "Enemies",
             ["start"] = "startPawn",
             ["team"] = "enemy",
-            ["think"] = "thinkPawn",
-            ["z"] = 2
+            ["think"] = "thinkPawn"
           }
         },
         {
@@ -10613,7 +10627,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 396,
@@ -10636,8 +10652,7 @@ return {
             ["module"] = "Enemies",
             ["movespeed"] = 2,
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {
@@ -10662,8 +10677,7 @@ return {
             ["movespeed"] = 2,
             ["path"] = { id = 409 },
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {
@@ -10700,8 +10714,6 @@ return {
           polyline = {
             { x = 192, y = 64 },
             { x = 160, y = 128 },
-            { x = 96, y = 160 },
-            { x = 32, y = 128 },
             { x = -32, y = 96 },
             { x = -96, y = 64 }
           },
@@ -10720,7 +10732,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 387,
@@ -10763,8 +10777,7 @@ return {
             ["module"] = "Enemies",
             ["movespeed"] = 2,
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {
@@ -10789,8 +10802,7 @@ return {
             ["movespeed"] = 2,
             ["path"] = { id = 393 },
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {
@@ -10807,7 +10819,7 @@ return {
           polyline = {
             { x = -192, y = 96 },
             { x = -160, y = 160 },
-            { x = -96, y = 192 },
+            { x = 0, y = 128 },
             { x = 96, y = 96 }
           },
           properties = {}
@@ -10825,7 +10837,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 397,
@@ -10868,8 +10882,7 @@ return {
             ["module"] = "Enemies",
             ["movespeed"] = 2,
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {
@@ -10894,8 +10907,7 @@ return {
             ["movespeed"] = 2,
             ["path"] = { id = 406 },
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {
@@ -10912,9 +10924,6 @@ return {
           polyline = {
             { x = -32, y = 0 },
             { x = 32, y = 32 },
-            { x = 0, y = 96 },
-            { x = 64, y = 64 },
-            { x = 128, y = 96 },
             { x = 192, y = 64 },
             { x = 256, y = 96 }
           },
@@ -10933,7 +10942,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
+      properties = {
+        ["z"] = 0
+      },
       objects = {
         {
           id = 400,
@@ -10976,8 +10987,7 @@ return {
             ["module"] = "Enemies",
             ["movespeed"] = 2,
             ["team"] = "enemy",
-            ["think"] = "thinkKnight",
-            ["z"] = 2
+            ["think"] = "thinkKnight"
           }
         },
         {

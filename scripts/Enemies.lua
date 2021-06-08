@@ -66,17 +66,21 @@ function Enemies.thinkKnight(unit)
         Enemies.defeatStandard(unit)
         return
     end
-    Unit.walkPath(unit)
-    if unit.pathindex > 4 then
+    if unit.pathindex and unit.pathindex == 6 then
+        unit.movespeed = 4
+        Unit.jumpPath(unit)
         local player = Units.get("player")
-        if player and unit.age % 30 == 0 then
+        if player and unit.age % 10 == 0 then
             local px, py = player.x, player.y
             local dx, dy = px - unit.x, py - unit.y
             local dist = math.len(dx, dy)
-            if dist <= 180 and  dy >= dist * cos60 then
+            if dy >= dist * cos60 then
                 Shooting.shoot_targetUnit_speed(unit, "BulletSword", player, 3)
             end
         end
+    else
+        unit.movespeed = 2
+        Unit.walkPath(unit)
     end
     if Unit.reachedPathEnd(unit) then
         Units.remove(unit)
