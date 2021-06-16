@@ -302,7 +302,7 @@ function Stage.draw()
     local tx = -math.floor(viewx)
     local ty = -math.floor(viewy)
     love.graphics.translate(tx, ty)
-    scene:draw(viewx, viewy, cameraw, camerah)
+    scene:draw()
     -- Physics.draw(viewx, viewy, cameraw, camerah)
     love.graphics.pop()
 end

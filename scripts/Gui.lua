@@ -99,7 +99,7 @@ function Gui.update(dsecs)
 end
 
 function Gui.draw()
-    scene:draw(-0x1000000, -0x1000000, 0x2000000, 0x2000000)
+    scene:draw()
 end
 
 return Gui

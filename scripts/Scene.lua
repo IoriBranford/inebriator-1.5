@@ -49,9 +49,10 @@ function Scene.new()
     return setmetatable(scene, Scene)
 end
 
-function Scene:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+function Scene:add(id, draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
     local sceneobject = setmetatable({}, SceneObject)
     sceneobject.id = id
+    sceneobject.draw = draw
     sceneobject.drawable = drawable
     sceneobject[drawable:type():lower()] = drawable
     sceneobject.quad = quad
@@ -68,37 +69,47 @@ function Scene:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
     sceneobject.kx = kx or 0
     sceneobject.ky = ky or 0
     sceneobject.hidden = nil
-    sceneobject.draw = nil
 
     self.byid[id] = sceneobject
     return sceneobject
 end
 
+local function drawQuad(sceneobject)
+    love.graphics.draw(sceneobject.drawable, sceneobject.quad,
+        math.floor(sceneobject.x), math.floor(sceneobject.y),
+        sceneobject.r,
+        sceneobject.sx, sceneobject.sy,
+        sceneobject.ox, sceneobject.oy,
+        sceneobject.kx, sceneobject.ky)
+end
+
+local function drawGeneric(sceneobject)
+    love.graphics.draw(sceneobject.drawable,
+        math.floor(sceneobject.x), math.floor(sceneobject.y),
+        sceneobject.r,
+        sceneobject.sx, sceneobject.sy,
+        sceneobject.ox, sceneobject.oy,
+        sceneobject.kx, sceneobject.ky)
+end
+
 function Scene:addChunk(id, chunk, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(id, chunk.tilebatch, nil, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
+    return self:add(id, drawGeneric, chunk.tilebatch, nil, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
 end
 
 function Scene:addTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:add(id, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+    local sceneobject = self:add(id, drawQuad, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
     setObjectTile(sceneobject, tile)
     return sceneobject
 end
 
 function Scene:addAnimatedTile(id, tile, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:add(id, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
+    local sceneobject = self:add(id, drawQuad, tile.image, nil, nil, nil, x, y, z, r, sx, sy, nil, nil, kx, ky)
     setObjectTile(sceneobject, tile, true)
     return sceneobject
 end
 
 function Scene:addText(id, text, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    return self:add(id, text, nil, text:getWidth(), text:getHeight(), x, y, z, r, sx, sy, ox, oy, kx, ky)
-end
-
-function Scene:addCustom(id, draw, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    local sceneobject = self:add(id, drawable, quad, w, h, x, y, z, r, sx, sy, ox, oy, kx, ky)
-    assert(type(draw) == "function")
-    sceneobject.draw = draw
-    return sceneobject
+    return self:add(id, drawGeneric, text, nil, text:getWidth(), text:getHeight(), x, y, z, r, sx, sy, ox, oy, kx, ky)
 end
 
 function Scene:get(id)
@@ -160,28 +171,17 @@ function Scene:updateAnimations(dsecs)
 end
 
 -- local sqrt2 = math.sqrt(2)
-function Scene:draw(viewx, viewy, vieww, viewh)
+function Scene:draw()
     -- local viewr = viewx + vieww
     -- local viewb = viewy + viewh
     local count = 0
     for id, sceneobject in pairs(self.byid) do
-        if not sceneobject.hidden then
-            count = count + 1
-            self[count] = sceneobject
-        end
-    end
-    for i = #self, count+1, -1 do
-        self[i] = nil
-    end
-    table.sort(self)
-    for i = 1, #self do
-        local sceneobject = self[i]
-        local x = sceneobject.x
-        local y = sceneobject.y
-        local ox = sceneobject.ox
-        local oy = sceneobject.oy
-        local sx = sceneobject.sx
-        local sy = sceneobject.sy
+        -- local x = sceneobject.x
+        -- local y = sceneobject.y
+        -- local ox = sceneobject.ox
+        -- local oy = sceneobject.oy
+        -- local sx = sceneobject.sx
+        -- local sy = sceneobject.sy
         -- local sxsqrt2 = sx*sqrt2
         -- local sysqrt2 = sy*sqrt2
         -- local l = x - sxsqrt2*ox
@@ -191,17 +191,19 @@ function Scene:draw(viewx, viewy, vieww, viewh)
         -- l, r = math.min(l, r), math.max(l, r)
         -- t, b = math.min(t, b), math.max(t, b)
         -- if r > viewx and viewr > l and b > viewy and viewb > t then
-            local quad = sceneobject.quad
-            if sceneobject.draw then
-                sceneobject:draw()
-            elseif quad then
-                love.graphics.draw(sceneobject.drawable, quad, math.floor(x), math.floor(y),
-                    sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
-            else
-                love.graphics.draw(sceneobject.drawable, math.floor(x), math.floor(y),
-                    sceneobject.r, sx, sy, ox, oy, sceneobject.kx, sceneobject.ky)
-            end
+        if not sceneobject.hidden then
+            count = count + 1
+            self[count] = sceneobject
+        end
         -- end
+    end
+    for i = #self, count+1, -1 do
+        self[i] = nil
+    end
+    table.sort(self)
+
+    for i = 1, #self do
+        self[i]:draw()
     end
 end
 
