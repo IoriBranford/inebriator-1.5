@@ -1,0 +1,14 @@
+{
+  "name": "demonizer-map-tools",
+  "version": "0.0.0",
+  "description": "",
+  "main": "checks.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Iori Branford",
+  "license": "ISC",
+  "devDependencies": {
+    "@mapeditor/tiled-api": "^1.6.0"
+  }
+}
