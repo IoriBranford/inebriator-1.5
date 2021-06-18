@@ -45,8 +45,8 @@ function Camera.doCollisions(camera)
 			if f1 == offscreeneater then
 				local id2 = b2:getUserData()
 				local u2 = Units.get(id2)
-				if u2 and not u2.think then
-					Units.remove(u2)
+				if u2 and u2.offscreenremove then
+					Units.remove(id2)
 				end
 			end
 		end
