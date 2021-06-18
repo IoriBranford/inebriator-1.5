@@ -1,5 +1,6 @@
 local Scene = require "Scene"
 local Stats = require "Stats"
+local Camera = require "Camera"
 local Stage = {}
 
 local Tiled = require "Tiled"
@@ -18,28 +19,14 @@ local playerprefab
 local player
 
 local respawntime
-local cameravx, cameravy
-local camerax, cameray
+local camera
 local camerax0
 local cameravxscalefactor
-local cameraw, camerah = 240, 320
 
 local stagewidth, stageheight
 
 local viewx, viewy
 local scene
-
-function Stage.getCameraSize()
-    return cameraw, camerah
-end
-
-function Stage.getCameraBottom()
-    return cameray + camerah
-end
-
-function Stage.getCameraVelY()
-    return cameravy
-end
 
 function Stage.init(stagefile, playercharacter)
     Units = Units or require "Units"
@@ -51,7 +38,6 @@ function Stage.init(stagefile, playercharacter)
     Physics.init()
     Units.init(scene)
 
-    cameravx, cameravy, camerax, cameray = 0, -1, 0, 0
     stagewidth, stageheight = 0, 0
 
     Stage.load(stagefile)
@@ -64,11 +50,16 @@ function Stage.init(stagefile, playercharacter)
     for i, prefabs in ipairs(playerfile.layers) do
         Units.addPrefabs(prefabs)
     end
-    viewx, viewy = camerax, cameray
+
+    camera = Units.add_id_position(Camera.Prefab, "camera", camerax0, stageheight - Camera.Prefab.height)
+    Units.activateAdded()
+
+    viewx, viewy = camera.x, camera.y
     respawntime = 0
 end
 
 function Stage.quit()
+    camera = nil
     timeline = nil
     player = nil
     scene = nil
@@ -89,8 +80,10 @@ function Stage.load(stagefile)
     stagewidth = stagecols * cellwidth
     stageheight = stagerows * cellheight
 
-    camerax0, cameray = stagewidth / 2 - cameraw / 2, stageheight - camerah
-    camerax = camerax0
+    local cameraw = Camera.Prefab.width
+    local camerah = Camera.Prefab.height
+    camerax0 = stagewidth / 2 - cameraw / 2
+    local cameray = stageheight - camerah
 
     cameravxscalefactor = (stagewidth - cameraw) / stagewidth
 
@@ -175,6 +168,7 @@ local function inputPlayerAttack()
     if fire or focus then
         if firetime <= 0 then
             Audio.play("data/sounds/playershot.ogg")
+            local cameravx, cameravy = camera.body:getLinearVelocity()
             if focus then
                 local bullet = Units.add_position("AmyShot0", x, y, player.z)
                 bullet.vely = bullet.vely + cameravy
@@ -198,6 +192,7 @@ local function handlePlayerHit()
         Audio.play("data/sounds/shriek.ogg")
         Audio.play("data/sounds/selfdestruct.ogg")
         local explosion = Units.add_position("ExplosionPlayer", player.x, player.y, player.z)
+        local cameravx, cameravy = camera.body:getLinearVelocity()
         explosion.vely = cameravy
         Player.remove(player)
         player = nil
@@ -206,8 +201,9 @@ local function handlePlayerHit()
 end
 
 function Stage.fixedupdate()
-    camerax = camerax + cameravx
-    cameray = cameray + cameravy
+    local cameraw, camerah = camera.width, camera.height
+    local camerax, cameray = camera.body:getPosition()
+    local cameravx, cameravy = camera.body:getLinearVelocity()
     timeline:advance(-cameravy)
     if camerax < 0 then
         camerax = 0
@@ -226,12 +222,13 @@ function Stage.fixedupdate()
         if respawntime <= 0 then
             if Stats.lives > 0 then
                 local cameraoffcenter = camerax0 - camerax
-                if cameraoffcenter == 0 then
+                if math.abs(cameraoffcenter) < 1 then
+                    camerax = camerax0
                     player = Units.add_id_position(playerprefab, "player", camerax + cameraw / 2, cameray + camerah * 7 / 8, 100)
                     player.invincibletime = 180
                     Stats.lives = Stats.lives - 1
                 else
-                    camerax = Movement.moveTowards(camerax, camerax0, 2 * cameraoffcenter / math.abs(cameraoffcenter))
+                    camerax = Movement.moveTowards(camerax, camerax0, cameraoffcenter < 0 and -2 or 2)
                 end
             else
                 cameravy = 0
@@ -241,11 +238,13 @@ function Stage.fixedupdate()
         end
     end
 
+    camera.body:setPosition(camerax, cameray)
+    camera.body:setLinearVelocity(cameravx, cameravy)
+
     inputPlayerAttack()
     Units.activateAdded()
     Physics.fixedupdate()
     Units.updatePositions()
-    Units.collide()
     Units.think()
     for id, body in Physics.iterateBodies() do
         Units.updateBody(id, body)
@@ -268,6 +267,9 @@ local function inputPlayerMove()
     if focus then
         movespeed = movespeed - 1
     end
+    local cameraw, camerah = camera.width, camera.height
+    local camerax, cameray = camera.body:getPosition()
+    local cameravx, cameravy = camera.body:getLinearVelocity()
     vx, vy = vx * movespeed, vy * movespeed + cameravy
     local x, y = player.x, player.y
     if x + vx < 0 then
@@ -291,8 +293,11 @@ function Stage.update(dsecs, fixedfrac)
 
     scene:updateAnimations(dsecs)
 
+    local camerax, cameray = camera.body:getPosition()
+    local cameravx, cameravy = camera.body:getLinearVelocity()
     local playervx = player and player.velx or 0
-    cameravx = playervx *cameravxscalefactor
+    cameravx = playervx * cameravxscalefactor
+    camera.body:setLinearVelocity(cameravx, cameravy)
     viewx = camerax + cameravx*fixedfrac
     viewy = cameray + cameravy*fixedfrac
 end
@@ -303,7 +308,7 @@ function Stage.draw()
     local ty = -math.floor(viewy)
     love.graphics.translate(tx, ty)
     scene:draw()
-    -- Physics.draw(viewx, viewy, cameraw, camerah)
+    -- Physics.draw(viewx, viewy, camera.width, camera.height)
     love.graphics.pop()
 end
 

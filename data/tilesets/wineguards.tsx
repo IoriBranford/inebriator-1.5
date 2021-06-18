@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.5" tiledversion="1.6.0" name="wineguards" tilewidth="24" tileheight="32" tilecount="90" columns="18" objectalignment="topleft">
+<tileset version="1.5" tiledversion="1.7.0" name="wineguards" tilewidth="24" tileheight="32" tilecount="90" columns="18" objectalignment="topleft">
  <tileoffset x="-12" y="-16"/>
  <properties>
   <property name="colstype" value="state"/>
@@ -850,55 +850,55 @@
   </objectgroup>
  </tile>
  <tile id="72">
-  <objectgroup draworder="index">
-   <object id="1" type="CollisionEnemy" x="0" y="12" width="24" height="16">
+  <objectgroup draworder="index" id="2">
+   <object id="1" name="hull" type="Fixture" x="0" y="12" width="24" height="16">
     <properties>
-     <property name="sensor" type="bool" value="false"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>
  </tile>
  <tile id="75">
-  <objectgroup draworder="index">
-   <object id="1" type="CollisionEnemy" x="0" y="13" width="24" height="16">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="12" width="24" height="16">
     <properties>
-     <property name="sensor" type="bool" value="false"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>
  </tile>
  <tile id="78">
-  <objectgroup draworder="index">
-   <object id="1" type="CollisionEnemy" x="0" y="12" width="24" height="16">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="12" width="24" height="16">
     <properties>
-     <property name="sensor" type="bool" value="false"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>
  </tile>
  <tile id="81">
-  <objectgroup draworder="index">
-   <object id="2" type="CollisionEnemy" x="0" y="8" width="24" height="16">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="12" width="24" height="16">
     <properties>
-     <property name="sensor" type="bool" value="false"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>
  </tile>
  <tile id="84">
-  <objectgroup draworder="index">
-   <object id="1" type="CollisionEnemy" x="0" y="8" width="24" height="16">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="12" width="24" height="16">
     <properties>
-     <property name="sensor" type="bool" value="false"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>
  </tile>
  <tile id="87">
-  <objectgroup draworder="index">
-   <object id="1" type="CollisionEnemy" x="0" y="10" width="24" height="16">
+  <objectgroup>
+   <object id="1" name="hull" type="Fixture" x="0" y="12" width="24" height="16">
     <properties>
-     <property name="sensor" type="bool" value="false"/>
+     <property name="sensor" type="bool" value="true"/>
     </properties>
    </object>
   </objectgroup>

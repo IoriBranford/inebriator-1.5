@@ -38,6 +38,7 @@ function Enemies.startPawn(unit)
 end
 
 function Enemies.thinkPawn(unit)
+    Unit.doCollisions(unit)
 	local health = unit.health or 1
 	if health < 1 then
         Enemies.defeatStandard(unit)
@@ -61,6 +62,7 @@ function Enemies.thinkPawn(unit)
 end
 
 function Enemies.thinkKnight(unit)
+    Unit.doCollisions(unit)
 	local health = unit.health or 1
 	if health < 1 then
         Enemies.defeatStandard(unit)

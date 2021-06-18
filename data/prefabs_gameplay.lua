@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.6.0",
+  tiledversion = "1.7.0",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 15,
@@ -1152,6 +1152,36 @@ return {
           properties = {
             ["tilename"] = "drunk"
           },
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            parallaxx = 1,
+            parallaxy = 1,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "hull",
+                type = "Fixture",
+                shape = "rectangle",
+                x = 0,
+                y = 0,
+                width = 24,
+                height = 16,
+                rotation = 0,
+                visible = true,
+                properties = {
+                  ["sensor"] = true
+                }
+              }
+            }
+          },
           animation = {
             {
               tileid = 0,
@@ -1350,15 +1380,13 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["offscreenremove"] = true,
             ["enemyteam"] = "player",
             ["health"] = 1,
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
             ["movespeed"] = 2,
-            ["start"] = "startDefaultBullet",
             ["team"] = "enemyshot",
-            ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
         },
@@ -1378,15 +1406,13 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["offscreenremove"] = true,
             ["enemyteam"] = "player",
             ["health"] = 1,
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
             ["movespeed"] = 4,
-            ["start"] = "startDefaultBullet",
             ["team"] = "enemyshot",
-            ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
         },
@@ -1406,15 +1432,13 @@ return {
             ["bodyrotation"] = true,
             ["bodytileshape"] = "hull",
             ["bodytype"] = "dynamic",
+            ["offscreenremove"] = true,
             ["enemyteam"] = "player",
             ["health"] = 1,
             ["hitdamageenemy"] = 1,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
             ["movespeed"] = 3,
-            ["start"] = "startDefaultBullet",
             ["team"] = "enemyshot",
-            ["think"] = "thinkDefaultBullet",
             ["time"] = 300
           }
         }
@@ -1446,7 +1470,9 @@ return {
           gid = 119,
           visible = true,
           properties = {
-            ["bodytype"] = "dynamic"
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "dynamic",
+            ["offscreenremove"] = true
           }
         },
         {

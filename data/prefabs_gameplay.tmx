@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="5" nextobjectid="13">
+<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="5" nextobjectid="13">
  <editorsettings>
   <export target="prefabs_gameplay.lua" format="lua"/>
  </editorsettings>
@@ -14,15 +14,13 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="enemyteam" value="player"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
     <property name="movespeed" type="float" value="2"/>
-    <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
-    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="300"/>
    </properties>
   </object>
@@ -31,15 +29,13 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="enemyteam" value="player"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
     <property name="movespeed" type="float" value="4"/>
-    <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
-    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="300"/>
    </properties>
   </object>
@@ -48,15 +44,13 @@
     <property name="bodyrotation" type="bool" value="true"/>
     <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="enemyteam" value="player"/>
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="1"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
     <property name="movespeed" type="float" value="3"/>
-    <property name="start" value="startDefaultBullet"/>
     <property name="team" value="enemyshot"/>
-    <property name="think" value="thinkDefaultBullet"/>
     <property name="time" type="int" value="300"/>
    </properties>
   </object>
@@ -64,7 +58,9 @@
  <objectgroup id="4" name="emotes">
   <object id="11" name="EmoteDrunk" type="Unit" gid="119" x="96" y="16" width="24" height="16">
    <properties>
+    <property name="bodytileshape" value="hull"/>
     <property name="bodytype" value="dynamic"/>
+    <property name="offscreenremove" type="bool" value="true"/>
    </properties>
   </object>
   <object id="12" name="EmoteSweat" type="Unit" gid="127" x="136" y="16" width="24" height="16">

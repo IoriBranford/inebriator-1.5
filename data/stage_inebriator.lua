@@ -6908,6 +6908,7 @@ return {
           objectGroup = {
             type = "objectgroup",
             draworder = "index",
+            id = 2,
             name = "",
             visible = true,
             opacity = 1,
@@ -6919,8 +6920,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "CollisionEnemy",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 0,
                 y = 12,
@@ -6929,7 +6930,7 @@ return {
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -6939,7 +6940,7 @@ return {
           id = 75,
           objectGroup = {
             type = "objectgroup",
-            draworder = "index",
+            draworder = "topdown",
             name = "",
             visible = true,
             opacity = 1,
@@ -6951,17 +6952,17 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "CollisionEnemy",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 0,
-                y = 13,
+                y = 12,
                 width = 24,
                 height = 16,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -6971,7 +6972,7 @@ return {
           id = 78,
           objectGroup = {
             type = "objectgroup",
-            draworder = "index",
+            draworder = "topdown",
             name = "",
             visible = true,
             opacity = 1,
@@ -6983,8 +6984,8 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "CollisionEnemy",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 0,
                 y = 12,
@@ -6993,7 +6994,7 @@ return {
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -7003,7 +7004,7 @@ return {
           id = 81,
           objectGroup = {
             type = "objectgroup",
-            draworder = "index",
+            draworder = "topdown",
             name = "",
             visible = true,
             opacity = 1,
@@ -7014,18 +7015,18 @@ return {
             properties = {},
             objects = {
               {
-                id = 2,
-                name = "",
-                type = "CollisionEnemy",
+                id = 1,
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 0,
-                y = 8,
+                y = 12,
                 width = 24,
                 height = 16,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -7035,7 +7036,7 @@ return {
           id = 84,
           objectGroup = {
             type = "objectgroup",
-            draworder = "index",
+            draworder = "topdown",
             name = "",
             visible = true,
             opacity = 1,
@@ -7047,17 +7048,17 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "CollisionEnemy",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 0,
-                y = 8,
+                y = 12,
                 width = 24,
                 height = 16,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -7067,7 +7068,7 @@ return {
           id = 87,
           objectGroup = {
             type = "objectgroup",
-            draworder = "index",
+            draworder = "topdown",
             name = "",
             visible = true,
             opacity = 1,
@@ -7079,17 +7080,17 @@ return {
             objects = {
               {
                 id = 1,
-                name = "",
-                type = "CollisionEnemy",
+                name = "hull",
+                type = "Fixture",
                 shape = "rectangle",
                 x = 0,
-                y = 10,
+                y = 12,
                 width = 24,
                 height = 16,
                 rotation = 0,
                 visible = true,
                 properties = {
-                  ["sensor"] = false
+                  ["sensor"] = true
                 }
               }
             }
@@ -8145,9 +8146,11 @@ return {
           gid = 700,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "static",
             ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
+            ["offscreenremove"] = true,
+            ["start"] = "startDefeatedDrunkEnemy"
           }
         },
         {
@@ -8163,9 +8166,11 @@ return {
           gid = 697,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "static",
             ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
+            ["offscreenremove"] = true,
+            ["start"] = "startDefeatedDrunkEnemy"
           }
         },
         {
@@ -8181,9 +8186,11 @@ return {
           gid = 703,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "static",
             ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
+            ["offscreenremove"] = true,
+            ["start"] = "startDefeatedDrunkEnemy"
           }
         },
         {
@@ -8199,9 +8206,11 @@ return {
           gid = 706,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "static",
             ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
+            ["offscreenremove"] = true,
+            ["start"] = "startDefeatedDrunkEnemy"
           }
         },
         {
@@ -8217,9 +8226,11 @@ return {
           gid = 709,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "static",
             ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
+            ["offscreenremove"] = true,
+            ["start"] = "startDefeatedDrunkEnemy"
           }
         },
         {
@@ -8235,9 +8246,11 @@ return {
           gid = 712,
           visible = true,
           properties = {
+            ["bodytileshape"] = "hull",
+            ["bodytype"] = "static",
             ["module"] = "Unit",
-            ["start"] = "startDefeatedDrunkEnemy",
-            ["think"] = "thinkDefeatedDrunkEnemy"
+            ["offscreenremove"] = true,
+            ["start"] = "startDefeatedDrunkEnemy"
           }
         },
         {

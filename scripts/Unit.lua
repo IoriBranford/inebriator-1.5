@@ -21,6 +21,7 @@ end
 Unit.startTimeout = startTimeout
 
 function Unit.thinkTimeout(unit)
+	Unit.doCollisions(unit)
 	local time = unit.time or 60
 	time = time - 1
 	unit.time = time
@@ -167,7 +168,8 @@ function Unit.startDefeatedDrunkEnemy(unit)
 end
 
 function Unit.thinkDefeatedDrunkEnemy(unit)
-	local camerabottom = Stage.getCameraBottom()
+	local camera = Units.get("camera")
+	local camerabottom = camera.y + camera.height
 	if unit.y > camerabottom then
 		Units.remove(unit)
 		Units.remove(unit.emote)
@@ -196,6 +198,7 @@ function Unit.doCollisions(unit)
 		return
 	end
 	local damage = 0
+	local damageenemy = unit.hitdamageenemy or 0
 	local damageself = unit.hitdamageself or 0
 	local x1, y1 = unit.x, unit.y
 	local z = unit.z
@@ -220,6 +223,17 @@ function Unit.doCollisions(unit)
 					local distx, disty = x2-x1, y2-y1
 					local x, y = x1 + distx/4, y1 + disty/4
 					Units.add_position(hitspark, x, y, z)
+
+					if not other.think then
+						local otherhealth = other.health
+						if otherhealth then
+							otherhealth = otherhealth - damageenemy - (other.hitdamageself or 0)
+							other.health = otherhealth
+							if otherhealth < 1 then
+								Units.remove(other)
+							end
+						end
+					end
 				end
             end
 		end

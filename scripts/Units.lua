@@ -49,7 +49,6 @@ local function activateUnit(unit)
             thinkingunits[id] = unit
         end
         start = unit.start and module[unit.start]
-        unit.collide = unit.collide and module[unit.collide] or Unit.collideDefault
     end
 
     local tile = unit.tile

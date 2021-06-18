@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.6.0",
+  tiledversion = "1.7.0",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 15,
@@ -915,11 +915,8 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 16,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
-            ["start"] = "startDefaultBullet",
+            ["offscreenremove"] = true,
             ["team"] = "playershot",
-            ["think"] = "thinkDefaultBullet",
-            ["time"] = 60,
             ["vely"] = -16
           }
         },
@@ -943,11 +940,8 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 17,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
-            ["start"] = "startDefaultBullet",
+            ["offscreenremove"] = true,
             ["team"] = "playershot",
-            ["think"] = "thinkDefaultBullet",
-            ["time"] = 60,
             ["vely"] = -16
           }
         },
@@ -971,11 +965,8 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 18,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
-            ["start"] = "startDefaultBullet",
+            ["offscreenremove"] = true,
             ["team"] = "playershot",
-            ["think"] = "thinkDefaultBullet",
-            ["time"] = 60,
             ["vely"] = -16
           }
         },
@@ -999,11 +990,8 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 19,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
-            ["start"] = "startDefaultBullet",
+            ["offscreenremove"] = true,
             ["team"] = "playershot",
-            ["think"] = "thinkDefaultBullet",
-            ["time"] = 60,
             ["vely"] = -16
           }
         },
@@ -1027,11 +1015,8 @@ return {
             ["health"] = 1,
             ["hitdamageenemy"] = 20,
             ["hitdamageself"] = 1,
-            ["module"] = "Unit",
-            ["start"] = "startDefaultBullet",
+            ["offscreenremove"] = true,
             ["team"] = "playershot",
-            ["think"] = "thinkDefaultBullet",
-            ["time"] = 60,
             ["vely"] = -16
           }
         },
@@ -1053,11 +1038,8 @@ return {
             ["bodytype"] = "dynamic",
             ["enemyteam"] = "enemy",
             ["hitdamageenemy"] = 2,
-            ["module"] = "Unit",
-            ["start"] = "startDefaultBullet",
+            ["offscreenremove"] = true,
             ["team"] = "playershot",
-            ["think"] = "thinkDefaultBullet",
-            ["time"] = 60,
             ["vely"] = -16
           }
         },

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="3" nextobjectid="9">
+<map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="15" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="3" nextobjectid="9">
  <editorsettings>
   <export target="player_AmyDrunk.lua" format="lua"/>
  </editorsettings>
@@ -31,11 +31,8 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="16"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefaultBullet"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="team" value="playershot"/>
-    <property name="think" value="thinkDefaultBullet"/>
-    <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
    </properties>
   </object>
@@ -48,11 +45,8 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="17"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefaultBullet"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="team" value="playershot"/>
-    <property name="think" value="thinkDefaultBullet"/>
-    <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
    </properties>
   </object>
@@ -65,11 +59,8 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="18"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefaultBullet"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="team" value="playershot"/>
-    <property name="think" value="thinkDefaultBullet"/>
-    <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
    </properties>
   </object>
@@ -82,11 +73,8 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="19"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefaultBullet"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="team" value="playershot"/>
-    <property name="think" value="thinkDefaultBullet"/>
-    <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
    </properties>
   </object>
@@ -99,11 +87,8 @@
     <property name="health" type="int" value="1"/>
     <property name="hitdamageenemy" type="int" value="20"/>
     <property name="hitdamageself" type="int" value="1"/>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefaultBullet"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="team" value="playershot"/>
-    <property name="think" value="thinkDefaultBullet"/>
-    <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
    </properties>
   </object>
@@ -114,11 +99,8 @@
     <property name="bodytype" value="dynamic"/>
     <property name="enemyteam" value="enemy"/>
     <property name="hitdamageenemy" type="int" value="2"/>
-    <property name="module" value="Unit"/>
-    <property name="start" value="startDefaultBullet"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="team" value="playershot"/>
-    <property name="think" value="thinkDefaultBullet"/>
-    <property name="time" type="int" value="60"/>
     <property name="vely" type="float" value="-16"/>
    </properties>
   </object>

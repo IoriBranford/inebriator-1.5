@@ -10,6 +10,7 @@ function Player.startGameplay(player)
 end
 
 function Player.thinkGameplay(player)
+    Unit.doCollisions(player)
     local invincibletime = player.invincibletime or 1
     invincibletime = math.max(0, invincibletime - 1)
     player.invincibletime = invincibletime

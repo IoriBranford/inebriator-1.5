@@ -38,44 +38,56 @@
   </properties>
   <object id="266" name="DefeatedPawn" type="Unit" gid="700" x="304" y="1248" width="24" height="32">
    <properties>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
     <property name="module" value="Unit"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
   <object id="294" name="DefeatedKnight" type="Unit" gid="697" x="328" y="1248" width="24" height="32">
    <properties>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
     <property name="module" value="Unit"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
   <object id="295" name="DefeatedRook" type="Unit" gid="703" x="352" y="1248" width="24" height="32">
    <properties>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
     <property name="module" value="Unit"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
   <object id="296" name="DefeatedBishop" type="Unit" gid="706" x="376" y="1248" width="24" height="32">
    <properties>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
     <property name="module" value="Unit"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
   <object id="297" name="DefeatedKing" type="Unit" gid="709" x="400" y="1248" width="24" height="32">
    <properties>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
     <property name="module" value="Unit"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
   <object id="298" name="DefeatedQueen" type="Unit" gid="712" x="424" y="1248" width="24" height="32">
    <properties>
+    <property name="bodytileshape" value="hull"/>
+    <property name="bodytype" value="static"/>
     <property name="module" value="Unit"/>
+    <property name="offscreenremove" type="bool" value="true"/>
     <property name="start" value="startDefeatedDrunkEnemy"/>
-    <property name="think" value="thinkDefeatedDrunkEnemy"/>
    </properties>
   </object>
   <object id="286" template="units/WineGlassRed.tx" name="WineGlassRed" x="304" y="1280"/>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.5" tiledversion="1.6.0" name="emotes" tilewidth="24" tileheight="16" tilecount="32" columns="8" objectalignment="topleft">
+<tileset version="1.5" tiledversion="1.7.0" name="emotes" tilewidth="24" tileheight="16" tilecount="32" columns="8" objectalignment="topleft">
  <tileoffset x="-12" y="-16"/>
  <image source="emotes.png" width="192" height="64"/>
  <tile id="0">
   <properties>
    <property name="tilename" value="drunk"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" name="hull" type="Fixture" x="0" y="0" width="24" height="16">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+   </object>
+  </objectgroup>
   <animation>
    <frame tileid="0" duration="125"/>
    <frame tileid="1" duration="125"/>

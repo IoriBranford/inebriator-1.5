@@ -5,6 +5,7 @@ local Audio = require "Audio"
 local Gui = require "Gui"
 local GameplayGui = require "GameplayGui"
 local Stats = require "Stats"
+local Camera = require "Camera"
 
 local Gameplay = {}
 
@@ -13,7 +14,7 @@ local canvas
 function Gameplay.loadphase(stagefile)
     Stage.init(stagefile, "AmyDrunk")
     GameplayGui.load()
-    canvas = love.graphics.newCanvas(Stage.getCameraSize())
+    canvas = love.graphics.newCanvas(Camera.Prefab.width, Camera.Prefab.height)
     canvas:setFilter("nearest")
     Stats.reset()
     Stats.refreshGui(GameplayGui)
