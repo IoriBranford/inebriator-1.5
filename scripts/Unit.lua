@@ -114,7 +114,11 @@ function Unit.jumpPath(unit, onPointReached)
 	unit.velz = velz
 	unit.z = unit.z + velz
 	unit.velx, unit.vely = nextx - x, nexty - y - (unit.z - unit.layer.z)
-	if nextx == destx and nexty == desty then
+	if math.abs(nextx - destx) < 2
+	and math.abs(nexty - desty) < 2
+	and unit.z <= unit.layer.z then
+		unit.velx = destx - x
+		unit.vely = desty - y
 		unit.velz = nil
 		unit.z = unit.layer.z
 		pathindex = pathindex + 2
@@ -191,17 +195,32 @@ function Unit.thinkFleeingCivilian(unit)
 	end
 end
 
+function Unit.takeHitDamage(unit, other)
+	if other.enemyteam == unit.team then
+		local damagefromenemy = other.hitdamageenemy or 0
+		local damageself = unit.hitdamageself or 0
+		local hitdamage = damagefromenemy + damageself
+
+		Audio.play("data/sounds/hit.ogg")
+		local hitspark = hitdamage > 0 and "ImpactDamage" or "ImpactNoDamage"
+		local x1, y1 = unit.x, unit.y
+		local x2, y2 = other.x, other.y
+		local distx, disty = x2-x1, y2-y1
+		local x, y = x1 + distx/4, y1 + disty/4
+		Units.add_position(hitspark, x, y, unit.z)
+		return hitdamage
+	end
+	return 0
+end
+
 function Unit.doCollisions(unit)
 	local body = unit.body
 	local team = unit.team
-	if not body or not team then
+	local enemyteam = unit.enemyteam
+	if not body or (not team and not enemyteam) then
 		return
 	end
 	local damage = 0
-	local damageenemy = unit.hitdamageenemy or 0
-	local damageself = unit.hitdamageself or 0
-	local x1, y1 = unit.x, unit.y
-	local z = unit.z
 	for _, contact in pairs(body:getContacts()) do
 		if contact:isTouching() then
 			local f1, f2 = contact:getFixtures()
@@ -212,26 +231,15 @@ function Unit.doCollisions(unit)
 			local id2 = b2:getUserData()
             local other = id2 and Units.get(id2)
             if other then
-				if other.enemyteam == team then
-					local damagefromenemy = other.hitdamageenemy or 0
-					local hitdamage = damagefromenemy + damageself
-					damage = damage + hitdamage
+				damage = damage + Unit.takeHitDamage(unit, other)
 
-					Audio.play("data/sounds/hit.ogg")
-					local hitspark = hitdamage > 0 and "ImpactDamage" or "ImpactNoDamage"
-					local x2, y2 = other.x, other.y
-					local distx, disty = x2-x1, y2-y1
-					local x, y = x1 + distx/4, y1 + disty/4
-					Units.add_position(hitspark, x, y, z)
-
-					if not other.think then
-						local otherhealth = other.health
-						if otherhealth then
-							otherhealth = otherhealth - damageenemy - (other.hitdamageself or 0)
-							other.health = otherhealth
-							if otherhealth < 1 then
-								Units.remove(other)
-							end
+				if not other.think then
+					local health = other.health
+					if health then
+						health = health - Unit.takeHitDamage(other, unit)
+						other.health = health
+						if health < 1 then
+							Units.remove(id2)
 						end
 					end
 				end
